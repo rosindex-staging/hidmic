@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>ROS Index</title>
+    <meta name="description" content="a community-maintained index of robotics software
+">
+
+    <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//r/choreo/github-yijiangh-Choreo/">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/main.css">
+    
+
+    <script type="text/javascript" src=/js/jquery.js></script>
+    <script src=/bootstrap/js/bootstrap.min.js type="text/javascript"></script>
+    <script src=/js/jquery-cookie-1.4.1/jquery.cookie.js type="text/javascript"></script>
+
+    <script type="text/javascript" src=/js/ga.js async></script>
+    <script type="text/javascript" src=/js/toc.js></script>
+
+    <script src=/js/distro_switch.js></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <div class="container-fluid" style="margin-bottom: 10px">
+
+      <div align="center">
+        <br>
+        <table id="topnav-table">
+          <tr>
+            <td valign="middle">
+                ROS Resources:
+              <a href="http://wiki.ros.org/">Documentation</a>
+              |
+              <a href="http://wiki.ros.org/Support">Support</a>
+              |
+              <a href="http://discourse.ros.org/">Discussion Forum</a>
+              |
+              <a href="http://status.ros.org/">Service Status</a>
+              |
+              <a href="http://answers.ros.org/">Q&A answers.ros.org</a>
+            </td>
+          </tr>
+        </table> <!-- topnav-table -->
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12 col-md-9" style="margin-top: 8px">
+          <div class="row">
+            <!-- title -->
+            <div class="col-xs-12 col-sm-3 col-md-3" style="white-space:nowrap;">
+              <a class="site-title" href="/">ROS Index</a> <sup><a href="https://github.com/ros-infrastructure/rosindex/issues/new" style="vertical-align:super;" class="label label-warning" target="_blank">BETA</a></sup>
+            </div>
+
+            <!-- main links -->
+            <div class="col-xs-12 col-sm-9 col-md-9 text-right">
+              <ul class="list-inline" style="margin-bottom:0px;">
+                <li><a class="btn btn-link" href="/about">About</a></li>
+
+                <li class="dropdown">
+                  <button id="dLabel" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Index <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li><a href="/packages/page/1/time/">Package List</a></li>
+                    <li><a href="/repos/page/1/time/">Repository List</a></li>
+
+                    <li class="hidden" class="divider"></li>
+
+
+                    <li class="hidden"><a href="/srvs/">Nodes</a></li>
+                    <li class="hidden"><a href="/msgs/">Messages</a></li>
+                    <li class="hidden"><a href="/srvs/">Services</a></li>
+                    <li class="hidden"><a href="/srvs/">Plugins</a></li>
+
+                    <li class="divider"></li>
+
+                    <li><a href="/deps/">System Dependencies</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown disabled">
+                  <button id="dLabel" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Doc <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    
+                    <li>
+                      <a href="/doc/ros2">
+                        ROS2 Overview
+                      </a>
+                    </li>
+                    
+                    <li class="hidden" class="divider"></li>
+
+                    <li class="hidden"><a href="/doc/tutorials">Tutorials</a></li>
+                    <li class="hidden"><a href="/doc/readmes">Readmes</a></li>
+                    <li class="hidden"><a href="/doc/apis">APIs</a></li>
+                  </ul>
+                </li>
+
+                <li><a class="btn btn-link" href="/contribute">Contribute</a></li>
+                <li><a class="btn btn-link" href="/stats">Stats</a></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- searchbox -->
+        <div class="col-sm-12 col-md-3" style="margin-top: 12px">
+          <form id="top-searchbox" action="/search/" role="form" method="get">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" name="q" placeholder="Search ROS">
+              <span class="input-group-btn">
+                <button class="btn btn-default btn-sm" title="Search ROS" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+                <a href="https://lunrjs.com/guides/searching.html"
+                   title="Help to Search" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-question-sign"></span>
+                </a>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    <a class="site-title" href="/">ROS Index</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <a class="page-link" href="/packages">Packages</a>
+        <a class="page-link" href="/repos">Repositories</a>
+        <a class="page-link" href="/search">Search</a>
+      </div>
+    </nav>
+    -->
+
+  </div>
+  <script type="text/javascript">
+    $('#top-searchbox').submit(function() {
+        return $('#top-searchbox input:text').filter(function() {
+          return $(this).val() == "";
+        }).length == 0;
+    });
+  </script>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="container-fluid" style="margin-top:20px">
+  <div class="container-fluid">
+    <div class="row">
+      <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/repos">Repos</a></li>
+        <li class="active">choreo</li>
+        <!--<li class="active">choreo</li>-->
+      </ol>
+    </div>
+    <div class="row">
+      
+
+<div id="distro-switch" class="btn-group btn-group-justified" data-toggle="buttons">
+  
+    <label id="crystal-option" class="distro-button btn btn-xs btn-default" href="#crystal" data="crystal">
+      <input type="radio" name="options" id="crystal-radio" autocomplete="off"> crystal
+    </label>
+  
+    <label id="bouncy-option" class="distro-button btn btn-xs btn-default" href="#bouncy" data="bouncy">
+      <input type="radio" name="options" id="bouncy-radio" autocomplete="off"> bouncy
+    </label>
+  
+    <label id="melodic-option" class="distro-button btn btn-xs btn-default" href="#melodic" data="melodic">
+      <input type="radio" name="options" id="melodic-radio" autocomplete="off"> melodic
+    </label>
+  
+    <label id="lunar-option" class="distro-button btn btn-xs btn-default" href="#lunar" data="lunar">
+      <input type="radio" name="options" id="lunar-radio" autocomplete="off"> lunar
+    </label>
+  
+    <label id="kinetic-option" class="distro-button btn btn-xs btn-primary" href="#kinetic" data="kinetic">
+      <input type="radio" name="options" id="kinetic-radio" autocomplete="off"> kinetic
+    </label>
+  
+    <label id="indigo-option" class="distro-button btn btn-xs btn-default" href="#indigo" data="indigo">
+      <input type="radio" name="options" id="indigo-radio" autocomplete="off"> indigo
+    </label>
+  
+
+  <!-- Older distros -->
+  <div class="btn-group dropdown">
+    <label type="button" class="btn btn-xs dropdown-toggle btn-default" data-toggle="dropdown" id="older-distro-button">
+        <input type="radio" name="options" autocomplete="off">
+      <span id="older-label">Older</span>
+      <span class="caret"></span>
+    </label>
+    <ul class="dropdown-menu" role="menu">
+      
+        <li data="ardent" id="ardent-option" class="disabled older-distro-option"  href="#ardent">
+          <a href="#ardent" data="ardent" id="ardent-button">ardent</a>
+        </li>
+      
+        <li data="jade" id="jade-option" class="disabled older-distro-option"  href="#jade">
+          <a href="#jade" data="jade" id="jade-button">jade</a>
+        </li>
+      
+        <li data="hydro" id="hydro-option" class="disabled older-distro-option"  href="#hydro">
+          <a href="#hydro" data="hydro" id="hydro-button">hydro</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+    <div class="row">
+      &nbsp;
+    </div>
+    <div class="row">
+      <div class="well well-sm">
+  <div>
+    
+  </div>
+  
+  <table class="table">
+    <tr>
+      <td width="100px" class="text-center">
+        <img style="width: 80px;" src="/assets/repo.png">
+      </td>
+      <td>
+        <h3><a style="text-decoration:none;" href="/r/choreo">choreo</a> <small>repository</small></h3>
+        
+      </td>
+    </tr>
+  </table>
+  <div class="top-buffer">
+    
+    
+<table class="table table-condensed instance-switch">
+  <tr>
+    <td>
+      <div id="repo-switch" class="btn-group btn-group-justified" role="group">
+        <div class="btn-group" style="width: 50px">
+          <a type="button" class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="left" title="View Instances" 
+            href="/repos/choreo"><span class="glyphicon glyphicon-th"></span></a>
+        </div>
+        <div class="btn-group" style="width: 90%" role="group">
+          <div class="dropdown">
+            <!-- TODO: add disabled when only 1 version is known? -->
+            <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" title="Select Instance">
+              <span class="pull-left" style="width: 100%; text-align: left">
+                <span class="pull-right"><span class="caret"></span></span> 
+              <span class="glyphicon glyphicon-star"></span>
+                  github-yijiangh-Choreo
+              </span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              
+                <li role="presentation">
+                  <a id="github-yijiangh-Choreo" role="menuitem" tabindex="-1" href="/r/choreo/github-yijiangh-Choreo" data="github-yijiangh-Choreo">
+                    <span class="glyphicon glyphicon-star"></span>
+                    github-yijiangh-Choreo
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+  </div>
+  <div class="top-buffer">
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="distro distro-crystal">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>crystal</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-bouncy">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>bouncy</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-melodic">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>melodic</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-lunar">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>lunar</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-kinetic">
+    <div class="container-fluid">
+      
+        
+        <div class="panel panel-default">
+          
+          <div class="panel-heading"><h3 class="panel-title">Repository Summary</h3></div>
+          <div class="panel-body" style="overflow-x: auto">
+            
+
+  <table class="table table-condensed">
+    <tr>
+      <td style="width:100px;" class="text-right"><b>Checkout URI</b></td>
+      <td><a class="label label-default" href="https://github.com/yijiangh/Choreo.git">https://github.com/yijiangh/Choreo.git</a></td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>VCS Type</b></td>
+      <td><span class="label label-default">git</span></td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>VCS Version</b></td>
+      <td><span class="label label-default">kinetic-devel</span></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
+      <td>
+        
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-10-03
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>Dev Status</b></td>
+      <td>
+        
+          
+            <span class="label label-success">
+          
+          DEVELOPED
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>Released</b></td>
+      <td>
+        
+          <span class="label label-default">UNRELEASED
+        </span>
+      </td>
+    </tr>
+  </table>
+
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">Packages</h3></div>
+          <div class="panel-body">
+            
+            
+              <table class="table table-condensed table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Version</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                  <tr>
+                    <td><a href="/p/choreo/github-yijiangh-Choreo">choreo</a></td>
+                    <td>0.0.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_core/github-yijiangh-Choreo">choreo_core</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_descartes_planner/github-yijiangh-Choreo">choreo_descartes_planner</a></td>
+                    <td>0.0.1</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_execution_gatekeeper/github-yijiangh-Choreo">choreo_execution_gatekeeper</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_geometry_conversion_helpers/github-yijiangh-Choreo">choreo_geometry_conversion_helpers</a></td>
+                    <td>3.4.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_gui/github-yijiangh-Choreo">choreo_gui</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_msgs/github-yijiangh-Choreo">choreo_msgs</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_output_processor/github-yijiangh-Choreo">choreo_output_processor</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_param_helpers/github-yijiangh-Choreo">choreo_param_helpers</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_planning_capability/github-yijiangh-Choreo">choreo_planning_capability</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_process_planning/github-yijiangh-Choreo">choreo_process_planning</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_rapidjson/github-yijiangh-Choreo">choreo_rapidjson</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/framefab_irb6600_support/github-yijiangh-Choreo">framefab_irb6600_support</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/framefab_irb6600_workspace_ikfast_rail_robot_manipulator_plugin/github-yijiangh-Choreo">framefab_irb6600_workspace_ikfast_rail_robot_manipulator_plugin</a></td>
+                    <td>0.0.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/framefab_irb6600_workspace_moveit_config/github-yijiangh-Choreo">framefab_irb6600_workspace_moveit_config</a></td>
+                    <td>0.3.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/asw_end_effector/github-yijiangh-Choreo">asw_end_effector</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/asw_material_feeder/github-yijiangh-Choreo">asw_material_feeder</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_kr150_2_support/github-yijiangh-Choreo">choreo_kr150_2_support</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_kr150_2_workspace_ikfast_rail_robot_manipulator_plugin/github-yijiangh-Choreo">choreo_kr150_2_workspace_ikfast_rail_robot_manipulator_plugin</a></td>
+                    <td>0.0.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_kr150_2_workspace_moveit_config/github-yijiangh-Choreo">choreo_kr150_2_workspace_moveit_config</a></td>
+                    <td>0.3.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_kr5_arc_support/github-yijiangh-Choreo">choreo_kr5_arc_support</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_kr5_arc_workspace_ikfast_rail_robot_manipulator_plugin/github-yijiangh-Choreo">choreo_kr5_arc_workspace_ikfast_rail_robot_manipulator_plugin</a></td>
+                    <td>0.0.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_kr5_arc_workspace_moveit_config/github-yijiangh-Choreo">choreo_kr5_arc_workspace_moveit_config</a></td>
+                    <td>0.3.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/framefab_kr6_r900_support/github-yijiangh-Choreo">framefab_kr6_r900_support</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/kr6_r900_mit_suction_gripper_moveit_config/github-yijiangh-Choreo">kr6_r900_mit_suction_gripper_moveit_config</a></td>
+                    <td>0.3.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/kr6_r900_workspace_ikfast_manipulator_plugin/github-yijiangh-Choreo">kr6_r900_workspace_ikfast_manipulator_plugin</a></td>
+                    <td>0.0.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/kr6_r900_workspace_moveit_config/github-yijiangh-Choreo">kr6_r900_workspace_moveit_config</a></td>
+                    <td>0.3.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/ucla_linear_axis/github-yijiangh-Choreo">ucla_linear_axis</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/mit_arch_suction_gripper/github-yijiangh-Choreo">mit_arch_suction_gripper</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_simulation_execution/github-yijiangh-Choreo">choreo_simulation_execution</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_task_sequence_external_planner/github-yijiangh-Choreo">choreo_task_sequence_external_planner</a></td>
+                    <td>0.5.1</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_task_sequence_planner/github-yijiangh-Choreo">choreo_task_sequence_planner</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/geometric_tools_engine/github-yijiangh-Choreo">geometric_tools_engine</a></td>
+                    <td>0.1.1</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_task_sequence_processor/github-yijiangh-Choreo">choreo_task_sequence_processor</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/choreo_visual_tools/github-yijiangh-Choreo">choreo_visual_tools</a></td>
+                    <td>3.4.0</td>
+                  </tr>
+                
+                </tbody>
+              </table>
+            
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">README</h3></div>
+          <div class="panel-body">
+            
+              <div class="rendered-markdown">
+<h1 id="choreo">Choreo</h1>
+
+<p><strong>A robotic motion planning platform for discrete architectural assembly</strong></p>
+
+<p><a href="https://travis-ci.org/yijiangh/Choreo"><img src="https://travis-ci.org/yijiangh/Choreo.svg?branch=kinetic-devel" alt="Build Status"></a></p>
+
+<p>Currently we support [ROS-kinetic] on Ubuntu 16.04.</p>
+
+<p><a href="http://digitalstructures.mit.edu/"><img src="http://digitalstructures.mit.edu/theme/digistruct/images/digital-structures-logo-gray.svg" width="150"></a>
+       
+<a href="http://web.mit.edu/"><img src="http://web.mit.edu/files/images/homepage/default/mit_logo.gif?v=1530763211" width="80"></a></p>
+
+<h2 id="installation">
+<img align="center" height="15" src="https://i.imgur.com/x1morBF.png"> Installation</h2>
+
+<p><strong>If you are new to Linux or ROS</strong>, you might find links in the <a href="https://github.com/yijiangh/Choreo/tree/kinetic-devel/#references">references</a> section handy.</p>
+
+<h3 id="build-from-source">Build from source</h3>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Install</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ROS-kinetic]</td>
+<td>base ROS system on Ubuntu 16.04</td>
+<td>follow instruction <a href="http://wiki.ros.org/kinetic/Installation/Ubuntu">here</a>
+</td>
+</tr>
+<tr>
+<td>[python_catkin_tools]</td>
+<td>catkin build tool</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><code>sudo apt-get install python-catkin-tools
+</code> |
+| [wstool] | workspace version control | 
+<code>sudo apt install python-wstool
+</code> |
+| [moveit!] | The Moveit! motion planning framework | 
+<code>sudo apt-get install ros-kinetic-moveit
+</code> |
+| [moveit visual tools] | visualization aids in rviz | 
+<code>sudo apt-get install ros-kinetic-moveit-visual-tools
+</code> |</p>
+
+<ul>
+<li>Cd into the 'src' directory of your catkin workspace (
+<code>~/catkin_ws/src
+</code> in my case) and run the following:</li>
+</ul>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">  wstool init <span class="nb">.</span> 
+  wstool merge https://github.com/yijiangh/Choreo/raw/kinetic-devel/choreo.rosinstall
+  wstool update
+  rosdep <span class="nb">install</span> <span class="nt">--from-paths</span> <span class="nb">.</span> <span class="nt">--ignore-src</span>
+
+</code></pre></div>
+<ul>
+<li>Finally, build Choreo from src:</li>
+</ul>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">cd</span> ~/catkin_ws <span class="o">(</span>your catkin workspace root<span class="o">)</span>
+  catkin build
+  <span class="nb">source </span>devel/setup.bash
+
+</code></pre></div>
+<h3 id="docker-image">Docker image</h3>
+
+<p>Coming soon.</p>
+
+<h2 id="quick-start-demo">
+<img align="center" height="15" src="https://i.imgur.com/x1morBF.png"> Quick start demo</h2>
+
+<p>Start playing with robotic spatial extrusion on a KUKA KR6R900 robot:</p>
+
+<p><code>roslaunch framefab_kr6_r900_support kr6_r900_choreo.launch</code></p>
+
+<p><img src="https://i.imgur.com/hSdrgm8.png" alt="KR6R900_demo" width="500"></p>
+
+<p>Or on an ABB robot mounted on a linear track:</p>
+
+<p><code>roslaunch framefab_irb6600_support irb6600_choreo.launch</code></p>
+
+<p><img src="https://i.imgur.com/5K0raAY.png" alt="ABB_demo" width="500"></p>
+
+<p>First set up your print model by clicking the <code>Parameters</code> button and set up model file path in <code>Model Input</code> (you might need to set up the robot start pose too). Save it and click <code>Next</code>. Some test models for spatial extrusion can be found <a href="https://github.com/yijiangh/framefab_mpp_test_models">here</a>.</p>
+
+<p><em>More detailed instruction coming soon.</em></p>
+
+<h2 id="code-api">
+<img align="center" height="15" src="https://i.imgur.com/x1morBF.png"> Code API</h2>
+
+<p>Coming soon.</p>
+
+<h2 id="publications">
+<img align="center" height="15" src="https://i.imgur.com/dHQx91Q.png"> Publications</h2>
+
+<p>If you use this work, please consider citing as follows:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">@article{Huang_Garrett_Mueller_2018, 
+title={Automated motion planning for robotic assembly of discrete architectural structures}, 
+url={http://arxiv.org/abs/1810.00998}, 
+note={arXiv: 1810.00998}, 
+journal={arXiv:1810.00998 [cs]}, 
+author={Huang, Yijiang and Garrett, Caelan Reed and Mueller, Caitlin Tobin}, year={2018}, month={Oct} }
+</code></pre></div>
+<p>Algorithms behind Choreo:
+- Automated motion planning for robotic assembly of discrete architectural structures, Preprint, <a href="https://arxiv.org/abs/1810.00998">paper link</a></p>
+
+<p>Applications of Choreo:
+- Robotic extrusion of architectural structures with nonstandard topology, RobArch 2018, <a href="http://web.mit.edu/yijiangh/www/papers/Huang2019_RobArch.pdf">paper link</a>
+- Spatial extrusion of Topology Optimized 3D Trusses, IASS 2018, <a href="http://web.mit.edu/yijiangh/www//papers/HuangCarstensenMueller_IASS2018.pdf">paper link</a></p>
+
+<h2 id="bugs-feature-requests">
+<img align="center" height="15" src="https://i.imgur.com/H4NwgMg.png"> Bugs &amp; Feature Requests</h2>
+
+<p>Please report bugs and request features using the <a href="https://github.com/yijiangh/Choreo/issues">Issue Tracker</a>.</p>
+
+<h2 id="references">
+<img align="center" height="15" src="https://i.imgur.com/x1morBF.png"> References<a name="references"></a>
+</h2>
+
+<p>If you are new to Linux: You may find it helpful to first do a quick tutorial on common command line tools for linux. A good one is <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/">here</a>.</p>
+
+<p>For researchers and developers who wants to dive deep into the system implementation but not familiar to ROS, you may find the official ROS tutorial <a href="http://wiki.ros.org/ROS/Tutorials">here</a> useful.</p>
+
+<p>[ROS-kinetic]: <a href="http://wiki.ros.org/kinetic">http://wiki.ros.org/kinetic</a>
+[python_catkin_tools]: <a href="http://catkin-tools.readthedocs.io/en/latest/index.html">http://catkin-tools.readthedocs.io/en/latest/index.html</a>
+[wstool]: <a href="http://wiki.ros.org/wstool">http://wiki.ros.org/wstool</a>
+[moveit!]: <a href="http://moveit.ros.org/install/">http://moveit.ros.org/install/</a>
+[moveit visual tools]: <a href="https://github.com/ros-planning/moveit_visual_tools">https://github.com/ros-planning/moveit_visual_tools</a></p>
+</div>
+            
+          </div>
+        </div>
+
+        
+        
+      
+    </div>
+  </div>
+
+  <div class="distro distro-indigo">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>indigo</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-ardent">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>ardent</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-jade">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>jade</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-hydro">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>hydro</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    setupDistroSwitch("crystal");
+  });
+</script>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4 col-md-4">
+          
+            <a href="https://github.com/ros-infrastructure" title="Find rosindex in Github">
+            <span class="icon  icon--github">
+              <svg viewBox="0 0 16 16">
+                <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+
+            <span class="username">ros-infrastructure</span>
+          </a>
+          |
+          <em>generated on 2019-01-10</em>
+        
+        </div>
+        <div class="col-sm-8 col-md-8 text-right">
+          <p class="text">a community-maintained index of robotics software
+ | <a href="/privacy.txt">privacy</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

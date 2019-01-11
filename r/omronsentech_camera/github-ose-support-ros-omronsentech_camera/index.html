@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>ROS Index</title>
+    <meta name="description" content="a community-maintained index of robotics software
+">
+
+    <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//r/omronsentech_camera/github-ose-support-ros-omronsentech_camera/">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/main.css">
+    
+
+    <script type="text/javascript" src=/js/jquery.js></script>
+    <script src=/bootstrap/js/bootstrap.min.js type="text/javascript"></script>
+    <script src=/js/jquery-cookie-1.4.1/jquery.cookie.js type="text/javascript"></script>
+
+    <script type="text/javascript" src=/js/ga.js async></script>
+    <script type="text/javascript" src=/js/toc.js></script>
+
+    <script src=/js/distro_switch.js></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <div class="container-fluid" style="margin-bottom: 10px">
+
+      <div align="center">
+        <br>
+        <table id="topnav-table">
+          <tr>
+            <td valign="middle">
+                ROS Resources:
+              <a href="http://wiki.ros.org/">Documentation</a>
+              |
+              <a href="http://wiki.ros.org/Support">Support</a>
+              |
+              <a href="http://discourse.ros.org/">Discussion Forum</a>
+              |
+              <a href="http://status.ros.org/">Service Status</a>
+              |
+              <a href="http://answers.ros.org/">Q&A answers.ros.org</a>
+            </td>
+          </tr>
+        </table> <!-- topnav-table -->
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12 col-md-9" style="margin-top: 8px">
+          <div class="row">
+            <!-- title -->
+            <div class="col-xs-12 col-sm-3 col-md-3" style="white-space:nowrap;">
+              <a class="site-title" href="/">ROS Index</a> <sup><a href="https://github.com/ros-infrastructure/rosindex/issues/new" style="vertical-align:super;" class="label label-warning" target="_blank">BETA</a></sup>
+            </div>
+
+            <!-- main links -->
+            <div class="col-xs-12 col-sm-9 col-md-9 text-right">
+              <ul class="list-inline" style="margin-bottom:0px;">
+                <li><a class="btn btn-link" href="/about">About</a></li>
+
+                <li class="dropdown">
+                  <button id="dLabel" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Index <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li><a href="/packages/page/1/time/">Package List</a></li>
+                    <li><a href="/repos/page/1/time/">Repository List</a></li>
+
+                    <li class="hidden" class="divider"></li>
+
+
+                    <li class="hidden"><a href="/srvs/">Nodes</a></li>
+                    <li class="hidden"><a href="/msgs/">Messages</a></li>
+                    <li class="hidden"><a href="/srvs/">Services</a></li>
+                    <li class="hidden"><a href="/srvs/">Plugins</a></li>
+
+                    <li class="divider"></li>
+
+                    <li><a href="/deps/">System Dependencies</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown disabled">
+                  <button id="dLabel" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Doc <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    
+                    <li>
+                      <a href="/doc/ros2">
+                        ROS2 Overview
+                      </a>
+                    </li>
+                    
+                    <li class="hidden" class="divider"></li>
+
+                    <li class="hidden"><a href="/doc/tutorials">Tutorials</a></li>
+                    <li class="hidden"><a href="/doc/readmes">Readmes</a></li>
+                    <li class="hidden"><a href="/doc/apis">APIs</a></li>
+                  </ul>
+                </li>
+
+                <li><a class="btn btn-link" href="/contribute">Contribute</a></li>
+                <li><a class="btn btn-link" href="/stats">Stats</a></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- searchbox -->
+        <div class="col-sm-12 col-md-3" style="margin-top: 12px">
+          <form id="top-searchbox" action="/search/" role="form" method="get">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" name="q" placeholder="Search ROS">
+              <span class="input-group-btn">
+                <button class="btn btn-default btn-sm" title="Search ROS" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+                <a href="https://lunrjs.com/guides/searching.html"
+                   title="Help to Search" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-question-sign"></span>
+                </a>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    <a class="site-title" href="/">ROS Index</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <a class="page-link" href="/packages">Packages</a>
+        <a class="page-link" href="/repos">Repositories</a>
+        <a class="page-link" href="/search">Search</a>
+      </div>
+    </nav>
+    -->
+
+  </div>
+  <script type="text/javascript">
+    $('#top-searchbox').submit(function() {
+        return $('#top-searchbox input:text').filter(function() {
+          return $(this).val() == "";
+        }).length == 0;
+    });
+  </script>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="container-fluid" style="margin-top:20px">
+  <div class="container-fluid">
+    <div class="row">
+      <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/repos">Repos</a></li>
+        <li class="active">omronsentech_camera</li>
+        <!--<li class="active">omronsentech_camera</li>-->
+      </ol>
+    </div>
+    <div class="row">
+      
+
+<div id="distro-switch" class="btn-group btn-group-justified" data-toggle="buttons">
+  
+    <label id="crystal-option" class="distro-button btn btn-xs btn-default" href="#crystal" data="crystal">
+      <input type="radio" name="options" id="crystal-radio" autocomplete="off"> crystal
+    </label>
+  
+    <label id="bouncy-option" class="distro-button btn btn-xs btn-default" href="#bouncy" data="bouncy">
+      <input type="radio" name="options" id="bouncy-radio" autocomplete="off"> bouncy
+    </label>
+  
+    <label id="melodic-option" class="distro-button btn btn-xs btn-default" href="#melodic" data="melodic">
+      <input type="radio" name="options" id="melodic-radio" autocomplete="off"> melodic
+    </label>
+  
+    <label id="lunar-option" class="distro-button btn btn-xs btn-primary" href="#lunar" data="lunar">
+      <input type="radio" name="options" id="lunar-radio" autocomplete="off"> lunar
+    </label>
+  
+    <label id="kinetic-option" class="distro-button btn btn-xs btn-primary" href="#kinetic" data="kinetic">
+      <input type="radio" name="options" id="kinetic-radio" autocomplete="off"> kinetic
+    </label>
+  
+    <label id="indigo-option" class="distro-button btn btn-xs btn-default" href="#indigo" data="indigo">
+      <input type="radio" name="options" id="indigo-radio" autocomplete="off"> indigo
+    </label>
+  
+
+  <!-- Older distros -->
+  <div class="btn-group dropdown">
+    <label type="button" class="btn btn-xs dropdown-toggle btn-default" data-toggle="dropdown" id="older-distro-button">
+        <input type="radio" name="options" autocomplete="off">
+      <span id="older-label">Older</span>
+      <span class="caret"></span>
+    </label>
+    <ul class="dropdown-menu" role="menu">
+      
+        <li data="ardent" id="ardent-option" class="disabled older-distro-option"  href="#ardent">
+          <a href="#ardent" data="ardent" id="ardent-button">ardent</a>
+        </li>
+      
+        <li data="jade" id="jade-option" class="disabled older-distro-option"  href="#jade">
+          <a href="#jade" data="jade" id="jade-button">jade</a>
+        </li>
+      
+        <li data="hydro" id="hydro-option" class="disabled older-distro-option"  href="#hydro">
+          <a href="#hydro" data="hydro" id="hydro-button">hydro</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+    <div class="row">
+      &nbsp;
+    </div>
+    <div class="row">
+      <div class="well well-sm">
+  <div>
+    
+  </div>
+  
+  <table class="table">
+    <tr>
+      <td width="100px" class="text-center">
+        <img style="width: 80px;" src="/assets/repo.png">
+      </td>
+      <td>
+        <h3><a style="text-decoration:none;" href="/r/omronsentech_camera">omronsentech_camera</a> <small>repository</small></h3>
+        
+      </td>
+    </tr>
+  </table>
+  <div class="top-buffer">
+    
+    
+<table class="table table-condensed instance-switch">
+  <tr>
+    <td>
+      <div id="repo-switch" class="btn-group btn-group-justified" role="group">
+        <div class="btn-group" style="width: 50px">
+          <a type="button" class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="left" title="View Instances" 
+            href="/repos/omronsentech_camera"><span class="glyphicon glyphicon-th"></span></a>
+        </div>
+        <div class="btn-group" style="width: 90%" role="group">
+          <div class="dropdown">
+            <!-- TODO: add disabled when only 1 version is known? -->
+            <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" title="Select Instance">
+              <span class="pull-left" style="width: 100%; text-align: left">
+                <span class="pull-right"><span class="caret"></span></span> 
+              <span class="glyphicon glyphicon-star"></span>
+                  github-ose-support-ros-omronsentech_camera
+              </span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              
+                <li role="presentation">
+                  <a id="github-ose-support-ros-omronsentech_camera" role="menuitem" tabindex="-1" href="/r/omronsentech_camera/github-ose-support-ros-omronsentech_camera" data="github-ose-support-ros-omronsentech_camera">
+                    <span class="glyphicon glyphicon-star"></span>
+                    github-ose-support-ros-omronsentech_camera
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+  </div>
+  <div class="top-buffer">
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="distro distro-crystal">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>crystal</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-bouncy">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>bouncy</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-melodic">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>melodic</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-lunar">
+    <div class="container-fluid">
+      
+        
+        <div class="panel panel-default">
+          
+          <div class="panel-heading"><h3 class="panel-title">Repository Summary</h3></div>
+          <div class="panel-body" style="overflow-x: auto">
+            
+
+  <table class="table table-condensed">
+    <tr>
+      <td style="width:100px;" class="text-right"><b>Checkout URI</b></td>
+      <td><a class="label label-default" href="https://github.com/ose-support-ros/omronsentech_camera.git">https://github.com/ose-support-ros/omronsentech_camera.git</a></td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>VCS Type</b></td>
+      <td><span class="label label-default">git</span></td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>VCS Version</b></td>
+      <td><span class="label label-default">master</span></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
+      <td>
+        
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-04-24
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>Dev Status</b></td>
+      <td>
+        
+          
+            <span class="label label-success">
+          
+          DEVELOPED
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>Released</b></td>
+      <td>
+        
+          <span class="label label-default">UNRELEASED
+        </span>
+      </td>
+    </tr>
+  </table>
+
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">Packages</h3></div>
+          <div class="panel-body">
+            
+            
+              <table class="table table-condensed table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Version</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                  <tr>
+                    <td><a href="/p/omronsentech_camera/github-ose-support-ros-omronsentech_camera">omronsentech_camera</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                </tbody>
+              </table>
+            
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">README</h3></div>
+          <div class="panel-body">
+            
+              <div class="rendered-markdown">
+<h1 id="ros-omron-sentech-sdk">ROS上のOMRON SENTECHカメラSDK</h1>
+
+<h2 id="1">1. 概要</h2>
+
+<p>omronsentech_cameraパッケージはオムロン センテック株式会社が提供するパッケージです。
+本パッケージ対応カメラはLinux版のSentechSDK対応カメラと同様です。
+カメラの機能や<em>GenICam GenApi</em>ノードのアクセスはSentechSDKのカメラ制御機能(Transport Layer) モジュール経由で行います。
+<em>GenICam GenApi</em>ノードとROSにあるノードとは全く別の物であることを注意下さい。 各GenICam GenApiノードは、汎用インタフェースを介してアクセス可能なカメラデバイスの機能またはレジスタに対応しています。GenICam GenApiの詳細は<a href="http://www.emva.org/wp-content/uploads/GenICam_Standard_v2_0.pdf">GenICam GenApiドキュメント（英語）</a>を参照下さい。</p>
+
+<h2 id="2">2. インストール</h2>
+
+<p>本パッケージはUbuntu 16.04 64ビット上のROS-Kineticで動作確認済みです。
+SentechSDKのカメラ制御機能(Transport Layer) モジュールを利用するため、本パッケージをインストールする際は事前にSentechSDKをインストールする必要があります。下記のURLでSentechSDK (USB3VisionとGigEVision)がダウンロードできます：
+<a href="https://sentech.co.jp/products/USB/software.html">https://sentech.co.jp/products/USB/software.html</a>.</p>
+
+<p>本パッケージは下記のROSパッケージが必要となります：</p>
+
+<ol>
+<li>camera_info_manager</li>
+<li>image_transport</li>
+<li>message_generation</li>
+<li>sensor_msgs</li>
+<li>std_msgs</li>
+<li>pluginlib</li>
+<li>nodelet</li>
+<li>roscpp</li>
+<li>roslaunch</li>
+<li>roslint</li>
+<li>rospy</li>
+</ol>
+
+<p>インストール手順として、catkinのワークスペースにomronsentech_camera.gitをクローンするかこのレポジトリに全ファイルをコピーして下さい。 通常のROSパッケージとしてパッケージをビルドする前にSentechSDKの環境変数の設定を確認して下さい:</p>
+
+<p><code>$ echo $STAPI_ROOT_PATH</code></p>
+
+<p>環境変数が未設定の場合は、下記のコマンドを実行して下さい（SentechSDKを/opt/sentechにインストールした場合）：</p>
+
+<p><code>$ source /opt/sentech/.stprofile</code></p>
+
+<p>omronsentech_cameraの内部構成は以下のとおりです。
+</p>
+<pre>
+/
+|-./README.md
+|-./README-ja.md
+|-./CMakeLists.txt
+|-./nodelet_plugins.xml
+|-./package.xml
+|-./rosdoc.yaml
+|-./doc/
+|      |-./html/
+|      |-./mainpage-en.md
+|      |-./mainpage-ja.md
+|      |-./manifest.yaml
+|
+|-./examples/
+|      |-./cpp/grabber.cpp
+|      |-./python/grabber.py
+|
+|-./include/
+|      |-./omronsentech_camera/<em>.h
+|<br>
+|-./launch/
+|      |-./</em>.launch
+|      |-./<em>.yaml
+|
+|-./msg/
+|      |-./</em>.msg
+|
+|-./src/
+|      |-./omronsentech_camera/<em>.cpp
+|<br>
+|-./srv/
+       |-./</em>.srv
+</pre>
+
+<p>docフォルダにあるドキュメントを生成する場合、omronsentech_cameraフォルダで下記のコマンドを実行下さい：</p>
+
+<p><code>$ rosdoc_lite -o doc</code></p>
+
+<p>注意：Doxygenとrosdoc_liteパッケージが必要となります。</p>
+
+<h2 id="3-stcamera_node">3. stcamera_nodeノード</h2>
+
+<p>パッケージにあるstcamera_nodeはパラメータ<strong>camera_to_connect</strong>により自動的に最初見つけたカメラ、指定したカメラや全カメラと接続し、画像を取得します。</p>
+
+<p>stcamera_nodeノードの実行は次のコマンドのいずれかを実行下さい：</p>
+
+<ul>
+<li><code>$ rosrun omronsentech_camera stcamera_node</code></li>
+</ul>
+
+<p>又は</p>
+
+<ul>
+<li><code>$ roslaunch omronsentech_camera stcamera_node.launch</code></li>
+</ul>
+
+<p>ノードをstcamera_node.launchファイルスクリプトで起動するとカメラ接続パラメータがstcamera_node.yamlで簡単に設定できます。 パラメータ設定の詳細は次の章を参照下さい。</p>
+
+<h3 id="3-1">3.1. ノードパラメータ</h3>
+
+<p>パラメータの値は大文字と小文字を区別します。設定できるパラメータは下記の通りです：</p>
+
+<ul>
+<li>
+<strong>camera_to_connect</strong> : 接続可能なカメラの設定。このパラメーターは、stcamera_nodeが実行される前に設定する必要があります。 実行中にこのパラメーターを変更しても、その変更は反映されません。設定無しの場合、最初に見つけたカメラを接続します。"all"を設定する場合、見つけた全てのカメラを接続します。CAMERA_ID又はCAMERA_MODEL(SERIAL)を設定する場合、指定したカメラのみと接続します。例：
+
+<ul>
+<li>
+<code>camera_to_connect:[]</code>: 最初に見つけたカメラを接続します。</li>
+<li>
+<code>camera_to_connect:["all"]</code>: 見つけた全てのカメラを接続します。キーワード「all」が提示された場合、見つけた全てのカメラを接続しようとします。</li>
+<li>
+<code>camera_to_connect:["00:11:1c:f6:yy:xx","STC-MCS510U3V(00XXYY0)"]</code>: MACアドレス「00:11:1c:f6:yy:xx」のGigEVisionカメラとシリアル番号「00XXYY0」のUSB3Visionカメラ(STC-MCS510U3V)のみ接続します。</li>
+<li>
+<code>camera_to_connect:["14210003XXYY"]</code>: ID「14210003XXYY」のカメラのみ接続します.</li>
+</ul>
+</li>
+<li>
+<strong>default_calibration_file</strong> : 指定するキャリブレーションファイルがないカメラを利用するデフォールトキャリブレーションファイルパス。stcamera_nodeが実行中にこのパラメータが変更され、カメラもすでに接続されている場合は、変更を適用するためにカメラの画像取得を無効にして再度有効にして下さい。キャリブレーションファイルの作成と使い方は下記のROSのチュートリアルを参照下さい（英語）：
+
+<ul>
+<li><a href="http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration">http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration</a></li>
+<li><a href="http://wiki.ros.org/camera_calibration_parsers">http://wiki.ros.org/camera_calibration_parsers</a></li>
+<li><a href="http://wiki.ros.org/image_proc">http://wiki.ros.org/image_proc</a></li>
+</ul>
+</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>calibration_file</strong> : ネームスペース「<em>{dev_CAMERA-NS}</em>」が持っているカメラ用のキャリブレーションファイルパス。stcamera_nodeが実行中にこのパラメータが変更され、カメラもすでに接続されている場合は、変更を適用するためにカメラの画像取得を無効にして再度有効にして下さい。カメラネームスペースの詳細は次の章をご参照下さい。</li>
+</ul>
+
+<h3 id="3-2">3.2. カメラの名前空間（ネームスペース）</h3>
+
+<p>stcamera_nodeはカメラと接続する際にカメラに対するトピックとサービスを宣言します。接続されたカメラを区別するために、各カメラには独自の名前空間（ネームスペース）があります。カメラのネームスペースは下記のルールで自動的に生成します：</p>
+
+<ul>
+<li>
+<strong>camera_to_connect</strong>の設定無又は["all"]の場合、ネームスペースの形式は <em>dev_{CAMERA_ID}</em>になります。<em>{CAMERA_ID}</em> はカメラのID。接続されたカメラIDが「14210003xxYY」の場合、ネームスペースは「<em>dev_14210003xxYY</em>」になります. GigEVisionのMACアドレスなどのカメラIDの英数字以外の文字は、アンダースコアに置き換えられます。</li>
+<li>
+<strong>camera_to_connect</strong>がCAMERA_MODEL(SERIAL)或いはCAMERA_IDの場合、ネームスペースの形式は<em>dev_{CAMERA_MODEL_SERIAL_}</em>或いは <em>dev_{CAMERA_ID}</em>になります。<em>{CAMERA_MODEL_SERIAL_}</em>はCAMERA_MODEL(SERIAL)からの書き換えられた文字列です. <em>{CAMERA_ID}</em> はカメラIDです。英数字以外の文字は、アンダースコアに置き換えられます。</li>
+</ul>
+
+<p><em>{dev_CAMERA-NS}</em>の値はサービスコール<strong>get_device_list</strong>また<strong>device_connection</strong>トピックでも得られます。</p>
+
+<h3 id="3-3">3.3. 発行するトピック</h3>
+
+<p>stcamera_nodeが発行するトピックは下記の通りです：</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">No.</th>
+<th>　トピック</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">1.</td>
+<td><strong>device_connection</strong></td>
+<td>接続または切断したときに発行されます。</td>
+</tr>
+<tr>
+<td style="text-align: center">2.</td>
+<td>
+<em>{dev_CAMERA-NS}</em>/<strong>camera_info</strong>
+</td>
+<td>ROSのimage_transport基準です。</td>
+</tr>
+<tr>
+<td style="text-align: center">3.</td>
+<td>
+<em>{dev_CAMERA-NS}</em>/<strong>chunk</strong>
+</td>
+<td>チャンクデータを取得したときに発行されます。</td>
+</tr>
+<tr>
+<td style="text-align: center">4.</td>
+<td>
+<em>{dev_CAMERA-NS}</em>/<strong>event</strong>
+</td>
+<td>カメライベントを登録し、登録されたイベントが発生したときに発行されます。</td>
+</tr>
+<tr>
+<td style="text-align: center">5.</td>
+<td>
+<em>{dev_CAMERA-NS}</em>/<strong>image_raw*</strong>
+</td>
+<td>画像データを取得したときに発行されます（ROSのimage_transport基準）。</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="3-4">3.4. サービス</h3>
+
+<p>stcamera_nodeが提供するサービスは下記の通りです：</p>
+
+<p>（下記に記載するGenICamノードはROSのノードとは全く別の物です）</p>
+
+<ul>
+<li>
+<strong>get_device_list</strong> : 検出されたデバイスのリストを取得します。</li>
+<li>
+<strong>get_gige_ip</strong> : 指定したGigEVisionカメラのIPアドレスを取得します。</li>
+<li>
+<strong>get_module_list</strong> : 対応するGenICam GenTLモジュール名のリストを取得します（<em>System</em>、<em>Interface</em>、<em>LocalDevice</em>、<em>RemoteDevice</em>、<em>DataStream</em>）。 モジュール名は特定のGenICamノードにアクセスする際に引数として渡す必要があります。たとえば、readまたはwrite_nodeサービス経由でカメラの<em>Gain</em>にアクセスするには、<em>Gain</em>がRemoteDeviceモジュールに存在するように指定する必要があります。</li>
+<li>
+<strong>get_sdk_info</strong> : SentechSDKバージョンとGenTLプロデューサの情報を取得します。</li>
+<li>
+<strong>set_gige_ip</strong> : 指定したGigEVisionカメラのIPアドレスを設定します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>enable_chunk</strong> : チャンクを有効または無効にします。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>enable_event_acquisition</strong> : 特定のモジュールのイベント取得を有効または無効にします。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>enable_event_node</strong> : 指定されるGenICamノードのイベントコールバックを有効または無効にします。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>enable_image_acquisition</strong> : 画像取得を有効または無効にします（カメラを接続する際、自動で有効になります）。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>enable_trigger</strong> : 指定されるトリガセレクタとソースに対してトリガを有効または無効にします。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>execute_node</strong> : 指定されるCommandインタフェースタイプを持つ特定のGenicamノードを実行します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_chunk_list</strong> : カメラがサポートするチャンクのリストを取得します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_enum_list</strong> : 指定されるGenICam列挙ノードの列挙のリストを取得します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_event_acquisition_status_list</strong> : 全モジュールのイベント取得のステータスを取得します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_event_node_status_list</strong> : 指定されるモジュールのGenICamノードイベント取得のステータスを取得します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_genicam_node_info</strong> : 指定されるGenICamノードの情報を取得します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_image_acquisition_status</strong> : 画像取得のステータスを取得します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_last_error</strong> : 最後の実行ステータス情報を取得します。エラーコードのリストについては次の章をご参照下さい。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_trigger_list</strong> : カメラがサポートしているトリガのリストを取得します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>image_raw</strong>* : ROSのimage_transportに基づくサービスです.</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>read_node</strong> : ノードインタフェースタイプに関係なく、指定されるGenICamノードを読み込みます。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>read_node_bool</strong> : ブール型のインタフェースタイプを持つ指定されるGenICamノードを読み取ります。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>read_node_enum</strong> : 列挙型のインタフェースタイプを持つ指定されるGenICamノードを読み取ります。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>read_node_float</strong> : Floatのインターフェイスタイプを持つ指定されるGenICamノードを読み取ります。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>read_node_int</strong> : 整数のインターフェイスタイプを持つ指定されるGenICamノードを読み取ります。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>read_node_string</strong> : Stringのインターフェイスタイプを持つ指定されるGenICamノードを読み取ります。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>send_soft_trigger</strong> : ソフトウェアトリガを送信します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>set_camera_info</strong> : ROSのimage_transportに基づくサービスです.</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>write_node</strong> : ノードインタフェースタイプに関係なく、指定されるGenICamノードを書き込みます。stcamera_nodeの内部は自動的に渡される文字列値をGenICamノードのインタフェースタイプに変換します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>write_node_bool</strong> : ブール型のインタフェースタイプを持つ指定されるGenICamノードを書き込みます。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>write_node_enum_int</strong> : 列挙型のインタフェースタイプを持つ指定されるGenICamノードに整数値を書き込みます。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>write_node_enum_str</strong> : 列挙型のインタフェースタイプを持つ指定されるGenICamノードに文字列値（列挙型エントリの記号名）を書き込みます。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>write_node_float</strong> : Floatのインタフェースタイプを持つ指定されるGenICamノードに整数値を書き込みます。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>write_node_int</strong> : 整数のインタフェースタイプを持つ指定されるGenICamノードに整数値を書き込みます。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>write_node_string</strong> : Stringのインタフェースタイプを持つ指定されるGenICamノードに整数値を書き込みます。</li>
+</ul>
+
+<p>注意：</p>
+
+<ul>
+<li><p>機種によって画像取得中にはGenICamノードにアクセスできない場合があります（エラー発生）。その際には画像取得を停止にしてから再度設定やアクセスして下さい。サービスコール<strong>enable_image_acquisition</strong>で画像取得停止ができます。例：<br>
+<code>$ rosservice call /stcamera_node/dev_CAMERA-NS/enable_image_acquisition false</code></p></li>
+<li>
+<p>IntegerタイプのGenICamノードは設定できる倍数が決まっており、その倍数で設定しないとエラーになります。サービスコール <strong>get_genicam_node_info</strong>で倍数の確認ができます。下記の例の倍数は16 (increment: "16")：<br>
+<code>$ rosservice call /stcamera_node/dev_CAMERA-NS/get_genicam_node_info RemoteDevice Width</code>
+</p>
+<pre>
+name: "Width"
+description: "Width of the image provided by the device (in pixels)."
+name_space: "Standard"
+interface_type: "IInteger"
+access_mode: "Read Only"
+is_cachable: "Yes"
+visibility: "Beginner"
+caching_mode: "Write to register, write to cache on read"
+is_streamable: True
+enum_value_str_list: []
+enum_value_int_list: []
+current_value: "2448"
+min_value: "64"
+max_value: "2448"
+increment: "16"
+unit: ''
+child_node_list: []
+</pre>
+</li>
+</ul>
+
+<h3 id="3-5">3.5. エラーコード</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: right">コード</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right">&lt; 0</td>
+<td>GenTLエラーコード。<a href="http://www.emva.org/wp-content/uploads/GenICam_GenTL_1_5.pdf">GenICam GenTLドキュメント（英語）</a>をご参照下さい。</td>
+</tr>
+<tr>
+<td style="text-align: right">0</td>
+<td>エラー無.</td>
+</tr>
+<tr>
+<td style="text-align: right">30000</td>
+<td>GenICamのジェネリック例外が発生しました。</td>
+</tr>
+<tr>
+<td style="text-align: right">30001</td>
+<td>モジュール名が無効です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30002</td>
+<td>(GenICam) ノードが無効またはアクセス不能です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30003</td>
+<td>イベントがすでに有効です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30004</td>
+<td>イベントがすでに無効です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30005</td>
+<td>画像取得がすでに有効です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30006</td>
+<td>画像取得がすでに無効です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30007</td>
+<td>チャンクがサポートされていません。</td>
+</tr>
+<tr>
+<td style="text-align: right">30008</td>
+<td>チャンク名が無効です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30009</td>
+<td>トリガがサポートされていません。</td>
+</tr>
+<tr>
+<td style="text-align: right">30010</td>
+<td>トリガ名が無効です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30011</td>
+<td>イベントがサポートされていません。</td>
+</tr>
+<tr>
+<td style="text-align: right">30012</td>
+<td>イベント名が無効です。</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="4">4. 使用法</h2>
+
+<h3 id="4-1-gain-image_view">4.1. カメラのGainを変更し、image_viewで取得画像を表示する</h3>
+
+<p>シンプルな操作と画像表示は下記の通りの流れを参照下さい。</p>
+
+<ul>
+<li>全カメラとの接続を設定し、stcamera_nodeを実行します:
+<code>$ roslaunch omronsentech_camera stcamera_node.launch</code>
+</li>
+<li>
+<p>ネームスペースを取得します：
+<code>$ rosservice call /stcamera_node/get_device_list</code><br>
+</p>
+<pre>
+
+<h2 id="device_list">device_list:</h2>
+
+<p>timestamp:
+  secs: 1521005471
+  nsecs: 777053680
+device_id: "142100030510"
+device_model: "STC-MCS510U3V"
+device_serial: "XXYYYZZ"
+device_tltype: "U3V"
+device_tl_specific_field: []
+device_tl_specific_value: []
+device_gentl_info:
+  vendor: "OMRON_SENTECH"
+  version: "1.5"
+  producer_version: "1.5.X.X.X"
+  full_path: "/opt/sentech/lib/libstgentl.cti"
+  tltype: "Mixed"
+device_namespace: "dev_14210XXYYYZZ"
+connected: True
+</p></pre>
+</li>
+<li><p>image_viewを実行します：<br>
+<code>$ rosrun image_view image_view image:=/stcamera_node/dev_14210XXYYYZZ/image_raw</code>、dev_14210XXYYYZZは接続されているカメラのネームスペースです。</p></li>
+<li><p>カメラのGain（IFloatタイプ）を100.0に変更する場合は、次のようにGenicam書き込みノード・サービスを使用します：<br>
+<code>$ rosservice call /stcamera_node/dev_14210XXYYYZZ/write_node_float RemoteDevice Gain 100.0</code><br>又は<br>
+<code>$ rosservice call /stcamera_node/dev_14210XXYYYZZ/write_node RemoteDevice Gain "'100.0'"</code></p></li>
+<li><p>現在のGain値を読み取るには、次のようにGenICam読み取りノードサービスを使用します：<br>
+<code>$ rosservice call /stcamera_node/dev_14210XXYYYZZ/read_node_float RemoteDevice</code><br> 又は <br>
+<code>$ rosservice call /stcamera_node/dev_14210XXYYYZZ/read_node RemoteDevice Gain</code></p></li>
+<li>
+<p><strong>get_genicam_node_info</strong> でGainノード情報を確認する場合は：<br>
+<code>$ rosservice call /stcamera_node/dev_14210XXYYYZZ/get_genicam_node_info RemoteDevice Gain</code><br>
+</p>
+<pre>
+name: "Gain"
+description: "Controls the selected gain as an absolute physical value. This is an amplification\
+\ factor applied to the video signal."
+name_space: "Standard"
+interface_type: "IFloat"
+access_mode: "Read and Write"
+is_cachable: "Yes"
+visibility: "Beginner"
+caching_mode: "Write to register, write to cache on read"
+is_streamable: True
+enum_value_str_list: []
+enum_value_int_list: []
+current_value: "100"
+min_value: "0.000000"
+max_value: "192.000000"
+increment: ''
+unit: ''
+child_node_list: []
+</pre>
+</li>
+</ul>
+
+<h3 id="4-2-launch">4.2. Launchファイルスクリプトの事例</h3>
+
+<p>Launchファイルスクリプトの例とそのパラメータはパッケージに含まれています。 それらを使用するには、次の手順を参照下さい。</p>
+
+<ul>
+<li>
+<strong>stcamera_node.launch</strong>:
+このLaunchファイルスクリプトはstcamera_nodeを実行します。検出されたカメラと接続します。 このスクリプトはstcamera_node.yamlにキャリブレーションファイル（オプション）を設定せず、そのまま起動することができます。</li>
+<li>
+<strong>stcamera_nodelet_manager.launch</strong>:
+このLaunchファイルスクリプトは、nodeletバージョンのstcamera_nodeを実行します。検出されたカメラと接続します。このスクリプトはstcamera_nodelet_manager.yamlにキャリブレーションファイル（オプション）を設定せず、そのまま起動することができます。</li>
+<li>
+<strong>stcamera_node_imageproc.launch</strong>:
+このLaunchファイルスクリプトは、接続されたカメラからストリーミングされた画像を表示するstcamera_nodeとimage_viewという2つのノードを実行します。 このスクリプトを起動する際に、stcamera_node_imageproc.launchとstcamera_node_imageproc.yamlにCAMERA_IDまたはCAMERA_MODEL（SERIAL）および名前空間dev_CAMERA-NSの指定が必要となります：
+
+<ul>
+<li>stcamera_node_imageproc.launchにある<strong>camera_namespace</strong>：<br> <code>&lt;arg name="camera_namespace" default="dev_CAMERA-NS" /&gt;</code>
+</li>
+<li>stcamera_node_imageproc.yamlにある<strong>camera_to_connect</strong>：<br> <code>camera_to_connect: ["CAMERA_ID or CAMERA_MODEL(SERIAL)"]</code>
+</li>
+<li>オプション： stcamera_node_imageproc.yamlにある<strong>default_calibration_file</strong>又は<em>{dev_CAMERA-NS}</em>/<strong>calibration_file</strong>：<br><code>default_calibration_file: file:///home/mydata/calibration.xml</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<h3 id="4-3-ros">4.3. ROSノードクライアント事例</h3>
+
+<p>exampleフォルダにあるノード「grabber」はシンプルなROSノードクライアント（両方C++とPythonベースがあります）事例として提供します。Grabberは下記の処理を行います：</p>
+
+<ol>
+<li>サービス「<strong>get_sdk_info</strong>」を呼び出して、SentechSDKとGenTL情報を取得し、画面に表示します。</li>
+<li>サービス「<strong>get_device_list</strong>」を呼び出して、接続済みのカメラを検出し、カメラのネームスペースを取得します。</li>
+<li>サービス「<strong>get_genicam_node_info</strong>」と「<strong>write_node_float</strong>」を呼び出して、カメラのGain値を読み取りと書き込みます。</li>
+<li>トピック「image_raw」を参照して、十枚まで画像を取得し、画像サイズとエンコード情報を画面に表示します。</li>
+<li>サービス「<strong>enable_trigger</strong>」を呼び出して、トリガモードを有効にして、十回まで一秒間ごとにサービス「<strong>send_soft_trigger</strong>」を呼び出して、画像を取得します。トリガモードを有効にする際、セレクタはFrameStartを指定し、ソースはSoftwareを指定します。</li>
+</ol>
+
+<p>GigEVisionカメラを利用する場合は、カメラに有効なIPアドレスがあることを確認して下さい。IPアドレスは、サービス「<strong>get_device_list</strong>」または「<strong>get_gige_ip</strong>」を呼び出すことで確認できます。静的IPアドレスは、サービス「<strong>set_gige_ip</strong>」で設定できます。例：<br>
+<code>$ rosservice call /stcamera_node/get_gige_ip "00:11:1c:xx:xx:xx"</code> （MACアドレス「00:11:1c:xx:xx:xx」を持っているGigEVisionカメラのIPアドレスを取得する場合）、及び
+<br>
+<code>$ rosservice call /stcamera_node/set_gige_ip "00:11:1c:xx:xx:xx" 192.168.y.z 255.255.255.0 0.0.0.0</code> （MACアドレス「00:11:1c:xx:xx:xx」を持っているGigEVisionカメラの静的IPアドレスを設定する場合）</p>
+
+<h2 id="5">5. カスタマイズ</h2>
+
+<p>stcamera_nodeは、OMRON SENTECHカメラを制御するために、一般的な機能を提供します。特定のカメラに対応するためのカスタマイズが必要な場合は、StCameraInterfaceクラスを継承し、別途のROSノードを作成するか既存のstcamera_node（StCameraNodeクラス）を編集する必要があります。stcamera_node（StCameraNodeクラス）を編集する場合、StCameraNodeクラスのinitializeCamera()関数にあるカメラインターフェイス初期化プロセスを編集する必要があります。
+StCameraInterfaceやStCameraNodeクラスの構造については、doxygenドキュメントを参照下さい。</p>
+
+<h2 id="6-api">6. API ドキュメント</h2>
+
+<p>コードのAPIやMsg/Srv APIのドキュメントは下記のURLでアクセスできます：<a href="https://wiki.ros.org/omronsentech_camera">https://wiki.ros.org/omronsentech_camera</a>.</p>
+
+<h2 id="7">7. 質問・フィードバックや不具合の報告</h2>
+
+<p>質問・フィードバックやバグが見つかった場合は、support-ros AT sentech.co DOT jpにお問い合わせ下さい。</p>
+</div>
+            
+          </div>
+        </div>
+
+        
+        
+      
+    </div>
+  </div>
+
+  <div class="distro distro-kinetic">
+    <div class="container-fluid">
+      
+        
+        <div class="panel panel-default">
+          
+          <div class="panel-heading"><h3 class="panel-title">Repository Summary</h3></div>
+          <div class="panel-body" style="overflow-x: auto">
+            
+
+  <table class="table table-condensed">
+    <tr>
+      <td style="width:100px;" class="text-right"><b>Checkout URI</b></td>
+      <td><a class="label label-default" href="https://github.com/ose-support-ros/omronsentech_camera.git">https://github.com/ose-support-ros/omronsentech_camera.git</a></td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>VCS Type</b></td>
+      <td><span class="label label-default">git</span></td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>VCS Version</b></td>
+      <td><span class="label label-default">master</span></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
+      <td>
+        
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-04-24
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>Dev Status</b></td>
+      <td>
+        
+          
+            <span class="label label-success">
+          
+          DEVELOPED
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>Released</b></td>
+      <td>
+        
+          <span class="label label-default">UNRELEASED
+        </span>
+      </td>
+    </tr>
+  </table>
+
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">Packages</h3></div>
+          <div class="panel-body">
+            
+            
+              <table class="table table-condensed table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Version</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                  <tr>
+                    <td><a href="/p/omronsentech_camera/github-ose-support-ros-omronsentech_camera">omronsentech_camera</a></td>
+                    <td>0.1.0</td>
+                  </tr>
+                
+                </tbody>
+              </table>
+            
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">README</h3></div>
+          <div class="panel-body">
+            
+              <div class="rendered-markdown">
+<h1 id="ros-omron-sentech-sdk">ROS上のOMRON SENTECHカメラSDK</h1>
+
+<h2 id="1">1. 概要</h2>
+
+<p>omronsentech_cameraパッケージはオムロン センテック株式会社が提供するパッケージです。
+本パッケージ対応カメラはLinux版のSentechSDK対応カメラと同様です。
+カメラの機能や<em>GenICam GenApi</em>ノードのアクセスはSentechSDKのカメラ制御機能(Transport Layer) モジュール経由で行います。
+<em>GenICam GenApi</em>ノードとROSにあるノードとは全く別の物であることを注意下さい。 各GenICam GenApiノードは、汎用インタフェースを介してアクセス可能なカメラデバイスの機能またはレジスタに対応しています。GenICam GenApiの詳細は<a href="http://www.emva.org/wp-content/uploads/GenICam_Standard_v2_0.pdf">GenICam GenApiドキュメント（英語）</a>を参照下さい。</p>
+
+<h2 id="2">2. インストール</h2>
+
+<p>本パッケージはUbuntu 16.04 64ビット上のROS-Kineticで動作確認済みです。
+SentechSDKのカメラ制御機能(Transport Layer) モジュールを利用するため、本パッケージをインストールする際は事前にSentechSDKをインストールする必要があります。下記のURLでSentechSDK (USB3VisionとGigEVision)がダウンロードできます：
+<a href="https://sentech.co.jp/products/USB/software.html">https://sentech.co.jp/products/USB/software.html</a>.</p>
+
+<p>本パッケージは下記のROSパッケージが必要となります：</p>
+
+<ol>
+<li>camera_info_manager</li>
+<li>image_transport</li>
+<li>message_generation</li>
+<li>sensor_msgs</li>
+<li>std_msgs</li>
+<li>pluginlib</li>
+<li>nodelet</li>
+<li>roscpp</li>
+<li>roslaunch</li>
+<li>roslint</li>
+<li>rospy</li>
+</ol>
+
+<p>インストール手順として、catkinのワークスペースにomronsentech_camera.gitをクローンするかこのレポジトリに全ファイルをコピーして下さい。 通常のROSパッケージとしてパッケージをビルドする前にSentechSDKの環境変数の設定を確認して下さい:</p>
+
+<p><code>$ echo $STAPI_ROOT_PATH</code></p>
+
+<p>環境変数が未設定の場合は、下記のコマンドを実行して下さい（SentechSDKを/opt/sentechにインストールした場合）：</p>
+
+<p><code>$ source /opt/sentech/.stprofile</code></p>
+
+<p>omronsentech_cameraの内部構成は以下のとおりです。
+</p>
+<pre>
+/
+|-./README.md
+|-./README-ja.md
+|-./CMakeLists.txt
+|-./nodelet_plugins.xml
+|-./package.xml
+|-./rosdoc.yaml
+|-./doc/
+|      |-./html/
+|      |-./mainpage-en.md
+|      |-./mainpage-ja.md
+|      |-./manifest.yaml
+|
+|-./examples/
+|      |-./cpp/grabber.cpp
+|      |-./python/grabber.py
+|
+|-./include/
+|      |-./omronsentech_camera/<em>.h
+|<br>
+|-./launch/
+|      |-./</em>.launch
+|      |-./<em>.yaml
+|
+|-./msg/
+|      |-./</em>.msg
+|
+|-./src/
+|      |-./omronsentech_camera/<em>.cpp
+|<br>
+|-./srv/
+       |-./</em>.srv
+</pre>
+
+<p>docフォルダにあるドキュメントを生成する場合、omronsentech_cameraフォルダで下記のコマンドを実行下さい：</p>
+
+<p><code>$ rosdoc_lite -o doc</code></p>
+
+<p>注意：Doxygenとrosdoc_liteパッケージが必要となります。</p>
+
+<h2 id="3-stcamera_node">3. stcamera_nodeノード</h2>
+
+<p>パッケージにあるstcamera_nodeはパラメータ<strong>camera_to_connect</strong>により自動的に最初見つけたカメラ、指定したカメラや全カメラと接続し、画像を取得します。</p>
+
+<p>stcamera_nodeノードの実行は次のコマンドのいずれかを実行下さい：</p>
+
+<ul>
+<li><code>$ rosrun omronsentech_camera stcamera_node</code></li>
+</ul>
+
+<p>又は</p>
+
+<ul>
+<li><code>$ roslaunch omronsentech_camera stcamera_node.launch</code></li>
+</ul>
+
+<p>ノードをstcamera_node.launchファイルスクリプトで起動するとカメラ接続パラメータがstcamera_node.yamlで簡単に設定できます。 パラメータ設定の詳細は次の章を参照下さい。</p>
+
+<h3 id="3-1">3.1. ノードパラメータ</h3>
+
+<p>パラメータの値は大文字と小文字を区別します。設定できるパラメータは下記の通りです：</p>
+
+<ul>
+<li>
+<strong>camera_to_connect</strong> : 接続可能なカメラの設定。このパラメーターは、stcamera_nodeが実行される前に設定する必要があります。 実行中にこのパラメーターを変更しても、その変更は反映されません。設定無しの場合、最初に見つけたカメラを接続します。"all"を設定する場合、見つけた全てのカメラを接続します。CAMERA_ID又はCAMERA_MODEL(SERIAL)を設定する場合、指定したカメラのみと接続します。例：
+
+<ul>
+<li>
+<code>camera_to_connect:[]</code>: 最初に見つけたカメラを接続します。</li>
+<li>
+<code>camera_to_connect:["all"]</code>: 見つけた全てのカメラを接続します。キーワード「all」が提示された場合、見つけた全てのカメラを接続しようとします。</li>
+<li>
+<code>camera_to_connect:["00:11:1c:f6:yy:xx","STC-MCS510U3V(00XXYY0)"]</code>: MACアドレス「00:11:1c:f6:yy:xx」のGigEVisionカメラとシリアル番号「00XXYY0」のUSB3Visionカメラ(STC-MCS510U3V)のみ接続します。</li>
+<li>
+<code>camera_to_connect:["14210003XXYY"]</code>: ID「14210003XXYY」のカメラのみ接続します.</li>
+</ul>
+</li>
+<li>
+<strong>default_calibration_file</strong> : 指定するキャリブレーションファイルがないカメラを利用するデフォールトキャリブレーションファイルパス。stcamera_nodeが実行中にこのパラメータが変更され、カメラもすでに接続されている場合は、変更を適用するためにカメラの画像取得を無効にして再度有効にして下さい。キャリブレーションファイルの作成と使い方は下記のROSのチュートリアルを参照下さい（英語）：
+
+<ul>
+<li><a href="http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration">http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration</a></li>
+<li><a href="http://wiki.ros.org/camera_calibration_parsers">http://wiki.ros.org/camera_calibration_parsers</a></li>
+<li><a href="http://wiki.ros.org/image_proc">http://wiki.ros.org/image_proc</a></li>
+</ul>
+</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>calibration_file</strong> : ネームスペース「<em>{dev_CAMERA-NS}</em>」が持っているカメラ用のキャリブレーションファイルパス。stcamera_nodeが実行中にこのパラメータが変更され、カメラもすでに接続されている場合は、変更を適用するためにカメラの画像取得を無効にして再度有効にして下さい。カメラネームスペースの詳細は次の章をご参照下さい。</li>
+</ul>
+
+<h3 id="3-2">3.2. カメラの名前空間（ネームスペース）</h3>
+
+<p>stcamera_nodeはカメラと接続する際にカメラに対するトピックとサービスを宣言します。接続されたカメラを区別するために、各カメラには独自の名前空間（ネームスペース）があります。カメラのネームスペースは下記のルールで自動的に生成します：</p>
+
+<ul>
+<li>
+<strong>camera_to_connect</strong>の設定無又は["all"]の場合、ネームスペースの形式は <em>dev_{CAMERA_ID}</em>になります。<em>{CAMERA_ID}</em> はカメラのID。接続されたカメラIDが「14210003xxYY」の場合、ネームスペースは「<em>dev_14210003xxYY</em>」になります. GigEVisionのMACアドレスなどのカメラIDの英数字以外の文字は、アンダースコアに置き換えられます。</li>
+<li>
+<strong>camera_to_connect</strong>がCAMERA_MODEL(SERIAL)或いはCAMERA_IDの場合、ネームスペースの形式は<em>dev_{CAMERA_MODEL_SERIAL_}</em>或いは <em>dev_{CAMERA_ID}</em>になります。<em>{CAMERA_MODEL_SERIAL_}</em>はCAMERA_MODEL(SERIAL)からの書き換えられた文字列です. <em>{CAMERA_ID}</em> はカメラIDです。英数字以外の文字は、アンダースコアに置き換えられます。</li>
+</ul>
+
+<p><em>{dev_CAMERA-NS}</em>の値はサービスコール<strong>get_device_list</strong>また<strong>device_connection</strong>トピックでも得られます。</p>
+
+<h3 id="3-3">3.3. 発行するトピック</h3>
+
+<p>stcamera_nodeが発行するトピックは下記の通りです：</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">No.</th>
+<th>　トピック</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">1.</td>
+<td><strong>device_connection</strong></td>
+<td>接続または切断したときに発行されます。</td>
+</tr>
+<tr>
+<td style="text-align: center">2.</td>
+<td>
+<em>{dev_CAMERA-NS}</em>/<strong>camera_info</strong>
+</td>
+<td>ROSのimage_transport基準です。</td>
+</tr>
+<tr>
+<td style="text-align: center">3.</td>
+<td>
+<em>{dev_CAMERA-NS}</em>/<strong>chunk</strong>
+</td>
+<td>チャンクデータを取得したときに発行されます。</td>
+</tr>
+<tr>
+<td style="text-align: center">4.</td>
+<td>
+<em>{dev_CAMERA-NS}</em>/<strong>event</strong>
+</td>
+<td>カメライベントを登録し、登録されたイベントが発生したときに発行されます。</td>
+</tr>
+<tr>
+<td style="text-align: center">5.</td>
+<td>
+<em>{dev_CAMERA-NS}</em>/<strong>image_raw*</strong>
+</td>
+<td>画像データを取得したときに発行されます（ROSのimage_transport基準）。</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="3-4">3.4. サービス</h3>
+
+<p>stcamera_nodeが提供するサービスは下記の通りです：</p>
+
+<p>（下記に記載するGenICamノードはROSのノードとは全く別の物です）</p>
+
+<ul>
+<li>
+<strong>get_device_list</strong> : 検出されたデバイスのリストを取得します。</li>
+<li>
+<strong>get_gige_ip</strong> : 指定したGigEVisionカメラのIPアドレスを取得します。</li>
+<li>
+<strong>get_module_list</strong> : 対応するGenICam GenTLモジュール名のリストを取得します（<em>System</em>、<em>Interface</em>、<em>LocalDevice</em>、<em>RemoteDevice</em>、<em>DataStream</em>）。 モジュール名は特定のGenICamノードにアクセスする際に引数として渡す必要があります。たとえば、readまたはwrite_nodeサービス経由でカメラの<em>Gain</em>にアクセスするには、<em>Gain</em>がRemoteDeviceモジュールに存在するように指定する必要があります。</li>
+<li>
+<strong>get_sdk_info</strong> : SentechSDKバージョンとGenTLプロデューサの情報を取得します。</li>
+<li>
+<strong>set_gige_ip</strong> : 指定したGigEVisionカメラのIPアドレスを設定します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>enable_chunk</strong> : チャンクを有効または無効にします。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>enable_event_acquisition</strong> : 特定のモジュールのイベント取得を有効または無効にします。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>enable_event_node</strong> : 指定されるGenICamノードのイベントコールバックを有効または無効にします。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>enable_image_acquisition</strong> : 画像取得を有効または無効にします（カメラを接続する際、自動で有効になります）。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>enable_trigger</strong> : 指定されるトリガセレクタとソースに対してトリガを有効または無効にします。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>execute_node</strong> : 指定されるCommandインタフェースタイプを持つ特定のGenicamノードを実行します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_chunk_list</strong> : カメラがサポートするチャンクのリストを取得します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_enum_list</strong> : 指定されるGenICam列挙ノードの列挙のリストを取得します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_event_acquisition_status_list</strong> : 全モジュールのイベント取得のステータスを取得します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_event_node_status_list</strong> : 指定されるモジュールのGenICamノードイベント取得のステータスを取得します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_genicam_node_info</strong> : 指定されるGenICamノードの情報を取得します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_image_acquisition_status</strong> : 画像取得のステータスを取得します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_last_error</strong> : 最後の実行ステータス情報を取得します。エラーコードのリストについては次の章をご参照下さい。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>get_trigger_list</strong> : カメラがサポートしているトリガのリストを取得します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>image_raw</strong>* : ROSのimage_transportに基づくサービスです.</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>read_node</strong> : ノードインタフェースタイプに関係なく、指定されるGenICamノードを読み込みます。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>read_node_bool</strong> : ブール型のインタフェースタイプを持つ指定されるGenICamノードを読み取ります。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>read_node_enum</strong> : 列挙型のインタフェースタイプを持つ指定されるGenICamノードを読み取ります。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>read_node_float</strong> : Floatのインターフェイスタイプを持つ指定されるGenICamノードを読み取ります。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>read_node_int</strong> : 整数のインターフェイスタイプを持つ指定されるGenICamノードを読み取ります。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>read_node_string</strong> : Stringのインターフェイスタイプを持つ指定されるGenICamノードを読み取ります。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>send_soft_trigger</strong> : ソフトウェアトリガを送信します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>set_camera_info</strong> : ROSのimage_transportに基づくサービスです.</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>write_node</strong> : ノードインタフェースタイプに関係なく、指定されるGenICamノードを書き込みます。stcamera_nodeの内部は自動的に渡される文字列値をGenICamノードのインタフェースタイプに変換します。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>write_node_bool</strong> : ブール型のインタフェースタイプを持つ指定されるGenICamノードを書き込みます。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>write_node_enum_int</strong> : 列挙型のインタフェースタイプを持つ指定されるGenICamノードに整数値を書き込みます。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>write_node_enum_str</strong> : 列挙型のインタフェースタイプを持つ指定されるGenICamノードに文字列値（列挙型エントリの記号名）を書き込みます。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>write_node_float</strong> : Floatのインタフェースタイプを持つ指定されるGenICamノードに整数値を書き込みます。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>write_node_int</strong> : 整数のインタフェースタイプを持つ指定されるGenICamノードに整数値を書き込みます。</li>
+<li>
+<em>{dev_CAMERA-NS}</em>/<strong>write_node_string</strong> : Stringのインタフェースタイプを持つ指定されるGenICamノードに整数値を書き込みます。</li>
+</ul>
+
+<p>注意：</p>
+
+<ul>
+<li><p>機種によって画像取得中にはGenICamノードにアクセスできない場合があります（エラー発生）。その際には画像取得を停止にしてから再度設定やアクセスして下さい。サービスコール<strong>enable_image_acquisition</strong>で画像取得停止ができます。例：<br>
+<code>$ rosservice call /stcamera_node/dev_CAMERA-NS/enable_image_acquisition false</code></p></li>
+<li>
+<p>IntegerタイプのGenICamノードは設定できる倍数が決まっており、その倍数で設定しないとエラーになります。サービスコール <strong>get_genicam_node_info</strong>で倍数の確認ができます。下記の例の倍数は16 (increment: "16")：<br>
+<code>$ rosservice call /stcamera_node/dev_CAMERA-NS/get_genicam_node_info RemoteDevice Width</code>
+</p>
+<pre>
+name: "Width"
+description: "Width of the image provided by the device (in pixels)."
+name_space: "Standard"
+interface_type: "IInteger"
+access_mode: "Read Only"
+is_cachable: "Yes"
+visibility: "Beginner"
+caching_mode: "Write to register, write to cache on read"
+is_streamable: True
+enum_value_str_list: []
+enum_value_int_list: []
+current_value: "2448"
+min_value: "64"
+max_value: "2448"
+increment: "16"
+unit: ''
+child_node_list: []
+</pre>
+</li>
+</ul>
+
+<h3 id="3-5">3.5. エラーコード</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: right">コード</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right">&lt; 0</td>
+<td>GenTLエラーコード。<a href="http://www.emva.org/wp-content/uploads/GenICam_GenTL_1_5.pdf">GenICam GenTLドキュメント（英語）</a>をご参照下さい。</td>
+</tr>
+<tr>
+<td style="text-align: right">0</td>
+<td>エラー無.</td>
+</tr>
+<tr>
+<td style="text-align: right">30000</td>
+<td>GenICamのジェネリック例外が発生しました。</td>
+</tr>
+<tr>
+<td style="text-align: right">30001</td>
+<td>モジュール名が無効です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30002</td>
+<td>(GenICam) ノードが無効またはアクセス不能です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30003</td>
+<td>イベントがすでに有効です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30004</td>
+<td>イベントがすでに無効です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30005</td>
+<td>画像取得がすでに有効です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30006</td>
+<td>画像取得がすでに無効です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30007</td>
+<td>チャンクがサポートされていません。</td>
+</tr>
+<tr>
+<td style="text-align: right">30008</td>
+<td>チャンク名が無効です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30009</td>
+<td>トリガがサポートされていません。</td>
+</tr>
+<tr>
+<td style="text-align: right">30010</td>
+<td>トリガ名が無効です。</td>
+</tr>
+<tr>
+<td style="text-align: right">30011</td>
+<td>イベントがサポートされていません。</td>
+</tr>
+<tr>
+<td style="text-align: right">30012</td>
+<td>イベント名が無効です。</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="4">4. 使用法</h2>
+
+<h3 id="4-1-gain-image_view">4.1. カメラのGainを変更し、image_viewで取得画像を表示する</h3>
+
+<p>シンプルな操作と画像表示は下記の通りの流れを参照下さい。</p>
+
+<ul>
+<li>全カメラとの接続を設定し、stcamera_nodeを実行します:
+<code>$ roslaunch omronsentech_camera stcamera_node.launch</code>
+</li>
+<li>
+<p>ネームスペースを取得します：
+<code>$ rosservice call /stcamera_node/get_device_list</code><br>
+</p>
+<pre>
+
+<h2 id="device_list">device_list:</h2>
+
+<p>timestamp:
+  secs: 1521005471
+  nsecs: 777053680
+device_id: "142100030510"
+device_model: "STC-MCS510U3V"
+device_serial: "XXYYYZZ"
+device_tltype: "U3V"
+device_tl_specific_field: []
+device_tl_specific_value: []
+device_gentl_info:
+  vendor: "OMRON_SENTECH"
+  version: "1.5"
+  producer_version: "1.5.X.X.X"
+  full_path: "/opt/sentech/lib/libstgentl.cti"
+  tltype: "Mixed"
+device_namespace: "dev_14210XXYYYZZ"
+connected: True
+</p></pre>
+</li>
+<li><p>image_viewを実行します：<br>
+<code>$ rosrun image_view image_view image:=/stcamera_node/dev_14210XXYYYZZ/image_raw</code>、dev_14210XXYYYZZは接続されているカメラのネームスペースです。</p></li>
+<li><p>カメラのGain（IFloatタイプ）を100.0に変更する場合は、次のようにGenicam書き込みノード・サービスを使用します：<br>
+<code>$ rosservice call /stcamera_node/dev_14210XXYYYZZ/write_node_float RemoteDevice Gain 100.0</code><br>又は<br>
+<code>$ rosservice call /stcamera_node/dev_14210XXYYYZZ/write_node RemoteDevice Gain "'100.0'"</code></p></li>
+<li><p>現在のGain値を読み取るには、次のようにGenICam読み取りノードサービスを使用します：<br>
+<code>$ rosservice call /stcamera_node/dev_14210XXYYYZZ/read_node_float RemoteDevice</code><br> 又は <br>
+<code>$ rosservice call /stcamera_node/dev_14210XXYYYZZ/read_node RemoteDevice Gain</code></p></li>
+<li>
+<p><strong>get_genicam_node_info</strong> でGainノード情報を確認する場合は：<br>
+<code>$ rosservice call /stcamera_node/dev_14210XXYYYZZ/get_genicam_node_info RemoteDevice Gain</code><br>
+</p>
+<pre>
+name: "Gain"
+description: "Controls the selected gain as an absolute physical value. This is an amplification\
+\ factor applied to the video signal."
+name_space: "Standard"
+interface_type: "IFloat"
+access_mode: "Read and Write"
+is_cachable: "Yes"
+visibility: "Beginner"
+caching_mode: "Write to register, write to cache on read"
+is_streamable: True
+enum_value_str_list: []
+enum_value_int_list: []
+current_value: "100"
+min_value: "0.000000"
+max_value: "192.000000"
+increment: ''
+unit: ''
+child_node_list: []
+</pre>
+</li>
+</ul>
+
+<h3 id="4-2-launch">4.2. Launchファイルスクリプトの事例</h3>
+
+<p>Launchファイルスクリプトの例とそのパラメータはパッケージに含まれています。 それらを使用するには、次の手順を参照下さい。</p>
+
+<ul>
+<li>
+<strong>stcamera_node.launch</strong>:
+このLaunchファイルスクリプトはstcamera_nodeを実行します。検出されたカメラと接続します。 このスクリプトはstcamera_node.yamlにキャリブレーションファイル（オプション）を設定せず、そのまま起動することができます。</li>
+<li>
+<strong>stcamera_nodelet_manager.launch</strong>:
+このLaunchファイルスクリプトは、nodeletバージョンのstcamera_nodeを実行します。検出されたカメラと接続します。このスクリプトはstcamera_nodelet_manager.yamlにキャリブレーションファイル（オプション）を設定せず、そのまま起動することができます。</li>
+<li>
+<strong>stcamera_node_imageproc.launch</strong>:
+このLaunchファイルスクリプトは、接続されたカメラからストリーミングされた画像を表示するstcamera_nodeとimage_viewという2つのノードを実行します。 このスクリプトを起動する際に、stcamera_node_imageproc.launchとstcamera_node_imageproc.yamlにCAMERA_IDまたはCAMERA_MODEL（SERIAL）および名前空間dev_CAMERA-NSの指定が必要となります：
+
+<ul>
+<li>stcamera_node_imageproc.launchにある<strong>camera_namespace</strong>：<br> <code>&lt;arg name="camera_namespace" default="dev_CAMERA-NS" /&gt;</code>
+</li>
+<li>stcamera_node_imageproc.yamlにある<strong>camera_to_connect</strong>：<br> <code>camera_to_connect: ["CAMERA_ID or CAMERA_MODEL(SERIAL)"]</code>
+</li>
+<li>オプション： stcamera_node_imageproc.yamlにある<strong>default_calibration_file</strong>又は<em>{dev_CAMERA-NS}</em>/<strong>calibration_file</strong>：<br><code>default_calibration_file: file:///home/mydata/calibration.xml</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<h3 id="4-3-ros">4.3. ROSノードクライアント事例</h3>
+
+<p>exampleフォルダにあるノード「grabber」はシンプルなROSノードクライアント（両方C++とPythonベースがあります）事例として提供します。Grabberは下記の処理を行います：</p>
+
+<ol>
+<li>サービス「<strong>get_sdk_info</strong>」を呼び出して、SentechSDKとGenTL情報を取得し、画面に表示します。</li>
+<li>サービス「<strong>get_device_list</strong>」を呼び出して、接続済みのカメラを検出し、カメラのネームスペースを取得します。</li>
+<li>サービス「<strong>get_genicam_node_info</strong>」と「<strong>write_node_float</strong>」を呼び出して、カメラのGain値を読み取りと書き込みます。</li>
+<li>トピック「image_raw」を参照して、十枚まで画像を取得し、画像サイズとエンコード情報を画面に表示します。</li>
+<li>サービス「<strong>enable_trigger</strong>」を呼び出して、トリガモードを有効にして、十回まで一秒間ごとにサービス「<strong>send_soft_trigger</strong>」を呼び出して、画像を取得します。トリガモードを有効にする際、セレクタはFrameStartを指定し、ソースはSoftwareを指定します。</li>
+</ol>
+
+<p>GigEVisionカメラを利用する場合は、カメラに有効なIPアドレスがあることを確認して下さい。IPアドレスは、サービス「<strong>get_device_list</strong>」または「<strong>get_gige_ip</strong>」を呼び出すことで確認できます。静的IPアドレスは、サービス「<strong>set_gige_ip</strong>」で設定できます。例：<br>
+<code>$ rosservice call /stcamera_node/get_gige_ip "00:11:1c:xx:xx:xx"</code> （MACアドレス「00:11:1c:xx:xx:xx」を持っているGigEVisionカメラのIPアドレスを取得する場合）、及び
+<br>
+<code>$ rosservice call /stcamera_node/set_gige_ip "00:11:1c:xx:xx:xx" 192.168.y.z 255.255.255.0 0.0.0.0</code> （MACアドレス「00:11:1c:xx:xx:xx」を持っているGigEVisionカメラの静的IPアドレスを設定する場合）</p>
+
+<h2 id="5">5. カスタマイズ</h2>
+
+<p>stcamera_nodeは、OMRON SENTECHカメラを制御するために、一般的な機能を提供します。特定のカメラに対応するためのカスタマイズが必要な場合は、StCameraInterfaceクラスを継承し、別途のROSノードを作成するか既存のstcamera_node（StCameraNodeクラス）を編集する必要があります。stcamera_node（StCameraNodeクラス）を編集する場合、StCameraNodeクラスのinitializeCamera()関数にあるカメラインターフェイス初期化プロセスを編集する必要があります。
+StCameraInterfaceやStCameraNodeクラスの構造については、doxygenドキュメントを参照下さい。</p>
+
+<h2 id="6-api">6. API ドキュメント</h2>
+
+<p>コードのAPIやMsg/Srv APIのドキュメントは下記のURLでアクセスできます：<a href="https://wiki.ros.org/omronsentech_camera">https://wiki.ros.org/omronsentech_camera</a>.</p>
+
+<h2 id="7">7. 質問・フィードバックや不具合の報告</h2>
+
+<p>質問・フィードバックやバグが見つかった場合は、support-ros AT sentech.co DOT jpにお問い合わせ下さい。</p>
+</div>
+            
+          </div>
+        </div>
+
+        
+        
+      
+    </div>
+  </div>
+
+  <div class="distro distro-indigo">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>indigo</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-ardent">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>ardent</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-jade">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>jade</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-hydro">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>hydro</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    setupDistroSwitch("crystal");
+  });
+</script>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4 col-md-4">
+          
+            <a href="https://github.com/ros-infrastructure" title="Find rosindex in Github">
+            <span class="icon  icon--github">
+              <svg viewBox="0 0 16 16">
+                <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+
+            <span class="username">ros-infrastructure</span>
+          </a>
+          |
+          <em>generated on 2019-01-10</em>
+        
+        </div>
+        <div class="col-sm-8 col-md-8 text-right">
+          <p class="text">a community-maintained index of robotics software
+ | <a href="/privacy.txt">privacy</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

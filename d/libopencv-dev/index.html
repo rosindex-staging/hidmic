@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>ROS Index</title>
+    <meta name="description" content="a community-maintained index of robotics software
+">
+
+    <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//d/libopencv-dev/">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/main.css">
+    
+
+    <script type="text/javascript" src=/js/jquery.js></script>
+    <script src=/bootstrap/js/bootstrap.min.js type="text/javascript"></script>
+    <script src=/js/jquery-cookie-1.4.1/jquery.cookie.js type="text/javascript"></script>
+
+    <script type="text/javascript" src=/js/ga.js async></script>
+    <script type="text/javascript" src=/js/toc.js></script>
+
+    <script src=/js/distro_switch.js></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <div class="container-fluid" style="margin-bottom: 10px">
+
+      <div align="center">
+        <br>
+        <table id="topnav-table">
+          <tr>
+            <td valign="middle">
+                ROS Resources:
+              <a href="http://wiki.ros.org/">Documentation</a>
+              |
+              <a href="http://wiki.ros.org/Support">Support</a>
+              |
+              <a href="http://discourse.ros.org/">Discussion Forum</a>
+              |
+              <a href="http://status.ros.org/">Service Status</a>
+              |
+              <a href="http://answers.ros.org/">Q&A answers.ros.org</a>
+            </td>
+          </tr>
+        </table> <!-- topnav-table -->
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12 col-md-9" style="margin-top: 8px">
+          <div class="row">
+            <!-- title -->
+            <div class="col-xs-12 col-sm-3 col-md-3" style="white-space:nowrap;">
+              <a class="site-title" href="/">ROS Index</a> <sup><a href="https://github.com/ros-infrastructure/rosindex/issues/new" style="vertical-align:super;" class="label label-warning" target="_blank">BETA</a></sup>
+            </div>
+
+            <!-- main links -->
+            <div class="col-xs-12 col-sm-9 col-md-9 text-right">
+              <ul class="list-inline" style="margin-bottom:0px;">
+                <li><a class="btn btn-link" href="/about">About</a></li>
+
+                <li class="dropdown">
+                  <button id="dLabel" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Index <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li><a href="/packages/page/1/time/">Package List</a></li>
+                    <li><a href="/repos/page/1/time/">Repository List</a></li>
+
+                    <li class="hidden" class="divider"></li>
+
+
+                    <li class="hidden"><a href="/srvs/">Nodes</a></li>
+                    <li class="hidden"><a href="/msgs/">Messages</a></li>
+                    <li class="hidden"><a href="/srvs/">Services</a></li>
+                    <li class="hidden"><a href="/srvs/">Plugins</a></li>
+
+                    <li class="divider"></li>
+
+                    <li><a href="/deps/">System Dependencies</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown disabled">
+                  <button id="dLabel" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Doc <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    
+                    <li>
+                      <a href="/doc/ros2">
+                        ROS2 Overview
+                      </a>
+                    </li>
+                    
+                    <li class="hidden" class="divider"></li>
+
+                    <li class="hidden"><a href="/doc/tutorials">Tutorials</a></li>
+                    <li class="hidden"><a href="/doc/readmes">Readmes</a></li>
+                    <li class="hidden"><a href="/doc/apis">APIs</a></li>
+                  </ul>
+                </li>
+
+                <li><a class="btn btn-link" href="/contribute">Contribute</a></li>
+                <li><a class="btn btn-link" href="/stats">Stats</a></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- searchbox -->
+        <div class="col-sm-12 col-md-3" style="margin-top: 12px">
+          <form id="top-searchbox" action="/search/" role="form" method="get">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" name="q" placeholder="Search ROS">
+              <span class="input-group-btn">
+                <button class="btn btn-default btn-sm" title="Search ROS" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+                <a href="https://lunrjs.com/guides/searching.html"
+                   title="Help to Search" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-question-sign"></span>
+                </a>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    <a class="site-title" href="/">ROS Index</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <a class="page-link" href="/packages">Packages</a>
+        <a class="page-link" href="/repos">Repositories</a>
+        <a class="page-link" href="/search">Search</a>
+      </div>
+    </nav>
+    -->
+
+  </div>
+  <script type="text/javascript">
+    $('#top-searchbox').submit(function() {
+        return $('#top-searchbox input:text').filter(function() {
+          return $(this).val() == "";
+        }).length == 0;
+    });
+  </script>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="container-fluid" style="margin-top:20px">
+  <div class="container-fluid">
+    <div class="row">
+      <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/deps">System Dependencies</a></li>
+        <li class="active">libopencv-dev</li>
+      </ol>
+    </div>
+    <div class="row">
+      <div class="well well-sm">
+        <table class="table">
+          <tr>
+            <td width="100px" class="text-center">
+              
+            </td>
+            <td>
+              <h3><a style="text-decoration:none;" href="/d/libopencv-dev">libopencv-dev</a> <small>system dep</small></h3>
+            </td>
+          </tr>
+        </table>
+        <div class="top-buffer">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">Dependency Availability</h3></div>
+    <div class="panel-body" style="overflow-x: auto">
+      <div class="container-fluid">
+        
+          
+          
+          
+          
+
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="vcenter"><strong>Arch Linux</strong></div>
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                
+                
+                  <div class="col-xs-6">
+                    <em>All Versions</em>
+                  </div>
+                  <div class="col-xs-6">
+                    
+                    
+                    
+                      
+                        <code>opencv</code>
+                      
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="row">&nbsp;</div>
+        
+          
+          
+          
+          
+
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="vcenter"><strong>CentOS</strong></div>
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                
+                
+                  <div class="col-xs-6">
+                    <em>All Versions</em>
+                  </div>
+                  <div class="col-xs-6">
+                    
+                    
+                    
+                      <em>Not available</em>
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="row">&nbsp;</div>
+        
+          
+          
+          
+          
+
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="vcenter"><strong>Cygwin</strong></div>
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                
+                
+                  <div class="col-xs-6">
+                    <em>All Versions</em>
+                  </div>
+                  <div class="col-xs-6">
+                    
+                    
+                    
+                      <em>Not available</em>
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="row">&nbsp;</div>
+        
+          
+          
+          
+          
+
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="vcenter"><strong>Debian</strong></div>
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                
+                
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Sarge
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>libopencv-dev</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Etch
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>libopencv-dev</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Lenny
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>libopencv-dev</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Squeeze
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>libopencv-dev</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Wheezy
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>libopencv-dev</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Jessie
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>libopencv-dev</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Sid (Unstable)
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>libopencv-dev</code>
+                        
+                      
+                    </div>
+                  
+                
+              </div>
+            </div>
+          </div>
+          <div class="row">&nbsp;</div>
+        
+          
+          
+          
+          
+
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="vcenter"><strong>Fedora</strong></div>
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                
+                
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        17 (Beefy Miracle)
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>opencv-devel</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        18 (Spherical Cow)
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>opencv-devel</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        19 (Schrödinger's Cat)
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>opencv-devel</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        20 (Heisenberg)
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>opencv-devel</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Fedora 21
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>opencv-devel</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Fedora 22
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>opencv-devel</code>
+                        
+                      
+                    </div>
+                  
+                
+              </div>
+            </div>
+          </div>
+          <div class="row">&nbsp;</div>
+        
+          
+          
+          
+          
+
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="vcenter"><strong>FreeBSD</strong></div>
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                
+                
+                  <div class="col-xs-6">
+                    <em>All Versions</em>
+                  </div>
+                  <div class="col-xs-6">
+                    
+                    
+                    
+                      <em>Not available</em>
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="row">&nbsp;</div>
+        
+          
+          
+          
+          
+
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="vcenter"><strong>Gentoo Linux</strong></div>
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                
+                
+                  <div class="col-xs-6">
+                    <em>All Versions</em>
+                  </div>
+                  <div class="col-xs-6">
+                    
+                    
+                    
+                      
+                        <code>media-libs/opencv</code>
+                      
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="row">&nbsp;</div>
+        
+          
+          
+          
+          
+
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="vcenter"><strong>Mandrake/Mandriva Linux</strong></div>
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                
+                
+                  <div class="col-xs-6">
+                    <em>All Versions</em>
+                  </div>
+                  <div class="col-xs-6">
+                    
+                    
+                    
+                      <em>Not available</em>
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="row">&nbsp;</div>
+        
+          
+          
+          
+          
+
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="vcenter"><strong>openSUSE</strong></div>
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                
+                
+                  <div class="col-xs-6">
+                    <em>All Versions</em>
+                  </div>
+                  <div class="col-xs-6">
+                    
+                    
+                    
+                      <em>Not available</em>
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="row">&nbsp;</div>
+        
+          
+          
+          
+          
+
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="vcenter"><strong>Mac OS X</strong></div>
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                
+                
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Leopard
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>opencv</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Snow Leopard
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>opencv</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Lion
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>opencv</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Mountain lion
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>opencv</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Mavericks
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>opencv</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Yosemite
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>opencv</code>
+                        
+                      
+                    </div>
+                  
+                
+              </div>
+            </div>
+          </div>
+          <div class="row">&nbsp;</div>
+        
+          
+          
+          
+          
+
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="vcenter"><strong>Red Hat Enterprise Linux</strong></div>
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                
+                
+                  <div class="col-xs-6">
+                    <em>All Versions</em>
+                  </div>
+                  <div class="col-xs-6">
+                    
+                    
+                    
+                      <em>Not available</em>
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="row">&nbsp;</div>
+        
+          
+          
+          
+          
+
+          
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="vcenter"><strong>Ubuntu</strong></div>
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                
+                
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Karmic
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        <em>Not available</em>
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Lucid
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        <em>Not available</em>
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Maverick
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        <em>Not available</em>
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Natty
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        <em>Not available</em>
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Oneiric
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        <em>Not available</em>
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Precise
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        <em>Not available</em>
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Quantal
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        <em>Not available</em>
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Raring
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        <em>Not available</em>
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Saucy
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>libopencv-dev</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Trusty
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>libopencv-dev</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Trusty (Python3)
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        <em>Not available</em>
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Utopic
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>libopencv-dev</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Utopic (Python3)
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        <em>Not available</em>
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Vivid
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>libopencv-dev</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Vivid (Python3)
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        <em>Not available</em>
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Wily
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>libopencv-dev</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Wily (Python3)
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        <em>Not available</em>
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Xenial
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        
+                          <code>libopencv-dev</code>
+                        
+                      
+                    </div>
+                  
+                    
+                    
+                    
+                    <div class="col-xs-6">
+                      
+                        Xenial (Python3)
+                      
+                    </div>
+                    <div class="col-xs-6">
+                      
+                      
+                      
+                        <em>Not available</em>
+                      
+                    </div>
+                  
+                
+              </div>
+            </div>
+          </div>
+          <div class="row">&nbsp;</div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">Raw Rosdep Data</h3></div>
+    <div class="panel-body">
+      <pre>
+  {"osx"=>{"homebrew"=>{"packages"=>["opencv"]}}, "arch"=>["opencv"], "debian"=>["libopencv-dev"], "fedora"=>["opencv-devel"], "gentoo"=>["media-libs/opencv"], "macports"=>["opencv"], "ubuntu"=>{"artful"=>["libopencv-dev"], "bionic"=>["libopencv-dev"], "saucy"=>["libopencv-dev"], "trusty"=>["libopencv-dev"], "utopic"=>["libopencv-dev"], "vivid"=>["libopencv-dev"], "wily"=>["libopencv-dev"], "xenial"=>["libopencv-dev"]}}
+      </pre>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">Used in Packages</h3></div>
+    <div class="panel-body table-responsive">
+      <table class="table">
+        <tbody>
+          
+          
+          
+          <tr>
+            <th scope="row">indigo</th>
+            <td>
+              
+              <a href="/p/map_merger#indigo" class="label label-primary pkg-label">
+                map_merger
+              </a>
+              
+              <a href="/p/apriltags#indigo" class="label label-primary pkg-label">
+                apriltags
+              </a>
+              
+              <a href="/p/aruco#indigo" class="label label-primary pkg-label">
+                aruco
+              </a>
+              
+              <a href="/p/cob_camera_sensors#indigo" class="label label-primary pkg-label">
+                cob_camera_sensors
+              </a>
+              
+              <a href="/p/cob_3d_features#indigo" class="label label-primary pkg-label">
+                cob_3d_features
+              </a>
+              
+              <a href="/p/cob_3d_mapping_tools#indigo" class="label label-primary pkg-label">
+                cob_3d_mapping_tools
+              </a>
+              
+              <a href="/p/cob_3d_registration#indigo" class="label label-primary pkg-label">
+                cob_3d_registration
+              </a>
+              
+              <a href="/p/cob_3d_segmentation#indigo" class="label label-primary pkg-label">
+                cob_3d_segmentation
+              </a>
+              
+              <a href="/p/cob_map_accessibility_analysis#indigo" class="label label-primary pkg-label">
+                cob_map_accessibility_analysis
+              </a>
+              
+              <a href="/p/cob_leg_detection#indigo" class="label label-primary pkg-label">
+                cob_leg_detection
+              </a>
+              
+              <a href="/p/cob_openni2_tracker#indigo" class="label label-primary pkg-label">
+                cob_openni2_tracker
+              </a>
+              
+              <a href="/p/cob_people_detection#indigo" class="label label-primary pkg-label">
+                cob_people_detection
+              </a>
+              
+              <a href="/p/cob_image_flip#indigo" class="label label-primary pkg-label">
+                cob_image_flip
+              </a>
+              
+              <a href="/p/cob_object_detection_visualizer#indigo" class="label label-primary pkg-label">
+                cob_object_detection_visualizer
+              </a>
+              
+              <a href="/p/cob_vision_utils#indigo" class="label label-primary pkg-label">
+                cob_vision_utils
+              </a>
+              
+              <a href="/p/gridmap_2d#indigo" class="label label-primary pkg-label">
+                gridmap_2d
+              </a>
+              
+              <a href="/p/libcmt#indigo" class="label label-primary pkg-label">
+                libcmt
+              </a>
+              
+              <a href="/p/slic#indigo" class="label label-primary pkg-label">
+                slic
+              </a>
+              
+              <a href="/p/cv_bridge#indigo" class="label label-primary pkg-label">
+                cv_bridge
+              </a>
+              
+              <a href="/p/image_geometry#indigo" class="label label-primary pkg-label">
+                image_geometry
+              </a>
+              
+              <a href="/p/cv_bridge#indigo" class="label label-primary pkg-label">
+                cv_bridge
+              </a>
+              
+              <a href="/p/image_geometry#indigo" class="label label-primary pkg-label">
+                image_geometry
+              </a>
+              
+              <a href="/p/cv_backports#indigo" class="label label-primary pkg-label">
+                cv_backports
+              </a>
+              
+              <a href="/p/mapviz#indigo" class="label label-primary pkg-label">
+                mapviz
+              </a>
+              
+              <a href="/p/baxter_sim_hardware#indigo" class="label label-primary pkg-label">
+                baxter_sim_hardware
+              </a>
+              
+              <a href="/p/cost_map_cv#indigo" class="label label-primary pkg-label">
+                cost_map_cv
+              </a>
+              
+              <a href="/p/cost_map_ros#indigo" class="label label-primary pkg-label">
+                cost_map_ros
+              </a>
+              
+              <a href="/p/ekf_localization#indigo" class="label label-primary pkg-label">
+                ekf_localization
+              </a>
+              
+              <a href="/p/fiducial_detect#indigo" class="label label-primary pkg-label">
+                fiducial_detect
+              </a>
+              
+              <a href="/p/fiducial_lib#indigo" class="label label-primary pkg-label">
+                fiducial_lib
+              </a>
+              
+              <a href="/p/fiducial_pose#indigo" class="label label-primary pkg-label">
+                fiducial_pose
+              </a>
+              
+              <a href="/p/flir_boson_usb#indigo" class="label label-primary pkg-label">
+                flir_boson_usb
+              </a>
+              
+              <a href="/p/homer_gui#indigo" class="label label-primary pkg-label">
+                homer_gui
+              </a>
+              
+              <a href="/p/or_libs#indigo" class="label label-primary pkg-label">
+                or_libs
+              </a>
+              
+              <a href="/p/or_nodes#indigo" class="label label-primary pkg-label">
+                or_nodes
+              </a>
+              
+              <a href="/p/robot_face#indigo" class="label label-primary pkg-label">
+                robot_face
+              </a>
+              
+              <a href="/p/anj_featurenav#indigo" class="label label-primary pkg-label">
+                anj_featurenav
+              </a>
+              
+              <a href="/p/featurenav_base#indigo" class="label label-primary pkg-label">
+                featurenav_base
+              </a>
+              
+              <a href="/p/light_scan_sim#indigo" class="label label-primary pkg-label">
+                light_scan_sim
+              </a>
+              
+              <a href="/p/robbie_architecture#indigo" class="label label-primary pkg-label">
+                robbie_architecture
+              </a>
+              
+            </td>
+          </tr>
+          
+          
+          
+          <tr>
+            <th scope="row">jade</th>
+            <td>
+              
+              <a href="/p/aruco#jade" class="label label-primary pkg-label">
+                aruco
+              </a>
+              
+              <a href="/p/libcmt#jade" class="label label-primary pkg-label">
+                libcmt
+              </a>
+              
+              <a href="/p/slic#jade" class="label label-primary pkg-label">
+                slic
+              </a>
+              
+              <a href="/p/cv_bridge#jade" class="label label-primary pkg-label">
+                cv_bridge
+              </a>
+              
+              <a href="/p/image_geometry#jade" class="label label-primary pkg-label">
+                image_geometry
+              </a>
+              
+              <a href="/p/cv_backports#jade" class="label label-primary pkg-label">
+                cv_backports
+              </a>
+              
+              <a href="/p/mapviz#jade" class="label label-primary pkg-label">
+                mapviz
+              </a>
+              
+              <a href="/p/multires_image#jade" class="label label-primary pkg-label">
+                multires_image
+              </a>
+              
+            </td>
+          </tr>
+          
+          
+          
+          <tr>
+            <th scope="row">kinetic</th>
+            <td>
+              
+              <a href="/p/cob_camera_sensors#kinetic" class="label label-primary pkg-label">
+                cob_camera_sensors
+              </a>
+              
+              <a href="/p/cob_map_accessibility_analysis#kinetic" class="label label-primary pkg-label">
+                cob_map_accessibility_analysis
+              </a>
+              
+              <a href="/p/cob_image_flip#kinetic" class="label label-primary pkg-label">
+                cob_image_flip
+              </a>
+              
+              <a href="/p/cob_object_detection_visualizer#kinetic" class="label label-primary pkg-label">
+                cob_object_detection_visualizer
+              </a>
+              
+              <a href="/p/cob_vision_utils#kinetic" class="label label-primary pkg-label">
+                cob_vision_utils
+              </a>
+              
+              <a href="/p/footstep_planner#kinetic" class="label label-primary pkg-label">
+                footstep_planner
+              </a>
+              
+              <a href="/p/gridmap_2d#kinetic" class="label label-primary pkg-label">
+                gridmap_2d
+              </a>
+              
+              <a href="/p/libcmt#kinetic" class="label label-primary pkg-label">
+                libcmt
+              </a>
+              
+              <a href="/p/slic#kinetic" class="label label-primary pkg-label">
+                slic
+              </a>
+              
+              <a href="/p/baxter_sim_hardware#kinetic" class="label label-primary pkg-label">
+                baxter_sim_hardware
+              </a>
+              
+              <a href="/p/cost_map_cv#kinetic" class="label label-primary pkg-label">
+                cost_map_cv
+              </a>
+              
+              <a href="/p/cost_map_ros#kinetic" class="label label-primary pkg-label">
+                cost_map_ros
+              </a>
+              
+              <a href="/p/flir_boson_usb#kinetic" class="label label-primary pkg-label">
+                flir_boson_usb
+              </a>
+              
+              <a href="/p/homer_robot_face#kinetic" class="label label-primary pkg-label">
+                homer_robot_face
+              </a>
+              
+              <a href="/p/qglv_opencv#kinetic" class="label label-primary pkg-label">
+                qglv_opencv
+              </a>
+              
+              <a href="/p/apriltags2_ros#kinetic" class="label label-primary pkg-label">
+                apriltags2_ros
+              </a>
+              
+              <a href="/p/homer_robbie_architecture#kinetic" class="label label-primary pkg-label">
+                homer_robbie_architecture
+              </a>
+              
+              <a href="/p/libmynteye#kinetic" class="label label-primary pkg-label">
+                libmynteye
+              </a>
+              
+              <a href="/p/mrpt1#kinetic" class="label label-primary pkg-label">
+                mrpt1
+              </a>
+              
+              <a href="/p/mynt_eye_ros_wrapper#kinetic" class="label label-primary pkg-label">
+                mynt_eye_ros_wrapper
+              </a>
+              
+            </td>
+          </tr>
+          
+          
+          
+          <tr>
+            <th scope="row">hydro</th>
+            <td>
+              
+              <a href="/p/cob_leg_detection#hydro" class="label label-primary pkg-label">
+                cob_leg_detection
+              </a>
+              
+              <a href="/p/cob_openni2_tracker#hydro" class="label label-primary pkg-label">
+                cob_openni2_tracker
+              </a>
+              
+              <a href="/p/cob_people_detection#hydro" class="label label-primary pkg-label">
+                cob_people_detection
+              </a>
+              
+              <a href="/p/libcmt#hydro" class="label label-primary pkg-label">
+                libcmt
+              </a>
+              
+              <a href="/p/slic#hydro" class="label label-primary pkg-label">
+                slic
+              </a>
+              
+              <a href="/p/mapviz#hydro" class="label label-primary pkg-label">
+                mapviz
+              </a>
+              
+              <a href="/p/swri_opencv_util#hydro" class="label label-primary pkg-label">
+                swri_opencv_util
+              </a>
+              
+            </td>
+          </tr>
+          
+          
+          
+          <tr>
+            <th scope="row">crystal</th>
+            <td>
+              
+              <a href="/p/depthimage_to_laserscan#crystal" class="label label-primary pkg-label">
+                depthimage_to_laserscan
+              </a>
+              
+              <a href="/p/cv_bridge#crystal" class="label label-primary pkg-label">
+                cv_bridge
+              </a>
+              
+              <a href="/p/image_geometry#crystal" class="label label-primary pkg-label">
+                image_geometry
+              </a>
+              
+              <a href="/p/image_tools#crystal" class="label label-primary pkg-label">
+                image_tools
+              </a>
+              
+              <a href="/p/intra_process_demo#crystal" class="label label-primary pkg-label">
+                intra_process_demo
+              </a>
+              
+            </td>
+          </tr>
+          
+          
+          
+          <tr>
+            <th scope="row">bouncy</th>
+            <td>
+              
+              <a href="/p/depthimage_to_laserscan#bouncy" class="label label-primary pkg-label">
+                depthimage_to_laserscan
+              </a>
+              
+              <a href="/p/cv_bridge#bouncy" class="label label-primary pkg-label">
+                cv_bridge
+              </a>
+              
+              <a href="/p/image_geometry#bouncy" class="label label-primary pkg-label">
+                image_geometry
+              </a>
+              
+              <a href="/p/image_tools#bouncy" class="label label-primary pkg-label">
+                image_tools
+              </a>
+              
+              <a href="/p/intra_process_demo#bouncy" class="label label-primary pkg-label">
+                intra_process_demo
+              </a>
+              
+            </td>
+          </tr>
+          
+          
+          
+          <tr>
+            <th scope="row">ardent</th>
+            <td>
+              
+              <a href="/p/depthimage_to_laserscan#ardent" class="label label-primary pkg-label">
+                depthimage_to_laserscan
+              </a>
+              
+              <a href="/p/image_geometry#ardent" class="label label-primary pkg-label">
+                image_geometry
+              </a>
+              
+              <a href="/p/image_tools#ardent" class="label label-primary pkg-label">
+                image_tools
+              </a>
+              
+              <a href="/p/intra_process_demo#ardent" class="label label-primary pkg-label">
+                intra_process_demo
+              </a>
+              
+            </td>
+          </tr>
+          
+          
+          
+          <tr>
+            <th scope="row">melodic</th>
+            <td>
+              
+              <a href="/p/libcmt#melodic" class="label label-primary pkg-label">
+                libcmt
+              </a>
+              
+              <a href="/p/slic#melodic" class="label label-primary pkg-label">
+                slic
+              </a>
+              
+              <a href="/p/cv_bridge#melodic" class="label label-primary pkg-label">
+                cv_bridge
+              </a>
+              
+              <a href="/p/image_geometry#melodic" class="label label-primary pkg-label">
+                image_geometry
+              </a>
+              
+              <a href="/p/rospilot#melodic" class="label label-primary pkg-label">
+                rospilot
+              </a>
+              
+              <a href="/p/flir_boson_usb#melodic" class="label label-primary pkg-label">
+                flir_boson_usb
+              </a>
+              
+              <a href="/p/mrpt2#melodic" class="label label-primary pkg-label">
+                mrpt2
+              </a>
+              
+            </td>
+          </tr>
+          
+          
+          
+          <tr>
+            <th scope="row">lunar</th>
+            <td>
+              
+              <a href="/p/libcmt#lunar" class="label label-primary pkg-label">
+                libcmt
+              </a>
+              
+              <a href="/p/slic#lunar" class="label label-primary pkg-label">
+                slic
+              </a>
+              
+              <a href="/p/flir_boson_usb#lunar" class="label label-primary pkg-label">
+                flir_boson_usb
+              </a>
+              
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4 col-md-4">
+          
+            <a href="https://github.com/ros-infrastructure" title="Find rosindex in Github">
+            <span class="icon  icon--github">
+              <svg viewBox="0 0 16 16">
+                <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+
+            <span class="username">ros-infrastructure</span>
+          </a>
+          |
+          <em>generated on 2019-01-10</em>
+        
+        </div>
+        <div class="col-sm-8 col-md-8 text-right">
+          <p class="text">a community-maintained index of robotics software
+ | <a href="/privacy.txt">privacy</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

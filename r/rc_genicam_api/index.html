@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>ROS Index</title>
+    <meta name="description" content="a community-maintained index of robotics software
+">
+
+    <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//r/rc_genicam_api/">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/main.css">
+    
+
+    <script type="text/javascript" src=/js/jquery.js></script>
+    <script src=/bootstrap/js/bootstrap.min.js type="text/javascript"></script>
+    <script src=/js/jquery-cookie-1.4.1/jquery.cookie.js type="text/javascript"></script>
+
+    <script type="text/javascript" src=/js/ga.js async></script>
+    <script type="text/javascript" src=/js/toc.js></script>
+
+    <script src=/js/distro_switch.js></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <div class="container-fluid" style="margin-bottom: 10px">
+
+      <div align="center">
+        <br>
+        <table id="topnav-table">
+          <tr>
+            <td valign="middle">
+                ROS Resources:
+              <a href="http://wiki.ros.org/">Documentation</a>
+              |
+              <a href="http://wiki.ros.org/Support">Support</a>
+              |
+              <a href="http://discourse.ros.org/">Discussion Forum</a>
+              |
+              <a href="http://status.ros.org/">Service Status</a>
+              |
+              <a href="http://answers.ros.org/">Q&A answers.ros.org</a>
+            </td>
+          </tr>
+        </table> <!-- topnav-table -->
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12 col-md-9" style="margin-top: 8px">
+          <div class="row">
+            <!-- title -->
+            <div class="col-xs-12 col-sm-3 col-md-3" style="white-space:nowrap;">
+              <a class="site-title" href="/">ROS Index</a> <sup><a href="https://github.com/ros-infrastructure/rosindex/issues/new" style="vertical-align:super;" class="label label-warning" target="_blank">BETA</a></sup>
+            </div>
+
+            <!-- main links -->
+            <div class="col-xs-12 col-sm-9 col-md-9 text-right">
+              <ul class="list-inline" style="margin-bottom:0px;">
+                <li><a class="btn btn-link" href="/about">About</a></li>
+
+                <li class="dropdown">
+                  <button id="dLabel" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Index <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li><a href="/packages/page/1/time/">Package List</a></li>
+                    <li><a href="/repos/page/1/time/">Repository List</a></li>
+
+                    <li class="hidden" class="divider"></li>
+
+
+                    <li class="hidden"><a href="/srvs/">Nodes</a></li>
+                    <li class="hidden"><a href="/msgs/">Messages</a></li>
+                    <li class="hidden"><a href="/srvs/">Services</a></li>
+                    <li class="hidden"><a href="/srvs/">Plugins</a></li>
+
+                    <li class="divider"></li>
+
+                    <li><a href="/deps/">System Dependencies</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown disabled">
+                  <button id="dLabel" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Doc <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    
+                    <li>
+                      <a href="/doc/ros2">
+                        ROS2 Overview
+                      </a>
+                    </li>
+                    
+                    <li class="hidden" class="divider"></li>
+
+                    <li class="hidden"><a href="/doc/tutorials">Tutorials</a></li>
+                    <li class="hidden"><a href="/doc/readmes">Readmes</a></li>
+                    <li class="hidden"><a href="/doc/apis">APIs</a></li>
+                  </ul>
+                </li>
+
+                <li><a class="btn btn-link" href="/contribute">Contribute</a></li>
+                <li><a class="btn btn-link" href="/stats">Stats</a></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- searchbox -->
+        <div class="col-sm-12 col-md-3" style="margin-top: 12px">
+          <form id="top-searchbox" action="/search/" role="form" method="get">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" name="q" placeholder="Search ROS">
+              <span class="input-group-btn">
+                <button class="btn btn-default btn-sm" title="Search ROS" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+                <a href="https://lunrjs.com/guides/searching.html"
+                   title="Help to Search" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-question-sign"></span>
+                </a>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    <a class="site-title" href="/">ROS Index</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <a class="page-link" href="/packages">Packages</a>
+        <a class="page-link" href="/repos">Repositories</a>
+        <a class="page-link" href="/search">Search</a>
+      </div>
+    </nav>
+    -->
+
+  </div>
+  <script type="text/javascript">
+    $('#top-searchbox').submit(function() {
+        return $('#top-searchbox input:text').filter(function() {
+          return $(this).val() == "";
+        }).length == 0;
+    });
+  </script>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="container-fluid" style="margin-top:20px">
+  <div class="container-fluid">
+    <div class="row">
+      <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/repos">Repos</a></li>
+        <li class="active">rc_genicam_api</li>
+        <!--<li class="active">rc_genicam_api</li>-->
+      </ol>
+    </div>
+    <div class="row">
+      
+
+<div id="distro-switch" class="btn-group btn-group-justified" data-toggle="buttons">
+  
+    <label id="crystal-option" class="distro-button btn btn-xs btn-default" href="#crystal" data="crystal">
+      <input type="radio" name="options" id="crystal-radio" autocomplete="off"> crystal
+    </label>
+  
+    <label id="bouncy-option" class="distro-button btn btn-xs btn-default" href="#bouncy" data="bouncy">
+      <input type="radio" name="options" id="bouncy-radio" autocomplete="off"> bouncy
+    </label>
+  
+    <label id="melodic-option" class="distro-button btn btn-xs btn-primary" href="#melodic" data="melodic">
+      <input type="radio" name="options" id="melodic-radio" autocomplete="off"> melodic
+    </label>
+  
+    <label id="lunar-option" class="distro-button btn btn-xs btn-primary" href="#lunar" data="lunar">
+      <input type="radio" name="options" id="lunar-radio" autocomplete="off"> lunar
+    </label>
+  
+    <label id="kinetic-option" class="distro-button btn btn-xs btn-primary" href="#kinetic" data="kinetic">
+      <input type="radio" name="options" id="kinetic-radio" autocomplete="off"> kinetic
+    </label>
+  
+    <label id="indigo-option" class="distro-button btn btn-xs btn-primary" href="#indigo" data="indigo">
+      <input type="radio" name="options" id="indigo-radio" autocomplete="off"> indigo
+    </label>
+  
+
+  <!-- Older distros -->
+  <div class="btn-group dropdown">
+    <label type="button" class="btn btn-xs dropdown-toggle btn-default" data-toggle="dropdown" id="older-distro-button">
+        <input type="radio" name="options" autocomplete="off">
+      <span id="older-label">Older</span>
+      <span class="caret"></span>
+    </label>
+    <ul class="dropdown-menu" role="menu">
+      
+        <li data="ardent" id="ardent-option" class="disabled older-distro-option"  href="#ardent">
+          <a href="#ardent" data="ardent" id="ardent-button">ardent</a>
+        </li>
+      
+        <li data="jade" id="jade-option" class="disabled older-distro-option"  href="#jade">
+          <a href="#jade" data="jade" id="jade-button">jade</a>
+        </li>
+      
+        <li data="hydro" id="hydro-option" class="disabled older-distro-option"  href="#hydro">
+          <a href="#hydro" data="hydro" id="hydro-button">hydro</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+    <div class="row">
+      &nbsp;
+    </div>
+    <div class="row">
+      <div class="well well-sm">
+  <div>
+    
+  </div>
+  
+  <table class="table">
+    <tr>
+      <td width="100px" class="text-center">
+        <img style="width: 80px;" src="/assets/repo.png">
+      </td>
+      <td>
+        <h3><a style="text-decoration:none;" href="/r/rc_genicam_api">rc_genicam_api</a> <small>repository</small></h3>
+        
+      </td>
+    </tr>
+  </table>
+  <div class="top-buffer">
+    
+    
+<table class="table table-condensed instance-switch">
+  <tr>
+    <td>
+      <div id="repo-switch" class="btn-group btn-group-justified" role="group">
+        <div class="btn-group" style="width: 50px">
+          <a type="button" class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="left" title="View Instances" 
+            href="/repos/rc_genicam_api"><span class="glyphicon glyphicon-th"></span></a>
+        </div>
+        <div class="btn-group" style="width: 90%" role="group">
+          <div class="dropdown">
+            <!-- TODO: add disabled when only 1 version is known? -->
+            <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" title="Select Instance">
+              <span class="pull-left" style="width: 100%; text-align: left">
+                <span class="pull-right"><span class="caret"></span></span> 
+              <span class="glyphicon glyphicon-star"></span>
+                  github-roboception-rc_genicam_api
+              </span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              
+                <li role="presentation">
+                  <a id="github-roboception-rc_genicam_api" role="menuitem" tabindex="-1" href="/r/rc_genicam_api/github-roboception-rc_genicam_api" data="github-roboception-rc_genicam_api">
+                    <span class="glyphicon glyphicon-star"></span>
+                    github-roboception-rc_genicam_api
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+  </div>
+  <div class="top-buffer">
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="distro distro-crystal">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>crystal</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-bouncy">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>bouncy</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-melodic">
+    <div class="container-fluid">
+      
+        
+        <div class="panel panel-default">
+          
+          <div class="panel-heading"><h3 class="panel-title">Repository Summary</h3></div>
+          <div class="panel-body" style="overflow-x: auto">
+            
+
+  <table class="table table-condensed">
+    <tr>
+      <td style="width:100px;" class="text-right"><b>Checkout URI</b></td>
+      <td><a class="label label-default" href="https://github.com/roboception/rc_genicam_api.git">https://github.com/roboception/rc_genicam_api.git</a></td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>VCS Type</b></td>
+      <td><span class="label label-default">git</span></td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>VCS Version</b></td>
+      <td><span class="label label-default">master</span></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
+      <td>
+        
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-09
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>Dev Status</b></td>
+      <td>
+        
+          
+            <span class="label label-success">
+          
+          DEVELOPED
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>Released</b></td>
+      <td>
+        
+          <span class="label label-primary"><span class="glyphicon glyphicon-flash"></span> RELEASED
+        </span>
+      </td>
+    </tr>
+  </table>
+
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">Packages</h3></div>
+          <div class="panel-body">
+            
+            
+              <table class="table table-condensed table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Version</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                  <tr>
+                    <td><a href="/p/rc_genicam_api/github-roboception-rc_genicam_api">rc_genicam_api</a></td>
+                    <td>2.0.3</td>
+                  </tr>
+                
+                </tbody>
+              </table>
+            
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">README</h3></div>
+          <div class="panel-body">
+            
+              <div class="rendered-markdown">
+<h1 id="roboception-genicam-convenience-layer">Roboception GenICam Convenience Layer</h1>
+
+<p>This package combines the Roboception convenience layer for images with the
+GenICam reference implementation and a GigE Vision transport layer. It is a
+self contained package that permits configuration and image streaming of
+GenICam / GigE Vision 2.0 compatible cameras like the Roboception rc_visard.
+The API is based on C++ 11 and can be compiled under Linux and Windows.</p>
+
+<p>This package also provides some tools that can be called from the command line
+for discovering cameras, changing their configuration and streaming images.
+Although the tools are meant to be useful when working in a shell or in a
+script, their main purpose is to serve as example on how to use the API for
+reading and setting parameters, streaming and synchronizing images.</p>
+
+<h2 id="api-changes-in-version-2-0-0">API changes in version 2.0.0</h2>
+
+<p>Version 2.0.0 introduced some API changes that require minor changes of
+programs that use the classes Buffer, Image and ImageList.</p>
+
+<p>An object of class Buffer can now represents a single buffer as well as a
+multipart buffer, depending on the availability of multipart support in the
+used GenTL producer and the GigE vision device. Multipart buffers can contain
+more than one image. For simplicity of the interface, non-multipart buffers are
+now treated like multipart buffers with just one image.</p>
+
+<p>For writing code that is able to support multipart, after grabbing the buffer,
+the number of parts must be requested with the method
+Buffer::getNumberOfParts() and a loop must be added to cycle over all parts.
+All methods that access image specific data have been extended by a second
+parameter for providing the 0 based part index. The following existing
+methods have been changed:</p>
+
+<ul>
+<li>void    *Buffer::getBase(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getSize(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getWidth(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getHeight(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getXOffset(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getYOffset(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getXPadding(std::uint32_t part) const;</li>
+<li>bool     Buffer::getImagePresent(std::uint32_t part) const;</li>
+<li>uint64_t Buffer::getPixelFormat(std::uint32_t part) const;</li>
+<li>uint64_t Buffer::getPixelFormatNamespace(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getDeliveredImageHeight(std::uint32_t part) const;</li>
+<li>         Image::Image(const Buffer *buffer, std::uint32_t part);</li>
+<li>void     ImageList::add(const Buffer *buffer, size_t part);</li>
+</ul>
+
+<p>Another important change is to use the new method Buffer::getGlobalBase() for
+getting the address used to connect a buffer with the nodemap for accessing
+chunk parameters instead of Buffer::getBase(). Other, new methods include:</p>
+
+<ul>
+<li>void    *Buffer::getGlobalBase() const;</li>
+<li>size_t   Buffer::getGlobalSize() const;</li>
+<li>size_t   Buffer::getPartDataType(uint32_t part) const;</li>
+<li>uint64_t Buffer::getPartSourceID(std::uint32_t part) const;</li>
+</ul>
+
+<h2 id="compiling-and-installing">Compiling and Installing</h2>
+
+<h3 id="linux">Linux</h3>
+
+<p>Building follows the standard cmake build flow. Please make sure to set the
+install path <em>before</em> compiling. Otherwise it can happen that the transport
+layer is not found when calling the tools.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">cd &lt;main-directory&gt;
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=&lt;install-directory&gt; ..
+make
+make install
+</code></pre></div>
+<h3 id="windows-and-visual-studio">Windows and Visual Studio</h3>
+
+<p>Building is based on cmake. Therefore, cmake must be downloaded and installed
+according to the operating system from <a href="https://cmake.org/download/">https://cmake.org/download/</a> After
+starting the cmake-gui, the path to the rc_genicam_api source code directory
+as well as the build directory must be specified. It is common to choose
+a sub-directory of the source code directory and name it 'build' for the
+the temporary files that are created during the build process. After setting
+both paths, the 'Configure' button must be pressed. In the up-coming dialog,
+it can be chosen for which version of Visual Studio and which platform (e.g.
+Win64) the project files should be generated. The dialog is closed by pressing
+'Finish'.</p>
+
+<p>After configuration, the value of the key with the name <code>CMAKE_INSTALL_PREFIX</code>
+may be changed to an install directory. By default, the install directory is
+set to a path like <code>C:/Program Files/rc_genicam_api</code>. The 'Generate' button
+leads to creating the project file. Visual Studio can be opened with this
+project by pressing the 'Open Project' button.</p>
+
+<p>By default, a 'Debug' version will be compiled. This can be changed to 'Release'
+for compiling an optimized version. The package can then be created, e.g. by
+pressing 'F7'. For installing the compiled package, the 'INSTALL' target can be
+<em>created</em> in the project explorer.</p>
+
+<p>After installation, the install directory will contain three sub-directories.
+The 'bin' directory contains the tools, DLLs and the default transport layer
+including configuration. The 'include' and 'lib' sub-directories contain the
+headers and libraries for using the API in own programs.</p>
+
+<p>NOTE: For using the libraries in own projects, define the symbol
+<code>GENICAM_NO_AUTO_IMPLIB</code> in your project file to avoid linker problems with the
+GenICam libraries.</p>
+
+<h2 id="tools">Tools</h2>
+
+<p>The tools do not offer a graphical user interface. They are meant to be called
+from a shell (e.g. Power Shell under Windows) or script and controlled by
+command line parameters. Calling the tools without any parameters prints a help
+text on the standard output.</p>
+
+<p>NOTE: If any tool returns the error <code>No transport layers found in path ...</code>,
+then read the section 'Transport Layer' below.</p>
+
+<ul>
+<li><code>gc_info</code></li>
+</ul>
+
+<p>Lists all available systems (i.e. transport layers), interfaces and devices
+  with some information. If a device ID is given on the command line, then the
+  complete GenICam nodemap with all parameters and their current values are
+  listed.</p>
+
+<ul>
+<li><code>gc_config</code></li>
+</ul>
+
+<p>Can be used to list network specific information of GenICam compatible GigE
+  Vision 2 cameras. The network settings as well as all other parameters
+  provided via GenICam can be changed.</p>
+
+<ul>
+<li><code>gc_stream</code></li>
+</ul>
+
+<p>This tool shows how to configure and stream images from a camera. GenICam
+  features can be configured directly from the command line. Images will be
+  stored in PGM or PPM format, depending on the image format.</p>
+
+<p>Streams of the Roboception rc_visard can be enabled or disabled directly on
+  the command line by setting the appropriate GenICam parameters. The following
+  command enables intensity images, disables disparity images and stores 10
+  images:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">  gc_stream &lt;ID&gt; ComponentSelector=Intensity ComponentEnable=1 ComponentSelector=Disparity ComponentEnable=0 n=10
+</code></pre></div>
+<p>NOTE: Many image viewers can display PGM and PPM format. The sv tool of cvkit
+  (<a href="https://github.com/roboception/cvkit">https://github.com/roboception/cvkit</a>) can also be used.</p>
+
+<ul>
+<li><code>gc_pointcloud</code></li>
+</ul>
+
+<p>This tool streams the left image, disparity, confidence and error from a
+  Roboception rc_visard sensor. It takes the first set of time synchronous
+  images, computes a colored point cloud and stores it in PLY ASCII format.
+  This tool demonstrates how to synchronize different images according to
+  their timestamps.</p>
+
+<p>NOTE: PLY is a standard format for scanned 3D data that can be read by many
+  programs. The plyv tool of cvkit (<a href="https://github.com/roboception/cvkit">https://github.com/roboception/cvkit</a>) can
+  also be used for visualization.</p>
+
+<h2 id="device-id">Device ID</h2>
+
+<p>There are multiple ways of specifying an ID to identify a device.</p>
+
+<ol>
+<li><p>The serial number of the device serves as ID.
+Example: <code>02911931</code></p></li>
+<li>
+<p>The given ID can also be a user defined name. The user defined name is set
+to <code>rc_visard</code> by default and can be changed with:</p>
+
+<p>gc_config <id> -n <user-defined-name></user-defined-name></id></p>
+</li>
+</ol>
+
+<p>This way of identifying a device can fail if there is more than one device
+   with the same name. No device is returned in this case.</p>
+
+<p>If the user defined name contains one or more colons, it must be preceded by
+   a colon (e.g. <code>:my:name</code>) or an interface ID (see below).</p>
+
+<ol>
+<li>The device ID of the GenTL producer (see <code>Transport Layer</code> section below)
+may also be used. This ID is unique, but not persistent as it depends on the
+implementation of the GenTL producer. Thus, it can change after software
+updates. It often encodes the MAC address of the sensor in some way.</li>
+</ol>
+
+<p>Example: <code>00_14_2d_2c_6e_bb</code></p>
+
+<p>All three options can be seen in the output of <code>gc_config -l</code>.</p>
+
+<h3 id="optional-interface-id-prefix">Optional Interface ID prefix</h3>
+
+<p>If the given ID contains a colon (i.e. <code>:</code>), the part before the (first)
+colon is interpreted as interface ID and the part after the first colon is
+treated as device ID. This is the format that <code>gc_config -l</code> shows. A device
+with the given ID is only sought on the specified interface. This can be
+useful if there are several ways to reach a device from a host computer,
+e.g. via wireless and wired network connection, but a certain connection
+type (e.g. wired) is preferred due to higher bandwidth and lower latency.</p>
+
+<p>Examples: <code>eth0:00_14_2d_2c_6e_bb</code>, <code>eth1:02911931</code> or <code>wlan0:rc_visard</code></p>
+
+<p>A colon at the beginning of the ID effectively defines an empty interface ID
+which triggers looking on all interfaces.</p>
+
+<p>If the given ID does not contain a colon, the ID is interpreted as the
+device ID itself and is sought throughout all interfaces as well.</p>
+
+<h2 id="transport-layer">Transport Layer</h2>
+
+<p>The communication to the device is done through a so called transport layer
+(i.e. GenTL producer version 1.5 or higher). This package provides and installs
+a default transport layer that implements the GigE Vision protocol for
+connecting to the Roboception rc_visard. According to the GenICam
+specification, the transport layer has the suffix '.cti'. The environment
+variable <code>GENICAM_GENTL32_PATH</code> (for 32 bit applications) or <code>GENICAM_GENTL64_PATH</code>
+(for 64 bit applications) must contain a list of paths that contain transport
+layers. All transport layers are provided as systems to the application.</p>
+
+<p>For convenience, if the environment variable is not defined or empty, it is
+internally defined with the install path of the provided transport layer (as
+known at compile time!). If the package is not installed, the install path is
+changed after compilation or the package is moved to another location after
+installation, then the transport layer may not be found. In this case, the
+tools shows an error like e.g.:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">'No transport layers found in path /usr/lib/rc_genicam_api'
+</code></pre></div>
+<p>In this case, the corresponding environment variable (see above) must be set to
+the directory in which the transport layer (i.e. file with suffix '.cti')
+resides.</p>
+
+<p>Under Windows, as second fall back additionally to the install path, the
+directory of the executable is also added to the environment variable. Thus,
+the install directory can be moved, as long as the cti file stays in the same
+directory as the executable.</p>
+
+<h2 id="network-optimization-under-linux">Network Optimization under Linux</h2>
+
+<p>When images are received at a lower rate than set/exepected the most
+likely problem is that this (user space) library cannot read the many UDP
+packets fast enough resulting in incomplete image buffers.</p>
+
+<h3 id="test-script">Test Script</h3>
+
+<p>The <code>net_perf_check.sh</code> script performs some simple checks and should be run
+while or after streaming images via GigE Vision.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">./net_perf_check.sh --help
+</code></pre></div>
+<h3 id="jumbo-frames">Jumbo Frames</h3>
+
+<p>First of all increasing the UDP packet size (using jubo frames) is strongly
+recommended! Increase the MTU of your network interface to 9000, e.g.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">sudo ifconfig eth0 mtu 9000
+</code></pre></div>
+<p>Also make sure that all network devices/switches between your host and the
+sensor support this.</p>
+
+<h3 id="sysctl-settings">sysctl settings</h3>
+
+<p>There are several Linux sysctl options that can be modified to increase
+performance for the GigE Vision usecase.</p>
+
+<p>These values can be changed during runtime with <code>sysctl</code> or written to
+<code>/etc/sysctl.conf</code> for persistence across reboots.</p>
+
+<h4 id="rmem_max">rmem_max</h4>
+
+<p>If the number of UDP RcvbufErrors increases while streaming, increasing the
+socket receive buffer size usually fixes the problem.</p>
+
+<p>Check the RcvbufErrors with <code>net_perf_check.sh</code> or</p>
+<div class="highlight"><pre><code class="language-" data-lang="">netstat -us | grep RcvbufErrors
+</code></pre></div>
+<p>Increase max receive buffer size:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">sudo sysctl -w net.core.rmem_max=33554432
+</code></pre></div>
+<h4 id="softirq">softirq</h4>
+
+<p>Changing these values is usually not necessary, but can help if the kernel
+is already dropping packets.</p>
+
+<p>Check with <code>net_perf_check.sh</code> and increase the values if needed:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">sudo sysctl -w net.core.netdev_max_backlog=2000
+sudo sysctl -w net.core.netdev_budget=600
+</code></pre></div>
+</div>
+            
+          </div>
+        </div>
+
+        
+        
+      
+    </div>
+  </div>
+
+  <div class="distro distro-lunar">
+    <div class="container-fluid">
+      
+        
+        <div class="panel panel-default">
+          
+          <div class="panel-heading"><h3 class="panel-title">Repository Summary</h3></div>
+          <div class="panel-body" style="overflow-x: auto">
+            
+
+  <table class="table table-condensed">
+    <tr>
+      <td style="width:100px;" class="text-right"><b>Checkout URI</b></td>
+      <td><a class="label label-default" href="https://github.com/roboception/rc_genicam_api.git">https://github.com/roboception/rc_genicam_api.git</a></td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>VCS Type</b></td>
+      <td><span class="label label-default">git</span></td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>VCS Version</b></td>
+      <td><span class="label label-default">master</span></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
+      <td>
+        
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-09
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>Dev Status</b></td>
+      <td>
+        
+          
+            <span class="label label-success">
+          
+          DEVELOPED
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>Released</b></td>
+      <td>
+        
+          <span class="label label-primary"><span class="glyphicon glyphicon-flash"></span> RELEASED
+        </span>
+      </td>
+    </tr>
+  </table>
+
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">Packages</h3></div>
+          <div class="panel-body">
+            
+            
+              <table class="table table-condensed table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Version</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                  <tr>
+                    <td><a href="/p/rc_genicam_api/github-roboception-rc_genicam_api">rc_genicam_api</a></td>
+                    <td>2.0.3</td>
+                  </tr>
+                
+                </tbody>
+              </table>
+            
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">README</h3></div>
+          <div class="panel-body">
+            
+              <div class="rendered-markdown">
+<h1 id="roboception-genicam-convenience-layer">Roboception GenICam Convenience Layer</h1>
+
+<p>This package combines the Roboception convenience layer for images with the
+GenICam reference implementation and a GigE Vision transport layer. It is a
+self contained package that permits configuration and image streaming of
+GenICam / GigE Vision 2.0 compatible cameras like the Roboception rc_visard.
+The API is based on C++ 11 and can be compiled under Linux and Windows.</p>
+
+<p>This package also provides some tools that can be called from the command line
+for discovering cameras, changing their configuration and streaming images.
+Although the tools are meant to be useful when working in a shell or in a
+script, their main purpose is to serve as example on how to use the API for
+reading and setting parameters, streaming and synchronizing images.</p>
+
+<h2 id="api-changes-in-version-2-0-0">API changes in version 2.0.0</h2>
+
+<p>Version 2.0.0 introduced some API changes that require minor changes of
+programs that use the classes Buffer, Image and ImageList.</p>
+
+<p>An object of class Buffer can now represents a single buffer as well as a
+multipart buffer, depending on the availability of multipart support in the
+used GenTL producer and the GigE vision device. Multipart buffers can contain
+more than one image. For simplicity of the interface, non-multipart buffers are
+now treated like multipart buffers with just one image.</p>
+
+<p>For writing code that is able to support multipart, after grabbing the buffer,
+the number of parts must be requested with the method
+Buffer::getNumberOfParts() and a loop must be added to cycle over all parts.
+All methods that access image specific data have been extended by a second
+parameter for providing the 0 based part index. The following existing
+methods have been changed:</p>
+
+<ul>
+<li>void    *Buffer::getBase(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getSize(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getWidth(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getHeight(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getXOffset(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getYOffset(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getXPadding(std::uint32_t part) const;</li>
+<li>bool     Buffer::getImagePresent(std::uint32_t part) const;</li>
+<li>uint64_t Buffer::getPixelFormat(std::uint32_t part) const;</li>
+<li>uint64_t Buffer::getPixelFormatNamespace(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getDeliveredImageHeight(std::uint32_t part) const;</li>
+<li>         Image::Image(const Buffer *buffer, std::uint32_t part);</li>
+<li>void     ImageList::add(const Buffer *buffer, size_t part);</li>
+</ul>
+
+<p>Another important change is to use the new method Buffer::getGlobalBase() for
+getting the address used to connect a buffer with the nodemap for accessing
+chunk parameters instead of Buffer::getBase(). Other, new methods include:</p>
+
+<ul>
+<li>void    *Buffer::getGlobalBase() const;</li>
+<li>size_t   Buffer::getGlobalSize() const;</li>
+<li>size_t   Buffer::getPartDataType(uint32_t part) const;</li>
+<li>uint64_t Buffer::getPartSourceID(std::uint32_t part) const;</li>
+</ul>
+
+<h2 id="compiling-and-installing">Compiling and Installing</h2>
+
+<h3 id="linux">Linux</h3>
+
+<p>Building follows the standard cmake build flow. Please make sure to set the
+install path <em>before</em> compiling. Otherwise it can happen that the transport
+layer is not found when calling the tools.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">cd &lt;main-directory&gt;
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=&lt;install-directory&gt; ..
+make
+make install
+</code></pre></div>
+<h3 id="windows-and-visual-studio">Windows and Visual Studio</h3>
+
+<p>Building is based on cmake. Therefore, cmake must be downloaded and installed
+according to the operating system from <a href="https://cmake.org/download/">https://cmake.org/download/</a> After
+starting the cmake-gui, the path to the rc_genicam_api source code directory
+as well as the build directory must be specified. It is common to choose
+a sub-directory of the source code directory and name it 'build' for the
+the temporary files that are created during the build process. After setting
+both paths, the 'Configure' button must be pressed. In the up-coming dialog,
+it can be chosen for which version of Visual Studio and which platform (e.g.
+Win64) the project files should be generated. The dialog is closed by pressing
+'Finish'.</p>
+
+<p>After configuration, the value of the key with the name <code>CMAKE_INSTALL_PREFIX</code>
+may be changed to an install directory. By default, the install directory is
+set to a path like <code>C:/Program Files/rc_genicam_api</code>. The 'Generate' button
+leads to creating the project file. Visual Studio can be opened with this
+project by pressing the 'Open Project' button.</p>
+
+<p>By default, a 'Debug' version will be compiled. This can be changed to 'Release'
+for compiling an optimized version. The package can then be created, e.g. by
+pressing 'F7'. For installing the compiled package, the 'INSTALL' target can be
+<em>created</em> in the project explorer.</p>
+
+<p>After installation, the install directory will contain three sub-directories.
+The 'bin' directory contains the tools, DLLs and the default transport layer
+including configuration. The 'include' and 'lib' sub-directories contain the
+headers and libraries for using the API in own programs.</p>
+
+<p>NOTE: For using the libraries in own projects, define the symbol
+<code>GENICAM_NO_AUTO_IMPLIB</code> in your project file to avoid linker problems with the
+GenICam libraries.</p>
+
+<h2 id="tools">Tools</h2>
+
+<p>The tools do not offer a graphical user interface. They are meant to be called
+from a shell (e.g. Power Shell under Windows) or script and controlled by
+command line parameters. Calling the tools without any parameters prints a help
+text on the standard output.</p>
+
+<p>NOTE: If any tool returns the error <code>No transport layers found in path ...</code>,
+then read the section 'Transport Layer' below.</p>
+
+<ul>
+<li><code>gc_info</code></li>
+</ul>
+
+<p>Lists all available systems (i.e. transport layers), interfaces and devices
+  with some information. If a device ID is given on the command line, then the
+  complete GenICam nodemap with all parameters and their current values are
+  listed.</p>
+
+<ul>
+<li><code>gc_config</code></li>
+</ul>
+
+<p>Can be used to list network specific information of GenICam compatible GigE
+  Vision 2 cameras. The network settings as well as all other parameters
+  provided via GenICam can be changed.</p>
+
+<ul>
+<li><code>gc_stream</code></li>
+</ul>
+
+<p>This tool shows how to configure and stream images from a camera. GenICam
+  features can be configured directly from the command line. Images will be
+  stored in PGM or PPM format, depending on the image format.</p>
+
+<p>Streams of the Roboception rc_visard can be enabled or disabled directly on
+  the command line by setting the appropriate GenICam parameters. The following
+  command enables intensity images, disables disparity images and stores 10
+  images:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">  gc_stream &lt;ID&gt; ComponentSelector=Intensity ComponentEnable=1 ComponentSelector=Disparity ComponentEnable=0 n=10
+</code></pre></div>
+<p>NOTE: Many image viewers can display PGM and PPM format. The sv tool of cvkit
+  (<a href="https://github.com/roboception/cvkit">https://github.com/roboception/cvkit</a>) can also be used.</p>
+
+<ul>
+<li><code>gc_pointcloud</code></li>
+</ul>
+
+<p>This tool streams the left image, disparity, confidence and error from a
+  Roboception rc_visard sensor. It takes the first set of time synchronous
+  images, computes a colored point cloud and stores it in PLY ASCII format.
+  This tool demonstrates how to synchronize different images according to
+  their timestamps.</p>
+
+<p>NOTE: PLY is a standard format for scanned 3D data that can be read by many
+  programs. The plyv tool of cvkit (<a href="https://github.com/roboception/cvkit">https://github.com/roboception/cvkit</a>) can
+  also be used for visualization.</p>
+
+<h2 id="device-id">Device ID</h2>
+
+<p>There are multiple ways of specifying an ID to identify a device.</p>
+
+<ol>
+<li><p>The serial number of the device serves as ID.
+Example: <code>02911931</code></p></li>
+<li>
+<p>The given ID can also be a user defined name. The user defined name is set
+to <code>rc_visard</code> by default and can be changed with:</p>
+
+<p>gc_config <id> -n <user-defined-name></user-defined-name></id></p>
+</li>
+</ol>
+
+<p>This way of identifying a device can fail if there is more than one device
+   with the same name. No device is returned in this case.</p>
+
+<p>If the user defined name contains one or more colons, it must be preceded by
+   a colon (e.g. <code>:my:name</code>) or an interface ID (see below).</p>
+
+<ol>
+<li>The device ID of the GenTL producer (see <code>Transport Layer</code> section below)
+may also be used. This ID is unique, but not persistent as it depends on the
+implementation of the GenTL producer. Thus, it can change after software
+updates. It often encodes the MAC address of the sensor in some way.</li>
+</ol>
+
+<p>Example: <code>00_14_2d_2c_6e_bb</code></p>
+
+<p>All three options can be seen in the output of <code>gc_config -l</code>.</p>
+
+<h3 id="optional-interface-id-prefix">Optional Interface ID prefix</h3>
+
+<p>If the given ID contains a colon (i.e. <code>:</code>), the part before the (first)
+colon is interpreted as interface ID and the part after the first colon is
+treated as device ID. This is the format that <code>gc_config -l</code> shows. A device
+with the given ID is only sought on the specified interface. This can be
+useful if there are several ways to reach a device from a host computer,
+e.g. via wireless and wired network connection, but a certain connection
+type (e.g. wired) is preferred due to higher bandwidth and lower latency.</p>
+
+<p>Examples: <code>eth0:00_14_2d_2c_6e_bb</code>, <code>eth1:02911931</code> or <code>wlan0:rc_visard</code></p>
+
+<p>A colon at the beginning of the ID effectively defines an empty interface ID
+which triggers looking on all interfaces.</p>
+
+<p>If the given ID does not contain a colon, the ID is interpreted as the
+device ID itself and is sought throughout all interfaces as well.</p>
+
+<h2 id="transport-layer">Transport Layer</h2>
+
+<p>The communication to the device is done through a so called transport layer
+(i.e. GenTL producer version 1.5 or higher). This package provides and installs
+a default transport layer that implements the GigE Vision protocol for
+connecting to the Roboception rc_visard. According to the GenICam
+specification, the transport layer has the suffix '.cti'. The environment
+variable <code>GENICAM_GENTL32_PATH</code> (for 32 bit applications) or <code>GENICAM_GENTL64_PATH</code>
+(for 64 bit applications) must contain a list of paths that contain transport
+layers. All transport layers are provided as systems to the application.</p>
+
+<p>For convenience, if the environment variable is not defined or empty, it is
+internally defined with the install path of the provided transport layer (as
+known at compile time!). If the package is not installed, the install path is
+changed after compilation or the package is moved to another location after
+installation, then the transport layer may not be found. In this case, the
+tools shows an error like e.g.:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">'No transport layers found in path /usr/lib/rc_genicam_api'
+</code></pre></div>
+<p>In this case, the corresponding environment variable (see above) must be set to
+the directory in which the transport layer (i.e. file with suffix '.cti')
+resides.</p>
+
+<p>Under Windows, as second fall back additionally to the install path, the
+directory of the executable is also added to the environment variable. Thus,
+the install directory can be moved, as long as the cti file stays in the same
+directory as the executable.</p>
+
+<h2 id="network-optimization-under-linux">Network Optimization under Linux</h2>
+
+<p>When images are received at a lower rate than set/exepected the most
+likely problem is that this (user space) library cannot read the many UDP
+packets fast enough resulting in incomplete image buffers.</p>
+
+<h3 id="test-script">Test Script</h3>
+
+<p>The <code>net_perf_check.sh</code> script performs some simple checks and should be run
+while or after streaming images via GigE Vision.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">./net_perf_check.sh --help
+</code></pre></div>
+<h3 id="jumbo-frames">Jumbo Frames</h3>
+
+<p>First of all increasing the UDP packet size (using jubo frames) is strongly
+recommended! Increase the MTU of your network interface to 9000, e.g.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">sudo ifconfig eth0 mtu 9000
+</code></pre></div>
+<p>Also make sure that all network devices/switches between your host and the
+sensor support this.</p>
+
+<h3 id="sysctl-settings">sysctl settings</h3>
+
+<p>There are several Linux sysctl options that can be modified to increase
+performance for the GigE Vision usecase.</p>
+
+<p>These values can be changed during runtime with <code>sysctl</code> or written to
+<code>/etc/sysctl.conf</code> for persistence across reboots.</p>
+
+<h4 id="rmem_max">rmem_max</h4>
+
+<p>If the number of UDP RcvbufErrors increases while streaming, increasing the
+socket receive buffer size usually fixes the problem.</p>
+
+<p>Check the RcvbufErrors with <code>net_perf_check.sh</code> or</p>
+<div class="highlight"><pre><code class="language-" data-lang="">netstat -us | grep RcvbufErrors
+</code></pre></div>
+<p>Increase max receive buffer size:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">sudo sysctl -w net.core.rmem_max=33554432
+</code></pre></div>
+<h4 id="softirq">softirq</h4>
+
+<p>Changing these values is usually not necessary, but can help if the kernel
+is already dropping packets.</p>
+
+<p>Check with <code>net_perf_check.sh</code> and increase the values if needed:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">sudo sysctl -w net.core.netdev_max_backlog=2000
+sudo sysctl -w net.core.netdev_budget=600
+</code></pre></div>
+</div>
+            
+          </div>
+        </div>
+
+        
+        
+      
+    </div>
+  </div>
+
+  <div class="distro distro-kinetic">
+    <div class="container-fluid">
+      
+        
+        <div class="panel panel-default">
+          
+          <div class="panel-heading"><h3 class="panel-title">Repository Summary</h3></div>
+          <div class="panel-body" style="overflow-x: auto">
+            
+
+  <table class="table table-condensed">
+    <tr>
+      <td style="width:100px;" class="text-right"><b>Checkout URI</b></td>
+      <td><a class="label label-default" href="https://github.com/roboception/rc_genicam_api.git">https://github.com/roboception/rc_genicam_api.git</a></td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>VCS Type</b></td>
+      <td><span class="label label-default">git</span></td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>VCS Version</b></td>
+      <td><span class="label label-default">master</span></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
+      <td>
+        
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-09
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>Dev Status</b></td>
+      <td>
+        
+          
+            <span class="label label-success">
+          
+          DEVELOPED
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>Released</b></td>
+      <td>
+        
+          <span class="label label-primary"><span class="glyphicon glyphicon-flash"></span> RELEASED
+        </span>
+      </td>
+    </tr>
+  </table>
+
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">Packages</h3></div>
+          <div class="panel-body">
+            
+            
+              <table class="table table-condensed table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Version</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                  <tr>
+                    <td><a href="/p/rc_genicam_api/github-roboception-rc_genicam_api">rc_genicam_api</a></td>
+                    <td>2.0.3</td>
+                  </tr>
+                
+                </tbody>
+              </table>
+            
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">README</h3></div>
+          <div class="panel-body">
+            
+              <div class="rendered-markdown">
+<h1 id="roboception-genicam-convenience-layer">Roboception GenICam Convenience Layer</h1>
+
+<p>This package combines the Roboception convenience layer for images with the
+GenICam reference implementation and a GigE Vision transport layer. It is a
+self contained package that permits configuration and image streaming of
+GenICam / GigE Vision 2.0 compatible cameras like the Roboception rc_visard.
+The API is based on C++ 11 and can be compiled under Linux and Windows.</p>
+
+<p>This package also provides some tools that can be called from the command line
+for discovering cameras, changing their configuration and streaming images.
+Although the tools are meant to be useful when working in a shell or in a
+script, their main purpose is to serve as example on how to use the API for
+reading and setting parameters, streaming and synchronizing images.</p>
+
+<h2 id="api-changes-in-version-2-0-0">API changes in version 2.0.0</h2>
+
+<p>Version 2.0.0 introduced some API changes that require minor changes of
+programs that use the classes Buffer, Image and ImageList.</p>
+
+<p>An object of class Buffer can now represents a single buffer as well as a
+multipart buffer, depending on the availability of multipart support in the
+used GenTL producer and the GigE vision device. Multipart buffers can contain
+more than one image. For simplicity of the interface, non-multipart buffers are
+now treated like multipart buffers with just one image.</p>
+
+<p>For writing code that is able to support multipart, after grabbing the buffer,
+the number of parts must be requested with the method
+Buffer::getNumberOfParts() and a loop must be added to cycle over all parts.
+All methods that access image specific data have been extended by a second
+parameter for providing the 0 based part index. The following existing
+methods have been changed:</p>
+
+<ul>
+<li>void    *Buffer::getBase(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getSize(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getWidth(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getHeight(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getXOffset(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getYOffset(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getXPadding(std::uint32_t part) const;</li>
+<li>bool     Buffer::getImagePresent(std::uint32_t part) const;</li>
+<li>uint64_t Buffer::getPixelFormat(std::uint32_t part) const;</li>
+<li>uint64_t Buffer::getPixelFormatNamespace(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getDeliveredImageHeight(std::uint32_t part) const;</li>
+<li>         Image::Image(const Buffer *buffer, std::uint32_t part);</li>
+<li>void     ImageList::add(const Buffer *buffer, size_t part);</li>
+</ul>
+
+<p>Another important change is to use the new method Buffer::getGlobalBase() for
+getting the address used to connect a buffer with the nodemap for accessing
+chunk parameters instead of Buffer::getBase(). Other, new methods include:</p>
+
+<ul>
+<li>void    *Buffer::getGlobalBase() const;</li>
+<li>size_t   Buffer::getGlobalSize() const;</li>
+<li>size_t   Buffer::getPartDataType(uint32_t part) const;</li>
+<li>uint64_t Buffer::getPartSourceID(std::uint32_t part) const;</li>
+</ul>
+
+<h2 id="compiling-and-installing">Compiling and Installing</h2>
+
+<h3 id="linux">Linux</h3>
+
+<p>Building follows the standard cmake build flow. Please make sure to set the
+install path <em>before</em> compiling. Otherwise it can happen that the transport
+layer is not found when calling the tools.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">cd &lt;main-directory&gt;
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=&lt;install-directory&gt; ..
+make
+make install
+</code></pre></div>
+<h3 id="windows-and-visual-studio">Windows and Visual Studio</h3>
+
+<p>Building is based on cmake. Therefore, cmake must be downloaded and installed
+according to the operating system from <a href="https://cmake.org/download/">https://cmake.org/download/</a> After
+starting the cmake-gui, the path to the rc_genicam_api source code directory
+as well as the build directory must be specified. It is common to choose
+a sub-directory of the source code directory and name it 'build' for the
+the temporary files that are created during the build process. After setting
+both paths, the 'Configure' button must be pressed. In the up-coming dialog,
+it can be chosen for which version of Visual Studio and which platform (e.g.
+Win64) the project files should be generated. The dialog is closed by pressing
+'Finish'.</p>
+
+<p>After configuration, the value of the key with the name <code>CMAKE_INSTALL_PREFIX</code>
+may be changed to an install directory. By default, the install directory is
+set to a path like <code>C:/Program Files/rc_genicam_api</code>. The 'Generate' button
+leads to creating the project file. Visual Studio can be opened with this
+project by pressing the 'Open Project' button.</p>
+
+<p>By default, a 'Debug' version will be compiled. This can be changed to 'Release'
+for compiling an optimized version. The package can then be created, e.g. by
+pressing 'F7'. For installing the compiled package, the 'INSTALL' target can be
+<em>created</em> in the project explorer.</p>
+
+<p>After installation, the install directory will contain three sub-directories.
+The 'bin' directory contains the tools, DLLs and the default transport layer
+including configuration. The 'include' and 'lib' sub-directories contain the
+headers and libraries for using the API in own programs.</p>
+
+<p>NOTE: For using the libraries in own projects, define the symbol
+<code>GENICAM_NO_AUTO_IMPLIB</code> in your project file to avoid linker problems with the
+GenICam libraries.</p>
+
+<h2 id="tools">Tools</h2>
+
+<p>The tools do not offer a graphical user interface. They are meant to be called
+from a shell (e.g. Power Shell under Windows) or script and controlled by
+command line parameters. Calling the tools without any parameters prints a help
+text on the standard output.</p>
+
+<p>NOTE: If any tool returns the error <code>No transport layers found in path ...</code>,
+then read the section 'Transport Layer' below.</p>
+
+<ul>
+<li><code>gc_info</code></li>
+</ul>
+
+<p>Lists all available systems (i.e. transport layers), interfaces and devices
+  with some information. If a device ID is given on the command line, then the
+  complete GenICam nodemap with all parameters and their current values are
+  listed.</p>
+
+<ul>
+<li><code>gc_config</code></li>
+</ul>
+
+<p>Can be used to list network specific information of GenICam compatible GigE
+  Vision 2 cameras. The network settings as well as all other parameters
+  provided via GenICam can be changed.</p>
+
+<ul>
+<li><code>gc_stream</code></li>
+</ul>
+
+<p>This tool shows how to configure and stream images from a camera. GenICam
+  features can be configured directly from the command line. Images will be
+  stored in PGM or PPM format, depending on the image format.</p>
+
+<p>Streams of the Roboception rc_visard can be enabled or disabled directly on
+  the command line by setting the appropriate GenICam parameters. The following
+  command enables intensity images, disables disparity images and stores 10
+  images:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">  gc_stream &lt;ID&gt; ComponentSelector=Intensity ComponentEnable=1 ComponentSelector=Disparity ComponentEnable=0 n=10
+</code></pre></div>
+<p>NOTE: Many image viewers can display PGM and PPM format. The sv tool of cvkit
+  (<a href="https://github.com/roboception/cvkit">https://github.com/roboception/cvkit</a>) can also be used.</p>
+
+<ul>
+<li><code>gc_pointcloud</code></li>
+</ul>
+
+<p>This tool streams the left image, disparity, confidence and error from a
+  Roboception rc_visard sensor. It takes the first set of time synchronous
+  images, computes a colored point cloud and stores it in PLY ASCII format.
+  This tool demonstrates how to synchronize different images according to
+  their timestamps.</p>
+
+<p>NOTE: PLY is a standard format for scanned 3D data that can be read by many
+  programs. The plyv tool of cvkit (<a href="https://github.com/roboception/cvkit">https://github.com/roboception/cvkit</a>) can
+  also be used for visualization.</p>
+
+<h2 id="device-id">Device ID</h2>
+
+<p>There are multiple ways of specifying an ID to identify a device.</p>
+
+<ol>
+<li><p>The serial number of the device serves as ID.
+Example: <code>02911931</code></p></li>
+<li>
+<p>The given ID can also be a user defined name. The user defined name is set
+to <code>rc_visard</code> by default and can be changed with:</p>
+
+<p>gc_config <id> -n <user-defined-name></user-defined-name></id></p>
+</li>
+</ol>
+
+<p>This way of identifying a device can fail if there is more than one device
+   with the same name. No device is returned in this case.</p>
+
+<p>If the user defined name contains one or more colons, it must be preceded by
+   a colon (e.g. <code>:my:name</code>) or an interface ID (see below).</p>
+
+<ol>
+<li>The device ID of the GenTL producer (see <code>Transport Layer</code> section below)
+may also be used. This ID is unique, but not persistent as it depends on the
+implementation of the GenTL producer. Thus, it can change after software
+updates. It often encodes the MAC address of the sensor in some way.</li>
+</ol>
+
+<p>Example: <code>00_14_2d_2c_6e_bb</code></p>
+
+<p>All three options can be seen in the output of <code>gc_config -l</code>.</p>
+
+<h3 id="optional-interface-id-prefix">Optional Interface ID prefix</h3>
+
+<p>If the given ID contains a colon (i.e. <code>:</code>), the part before the (first)
+colon is interpreted as interface ID and the part after the first colon is
+treated as device ID. This is the format that <code>gc_config -l</code> shows. A device
+with the given ID is only sought on the specified interface. This can be
+useful if there are several ways to reach a device from a host computer,
+e.g. via wireless and wired network connection, but a certain connection
+type (e.g. wired) is preferred due to higher bandwidth and lower latency.</p>
+
+<p>Examples: <code>eth0:00_14_2d_2c_6e_bb</code>, <code>eth1:02911931</code> or <code>wlan0:rc_visard</code></p>
+
+<p>A colon at the beginning of the ID effectively defines an empty interface ID
+which triggers looking on all interfaces.</p>
+
+<p>If the given ID does not contain a colon, the ID is interpreted as the
+device ID itself and is sought throughout all interfaces as well.</p>
+
+<h2 id="transport-layer">Transport Layer</h2>
+
+<p>The communication to the device is done through a so called transport layer
+(i.e. GenTL producer version 1.5 or higher). This package provides and installs
+a default transport layer that implements the GigE Vision protocol for
+connecting to the Roboception rc_visard. According to the GenICam
+specification, the transport layer has the suffix '.cti'. The environment
+variable <code>GENICAM_GENTL32_PATH</code> (for 32 bit applications) or <code>GENICAM_GENTL64_PATH</code>
+(for 64 bit applications) must contain a list of paths that contain transport
+layers. All transport layers are provided as systems to the application.</p>
+
+<p>For convenience, if the environment variable is not defined or empty, it is
+internally defined with the install path of the provided transport layer (as
+known at compile time!). If the package is not installed, the install path is
+changed after compilation or the package is moved to another location after
+installation, then the transport layer may not be found. In this case, the
+tools shows an error like e.g.:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">'No transport layers found in path /usr/lib/rc_genicam_api'
+</code></pre></div>
+<p>In this case, the corresponding environment variable (see above) must be set to
+the directory in which the transport layer (i.e. file with suffix '.cti')
+resides.</p>
+
+<p>Under Windows, as second fall back additionally to the install path, the
+directory of the executable is also added to the environment variable. Thus,
+the install directory can be moved, as long as the cti file stays in the same
+directory as the executable.</p>
+
+<h2 id="network-optimization-under-linux">Network Optimization under Linux</h2>
+
+<p>When images are received at a lower rate than set/exepected the most
+likely problem is that this (user space) library cannot read the many UDP
+packets fast enough resulting in incomplete image buffers.</p>
+
+<h3 id="test-script">Test Script</h3>
+
+<p>The <code>net_perf_check.sh</code> script performs some simple checks and should be run
+while or after streaming images via GigE Vision.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">./net_perf_check.sh --help
+</code></pre></div>
+<h3 id="jumbo-frames">Jumbo Frames</h3>
+
+<p>First of all increasing the UDP packet size (using jubo frames) is strongly
+recommended! Increase the MTU of your network interface to 9000, e.g.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">sudo ifconfig eth0 mtu 9000
+</code></pre></div>
+<p>Also make sure that all network devices/switches between your host and the
+sensor support this.</p>
+
+<h3 id="sysctl-settings">sysctl settings</h3>
+
+<p>There are several Linux sysctl options that can be modified to increase
+performance for the GigE Vision usecase.</p>
+
+<p>These values can be changed during runtime with <code>sysctl</code> or written to
+<code>/etc/sysctl.conf</code> for persistence across reboots.</p>
+
+<h4 id="rmem_max">rmem_max</h4>
+
+<p>If the number of UDP RcvbufErrors increases while streaming, increasing the
+socket receive buffer size usually fixes the problem.</p>
+
+<p>Check the RcvbufErrors with <code>net_perf_check.sh</code> or</p>
+<div class="highlight"><pre><code class="language-" data-lang="">netstat -us | grep RcvbufErrors
+</code></pre></div>
+<p>Increase max receive buffer size:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">sudo sysctl -w net.core.rmem_max=33554432
+</code></pre></div>
+<h4 id="softirq">softirq</h4>
+
+<p>Changing these values is usually not necessary, but can help if the kernel
+is already dropping packets.</p>
+
+<p>Check with <code>net_perf_check.sh</code> and increase the values if needed:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">sudo sysctl -w net.core.netdev_max_backlog=2000
+sudo sysctl -w net.core.netdev_budget=600
+</code></pre></div>
+</div>
+            
+          </div>
+        </div>
+
+        
+        
+      
+    </div>
+  </div>
+
+  <div class="distro distro-indigo">
+    <div class="container-fluid">
+      
+        
+        <div class="panel panel-default">
+          
+          <div class="panel-heading"><h3 class="panel-title">Repository Summary</h3></div>
+          <div class="panel-body" style="overflow-x: auto">
+            
+
+  <table class="table table-condensed">
+    <tr>
+      <td style="width:100px;" class="text-right"><b>Checkout URI</b></td>
+      <td><a class="label label-default" href="https://github.com/roboception/rc_genicam_api.git">https://github.com/roboception/rc_genicam_api.git</a></td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>VCS Type</b></td>
+      <td><span class="label label-default">git</span></td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>VCS Version</b></td>
+      <td><span class="label label-default">master</span></td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
+      <td>
+        
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-09
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>Dev Status</b></td>
+      <td>
+        
+          
+            <span class="label label-success">
+          
+          DEVELOPED
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right"><b>Released</b></td>
+      <td>
+        
+          <span class="label label-primary"><span class="glyphicon glyphicon-flash"></span> RELEASED
+        </span>
+      </td>
+    </tr>
+  </table>
+
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">Packages</h3></div>
+          <div class="panel-body">
+            
+            
+              <table class="table table-condensed table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Version</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                  <tr>
+                    <td><a href="/p/rc_genicam_api/github-roboception-rc_genicam_api">rc_genicam_api</a></td>
+                    <td>2.0.3</td>
+                  </tr>
+                
+                </tbody>
+              </table>
+            
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">README</h3></div>
+          <div class="panel-body">
+            
+              <div class="rendered-markdown">
+<h1 id="roboception-genicam-convenience-layer">Roboception GenICam Convenience Layer</h1>
+
+<p>This package combines the Roboception convenience layer for images with the
+GenICam reference implementation and a GigE Vision transport layer. It is a
+self contained package that permits configuration and image streaming of
+GenICam / GigE Vision 2.0 compatible cameras like the Roboception rc_visard.
+The API is based on C++ 11 and can be compiled under Linux and Windows.</p>
+
+<p>This package also provides some tools that can be called from the command line
+for discovering cameras, changing their configuration and streaming images.
+Although the tools are meant to be useful when working in a shell or in a
+script, their main purpose is to serve as example on how to use the API for
+reading and setting parameters, streaming and synchronizing images.</p>
+
+<h2 id="api-changes-in-version-2-0-0">API changes in version 2.0.0</h2>
+
+<p>Version 2.0.0 introduced some API changes that require minor changes of
+programs that use the classes Buffer, Image and ImageList.</p>
+
+<p>An object of class Buffer can now represents a single buffer as well as a
+multipart buffer, depending on the availability of multipart support in the
+used GenTL producer and the GigE vision device. Multipart buffers can contain
+more than one image. For simplicity of the interface, non-multipart buffers are
+now treated like multipart buffers with just one image.</p>
+
+<p>For writing code that is able to support multipart, after grabbing the buffer,
+the number of parts must be requested with the method
+Buffer::getNumberOfParts() and a loop must be added to cycle over all parts.
+All methods that access image specific data have been extended by a second
+parameter for providing the 0 based part index. The following existing
+methods have been changed:</p>
+
+<ul>
+<li>void    *Buffer::getBase(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getSize(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getWidth(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getHeight(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getXOffset(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getYOffset(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getXPadding(std::uint32_t part) const;</li>
+<li>bool     Buffer::getImagePresent(std::uint32_t part) const;</li>
+<li>uint64_t Buffer::getPixelFormat(std::uint32_t part) const;</li>
+<li>uint64_t Buffer::getPixelFormatNamespace(std::uint32_t part) const;</li>
+<li>size_t   Buffer::getDeliveredImageHeight(std::uint32_t part) const;</li>
+<li>         Image::Image(const Buffer *buffer, std::uint32_t part);</li>
+<li>void     ImageList::add(const Buffer *buffer, size_t part);</li>
+</ul>
+
+<p>Another important change is to use the new method Buffer::getGlobalBase() for
+getting the address used to connect a buffer with the nodemap for accessing
+chunk parameters instead of Buffer::getBase(). Other, new methods include:</p>
+
+<ul>
+<li>void    *Buffer::getGlobalBase() const;</li>
+<li>size_t   Buffer::getGlobalSize() const;</li>
+<li>size_t   Buffer::getPartDataType(uint32_t part) const;</li>
+<li>uint64_t Buffer::getPartSourceID(std::uint32_t part) const;</li>
+</ul>
+
+<h2 id="compiling-and-installing">Compiling and Installing</h2>
+
+<h3 id="linux">Linux</h3>
+
+<p>Building follows the standard cmake build flow. Please make sure to set the
+install path <em>before</em> compiling. Otherwise it can happen that the transport
+layer is not found when calling the tools.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">cd &lt;main-directory&gt;
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=&lt;install-directory&gt; ..
+make
+make install
+</code></pre></div>
+<h3 id="windows-and-visual-studio">Windows and Visual Studio</h3>
+
+<p>Building is based on cmake. Therefore, cmake must be downloaded and installed
+according to the operating system from <a href="https://cmake.org/download/">https://cmake.org/download/</a> After
+starting the cmake-gui, the path to the rc_genicam_api source code directory
+as well as the build directory must be specified. It is common to choose
+a sub-directory of the source code directory and name it 'build' for the
+the temporary files that are created during the build process. After setting
+both paths, the 'Configure' button must be pressed. In the up-coming dialog,
+it can be chosen for which version of Visual Studio and which platform (e.g.
+Win64) the project files should be generated. The dialog is closed by pressing
+'Finish'.</p>
+
+<p>After configuration, the value of the key with the name <code>CMAKE_INSTALL_PREFIX</code>
+may be changed to an install directory. By default, the install directory is
+set to a path like <code>C:/Program Files/rc_genicam_api</code>. The 'Generate' button
+leads to creating the project file. Visual Studio can be opened with this
+project by pressing the 'Open Project' button.</p>
+
+<p>By default, a 'Debug' version will be compiled. This can be changed to 'Release'
+for compiling an optimized version. The package can then be created, e.g. by
+pressing 'F7'. For installing the compiled package, the 'INSTALL' target can be
+<em>created</em> in the project explorer.</p>
+
+<p>After installation, the install directory will contain three sub-directories.
+The 'bin' directory contains the tools, DLLs and the default transport layer
+including configuration. The 'include' and 'lib' sub-directories contain the
+headers and libraries for using the API in own programs.</p>
+
+<p>NOTE: For using the libraries in own projects, define the symbol
+<code>GENICAM_NO_AUTO_IMPLIB</code> in your project file to avoid linker problems with the
+GenICam libraries.</p>
+
+<h2 id="tools">Tools</h2>
+
+<p>The tools do not offer a graphical user interface. They are meant to be called
+from a shell (e.g. Power Shell under Windows) or script and controlled by
+command line parameters. Calling the tools without any parameters prints a help
+text on the standard output.</p>
+
+<p>NOTE: If any tool returns the error <code>No transport layers found in path ...</code>,
+then read the section 'Transport Layer' below.</p>
+
+<ul>
+<li><code>gc_info</code></li>
+</ul>
+
+<p>Lists all available systems (i.e. transport layers), interfaces and devices
+  with some information. If a device ID is given on the command line, then the
+  complete GenICam nodemap with all parameters and their current values are
+  listed.</p>
+
+<ul>
+<li><code>gc_config</code></li>
+</ul>
+
+<p>Can be used to list network specific information of GenICam compatible GigE
+  Vision 2 cameras. The network settings as well as all other parameters
+  provided via GenICam can be changed.</p>
+
+<ul>
+<li><code>gc_stream</code></li>
+</ul>
+
+<p>This tool shows how to configure and stream images from a camera. GenICam
+  features can be configured directly from the command line. Images will be
+  stored in PGM or PPM format, depending on the image format.</p>
+
+<p>Streams of the Roboception rc_visard can be enabled or disabled directly on
+  the command line by setting the appropriate GenICam parameters. The following
+  command enables intensity images, disables disparity images and stores 10
+  images:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">  gc_stream &lt;ID&gt; ComponentSelector=Intensity ComponentEnable=1 ComponentSelector=Disparity ComponentEnable=0 n=10
+</code></pre></div>
+<p>NOTE: Many image viewers can display PGM and PPM format. The sv tool of cvkit
+  (<a href="https://github.com/roboception/cvkit">https://github.com/roboception/cvkit</a>) can also be used.</p>
+
+<ul>
+<li><code>gc_pointcloud</code></li>
+</ul>
+
+<p>This tool streams the left image, disparity, confidence and error from a
+  Roboception rc_visard sensor. It takes the first set of time synchronous
+  images, computes a colored point cloud and stores it in PLY ASCII format.
+  This tool demonstrates how to synchronize different images according to
+  their timestamps.</p>
+
+<p>NOTE: PLY is a standard format for scanned 3D data that can be read by many
+  programs. The plyv tool of cvkit (<a href="https://github.com/roboception/cvkit">https://github.com/roboception/cvkit</a>) can
+  also be used for visualization.</p>
+
+<h2 id="device-id">Device ID</h2>
+
+<p>There are multiple ways of specifying an ID to identify a device.</p>
+
+<ol>
+<li><p>The serial number of the device serves as ID.
+Example: <code>02911931</code></p></li>
+<li>
+<p>The given ID can also be a user defined name. The user defined name is set
+to <code>rc_visard</code> by default and can be changed with:</p>
+
+<p>gc_config <id> -n <user-defined-name></user-defined-name></id></p>
+</li>
+</ol>
+
+<p>This way of identifying a device can fail if there is more than one device
+   with the same name. No device is returned in this case.</p>
+
+<p>If the user defined name contains one or more colons, it must be preceded by
+   a colon (e.g. <code>:my:name</code>) or an interface ID (see below).</p>
+
+<ol>
+<li>The device ID of the GenTL producer (see <code>Transport Layer</code> section below)
+may also be used. This ID is unique, but not persistent as it depends on the
+implementation of the GenTL producer. Thus, it can change after software
+updates. It often encodes the MAC address of the sensor in some way.</li>
+</ol>
+
+<p>Example: <code>00_14_2d_2c_6e_bb</code></p>
+
+<p>All three options can be seen in the output of <code>gc_config -l</code>.</p>
+
+<h3 id="optional-interface-id-prefix">Optional Interface ID prefix</h3>
+
+<p>If the given ID contains a colon (i.e. <code>:</code>), the part before the (first)
+colon is interpreted as interface ID and the part after the first colon is
+treated as device ID. This is the format that <code>gc_config -l</code> shows. A device
+with the given ID is only sought on the specified interface. This can be
+useful if there are several ways to reach a device from a host computer,
+e.g. via wireless and wired network connection, but a certain connection
+type (e.g. wired) is preferred due to higher bandwidth and lower latency.</p>
+
+<p>Examples: <code>eth0:00_14_2d_2c_6e_bb</code>, <code>eth1:02911931</code> or <code>wlan0:rc_visard</code></p>
+
+<p>A colon at the beginning of the ID effectively defines an empty interface ID
+which triggers looking on all interfaces.</p>
+
+<p>If the given ID does not contain a colon, the ID is interpreted as the
+device ID itself and is sought throughout all interfaces as well.</p>
+
+<h2 id="transport-layer">Transport Layer</h2>
+
+<p>The communication to the device is done through a so called transport layer
+(i.e. GenTL producer version 1.5 or higher). This package provides and installs
+a default transport layer that implements the GigE Vision protocol for
+connecting to the Roboception rc_visard. According to the GenICam
+specification, the transport layer has the suffix '.cti'. The environment
+variable <code>GENICAM_GENTL32_PATH</code> (for 32 bit applications) or <code>GENICAM_GENTL64_PATH</code>
+(for 64 bit applications) must contain a list of paths that contain transport
+layers. All transport layers are provided as systems to the application.</p>
+
+<p>For convenience, if the environment variable is not defined or empty, it is
+internally defined with the install path of the provided transport layer (as
+known at compile time!). If the package is not installed, the install path is
+changed after compilation or the package is moved to another location after
+installation, then the transport layer may not be found. In this case, the
+tools shows an error like e.g.:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">'No transport layers found in path /usr/lib/rc_genicam_api'
+</code></pre></div>
+<p>In this case, the corresponding environment variable (see above) must be set to
+the directory in which the transport layer (i.e. file with suffix '.cti')
+resides.</p>
+
+<p>Under Windows, as second fall back additionally to the install path, the
+directory of the executable is also added to the environment variable. Thus,
+the install directory can be moved, as long as the cti file stays in the same
+directory as the executable.</p>
+
+<h2 id="network-optimization-under-linux">Network Optimization under Linux</h2>
+
+<p>When images are received at a lower rate than set/exepected the most
+likely problem is that this (user space) library cannot read the many UDP
+packets fast enough resulting in incomplete image buffers.</p>
+
+<h3 id="test-script">Test Script</h3>
+
+<p>The <code>net_perf_check.sh</code> script performs some simple checks and should be run
+while or after streaming images via GigE Vision.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">./net_perf_check.sh --help
+</code></pre></div>
+<h3 id="jumbo-frames">Jumbo Frames</h3>
+
+<p>First of all increasing the UDP packet size (using jubo frames) is strongly
+recommended! Increase the MTU of your network interface to 9000, e.g.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">sudo ifconfig eth0 mtu 9000
+</code></pre></div>
+<p>Also make sure that all network devices/switches between your host and the
+sensor support this.</p>
+
+<h3 id="sysctl-settings">sysctl settings</h3>
+
+<p>There are several Linux sysctl options that can be modified to increase
+performance for the GigE Vision usecase.</p>
+
+<p>These values can be changed during runtime with <code>sysctl</code> or written to
+<code>/etc/sysctl.conf</code> for persistence across reboots.</p>
+
+<h4 id="rmem_max">rmem_max</h4>
+
+<p>If the number of UDP RcvbufErrors increases while streaming, increasing the
+socket receive buffer size usually fixes the problem.</p>
+
+<p>Check the RcvbufErrors with <code>net_perf_check.sh</code> or</p>
+<div class="highlight"><pre><code class="language-" data-lang="">netstat -us | grep RcvbufErrors
+</code></pre></div>
+<p>Increase max receive buffer size:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">sudo sysctl -w net.core.rmem_max=33554432
+</code></pre></div>
+<h4 id="softirq">softirq</h4>
+
+<p>Changing these values is usually not necessary, but can help if the kernel
+is already dropping packets.</p>
+
+<p>Check with <code>net_perf_check.sh</code> and increase the values if needed:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">sudo sysctl -w net.core.netdev_max_backlog=2000
+sudo sysctl -w net.core.netdev_budget=600
+</code></pre></div>
+</div>
+            
+          </div>
+        </div>
+
+        
+        
+      
+    </div>
+  </div>
+
+  <div class="distro distro-ardent">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>ardent</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-jade">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>jade</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-hydro">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>hydro</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    setupDistroSwitch("crystal");
+  });
+</script>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4 col-md-4">
+          
+            <a href="https://github.com/ros-infrastructure" title="Find rosindex in Github">
+            <span class="icon  icon--github">
+              <svg viewBox="0 0 16 16">
+                <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+
+            <span class="username">ros-infrastructure</span>
+          </a>
+          |
+          <em>generated on 2019-01-10</em>
+        
+        </div>
+        <div class="col-sm-8 col-md-8 text-right">
+          <p class="text">a community-maintained index of robotics software
+ | <a href="/privacy.txt">privacy</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
