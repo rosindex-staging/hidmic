@@ -121,15 +121,9 @@
         <div class="col-sm-12 col-md-3" style="margin-top: 12px">
           <form id="top-searchbox" action="/search/" role="form" method="get">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" name="q" placeholder="Search ROS">
+              <input type="text" class="form-control" name="q" placeholder="Search ROS Packages">
               <span class="input-group-btn">
-                <button class="btn btn-default btn-sm" title="Search ROS" type="submit">
-                  <span class="glyphicon glyphicon-search"></span>
-                </button>
-                <a href="https://lunrjs.com/guides/searching.html"
-                   title="Help to Search" class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-question-sign"></span>
-                </a>
+                <button class="btn btn-default btn-sm" title="Search ROS Packages" type="submit"><span class="glyphicon glyphicon-search"></span></button>
               </span>
             </div>
           </form>
@@ -429,7 +423,7 @@ mir_robot
     
     
     
-    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">3</span> Assets</a>
+    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">4</span> Assets</a>
   </li>
   <li class="better-tabs">
     
@@ -515,7 +509,7 @@ mir_robot
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-12-13
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-22
         </span>
       </td>
     </tr>
@@ -737,9 +731,66 @@ mir_robot
                         
                       
                         
+                          <li><strong>with_virtual_walls</strong> <em>&#91;default: true&#93; </em></li>
+                        
                       
                         
                       
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/dfki-ric/mir_robot/tree/kinetic/mir_navigation/launch/amcl.launch" target="_blank">launch/amcl.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>use_map_topic</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>scan_topic</strong> <em>&#91;default: scan&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>map_topic</strong> <em>&#91;default: /map&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>initial_pose_x</strong> <em>&#91;default: 0.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>initial_pose_y</strong> <em>&#91;default: 0.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>initial_pose_a</strong> <em>&#91;default: 0.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>odom_frame_id</strong> <em>&#91;default: odom_comb&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>base_frame_id</strong> <em>&#91;default: base_footprint&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>global_frame_id</strong> <em>&#91;default: /map&#93; </em></li>
                         
                       
                     </ul>
@@ -763,6 +814,10 @@ mir_robot
                           <li><strong>virtual_walls_map_file</strong> <em>&#91;default: $(arg map_file)&#93;  &#8212; Path to a virtual walls map .yaml file (optional).</em></li>
                         
                       
+                        
+                          <li><strong>with_virtual_walls</strong> <em>&#91;default: true&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -778,6 +833,10 @@ mir_robot
                       
                         
                           <li><strong>local_planner</strong>   &#8212; Local planner can be either dwa, base, teb or pose</em></li>
+                        
+                      
+                        
+                          <li><strong>with_virtual_walls</strong> <em>&#91;default: true&#93;  &#8212; Enables usage of virtual walls when set. Set to false when running SLAM.</em></li>
                         
                       
                     </ul>
@@ -1088,7 +1147,7 @@ mir_robot
     
     
     
-    <a href="#indigo-assets" data-toggle="tab"><span class="label label-primary">3</span> Assets</a>
+    <a href="#indigo-assets" data-toggle="tab"><span class="label label-primary">4</span> Assets</a>
   </li>
   <li class="better-tabs">
     
@@ -1174,7 +1233,7 @@ mir_robot
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-12-13
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-22
         </span>
       </td>
     </tr>
@@ -1396,9 +1455,66 @@ mir_robot
                         
                       
                         
+                          <li><strong>with_virtual_walls</strong> <em>&#91;default: true&#93; </em></li>
+                        
                       
                         
                       
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/dfki-ric/mir_robot/tree/indigo/mir_navigation/launch/amcl.launch" target="_blank">launch/amcl.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>use_map_topic</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>scan_topic</strong> <em>&#91;default: scan&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>map_topic</strong> <em>&#91;default: /map&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>initial_pose_x</strong> <em>&#91;default: 0.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>initial_pose_y</strong> <em>&#91;default: 0.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>initial_pose_a</strong> <em>&#91;default: 0.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>odom_frame_id</strong> <em>&#91;default: odom_comb&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>base_frame_id</strong> <em>&#91;default: base_footprint&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>global_frame_id</strong> <em>&#91;default: /map&#93; </em></li>
                         
                       
                     </ul>
@@ -1422,6 +1538,10 @@ mir_robot
                           <li><strong>virtual_walls_map_file</strong> <em>&#91;default: $(arg map_file)&#93;  &#8212; Path to a virtual walls map .yaml file (optional).</em></li>
                         
                       
+                        
+                          <li><strong>with_virtual_walls</strong> <em>&#91;default: true&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -1437,6 +1557,10 @@ mir_robot
                       
                         
                           <li><strong>local_planner</strong>   &#8212; Local planner can be either dwa, base, teb or pose</em></li>
+                        
+                      
+                        
+                          <li><strong>with_virtual_walls</strong> <em>&#91;default: true&#93;  &#8212; Enables usage of virtual walls when set. Set to false when running SLAM.</em></li>
                         
                       
                     </ul>
@@ -1645,7 +1769,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-10</em>
+          <em>generated on 2019-01-22</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

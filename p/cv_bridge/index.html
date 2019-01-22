@@ -121,15 +121,9 @@
         <div class="col-sm-12 col-md-3" style="margin-top: 12px">
           <form id="top-searchbox" action="/search/" role="form" method="get">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" name="q" placeholder="Search ROS">
+              <input type="text" class="form-control" name="q" placeholder="Search ROS Packages">
               <span class="input-group-btn">
-                <button class="btn btn-default btn-sm" title="Search ROS" type="submit">
-                  <span class="glyphicon glyphicon-search"></span>
-                </button>
-                <a href="https://lunrjs.com/guides/searching.html"
-                   title="Help to Search" class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-question-sign"></span>
-                </a>
+                <button class="btn btn-default btn-sm" title="Search ROS Packages" type="submit"><span class="glyphicon glyphicon-search"></span></button>
               </span>
             </div>
           </form>
@@ -463,7 +457,7 @@ vision_opencv
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-11-26
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-11
         </span>
       </td>
     </tr>
@@ -586,8 +580,9 @@ Since ros2 bases on python3, please make sure that python3-numpy is installed, o
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">
 <span class="nb">cd</span> &lt;YOUR_ROS2_WORKSPACE&gt;
 git clone https://github.com/ros-perception/vision_opencv.git
+<span class="nb">cd </span>vision_opencv
 git checkout ros2
-src/ament/ament_tools/scripts/ament.py build <span class="nt">--build-tests</span> <span class="nt">--symlink-install</span>
+colcon build <span class="nt">--symlink-install</span>
 
 
 </code></pre></div>
@@ -601,7 +596,7 @@ src/ament/ament_tools/scripts/ament.py build <span class="nt">--build-tests</spa
 <p>Next to prepare runtime environment and run tests:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">
 <span class="nb">source</span> &lt;YOUR_ROS2_WORKSPACE&gt;/install/local_setup.bash
-ament <span class="nb">test</span> <span class="nt">--skip-build</span> <span class="nt">--skip-install</span> <span class="nt">--only-packages</span> cv_bridge
+colcon <span class="nb">test</span>
 
 
 </code></pre></div>
@@ -1332,7 +1327,7 @@ vision_opencv
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-11-26
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-11
         </span>
       </td>
     </tr>
@@ -1455,8 +1450,9 @@ Since ros2 bases on python3, please make sure that python3-numpy is installed, o
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">
 <span class="nb">cd</span> &lt;YOUR_ROS2_WORKSPACE&gt;
 git clone https://github.com/ros-perception/vision_opencv.git
+<span class="nb">cd </span>vision_opencv
 git checkout ros2
-src/ament/ament_tools/scripts/ament.py build <span class="nt">--build-tests</span> <span class="nt">--symlink-install</span>
+colcon build <span class="nt">--symlink-install</span>
 
 
 </code></pre></div>
@@ -1470,7 +1466,7 @@ src/ament/ament_tools/scripts/ament.py build <span class="nt">--build-tests</spa
 <p>Next to prepare runtime environment and run tests:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">
 <span class="nb">source</span> &lt;YOUR_ROS2_WORKSPACE&gt;/install/local_setup.bash
-ament <span class="nb">test</span> <span class="nt">--skip-build</span> <span class="nt">--skip-install</span> <span class="nt">--only-packages</span> cv_bridge
+colcon <span class="nb">test</span>
 
 
 </code></pre></div>
@@ -14309,7 +14305,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-10</em>
+          <em>generated on 2019-01-22</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

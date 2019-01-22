@@ -121,15 +121,9 @@
         <div class="col-sm-12 col-md-3" style="margin-top: 12px">
           <form id="top-searchbox" action="/search/" role="form" method="get">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" name="q" placeholder="Search ROS">
+              <input type="text" class="form-control" name="q" placeholder="Search ROS Packages">
               <span class="input-group-btn">
-                <button class="btn btn-default btn-sm" title="Search ROS" type="submit">
-                  <span class="glyphicon glyphicon-search"></span>
-                </button>
-                <a href="https://lunrjs.com/guides/searching.html"
-                   title="Help to Search" class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-question-sign"></span>
-                </a>
+                <button class="btn btn-default btn-sm" title="Search ROS Packages" type="submit"><span class="glyphicon glyphicon-search"></span></button>
               </span>
             </div>
           </form>
@@ -475,7 +469,7 @@ darknet_ros_msgs
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-10-15
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-14
         </span>
       </td>
     </tr>
@@ -869,15 +863,9 @@ darknet_ros_msgs
                     <ul>
                       
                         
-                          <li><strong>launch_prefix</strong> <em>&#91;default: &#93; </em></li>
+                          <li><strong>network_param_file</strong> <em>&#91;default: $(find darknet_ros)/config/yolov3.yaml&#93; </em></li>
                         
                       
-                        
-                          <li><strong>yolo_weights_path</strong> <em>&#91;default: $(find darknet_ros)/yolo_network_config/weights&#93; </em></li>
-                        
-                      
-                        
-                          <li><strong>yolo_config_path</strong> <em>&#91;default: $(find darknet_ros)/yolo_network_config/cfg&#93; </em></li>
                         
                       
                     </ul>
@@ -903,6 +891,14 @@ darknet_ros_msgs
                       
                         
                           <li><strong>yolo_config_path</strong> <em>&#91;default: $(find darknet_ros)/yolo_network_config/cfg&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>ros_param_file</strong> <em>&#91;default: $(find darknet_ros)/config/ros.yaml&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>network_param_file</strong> <em>&#91;default: $(find darknet_ros)/config/yolov2-tiny.yaml&#93; </em></li>
                         
                       
                     </ul>
@@ -1119,7 +1115,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-10</em>
+          <em>generated on 2019-01-22</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

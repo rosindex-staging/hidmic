@@ -121,15 +121,9 @@
         <div class="col-sm-12 col-md-3" style="margin-top: 12px">
           <form id="top-searchbox" action="/search/" role="form" method="get">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" name="q" placeholder="Search ROS">
+              <input type="text" class="form-control" name="q" placeholder="Search ROS Packages">
               <span class="input-group-btn">
-                <button class="btn btn-default btn-sm" title="Search ROS" type="submit">
-                  <span class="glyphicon glyphicon-search"></span>
-                </button>
-                <a href="https://lunrjs.com/guides/searching.html"
-                   title="Help to Search" class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-question-sign"></span>
-                </a>
+                <button class="btn btn-default btn-sm" title="Search ROS Packages" type="submit"><span class="glyphicon glyphicon-search"></span></button>
               </span>
             </div>
           </form>
@@ -464,7 +458,7 @@ telegram_ros
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-12-16
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-12
         </span>
       </td>
     </tr>
@@ -537,6 +531,12 @@ telegram_ros
 <h1 id="telegram_ros">telegram_ros</h1>
 
 <p>Bridges between a <a href="https://telegram.org/">Telegram</a> conversation and <a href="http://ros.org">ROS</a>.</p>
+
+<p>Only a single Telegram user can send and receive text, images and locations to/from the ROS bridge.
+A user must send the <code>/start</code> command to start a conversation. A new user can then <code>/start</code> as well and take over.
+Once connected, a user can type <code>/stop</code> to disconnect</p>
+
+<p>Currently, there is <em>no</em> authentication (Issue #6)</p>
 
 <h2 id="travis-ci-build-status">Travis CI Build Status</h2>
 
@@ -890,7 +890,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-10</em>
+          <em>generated on 2019-01-22</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">
