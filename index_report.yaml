@@ -85942,7 +85942,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic
       lunar: ''
       kinetic: ''
       indigo: ''
@@ -85956,7 +85956,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic
       lunar: master
       kinetic: master
       indigo: master
@@ -98976,7 +98976,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: ''

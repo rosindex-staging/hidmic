@@ -121,9 +121,15 @@
         <div class="col-sm-12 col-md-3" style="margin-top: 12px">
           <form id="top-searchbox" action="/search/" role="form" method="get">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" name="q" placeholder="Search ROS Packages">
+              <input type="text" class="form-control" name="term" placeholder="Search ROS">
               <span class="input-group-btn">
-                <button class="btn btn-default btn-sm" title="Search ROS Packages" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                <button class="btn btn-default btn-sm" title="Search ROS" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+                <a href="https://lunrjs.com/guides/searching.html"
+                   title="Help to Search" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-question-sign"></span>
+                </a>
               </span>
             </div>
           </form>
@@ -367,7 +373,7 @@ sick_scan
     
     
     
-    <a href="#lunar-assets" data-toggle="tab"><span class="label label-primary">42</span> Assets</a>
+    <a href="#lunar-assets" data-toggle="tab"><span class="label label-primary">51</span> Assets</a>
   </li>
   <li class="better-tabs">
     
@@ -453,7 +459,7 @@ sick_scan
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-11-08
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-24
         </span>
       </td>
     </tr>
@@ -684,6 +690,11 @@ towards rough outdoor environments. </p>
 </tr>
 </tbody>
 </table>
+
+<h2 id="imu-support">IMU Support</h2>
+
+<p>Devices of the MRS6xxx and MRS1xxx series will in future (2019) be available with an optionally built-in IMU. 
+Further information on the implementation and use of the experimental Imu support can be found on the <a href="https://github.com/SICKAG/sick_scan/tree/master/./doc/IMU.md">Imu page</a>.</p>
 
 <h2 id="start-node">Start Node</h2>
 
@@ -1215,6 +1226,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -1247,6 +1262,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -1259,6 +1278,18 @@ LMS511 </p>
                   
                   <li>
                     <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>cloud_topic</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
                       
                     </ul>
                   </li>
@@ -1382,6 +1413,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -1404,6 +1439,81 @@ LMS511 </p>
                 </ul>
               </li>
             
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/demo_roscon.launch" target="_blank">launch/demo_roscon.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     LAUNCH-FILE for
+     RMS3xx - Radar device emulation and visualisation
+  </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>emul_sensor</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_sphere_radius</strong> <em>&#91;default: 1.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_palette_name</strong> <em>&#91;default: viridis.pal&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_palette_min_ampl</strong> <em>&#91;default: 30.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_palette_max_ampl</strong> <em>&#91;default: 70.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_arrow_scale</strong> <em>&#91;default: 1.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>object_arrow_scale</strong> <em>&#91;default: 1.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rviz</strong> <em>&#91;default: true&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rviz_file</strong> <em>&#91;default: $(find sick_scan)/launch/rviz/demo_roscon.rviz&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/test_002_combi_live_traffic.launch" target="_blank">launch/test_002_combi_live_traffic.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     Example launch for testing live cooperation of radar and laserscanner
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>record_data</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/test_004_mrs1xxx_slam.launch" target="_blank">launch/test_004_mrs1xxx_slam.launch</a>
                 <ul class="list-unstyled">
                   
@@ -1411,6 +1521,35 @@ LMS511 </p>
                   
                   <li>
                     <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/sick_mrs_1xxx_cartographer.launch" target="_blank">launch/sick_mrs_1xxx_cartographer.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em> LAUNCH FILE                                     </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>cloud_topic</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
                       
                     </ul>
                   </li>
@@ -1439,6 +1578,14 @@ LMS511 </p>
                           <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
                         
                       
+                        
+                          <li><strong>cloud_topic</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -1465,6 +1612,92 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname1</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>hostname2</strong> <em>&#91;default: 192.168.0.2&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/rviz/sick_twin_mrs6xxx_tim5xx.launch" target="_blank">launch/rviz/sick_twin_mrs6xxx_tim5xx.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     Example launch of using two scanners in parallel
+
+     In this example we use two TIM5xx-scanner with a mounting distance of 2 m.
+     Do see the result in rviz we recommend the following settings:
+
+     1. Global Options->Fixed Frame: map
+     2. Pointcloud2->Topic: /cloud_1
+     3. Pointcloud2->Topic: /cloud_2
+     4. Modify the given ip addresses to your local setup.
+     Remark: Add two Pointcloud2-Visualizer to the Displays-Windows.
+     You can also add two Laserscan-Visualizer. Please set the topic for laserscan-Visualizer to /scan_1 and /scan_2 in this case.
+
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/sick_tim_5xx_new_ip.launch" target="_blank">launch/sick_tim_5xx_new_ip.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     !!!EXPERIMENTAL!!!
+     !!! ONLY BINARY COMMAND SUPPORT !!!
+     **********************************************
+     Lanch File for setting new ip address
+     **********************************************
+    This is an experimental launch file to set a new ip address in the scanner.
+    Maybe one should add a EEPROM-write command. But in our tests this was not necessary.
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>new_IP</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>cloud_topic</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/test_101_pcl.launch" target="_blank">launch/test_101_pcl.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     Example launch for testing pointcloud to image converter
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
                     </ul>
                   </li>
                 </ul>
@@ -1477,6 +1710,10 @@ LMS511 </p>
                   
                   <li>
                     <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
                       
                     </ul>
                   </li>
@@ -1521,6 +1758,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -1535,6 +1776,36 @@ LMS511 </p>
      EXPERIMENTAL - brand new driver
      Only SOPAS-ASCII supported.
   </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/test_100_roscon_tim_twin.launch" target="_blank">launch/test_100_roscon_tim_twin.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     Example launch of using two scanners in parallel
+
+     In this example we use two TIM5xx-scanner with a mounting distance of 2 m.
+     Do see the result in rviz we recommend the following settings:
+
+     1. Global Options->Fixed Frame: map
+     2. Pointcloud2->Topic: /cloud_1
+     3. Pointcloud2->Topic: /cloud_2
+     4. Modify the given ip addresses to your local setup.
+     Remark: Add two Pointcloud2-Visualizer to the Displays-Windows.
+     You can also add two Laserscan-Visualizer. Please set the topic for laserscan-Visualizer to /scan_1 and /scan_2 in this case.
+
+</em></li>
                   
                   <li>
                     <ul>
@@ -1556,6 +1827,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -1568,6 +1843,10 @@ LMS511 </p>
                   
                   <li>
                     <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
                       
                     </ul>
                   </li>
@@ -1771,9 +2050,13 @@ LMS511 </p>
             
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/RadarPreHeaderDeviceBlock.msg" target="_blank">msg/RadarPreHeaderDeviceBlock.msg</a></li>
             
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/SickImu.msg" target="_blank">msg/SickImu.msg</a></li>
+            
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/RadarPreHeaderEncoderBlock.msg" target="_blank">msg/RadarPreHeaderEncoderBlock.msg</a></li>
             
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/RadarObject.msg" target="_blank">msg/RadarObject.msg</a></li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/ImuExtended.msg" target="_blank">msg/ImuExtended.msg</a></li>
             
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/RadarPreHeaderStatusBlock.msg" target="_blank">msg/RadarPreHeaderStatusBlock.msg</a></li>
             
@@ -2027,7 +2310,7 @@ sick_scan
     
     
     
-    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">42</span> Assets</a>
+    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">51</span> Assets</a>
   </li>
   <li class="better-tabs">
     
@@ -2113,7 +2396,7 @@ sick_scan
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-11-08
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-24
         </span>
       </td>
     </tr>
@@ -2344,6 +2627,11 @@ towards rough outdoor environments. </p>
 </tr>
 </tbody>
 </table>
+
+<h2 id="imu-support">IMU Support</h2>
+
+<p>Devices of the MRS6xxx and MRS1xxx series will in future (2019) be available with an optionally built-in IMU. 
+Further information on the implementation and use of the experimental Imu support can be found on the <a href="https://github.com/SICKAG/sick_scan/tree/master/./doc/IMU.md">Imu page</a>.</p>
 
 <h2 id="start-node">Start Node</h2>
 
@@ -2875,6 +3163,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -2907,6 +3199,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -2919,6 +3215,18 @@ LMS511 </p>
                   
                   <li>
                     <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>cloud_topic</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
                       
                     </ul>
                   </li>
@@ -3042,6 +3350,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -3064,6 +3376,81 @@ LMS511 </p>
                 </ul>
               </li>
             
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/demo_roscon.launch" target="_blank">launch/demo_roscon.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     LAUNCH-FILE for
+     RMS3xx - Radar device emulation and visualisation
+  </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>emul_sensor</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_sphere_radius</strong> <em>&#91;default: 1.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_palette_name</strong> <em>&#91;default: viridis.pal&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_palette_min_ampl</strong> <em>&#91;default: 30.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_palette_max_ampl</strong> <em>&#91;default: 70.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_arrow_scale</strong> <em>&#91;default: 1.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>object_arrow_scale</strong> <em>&#91;default: 1.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rviz</strong> <em>&#91;default: true&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rviz_file</strong> <em>&#91;default: $(find sick_scan)/launch/rviz/demo_roscon.rviz&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/test_002_combi_live_traffic.launch" target="_blank">launch/test_002_combi_live_traffic.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     Example launch for testing live cooperation of radar and laserscanner
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>record_data</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/test_004_mrs1xxx_slam.launch" target="_blank">launch/test_004_mrs1xxx_slam.launch</a>
                 <ul class="list-unstyled">
                   
@@ -3071,6 +3458,35 @@ LMS511 </p>
                   
                   <li>
                     <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/sick_mrs_1xxx_cartographer.launch" target="_blank">launch/sick_mrs_1xxx_cartographer.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em> LAUNCH FILE                                     </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>cloud_topic</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
                       
                     </ul>
                   </li>
@@ -3099,6 +3515,14 @@ LMS511 </p>
                           <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
                         
                       
+                        
+                          <li><strong>cloud_topic</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -3125,6 +3549,92 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname1</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>hostname2</strong> <em>&#91;default: 192.168.0.2&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/rviz/sick_twin_mrs6xxx_tim5xx.launch" target="_blank">launch/rviz/sick_twin_mrs6xxx_tim5xx.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     Example launch of using two scanners in parallel
+
+     In this example we use two TIM5xx-scanner with a mounting distance of 2 m.
+     Do see the result in rviz we recommend the following settings:
+
+     1. Global Options->Fixed Frame: map
+     2. Pointcloud2->Topic: /cloud_1
+     3. Pointcloud2->Topic: /cloud_2
+     4. Modify the given ip addresses to your local setup.
+     Remark: Add two Pointcloud2-Visualizer to the Displays-Windows.
+     You can also add two Laserscan-Visualizer. Please set the topic for laserscan-Visualizer to /scan_1 and /scan_2 in this case.
+
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/sick_tim_5xx_new_ip.launch" target="_blank">launch/sick_tim_5xx_new_ip.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     !!!EXPERIMENTAL!!!
+     !!! ONLY BINARY COMMAND SUPPORT !!!
+     **********************************************
+     Lanch File for setting new ip address
+     **********************************************
+    This is an experimental launch file to set a new ip address in the scanner.
+    Maybe one should add a EEPROM-write command. But in our tests this was not necessary.
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>new_IP</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>cloud_topic</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/test_101_pcl.launch" target="_blank">launch/test_101_pcl.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     Example launch for testing pointcloud to image converter
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
                     </ul>
                   </li>
                 </ul>
@@ -3137,6 +3647,10 @@ LMS511 </p>
                   
                   <li>
                     <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
                       
                     </ul>
                   </li>
@@ -3181,6 +3695,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -3195,6 +3713,36 @@ LMS511 </p>
      EXPERIMENTAL - brand new driver
      Only SOPAS-ASCII supported.
   </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/test_100_roscon_tim_twin.launch" target="_blank">launch/test_100_roscon_tim_twin.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     Example launch of using two scanners in parallel
+
+     In this example we use two TIM5xx-scanner with a mounting distance of 2 m.
+     Do see the result in rviz we recommend the following settings:
+
+     1. Global Options->Fixed Frame: map
+     2. Pointcloud2->Topic: /cloud_1
+     3. Pointcloud2->Topic: /cloud_2
+     4. Modify the given ip addresses to your local setup.
+     Remark: Add two Pointcloud2-Visualizer to the Displays-Windows.
+     You can also add two Laserscan-Visualizer. Please set the topic for laserscan-Visualizer to /scan_1 and /scan_2 in this case.
+
+</em></li>
                   
                   <li>
                     <ul>
@@ -3216,6 +3764,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -3228,6 +3780,10 @@ LMS511 </p>
                   
                   <li>
                     <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
                       
                     </ul>
                   </li>
@@ -3431,9 +3987,13 @@ LMS511 </p>
             
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/RadarPreHeaderDeviceBlock.msg" target="_blank">msg/RadarPreHeaderDeviceBlock.msg</a></li>
             
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/SickImu.msg" target="_blank">msg/SickImu.msg</a></li>
+            
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/RadarPreHeaderEncoderBlock.msg" target="_blank">msg/RadarPreHeaderEncoderBlock.msg</a></li>
             
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/RadarObject.msg" target="_blank">msg/RadarObject.msg</a></li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/ImuExtended.msg" target="_blank">msg/ImuExtended.msg</a></li>
             
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/RadarPreHeaderStatusBlock.msg" target="_blank">msg/RadarPreHeaderStatusBlock.msg</a></li>
             
@@ -3687,7 +4247,7 @@ sick_scan
     
     
     
-    <a href="#indigo-assets" data-toggle="tab"><span class="label label-primary">42</span> Assets</a>
+    <a href="#indigo-assets" data-toggle="tab"><span class="label label-primary">51</span> Assets</a>
   </li>
   <li class="better-tabs">
     
@@ -3773,7 +4333,7 @@ sick_scan
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-11-08
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-24
         </span>
       </td>
     </tr>
@@ -4004,6 +4564,11 @@ towards rough outdoor environments. </p>
 </tr>
 </tbody>
 </table>
+
+<h2 id="imu-support">IMU Support</h2>
+
+<p>Devices of the MRS6xxx and MRS1xxx series will in future (2019) be available with an optionally built-in IMU. 
+Further information on the implementation and use of the experimental Imu support can be found on the <a href="https://github.com/SICKAG/sick_scan/tree/master/./doc/IMU.md">Imu page</a>.</p>
 
 <h2 id="start-node">Start Node</h2>
 
@@ -4535,6 +5100,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -4567,6 +5136,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -4579,6 +5152,18 @@ LMS511 </p>
                   
                   <li>
                     <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>cloud_topic</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
                       
                     </ul>
                   </li>
@@ -4702,6 +5287,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -4724,6 +5313,81 @@ LMS511 </p>
                 </ul>
               </li>
             
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/demo_roscon.launch" target="_blank">launch/demo_roscon.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     LAUNCH-FILE for
+     RMS3xx - Radar device emulation and visualisation
+  </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>emul_sensor</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_sphere_radius</strong> <em>&#91;default: 1.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_palette_name</strong> <em>&#91;default: viridis.pal&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_palette_min_ampl</strong> <em>&#91;default: 30.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_palette_max_ampl</strong> <em>&#91;default: 70.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rawtarget_arrow_scale</strong> <em>&#91;default: 1.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>object_arrow_scale</strong> <em>&#91;default: 1.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rviz</strong> <em>&#91;default: true&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>rviz_file</strong> <em>&#91;default: $(find sick_scan)/launch/rviz/demo_roscon.rviz&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/test_002_combi_live_traffic.launch" target="_blank">launch/test_002_combi_live_traffic.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     Example launch for testing live cooperation of radar and laserscanner
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>record_data</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/test_004_mrs1xxx_slam.launch" target="_blank">launch/test_004_mrs1xxx_slam.launch</a>
                 <ul class="list-unstyled">
                   
@@ -4731,6 +5395,35 @@ LMS511 </p>
                   
                   <li>
                     <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/sick_mrs_1xxx_cartographer.launch" target="_blank">launch/sick_mrs_1xxx_cartographer.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em> LAUNCH FILE                                     </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>cloud_topic</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
                       
                     </ul>
                   </li>
@@ -4759,6 +5452,14 @@ LMS511 </p>
                           <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
                         
                       
+                        
+                          <li><strong>cloud_topic</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -4785,6 +5486,92 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname1</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>hostname2</strong> <em>&#91;default: 192.168.0.2&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/rviz/sick_twin_mrs6xxx_tim5xx.launch" target="_blank">launch/rviz/sick_twin_mrs6xxx_tim5xx.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     Example launch of using two scanners in parallel
+
+     In this example we use two TIM5xx-scanner with a mounting distance of 2 m.
+     Do see the result in rviz we recommend the following settings:
+
+     1. Global Options->Fixed Frame: map
+     2. Pointcloud2->Topic: /cloud_1
+     3. Pointcloud2->Topic: /cloud_2
+     4. Modify the given ip addresses to your local setup.
+     Remark: Add two Pointcloud2-Visualizer to the Displays-Windows.
+     You can also add two Laserscan-Visualizer. Please set the topic for laserscan-Visualizer to /scan_1 and /scan_2 in this case.
+
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/sick_tim_5xx_new_ip.launch" target="_blank">launch/sick_tim_5xx_new_ip.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     !!!EXPERIMENTAL!!!
+     !!! ONLY BINARY COMMAND SUPPORT !!!
+     **********************************************
+     Lanch File for setting new ip address
+     **********************************************
+    This is an experimental launch file to set a new ip address in the scanner.
+    Maybe one should add a EEPROM-write command. But in our tests this was not necessary.
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>new_IP</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>cloud_topic</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: cloud&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/test_101_pcl.launch" target="_blank">launch/test_101_pcl.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     Example launch for testing pointcloud to image converter
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
                     </ul>
                   </li>
                 </ul>
@@ -4797,6 +5584,10 @@ LMS511 </p>
                   
                   <li>
                     <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
                       
                     </ul>
                   </li>
@@ -4841,6 +5632,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -4855,6 +5650,36 @@ LMS511 </p>
      EXPERIMENTAL - brand new driver
      Only SOPAS-ASCII supported.
   </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/test_100_roscon_tim_twin.launch" target="_blank">launch/test_100_roscon_tim_twin.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     Example launch of using two scanners in parallel
+
+     In this example we use two TIM5xx-scanner with a mounting distance of 2 m.
+     Do see the result in rviz we recommend the following settings:
+
+     1. Global Options->Fixed Frame: map
+     2. Pointcloud2->Topic: /cloud_1
+     3. Pointcloud2->Topic: /cloud_2
+     4. Modify the given ip addresses to your local setup.
+     Remark: Add two Pointcloud2-Visualizer to the Displays-Windows.
+     You can also add two Laserscan-Visualizer. Please set the topic for laserscan-Visualizer to /scan_1 and /scan_2 in this case.
+
+</em></li>
                   
                   <li>
                     <ul>
@@ -4876,6 +5701,10 @@ LMS511 </p>
                   <li>
                     <ul>
                       
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -4888,6 +5717,10 @@ LMS511 </p>
                   
                   <li>
                     <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
                       
                     </ul>
                   </li>
@@ -5091,9 +5924,13 @@ LMS511 </p>
             
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/RadarPreHeaderDeviceBlock.msg" target="_blank">msg/RadarPreHeaderDeviceBlock.msg</a></li>
             
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/SickImu.msg" target="_blank">msg/SickImu.msg</a></li>
+            
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/RadarPreHeaderEncoderBlock.msg" target="_blank">msg/RadarPreHeaderEncoderBlock.msg</a></li>
             
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/RadarObject.msg" target="_blank">msg/RadarObject.msg</a></li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/ImuExtended.msg" target="_blank">msg/ImuExtended.msg</a></li>
             
               <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./msg/RadarPreHeaderStatusBlock.msg" target="_blank">msg/RadarPreHeaderStatusBlock.msg</a></li>
             
@@ -5293,7 +6130,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-22</em>
+          <em>generated on 2019-01-24</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

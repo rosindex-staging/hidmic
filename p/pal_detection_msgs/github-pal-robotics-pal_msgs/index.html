@@ -121,9 +121,15 @@
         <div class="col-sm-12 col-md-3" style="margin-top: 12px">
           <form id="top-searchbox" action="/search/" role="form" method="get">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" name="q" placeholder="Search ROS Packages">
+              <input type="text" class="form-control" name="term" placeholder="Search ROS">
               <span class="input-group-btn">
-                <button class="btn btn-default btn-sm" title="Search ROS Packages" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                <button class="btn btn-default btn-sm" title="Search ROS" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+                <a href="https://lunrjs.com/guides/searching.html"
+                   title="Help to Search" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-question-sign"></span>
+                </a>
               </span>
             </div>
           </form>
@@ -519,14 +525,14 @@ pal_wifi_localization_msgs
     
     
     
-    <a href="#indigo-assets" data-toggle="tab"><span class="label label-primary">18</span> Assets</a>
+    <a href="#indigo-assets" data-toggle="tab"><span class="label label-primary">21</span> Assets</a>
   </li>
   <li class="better-tabs">
     
     
     
     
-    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">4</span> Dependencies</a>
+    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -557,7 +563,7 @@ pal_wifi_localization_msgs
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.12.10</td>
+                <td>0.12.11</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -605,7 +611,7 @@ pal_wifi_localization_msgs
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-12-17
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-22
         </span>
       </td>
     </tr>
@@ -809,6 +815,26 @@ pal_wifi_localization_msgs
                           
                           
                           
+                          <a href="/p/actionlib_msgs#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/actionlib_msgs" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/actionlib_msgs#indigo">actionlib_msgs</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
                           <a href="/p/message_runtime#indigo-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
@@ -911,7 +937,11 @@ pal_wifi_localization_msgs
             
               <li><a href="https://github.com/pal-robotics/pal_msgs/tree/indigo-devel/pal_detection_msgs/msg/Gesture.msg" target="_blank">msg/Gesture.msg</a></li>
             
+              <li><a href="https://github.com/pal-robotics/pal_msgs/tree/indigo-devel/pal_detection_msgs/msg/RecognizedObjectArray.msg" target="_blank">msg/RecognizedObjectArray.msg</a></li>
+            
               <li><a href="https://github.com/pal-robotics/pal_msgs/tree/indigo-devel/pal_detection_msgs/msg/Detections2d.msg" target="_blank">msg/Detections2d.msg</a></li>
+            
+              <li><a href="https://github.com/pal-robotics/pal_msgs/tree/indigo-devel/pal_detection_msgs/msg/RecognizedObject.msg" target="_blank">msg/RecognizedObject.msg</a></li>
             
               <li><a href="https://github.com/pal-robotics/pal_msgs/tree/indigo-devel/pal_detection_msgs/msg/RotatedDetection2d.msg" target="_blank">msg/RotatedDetection2d.msg</a></li>
             
@@ -933,6 +963,8 @@ pal_wifi_localization_msgs
           <ul>
             
               <li><a href="https://github.com/pal-robotics/pal_msgs/tree/indigo-devel/pal_detection_msgs/srv/AddTexturedObject.srv" target="_blank">srv/AddTexturedObject.srv</a></li>
+            
+              <li><a href="https://github.com/pal-robotics/pal_msgs/tree/indigo-devel/pal_detection_msgs/srv/ChangeObjectRecognizerModel.srv" target="_blank">srv/ChangeObjectRecognizerModel.srv</a></li>
             
               <li><a href="https://github.com/pal-robotics/pal_msgs/tree/indigo-devel/pal_detection_msgs/srv/SetDatabase.srv" target="_blank">srv/SetDatabase.srv</a></li>
             
@@ -1891,7 +1923,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-22</em>
+          <em>generated on 2019-01-24</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

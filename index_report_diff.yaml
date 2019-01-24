@@ -1,0 +1,19 @@
+---
+adds:
+  rosdeps: []
+  repos: []
+  repo_instances: []
+  packages: []
+dels:
+  rosdeps: []
+  repos: []
+  repo_instances: []
+  packages: []
+mods:
+  rosdeps: []
+  repos: []
+  repo_instances:
+  - github-ethz-asl-grid_map
+  - github-anybotics-grid_map
+  - github-ROBOTIS-GIT-turtlebot3_applications
+  packages: []
