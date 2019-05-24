@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/sick_scan/github-SICKAG-sick_scan/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -373,14 +376,14 @@ sick_scan
     
     
     
-    <a href="#lunar-assets" data-toggle="tab"><span class="label label-primary">51</span> Assets</a>
+    <a href="#lunar-assets" data-toggle="tab"><span class="label label-primary">52</span> Assets</a>
   </li>
   <li class="better-tabs">
     
     
     
     
-    <a href="#lunar-deps" data-toggle="tab"><span class="label label-primary">9</span> Dependencies</a>
+    <a href="#lunar-deps" data-toggle="tab"><span class="label label-primary">10</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -411,7 +414,7 @@ sick_scan
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.0.13</td>
+                <td>0.0.16</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -459,7 +462,7 @@ sick_scan
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-24
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-16
         </span>
       </td>
     </tr>
@@ -554,8 +557,11 @@ sick_scan
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#supported-hardware">Supported Hardware</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#start-node">Start node</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#bugs-and-feature-requests">Bugs and feature requests</a></li>
+<li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#tools">Tools</a></li>
+<li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#troubleshooting">Troubleshooting</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./doc/slam.md">SLAM-Support</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./doc/radar.md">Radar</a></li>
+<li><a href="https://github.com/SICKAG/sick_scan/tree/master/./doc/profiling.md">Profiling</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#testing">Testing</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#creators">Creators</a></li>
 </ul>
@@ -653,6 +659,30 @@ towards rough outdoor environments. </p>
 <td style="text-align: center"></td>
 </tr>
 <tr>
+<td>TiM781</td>
+<td><a href="https://www.sick.com/de/de/mess-und-detektionsloesungen/2d-lidar-sensoren/tim7xx/tim781-2174101/p/p594148">1096807</a></td>
+<td>1 layer max. range: 25m, ang. resol. 0.33 [deg]</td>
+<td style="text-align: center">✔ [stable]</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Scan-Rate: 15 Hz</td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td>TiM781s</td>
+<td><a href="https://www.sick.com/de/de/mess-und-detektionsloesungen/2d-lidar-sensoren/tim7xx/tim781s-2174104/p/p594149">1096363</a></td>
+<td>1 layer max. range: 25m, ang. resol. 0.33 [deg]</td>
+<td style="text-align: center">✔ [stable]</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Scan-Rate: 15 Hz</td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
 <td>LMS511-10100 PRO</td>
 <td><a href="https://www.sick.com/de/en/detection-and-ranging-solutions/2d-lidar-sensors/lms5xx/c/g179651">e.g. 1046135</a></td>
 <td>1 layer max. range: 80m, ang. resol. 0.167 [deg]</td>
@@ -721,7 +751,7 @@ roslaunch sick_scan sick_lms_5xx.launch</p>
 <p>For RMS3xx-family:
 roslaunch sick_scan sick_rms_3xx.launch (under development)</p>
 
-<h3 id="setting-ip-adresse-for-scanner">Setting ip adresse for scanner</h3>
+<h3 id="starting-scanner-with-specific-ip-address">Starting scanner with specific ip address</h3>
 
 <p>To start the scanner with a specific IP address, the launch command can be used for most launch files as follows.
 The hostname is the ip-address of the scanner:</p>
@@ -754,6 +784,29 @@ There are two ways to prevent this:
 -- All scanners: COLA-B (Binary)</li>
 <li>Software should be further tested, documented and beautified</li>
 <li>Setting of "topic" should not be hardcoded to /cloud in the future. This allows the simultaneous operation of several scanners. Each point cloud can then be converted using its own TF transformation.</li>
+</ul>
+
+<h2 id="tools">Tools</h2>
+
+<p>Various tools exist in the repository to improve the operation of the scanners. It is also recommended to read the following section "Troubleshooting".
+Overview of the tools:</p>
+
+<ul>
+<li>Search for scanner in the network:
+Use the Python3 tool "sick_generic_device_finder.py" in the tools/sick_generic_device_finder directory.
+The tools will output the IP addresses of the connected scanners and some more information about the scanner.<br>
+Call it with python3, i.e.
+<code>
+python3 sick_generic_device_finder.py
+</code>
+</li>
+<li>Setting new IP address: With the help of the parameter "new_IP" a new IP address can be assigned when calling the node sick_scan. 
+The launch file sick_new_ip.launch in the launch directory shows an example of how to use this parameter.</li>
+<li>Converting of pointclouds to images: With the tool pcl_converter.cpp one can convert pointcloud2-data
+to image. That is especial convenient for 24-layers scanners like the MRS6124.</li>
+<li>Setting up a brand new scanner: To set up a brand new scanner, 
+it is recommended to use the two tools "sick_generic_device_finder.py" to find the scanner in the network 
+and the launch file sick_new_ip.launch to set a new IP address. If further settings are to be saved that cannot be made via ROS   parameters, we recommend using the Windows tool "Sopas ET" from SICK.</li>
 </ul>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
@@ -793,6 +846,8 @@ The instructions at <a href="http://sickusablog.com/create-and-download-a-sopas-
 </ol>
 </li>
 <li>In case of application support please use <a href="https://supportportal.sick.com">https://supportportal.sick.com </a>.</li>
+<li>Issue Handling: Issues, for which no reply was received from the questioner for more than 7 days,<br>
+are closed by us because we assume that the user has solved the problem.</li>
 </ul>
 
 <h2 id="installation">Installation</h2>
@@ -1097,6 +1152,26 @@ LMS511 </p>
                           </a>
                         </td>
                         <td><a href="/p/pcl_ros#lunar">pcl_ros</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#lunar-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#lunar">catkin</a></td>
                       </tr>
                     
                   
@@ -1618,6 +1693,35 @@ LMS511 </p>
                       
                         
                           <li><strong>hostname2</strong> <em>&#91;default: 192.168.0.2&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/sick_new_ip.launch" target="_blank">launch/sick_new_ip.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     !!!EXPERIMENTAL!!!
+     !!! ONLY BINARY COMMAND SUPPORT !!!
+     **********************************************
+     Lanch File for setting new ip address
+     **********************************************
+    This is an experimental launch file to set a new ip address in the scanner.
+    Maybe one should add a EEPROM-write command. But in our tests this was not necessary.
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>new_IP</strong> <em>&#91;default: 192.168.0.2&#93; </em></li>
                         
                       
                     </ul>
@@ -2310,14 +2414,14 @@ sick_scan
     
     
     
-    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">51</span> Assets</a>
+    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">52</span> Assets</a>
   </li>
   <li class="better-tabs">
     
     
     
     
-    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">9</span> Dependencies</a>
+    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">10</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -2348,7 +2452,7 @@ sick_scan
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.0.13</td>
+                <td>0.0.16</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -2396,7 +2500,7 @@ sick_scan
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-24
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-16
         </span>
       </td>
     </tr>
@@ -2491,8 +2595,11 @@ sick_scan
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#supported-hardware">Supported Hardware</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#start-node">Start node</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#bugs-and-feature-requests">Bugs and feature requests</a></li>
+<li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#tools">Tools</a></li>
+<li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#troubleshooting">Troubleshooting</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./doc/slam.md">SLAM-Support</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./doc/radar.md">Radar</a></li>
+<li><a href="https://github.com/SICKAG/sick_scan/tree/master/./doc/profiling.md">Profiling</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#testing">Testing</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#creators">Creators</a></li>
 </ul>
@@ -2590,6 +2697,30 @@ towards rough outdoor environments. </p>
 <td style="text-align: center"></td>
 </tr>
 <tr>
+<td>TiM781</td>
+<td><a href="https://www.sick.com/de/de/mess-und-detektionsloesungen/2d-lidar-sensoren/tim7xx/tim781-2174101/p/p594148">1096807</a></td>
+<td>1 layer max. range: 25m, ang. resol. 0.33 [deg]</td>
+<td style="text-align: center">✔ [stable]</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Scan-Rate: 15 Hz</td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td>TiM781s</td>
+<td><a href="https://www.sick.com/de/de/mess-und-detektionsloesungen/2d-lidar-sensoren/tim7xx/tim781s-2174104/p/p594149">1096363</a></td>
+<td>1 layer max. range: 25m, ang. resol. 0.33 [deg]</td>
+<td style="text-align: center">✔ [stable]</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Scan-Rate: 15 Hz</td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
 <td>LMS511-10100 PRO</td>
 <td><a href="https://www.sick.com/de/en/detection-and-ranging-solutions/2d-lidar-sensors/lms5xx/c/g179651">e.g. 1046135</a></td>
 <td>1 layer max. range: 80m, ang. resol. 0.167 [deg]</td>
@@ -2658,7 +2789,7 @@ roslaunch sick_scan sick_lms_5xx.launch</p>
 <p>For RMS3xx-family:
 roslaunch sick_scan sick_rms_3xx.launch (under development)</p>
 
-<h3 id="setting-ip-adresse-for-scanner">Setting ip adresse for scanner</h3>
+<h3 id="starting-scanner-with-specific-ip-address">Starting scanner with specific ip address</h3>
 
 <p>To start the scanner with a specific IP address, the launch command can be used for most launch files as follows.
 The hostname is the ip-address of the scanner:</p>
@@ -2691,6 +2822,29 @@ There are two ways to prevent this:
 -- All scanners: COLA-B (Binary)</li>
 <li>Software should be further tested, documented and beautified</li>
 <li>Setting of "topic" should not be hardcoded to /cloud in the future. This allows the simultaneous operation of several scanners. Each point cloud can then be converted using its own TF transformation.</li>
+</ul>
+
+<h2 id="tools">Tools</h2>
+
+<p>Various tools exist in the repository to improve the operation of the scanners. It is also recommended to read the following section "Troubleshooting".
+Overview of the tools:</p>
+
+<ul>
+<li>Search for scanner in the network:
+Use the Python3 tool "sick_generic_device_finder.py" in the tools/sick_generic_device_finder directory.
+The tools will output the IP addresses of the connected scanners and some more information about the scanner.<br>
+Call it with python3, i.e.
+<code>
+python3 sick_generic_device_finder.py
+</code>
+</li>
+<li>Setting new IP address: With the help of the parameter "new_IP" a new IP address can be assigned when calling the node sick_scan. 
+The launch file sick_new_ip.launch in the launch directory shows an example of how to use this parameter.</li>
+<li>Converting of pointclouds to images: With the tool pcl_converter.cpp one can convert pointcloud2-data
+to image. That is especial convenient for 24-layers scanners like the MRS6124.</li>
+<li>Setting up a brand new scanner: To set up a brand new scanner, 
+it is recommended to use the two tools "sick_generic_device_finder.py" to find the scanner in the network 
+and the launch file sick_new_ip.launch to set a new IP address. If further settings are to be saved that cannot be made via ROS   parameters, we recommend using the Windows tool "Sopas ET" from SICK.</li>
 </ul>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
@@ -2730,6 +2884,8 @@ The instructions at <a href="http://sickusablog.com/create-and-download-a-sopas-
 </ol>
 </li>
 <li>In case of application support please use <a href="https://supportportal.sick.com">https://supportportal.sick.com </a>.</li>
+<li>Issue Handling: Issues, for which no reply was received from the questioner for more than 7 days,<br>
+are closed by us because we assume that the user has solved the problem.</li>
 </ul>
 
 <h2 id="installation">Installation</h2>
@@ -3034,6 +3190,26 @@ LMS511 </p>
                           </a>
                         </td>
                         <td><a href="/p/pcl_ros#kinetic">pcl_ros</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#kinetic">catkin</a></td>
                       </tr>
                     
                   
@@ -3555,6 +3731,35 @@ LMS511 </p>
                       
                         
                           <li><strong>hostname2</strong> <em>&#91;default: 192.168.0.2&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/sick_new_ip.launch" target="_blank">launch/sick_new_ip.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     !!!EXPERIMENTAL!!!
+     !!! ONLY BINARY COMMAND SUPPORT !!!
+     **********************************************
+     Lanch File for setting new ip address
+     **********************************************
+    This is an experimental launch file to set a new ip address in the scanner.
+    Maybe one should add a EEPROM-write command. But in our tests this was not necessary.
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>new_IP</strong> <em>&#91;default: 192.168.0.2&#93; </em></li>
                         
                       
                     </ul>
@@ -4247,14 +4452,14 @@ sick_scan
     
     
     
-    <a href="#indigo-assets" data-toggle="tab"><span class="label label-primary">51</span> Assets</a>
+    <a href="#indigo-assets" data-toggle="tab"><span class="label label-primary">52</span> Assets</a>
   </li>
   <li class="better-tabs">
     
     
     
     
-    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">9</span> Dependencies</a>
+    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">10</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -4285,7 +4490,7 @@ sick_scan
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.0.13</td>
+                <td>0.0.16</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -4333,7 +4538,7 @@ sick_scan
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-24
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-16
         </span>
       </td>
     </tr>
@@ -4428,8 +4633,11 @@ sick_scan
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#supported-hardware">Supported Hardware</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#start-node">Start node</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#bugs-and-feature-requests">Bugs and feature requests</a></li>
+<li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#tools">Tools</a></li>
+<li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#troubleshooting">Troubleshooting</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./doc/slam.md">SLAM-Support</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./doc/radar.md">Radar</a></li>
+<li><a href="https://github.com/SICKAG/sick_scan/tree/master/./doc/profiling.md">Profiling</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#testing">Testing</a></li>
 <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./#creators">Creators</a></li>
 </ul>
@@ -4527,6 +4735,30 @@ towards rough outdoor environments. </p>
 <td style="text-align: center"></td>
 </tr>
 <tr>
+<td>TiM781</td>
+<td><a href="https://www.sick.com/de/de/mess-und-detektionsloesungen/2d-lidar-sensoren/tim7xx/tim781-2174101/p/p594148">1096807</a></td>
+<td>1 layer max. range: 25m, ang. resol. 0.33 [deg]</td>
+<td style="text-align: center">✔ [stable]</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Scan-Rate: 15 Hz</td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td>TiM781s</td>
+<td><a href="https://www.sick.com/de/de/mess-und-detektionsloesungen/2d-lidar-sensoren/tim7xx/tim781s-2174104/p/p594149">1096363</a></td>
+<td>1 layer max. range: 25m, ang. resol. 0.33 [deg]</td>
+<td style="text-align: center">✔ [stable]</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Scan-Rate: 15 Hz</td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
 <td>LMS511-10100 PRO</td>
 <td><a href="https://www.sick.com/de/en/detection-and-ranging-solutions/2d-lidar-sensors/lms5xx/c/g179651">e.g. 1046135</a></td>
 <td>1 layer max. range: 80m, ang. resol. 0.167 [deg]</td>
@@ -4595,7 +4827,7 @@ roslaunch sick_scan sick_lms_5xx.launch</p>
 <p>For RMS3xx-family:
 roslaunch sick_scan sick_rms_3xx.launch (under development)</p>
 
-<h3 id="setting-ip-adresse-for-scanner">Setting ip adresse for scanner</h3>
+<h3 id="starting-scanner-with-specific-ip-address">Starting scanner with specific ip address</h3>
 
 <p>To start the scanner with a specific IP address, the launch command can be used for most launch files as follows.
 The hostname is the ip-address of the scanner:</p>
@@ -4628,6 +4860,29 @@ There are two ways to prevent this:
 -- All scanners: COLA-B (Binary)</li>
 <li>Software should be further tested, documented and beautified</li>
 <li>Setting of "topic" should not be hardcoded to /cloud in the future. This allows the simultaneous operation of several scanners. Each point cloud can then be converted using its own TF transformation.</li>
+</ul>
+
+<h2 id="tools">Tools</h2>
+
+<p>Various tools exist in the repository to improve the operation of the scanners. It is also recommended to read the following section "Troubleshooting".
+Overview of the tools:</p>
+
+<ul>
+<li>Search for scanner in the network:
+Use the Python3 tool "sick_generic_device_finder.py" in the tools/sick_generic_device_finder directory.
+The tools will output the IP addresses of the connected scanners and some more information about the scanner.<br>
+Call it with python3, i.e.
+<code>
+python3 sick_generic_device_finder.py
+</code>
+</li>
+<li>Setting new IP address: With the help of the parameter "new_IP" a new IP address can be assigned when calling the node sick_scan. 
+The launch file sick_new_ip.launch in the launch directory shows an example of how to use this parameter.</li>
+<li>Converting of pointclouds to images: With the tool pcl_converter.cpp one can convert pointcloud2-data
+to image. That is especial convenient for 24-layers scanners like the MRS6124.</li>
+<li>Setting up a brand new scanner: To set up a brand new scanner, 
+it is recommended to use the two tools "sick_generic_device_finder.py" to find the scanner in the network 
+and the launch file sick_new_ip.launch to set a new IP address. If further settings are to be saved that cannot be made via ROS   parameters, we recommend using the Windows tool "Sopas ET" from SICK.</li>
 </ul>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
@@ -4667,6 +4922,8 @@ The instructions at <a href="http://sickusablog.com/create-and-download-a-sopas-
 </ol>
 </li>
 <li>In case of application support please use <a href="https://supportportal.sick.com">https://supportportal.sick.com </a>.</li>
+<li>Issue Handling: Issues, for which no reply was received from the questioner for more than 7 days,<br>
+are closed by us because we assume that the user has solved the problem.</li>
 </ul>
 
 <h2 id="installation">Installation</h2>
@@ -4971,6 +5228,26 @@ LMS511 </p>
                           </a>
                         </td>
                         <td><a href="/p/pcl_ros#indigo">pcl_ros</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#indigo">catkin</a></td>
                       </tr>
                     
                   
@@ -5492,6 +5769,35 @@ LMS511 </p>
                       
                         
                           <li><strong>hostname2</strong> <em>&#91;default: 192.168.0.2&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/SICKAG/sick_scan/tree/master/./launch/sick_new_ip.launch" target="_blank">launch/sick_new_ip.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+     !!!EXPERIMENTAL!!!
+     !!! ONLY BINARY COMMAND SUPPORT !!!
+     **********************************************
+     Lanch File for setting new ip address
+     **********************************************
+    This is an experimental launch file to set a new ip address in the scanner.
+    Maybe one should add a EEPROM-write command. But in our tests this was not necessary.
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>hostname</strong> <em>&#91;default: 192.168.0.1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>new_IP</strong> <em>&#91;default: 192.168.0.2&#93; </em></li>
                         
                       
                     </ul>
@@ -6130,7 +6436,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

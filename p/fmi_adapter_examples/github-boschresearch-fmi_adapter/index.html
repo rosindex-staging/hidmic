@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/fmi_adapter_examples/github-boschresearch-fmi_adapter/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -387,7 +390,7 @@ fmi_adapter_examples
     
     
     
-    <a href="#melodic-deps" data-toggle="tab"><span class="label label-default">0</span> Dependencies</a>
+    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">4</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -466,7 +469,7 @@ fmi_adapter_examples
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-10-12
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-26
         </span>
       </td>
     </tr>
@@ -550,7 +553,7 @@ fmi_adapter_examples
 
 <h1 id="the-fmi_adapter_examples-package">The fmi_adapter_examples package</h1>
 
-<p>This <a href="http://www.ros.org/">ROS</a> package provides few examples for the use of the fmi_adapter package. It contains two FMU files DampedPendulum.fmu and TransportDelay.fmu (both created with the <a href="https://www.qtronic.de/en/fmusdk.html">FMU SDK</a>) and corresponding launch files. Furthermore, it includes a model of a damped pendulum in the <a href="https://www.modelica.org/">Modelica language</a> to create your own FMU.</p>
+<p>This <a href="http://www.ros.org/">ROS</a> package provides few examples for the use of the fmi_adapter package. It contains two FMU files DampedPendulum.fmu and TransportDelay.fmu (both created with the <a href="https://www.qtronic.de/en/fmu-sdk/">FMU SDK</a>) and corresponding launch files. Furthermore, it includes a model of a damped pendulum in the <a href="https://www.modelica.org/">Modelica language</a> to create your own FMU.</p>
 
 <h2 id="running-the-provided-sample-fmus">Running the provided sample FMUs</h2>
 
@@ -658,7 +661,96 @@ or invoke the package's node directly by
           </div>
           <div class="panel-body">
             
-              <em>No dependencies on ROS packages.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th class="text-center">Deps</th>
+                  <th class="text-center"><span class="glyphicon glyphicon-th" title="Package instances"></span></th>
+                  <th style="width: 100%">Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#melodic">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/fmi_adapter#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/fmi_adapter" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/fmi_adapter#melodic">fmi_adapter</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/roscpp#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/roscpp" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/roscpp#melodic">roscpp</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rqt_plot#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rqt_plot" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rqt_plot#melodic">rqt_plot</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
           <div class="panel-heading">
@@ -949,7 +1041,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

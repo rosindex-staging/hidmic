@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/sick_safetyscanners/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -369,7 +372,7 @@ sick_safetyscanners
     
     
     
-    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
+    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">8</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -448,7 +451,7 @@ sick_safetyscanners
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-15
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-06
         </span>
       </td>
     </tr>
@@ -649,6 +652,16 @@ sick_safetyscanners
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>outdoorScan3 Pro</td>
+<td>MICS3-CBUZ40IZ1P01</td>
+<td>Safety Laser Scanner, EtherNet/IP CIP Safety, Protective Field Range: 4 m</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -687,8 +700,8 @@ source</span> ~/catkin_ws/install/setup.bash
 </code></pre></div>
 <h3 id="starting">Starting</h3>
 
-<p>To start the driver the launch file has to be started. For the driver to work correctly, the sensor ip, sensor tcp port and host ip have to be defined. These parameters can be passed to the sensor as arguments via launch file.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">roslaunch sick_safetyscanners sick_safetyscanners.launch sensor_ip:=192.168.1.10 sensor_tcp_port:=2122 host_ip:=192.168.1.9
+<p>To start the driver the launch file has to be started. For the driver to work correctly, the sensor ip and host ip have to be defined. These parameters can be passed to the sensor as arguments via launch file.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">roslaunch sick_safetyscanners sick_safetyscanners.launch sensor_ip:=192.168.1.10 host_ip:=192.168.1.9
 
 </code></pre></div>
 <p>This will start the driver and the dynamic reconfigure node. In this you can set different parameters on runtime, especially the angles and the data the sensor should publish. If these parameters should be set on startup they can be loaded to the parameter server beforehand.</p>
@@ -762,13 +775,6 @@ source</span> ~/catkin_ws/install/setup.bash
 <td>Sensor IP address. Can be passed as an argument to the launch file.</td>
 </tr>
 <tr>
-<td>sensor_tcp_port</td>
-<td>Integer</td>
-<td>2122</td>
-<td>✔</td>
-<td>Sensor TCP Port.  Can be passed as an argument to the launch file.</td>
-</tr>
-<tr>
 <td>host_ip</td>
 <td>String</td>
 <td>192.168.1.9</td>
@@ -801,14 +807,14 @@ source</span> ~/catkin_ws/install/setup.bash
 <td>Double</td>
 <td>0.0</td>
 <td></td>
-<td>Start angle of scan in radians, if both start and end angle are equal, all angels are regarded</td>
+<td>Start angle of scan in radians, if both start and end angle are equal, all angels are regarded.  0° is at the front of the scanner.</td>
 </tr>
 <tr>
 <td>angle_end</td>
 <td>Double</td>
 <td>0.0</td>
 <td></td>
-<td>End angle of scan in radians, if both start and end angle are equal, all angels are regarded</td>
+<td>End angle of scan in radians, if both start and end angle are equal, all angels are regarded.  0° is at the front of the scanner.</td>
 </tr>
 <tr>
 <td>channel_enabled</td>
@@ -853,11 +859,11 @@ source</span> ~/catkin_ws/install/setup.bash
 <td>If the application IO data should be published</td>
 </tr>
 <tr>
-<td>use_sick_angles</td>
+<td>use_persistent_config</td>
 <td>Boolean</td>
 <td>false</td>
 <td></td>
-<td>If this flag is set, the predefined angles from SICK are used. If this flag is set to false an offset of -90° is added to the angles so that 0° is at the front of the scanner.</td>
+<td>If this flag is set, the configured angles from the sensor are loaded and used and the ROS parameters <em>angle_start</em> and <em>angle_end</em> are disregarded</td>
 </tr>
 </tbody>
 </table>
@@ -955,6 +961,66 @@ source</span> ~/catkin_ws/install/setup.bash
                           </a>
                         </td>
                         <td><a href="/p/message_generation#melodic">message_generation</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#melodic">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/message_runtime#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/message_runtime" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/message_runtime#melodic">message_runtime</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rqt_reconfigure#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rqt_reconfigure" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rqt_reconfigure#melodic">rqt_reconfigure</a></td>
                       </tr>
                     
                   
@@ -1090,15 +1156,59 @@ source</span> ~/catkin_ws/install/setup.bash
                         
                       
                         
-                          <li><strong>sensor_tcp_port</strong> <em>&#91;default: 2122&#93; </em></li>
-                        
-                      
-                        
                           <li><strong>host_ip</strong> <em>&#91;default: 192.168.1.9&#93; </em></li>
                         
                       
                         
                           <li><strong>host_udp_port</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: scan&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>skip</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>angle_start</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>angle_end</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>time_offset</strong> <em>&#91;default: 0.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>channel_enabled</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>general_system_state</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>derived_settings</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>measurement_data</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>intrusion_data</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>application_io_data</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>use_persistent_config</strong> <em>&#91;default: False&#93; </em></li>
                         
                       
                     </ul>
@@ -1404,7 +1514,7 @@ sick_safetyscanners
     
     
     
-    <a href="#lunar-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
+    <a href="#lunar-deps" data-toggle="tab"><span class="label label-primary">8</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1483,7 +1593,7 @@ sick_safetyscanners
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-15
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-06
         </span>
       </td>
     </tr>
@@ -1684,6 +1794,16 @@ sick_safetyscanners
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>outdoorScan3 Pro</td>
+<td>MICS3-CBUZ40IZ1P01</td>
+<td>Safety Laser Scanner, EtherNet/IP CIP Safety, Protective Field Range: 4 m</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -1722,8 +1842,8 @@ source</span> ~/catkin_ws/install/setup.bash
 </code></pre></div>
 <h3 id="starting">Starting</h3>
 
-<p>To start the driver the launch file has to be started. For the driver to work correctly, the sensor ip, sensor tcp port and host ip have to be defined. These parameters can be passed to the sensor as arguments via launch file.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">roslaunch sick_safetyscanners sick_safetyscanners.launch sensor_ip:=192.168.1.10 sensor_tcp_port:=2122 host_ip:=192.168.1.9
+<p>To start the driver the launch file has to be started. For the driver to work correctly, the sensor ip and host ip have to be defined. These parameters can be passed to the sensor as arguments via launch file.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">roslaunch sick_safetyscanners sick_safetyscanners.launch sensor_ip:=192.168.1.10 host_ip:=192.168.1.9
 
 </code></pre></div>
 <p>This will start the driver and the dynamic reconfigure node. In this you can set different parameters on runtime, especially the angles and the data the sensor should publish. If these parameters should be set on startup they can be loaded to the parameter server beforehand.</p>
@@ -1797,13 +1917,6 @@ source</span> ~/catkin_ws/install/setup.bash
 <td>Sensor IP address. Can be passed as an argument to the launch file.</td>
 </tr>
 <tr>
-<td>sensor_tcp_port</td>
-<td>Integer</td>
-<td>2122</td>
-<td>✔</td>
-<td>Sensor TCP Port.  Can be passed as an argument to the launch file.</td>
-</tr>
-<tr>
 <td>host_ip</td>
 <td>String</td>
 <td>192.168.1.9</td>
@@ -1836,14 +1949,14 @@ source</span> ~/catkin_ws/install/setup.bash
 <td>Double</td>
 <td>0.0</td>
 <td></td>
-<td>Start angle of scan in radians, if both start and end angle are equal, all angels are regarded</td>
+<td>Start angle of scan in radians, if both start and end angle are equal, all angels are regarded.  0° is at the front of the scanner.</td>
 </tr>
 <tr>
 <td>angle_end</td>
 <td>Double</td>
 <td>0.0</td>
 <td></td>
-<td>End angle of scan in radians, if both start and end angle are equal, all angels are regarded</td>
+<td>End angle of scan in radians, if both start and end angle are equal, all angels are regarded.  0° is at the front of the scanner.</td>
 </tr>
 <tr>
 <td>channel_enabled</td>
@@ -1888,11 +2001,11 @@ source</span> ~/catkin_ws/install/setup.bash
 <td>If the application IO data should be published</td>
 </tr>
 <tr>
-<td>use_sick_angles</td>
+<td>use_persistent_config</td>
 <td>Boolean</td>
 <td>false</td>
 <td></td>
-<td>If this flag is set, the predefined angles from SICK are used. If this flag is set to false an offset of -90° is added to the angles so that 0° is at the front of the scanner.</td>
+<td>If this flag is set, the configured angles from the sensor are loaded and used and the ROS parameters <em>angle_start</em> and <em>angle_end</em> are disregarded</td>
 </tr>
 </tbody>
 </table>
@@ -1990,6 +2103,66 @@ source</span> ~/catkin_ws/install/setup.bash
                           </a>
                         </td>
                         <td><a href="/p/message_generation#lunar">message_generation</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#lunar-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#lunar">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/message_runtime#lunar-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/message_runtime" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/message_runtime#lunar">message_runtime</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rqt_reconfigure#lunar-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rqt_reconfigure" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rqt_reconfigure#lunar">rqt_reconfigure</a></td>
                       </tr>
                     
                   
@@ -2125,15 +2298,59 @@ source</span> ~/catkin_ws/install/setup.bash
                         
                       
                         
-                          <li><strong>sensor_tcp_port</strong> <em>&#91;default: 2122&#93; </em></li>
-                        
-                      
-                        
                           <li><strong>host_ip</strong> <em>&#91;default: 192.168.1.9&#93; </em></li>
                         
                       
                         
                           <li><strong>host_udp_port</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: scan&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>skip</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>angle_start</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>angle_end</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>time_offset</strong> <em>&#91;default: 0.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>channel_enabled</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>general_system_state</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>derived_settings</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>measurement_data</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>intrusion_data</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>application_io_data</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>use_persistent_config</strong> <em>&#91;default: False&#93; </em></li>
                         
                       
                     </ul>
@@ -2439,7 +2656,7 @@ sick_safetyscanners
     
     
     
-    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
+    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">8</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -2518,7 +2735,7 @@ sick_safetyscanners
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-15
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-06
         </span>
       </td>
     </tr>
@@ -2719,6 +2936,16 @@ sick_safetyscanners
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>outdoorScan3 Pro</td>
+<td>MICS3-CBUZ40IZ1P01</td>
+<td>Safety Laser Scanner, EtherNet/IP CIP Safety, Protective Field Range: 4 m</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -2757,8 +2984,8 @@ source</span> ~/catkin_ws/install/setup.bash
 </code></pre></div>
 <h3 id="starting">Starting</h3>
 
-<p>To start the driver the launch file has to be started. For the driver to work correctly, the sensor ip, sensor tcp port and host ip have to be defined. These parameters can be passed to the sensor as arguments via launch file.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">roslaunch sick_safetyscanners sick_safetyscanners.launch sensor_ip:=192.168.1.10 sensor_tcp_port:=2122 host_ip:=192.168.1.9
+<p>To start the driver the launch file has to be started. For the driver to work correctly, the sensor ip and host ip have to be defined. These parameters can be passed to the sensor as arguments via launch file.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">roslaunch sick_safetyscanners sick_safetyscanners.launch sensor_ip:=192.168.1.10 host_ip:=192.168.1.9
 
 </code></pre></div>
 <p>This will start the driver and the dynamic reconfigure node. In this you can set different parameters on runtime, especially the angles and the data the sensor should publish. If these parameters should be set on startup they can be loaded to the parameter server beforehand.</p>
@@ -2832,13 +3059,6 @@ source</span> ~/catkin_ws/install/setup.bash
 <td>Sensor IP address. Can be passed as an argument to the launch file.</td>
 </tr>
 <tr>
-<td>sensor_tcp_port</td>
-<td>Integer</td>
-<td>2122</td>
-<td>✔</td>
-<td>Sensor TCP Port.  Can be passed as an argument to the launch file.</td>
-</tr>
-<tr>
 <td>host_ip</td>
 <td>String</td>
 <td>192.168.1.9</td>
@@ -2871,14 +3091,14 @@ source</span> ~/catkin_ws/install/setup.bash
 <td>Double</td>
 <td>0.0</td>
 <td></td>
-<td>Start angle of scan in radians, if both start and end angle are equal, all angels are regarded</td>
+<td>Start angle of scan in radians, if both start and end angle are equal, all angels are regarded.  0° is at the front of the scanner.</td>
 </tr>
 <tr>
 <td>angle_end</td>
 <td>Double</td>
 <td>0.0</td>
 <td></td>
-<td>End angle of scan in radians, if both start and end angle are equal, all angels are regarded</td>
+<td>End angle of scan in radians, if both start and end angle are equal, all angels are regarded.  0° is at the front of the scanner.</td>
 </tr>
 <tr>
 <td>channel_enabled</td>
@@ -2923,11 +3143,11 @@ source</span> ~/catkin_ws/install/setup.bash
 <td>If the application IO data should be published</td>
 </tr>
 <tr>
-<td>use_sick_angles</td>
+<td>use_persistent_config</td>
 <td>Boolean</td>
 <td>false</td>
 <td></td>
-<td>If this flag is set, the predefined angles from SICK are used. If this flag is set to false an offset of -90° is added to the angles so that 0° is at the front of the scanner.</td>
+<td>If this flag is set, the configured angles from the sensor are loaded and used and the ROS parameters <em>angle_start</em> and <em>angle_end</em> are disregarded</td>
 </tr>
 </tbody>
 </table>
@@ -3025,6 +3245,66 @@ source</span> ~/catkin_ws/install/setup.bash
                           </a>
                         </td>
                         <td><a href="/p/message_generation#kinetic">message_generation</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#kinetic">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/message_runtime#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/message_runtime" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/message_runtime#kinetic">message_runtime</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rqt_reconfigure#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rqt_reconfigure" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rqt_reconfigure#kinetic">rqt_reconfigure</a></td>
                       </tr>
                     
                   
@@ -3160,15 +3440,59 @@ source</span> ~/catkin_ws/install/setup.bash
                         
                       
                         
-                          <li><strong>sensor_tcp_port</strong> <em>&#91;default: 2122&#93; </em></li>
-                        
-                      
-                        
                           <li><strong>host_ip</strong> <em>&#91;default: 192.168.1.9&#93; </em></li>
                         
                       
                         
                           <li><strong>host_udp_port</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: scan&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>skip</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>angle_start</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>angle_end</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>time_offset</strong> <em>&#91;default: 0.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>channel_enabled</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>general_system_state</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>derived_settings</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>measurement_data</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>intrusion_data</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>application_io_data</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>use_persistent_config</strong> <em>&#91;default: False&#93; </em></li>
                         
                       
                     </ul>
@@ -3474,7 +3798,7 @@ sick_safetyscanners
     
     
     
-    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
+    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">8</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -3553,7 +3877,7 @@ sick_safetyscanners
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-15
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-06
         </span>
       </td>
     </tr>
@@ -3754,6 +4078,16 @@ sick_safetyscanners
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>outdoorScan3 Pro</td>
+<td>MICS3-CBUZ40IZ1P01</td>
+<td>Safety Laser Scanner, EtherNet/IP CIP Safety, Protective Field Range: 4 m</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -3792,8 +4126,8 @@ source</span> ~/catkin_ws/install/setup.bash
 </code></pre></div>
 <h3 id="starting">Starting</h3>
 
-<p>To start the driver the launch file has to be started. For the driver to work correctly, the sensor ip, sensor tcp port and host ip have to be defined. These parameters can be passed to the sensor as arguments via launch file.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">roslaunch sick_safetyscanners sick_safetyscanners.launch sensor_ip:=192.168.1.10 sensor_tcp_port:=2122 host_ip:=192.168.1.9
+<p>To start the driver the launch file has to be started. For the driver to work correctly, the sensor ip and host ip have to be defined. These parameters can be passed to the sensor as arguments via launch file.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">roslaunch sick_safetyscanners sick_safetyscanners.launch sensor_ip:=192.168.1.10 host_ip:=192.168.1.9
 
 </code></pre></div>
 <p>This will start the driver and the dynamic reconfigure node. In this you can set different parameters on runtime, especially the angles and the data the sensor should publish. If these parameters should be set on startup they can be loaded to the parameter server beforehand.</p>
@@ -3867,13 +4201,6 @@ source</span> ~/catkin_ws/install/setup.bash
 <td>Sensor IP address. Can be passed as an argument to the launch file.</td>
 </tr>
 <tr>
-<td>sensor_tcp_port</td>
-<td>Integer</td>
-<td>2122</td>
-<td>✔</td>
-<td>Sensor TCP Port.  Can be passed as an argument to the launch file.</td>
-</tr>
-<tr>
 <td>host_ip</td>
 <td>String</td>
 <td>192.168.1.9</td>
@@ -3906,14 +4233,14 @@ source</span> ~/catkin_ws/install/setup.bash
 <td>Double</td>
 <td>0.0</td>
 <td></td>
-<td>Start angle of scan in radians, if both start and end angle are equal, all angels are regarded</td>
+<td>Start angle of scan in radians, if both start and end angle are equal, all angels are regarded.  0° is at the front of the scanner.</td>
 </tr>
 <tr>
 <td>angle_end</td>
 <td>Double</td>
 <td>0.0</td>
 <td></td>
-<td>End angle of scan in radians, if both start and end angle are equal, all angels are regarded</td>
+<td>End angle of scan in radians, if both start and end angle are equal, all angels are regarded.  0° is at the front of the scanner.</td>
 </tr>
 <tr>
 <td>channel_enabled</td>
@@ -3958,11 +4285,11 @@ source</span> ~/catkin_ws/install/setup.bash
 <td>If the application IO data should be published</td>
 </tr>
 <tr>
-<td>use_sick_angles</td>
+<td>use_persistent_config</td>
 <td>Boolean</td>
 <td>false</td>
 <td></td>
-<td>If this flag is set, the predefined angles from SICK are used. If this flag is set to false an offset of -90° is added to the angles so that 0° is at the front of the scanner.</td>
+<td>If this flag is set, the configured angles from the sensor are loaded and used and the ROS parameters <em>angle_start</em> and <em>angle_end</em> are disregarded</td>
 </tr>
 </tbody>
 </table>
@@ -4060,6 +4387,66 @@ source</span> ~/catkin_ws/install/setup.bash
                           </a>
                         </td>
                         <td><a href="/p/message_generation#indigo">message_generation</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#indigo">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/message_runtime#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/message_runtime" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/message_runtime#indigo">message_runtime</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rqt_reconfigure#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rqt_reconfigure" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rqt_reconfigure#indigo">rqt_reconfigure</a></td>
                       </tr>
                     
                   
@@ -4195,15 +4582,59 @@ source</span> ~/catkin_ws/install/setup.bash
                         
                       
                         
-                          <li><strong>sensor_tcp_port</strong> <em>&#91;default: 2122&#93; </em></li>
-                        
-                      
-                        
                           <li><strong>host_ip</strong> <em>&#91;default: 192.168.1.9&#93; </em></li>
                         
                       
                         
                           <li><strong>host_udp_port</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>frame_id</strong> <em>&#91;default: scan&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>skip</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>angle_start</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>angle_end</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>time_offset</strong> <em>&#91;default: 0.0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>channel_enabled</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>general_system_state</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>derived_settings</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>measurement_data</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>intrusion_data</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>application_io_data</strong> <em>&#91;default: True&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>use_persistent_config</strong> <em>&#91;default: False&#93; </em></li>
                         
                       
                     </ul>
@@ -4448,7 +4879,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

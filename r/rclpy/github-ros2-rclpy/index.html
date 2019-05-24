@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//r/rclpy/github-ros2-rclpy/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -331,7 +334,7 @@
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-11
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-23
         </span>
       </td>
     </tr>
@@ -374,7 +377,7 @@
                 
                   <tr>
                     <td><a href="/p/rclpy/github-ros2-rclpy">rclpy</a></td>
-                    <td>0.6.1</td>
+                    <td>0.7.2</td>
                   </tr>
                 
                 </tbody>
@@ -391,6 +394,19 @@
 <h1 id="rclpy">rclpy</h1>
 
 <p>ROS Client Library for the Python language.</p>
+
+<h2 id="building-documentation">Building documentation</h2>
+
+<p>Documentation can be built for <code>rclpy</code> using <a href="http://www.sphinx-doc.org/en/master/">Sphinx</a>.</p>
+
+<h4 id="install-dependencies">Install dependencies</h4>
+<div class="highlight"><pre><code class="language-" data-lang="">sudo apt install python3-sphinx python3-pip
+sudo -H pip3 install sphinx_autodoc_typehints
+</code></pre></div>
+<h4 id="build">Build</h4>
+<div class="highlight"><pre><code class="language-" data-lang="">cd rclpy/docs
+make html
+</code></pre></div>
 </div>
             
           </div>
@@ -672,7 +688,7 @@
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

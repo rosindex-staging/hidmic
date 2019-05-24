@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/examples_rclpy_minimal_publisher/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -331,6 +334,22 @@ examples_rclcpp_minimal_timer
           
             
             
+              <a class="label label-primary pkg-label" href="/p/examples_rclpy_minimal_action_client/github-ros2-examples">
+
+examples_rclpy_minimal_action_client
+</a>
+            
+          
+            
+            
+              <a class="label label-primary pkg-label" href="/p/examples_rclpy_minimal_action_server/github-ros2-examples">
+
+examples_rclpy_minimal_action_server
+</a>
+            
+          
+            
+            
               <a class="label label-primary pkg-label" href="/p/examples_rclpy_executors/github-ros2-examples">
 
 examples_rclpy_executors
@@ -449,7 +468,7 @@ examples_rclpy_minimal_subscriber
     
     
     
-    <a href="#crystal-deps" data-toggle="tab"><span class="label label-default">0</span> Dependencies</a>
+    <a href="#crystal-deps" data-toggle="tab"><span class="label label-primary">6</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -480,7 +499,7 @@ examples_rclpy_minimal_subscriber
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.6.1</td>
+                <td>0.7.2</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -528,7 +547,7 @@ examples_rclpy_minimal_subscriber
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-12-07
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-23
         </span>
       </td>
     </tr>
@@ -657,7 +676,116 @@ The <code>publisher_member_function</code> recipe creates a class MinimalPublish
           </div>
           <div class="panel-body">
             
-              <em>No dependencies on ROS packages.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th class="text-center">Deps</th>
+                  <th class="text-center"><span class="glyphicon glyphicon-th" title="Package instances"></span></th>
+                  <th style="width: 100%">Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rclpy#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rclpy" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rclpy#crystal">rclpy</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/std_msgs#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/std_msgs" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/std_msgs#crystal">std_msgs</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_copyright#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_copyright" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_copyright#crystal">ament_copyright</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_flake8#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_flake8" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_flake8#crystal">ament_flake8</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_pep257#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_pep257" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_pep257#crystal">ament_pep257</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
           <div class="panel-heading">
@@ -665,7 +793,20 @@ The <code>publisher_member_function</code> recipe creates a class MinimalPublish
           </div>
           <div class="panel-body">
             
-              <em>No direct system dependencies.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                      <tr>
+                        <td><a href="/d/python3-pytest">python3-pytest</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -678,7 +819,30 @@ The <code>publisher_member_function</code> recipe creates a class MinimalPublish
           </div>
           <div class="panel-body">
             
-              <em>No known dependants.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                  <th>Repo</th>
+                  <th class="text-center">Deps</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/desktop/github-ros2-variants#crystal">desktop</a></td>
+                      <td><a href="/r/variants/github-ros2-variants">github-ros2-variants</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/desktop/github-ros2-variants#crystal-deps" class="inactive">
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -1035,7 +1199,7 @@ examples_rclpy_minimal_subscriber
     
     
     
-    <a href="#bouncy-deps" data-toggle="tab"><span class="label label-default">0</span> Dependencies</a>
+    <a href="#bouncy-deps" data-toggle="tab"><span class="label label-primary">6</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1243,7 +1407,116 @@ The <code>publisher_member_function</code> recipe creates a class MinimalPublish
           </div>
           <div class="panel-body">
             
-              <em>No dependencies on ROS packages.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th class="text-center">Deps</th>
+                  <th class="text-center"><span class="glyphicon glyphicon-th" title="Package instances"></span></th>
+                  <th style="width: 100%">Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rclpy#bouncy-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rclpy" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rclpy#bouncy">rclpy</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/std_msgs#bouncy-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/std_msgs" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/std_msgs#bouncy">std_msgs</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_copyright#bouncy-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_copyright" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_copyright#bouncy">ament_copyright</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_flake8#bouncy-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_flake8" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_flake8#bouncy">ament_flake8</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_pep257#bouncy-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_pep257" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_pep257#bouncy">ament_pep257</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
           <div class="panel-heading">
@@ -1251,7 +1524,20 @@ The <code>publisher_member_function</code> recipe creates a class MinimalPublish
           </div>
           <div class="panel-body">
             
-              <em>No direct system dependencies.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                      <tr>
+                        <td><a href="/d/python3-pytest">python3-pytest</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -1264,7 +1550,30 @@ The <code>publisher_member_function</code> recipe creates a class MinimalPublish
           </div>
           <div class="panel-body">
             
-              <em>No known dependants.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                  <th>Repo</th>
+                  <th class="text-center">Deps</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/desktop/github-ros2-variants#bouncy">desktop</a></td>
+                      <td><a href="/r/variants/github-ros2-variants">github-ros2-variants</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/desktop/github-ros2-variants#bouncy-deps" class="inactive">
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -1653,7 +1962,7 @@ examples_rclpy_minimal_subscriber
     
     
     
-    <a href="#ardent-deps" data-toggle="tab"><span class="label label-default">0</span> Dependencies</a>
+    <a href="#ardent-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1859,7 +2168,116 @@ The <code>publisher_member_function</code> recipe creates a class MinimalPublish
           </div>
           <div class="panel-body">
             
-              <em>No dependencies on ROS packages.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th class="text-center">Deps</th>
+                  <th class="text-center"><span class="glyphicon glyphicon-th" title="Package instances"></span></th>
+                  <th style="width: 100%">Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rclpy#ardent-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rclpy" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rclpy#ardent">rclpy</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/std_msgs#ardent-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/std_msgs" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/std_msgs#ardent">std_msgs</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_copyright#ardent-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_copyright" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_copyright#ardent">ament_copyright</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_flake8#ardent-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_flake8" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_flake8#ardent">ament_flake8</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_pep257#ardent-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_pep257" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_pep257#ardent">ament_pep257</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
           <div class="panel-heading">
@@ -1880,7 +2298,30 @@ The <code>publisher_member_function</code> recipe creates a class MinimalPublish
           </div>
           <div class="panel-body">
             
-              <em>No known dependants.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                  <th>Repo</th>
+                  <th class="text-center">Deps</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/desktop/github-ros2-variants#ardent">desktop</a></td>
+                      <td><a href="/r/variants/github-ros2-variants">github-ros2-variants</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/desktop/github-ros2-variants#ardent-deps" class="inactive">
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -2088,7 +2529,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

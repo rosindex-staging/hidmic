@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/nav2_motion_primitives/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -291,6 +294,14 @@ nav2_bt_navigator
           
             
             
+              <a class="label label-primary pkg-label" href="/p/nav2_common/github-ros-planning-navigation2">
+
+nav2_common
+</a>
+            
+          
+            
+            
               <a class="label label-primary pkg-label" href="/p/nav2_costmap_2d/github-ros-planning-navigation2">
 
 nav2_costmap_2d
@@ -379,6 +390,14 @@ nav2_dynamic_params
           
             
             
+              <a class="label label-primary pkg-label" href="/p/nav2_turtlebot3_rl/github-ros-planning-navigation2">
+
+nav2_turtlebot3_rl
+</a>
+            
+          
+            
+            
               <a class="label label-primary pkg-label" href="/p/nav2_map_server/github-ros-planning-navigation2">
 
 nav2_map_server
@@ -422,14 +441,6 @@ nav2_navfn_planner
               <a class="label label-primary pkg-label" href="/p/nav2_robot/github-ros-planning-navigation2">
 
 nav2_robot
-</a>
-            
-          
-            
-            
-              <a class="label label-primary pkg-label" href="/p/nav2_simple_navigator/github-ros-planning-navigation2">
-
-nav2_simple_navigator
 </a>
             
           
@@ -561,7 +572,7 @@ navigation2
     
     
     
-    <a href="#crystal-deps" data-toggle="tab"><span class="label label-primary">9</span> Dependencies</a>
+    <a href="#crystal-deps" data-toggle="tab"><span class="label label-primary">17</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -640,7 +651,7 @@ navigation2
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-18
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-16
         </span>
       </td>
     </tr>
@@ -710,9 +721,119 @@ navigation2
               <div class="panel-heading"><span class="glyphicon glyphicon-file"></span><a href="https://github.com/ros-planning/navigation2/tree/master/nav2_motion_primitives/README.md" title="Open in git repository">nav2_motion_primitives/README.md</a></div>
               <div class="panel-body">
                     <div class="rendered-markdown">
-<h1 id="behaviors">Behaviors</h1>
+<p><strong>Warning</strong>: As with the rest of <code>nav2</code>, this package is still in development and only works with Turtlebot 3 at the moment. Currently collision avoidance has not been integrated. The user is advised to not use this feature on a physical robot for safety reasons.  As of now, this feature should only be used in simulations.</p>
 
-<p>TODO (orduno)</p>
+<hr>
+
+<h1 id="motion-primitives">Motion Primitives</h1>
+
+<p>The <code>nav2_motion_primitives</code> package implements, as the name suggests, a module for executing simple controlled robot movements such as rotating on its own axis or moving linearly.</p>
+
+<p>The package defines:
+- A <code>MotionPrimitive</code> template which is used as a base class to implement specific primitives.
+- The <code>BackUp</code>, <code>Spin</code> and <code>Stop</code> primitives.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p><em>Motion primitives</em> define simple predictable movements that components can leverage for defining more complex behavior. For example, <code>nav2</code> uses motion primitives for executing recovery behaviors, such as the ones defined on the <a href="https://github.com/ros-planning/navigation2/tree/master/nav2_motion_primitives/../nav2_bt_navigator/README.md##Recovery-Behavior-Trees">BtNavigator</a>.</p>
+
+<p>Currently the package provides the following primitives:
+- <strong>Spin</strong> performs an in-place rotation by a given angle.
+- <strong>Back Up</strong> performs an linear translation by a given distance.
+- <strong>Stop</strong> brings the robot to a stationary state.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>The module is implemented as a single node containing multiple primitives and follows the <code>nav2</code> <a href="https://github.com/ros-planning/navigation2/tree/master/nav2_motion_primitives/../nav2_tasks/README.md#Overview">task hierarchy</a>. Each primitive is defined as a <code>nav2_task</code> with corresponding <em>command</em> and <em>result</em> message definitions.</p>
+
+<p>The <code>MotionPrimitive</code> base class manages the task server, provides a robot interface and calls the primitive's update functions.</p>
+
+<p>To gain insight into the package lets go over how to implement and execute a new motion primitive.</p>
+
+<h3 id="defining-a-primitive">Defining a primitive</h3>
+
+<p>In this section we'll go over how to define a new primitive and implement the corresponding motion.</p>
+
+<p>The first step is to provide the <a href="https://github.com/ros-planning/navigation2/tree/master/nav2_motion_primitives/../nav2_tasks/README.md">task definition</a> inside the <code>nav2_tasks</code> package. For example, lets define a <code>SomePrimitive</code> task interface, i.e. the types of messages to use for the command and result, as well as the client and server.</p>
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">namespace</span> <span class="n">nav2_tasks</span>
+<span class="p">{</span>
+
+<span class="k">using</span> <span class="n">SomePrimitiveCommand</span> <span class="o">=</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">SomePrimitiveResult</span> <span class="o">=</span> <span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Empty</span><span class="p">;</span>
+
+<span class="k">using</span> <span class="n">SomePrimitiveTaskClient</span> <span class="o">=</span> <span class="n">TaskClient</span><span class="o">&lt;</span><span class="n">SomePrimitiveCommand</span><span class="p">,</span> <span class="n">SomePrimitiveResult</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">SomePrimitiveTaskServer</span> <span class="o">=</span> <span class="n">TaskServer</span><span class="o">&lt;</span><span class="n">SomePrimitiveCommand</span><span class="p">,</span> <span class="n">SomePrimitiveResult</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="k">template</span><span class="o">&lt;&gt;</span>
+<span class="kr">inline</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">getTaskName</span><span class="o">&lt;</span><span class="n">SomePrimitiveCommand</span><span class="p">,</span> <span class="n">SomePrimitiveResult</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="s">"SomePrimitiveTask"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">}</span>  <span class="c1">// namespace nav2_tasks</span>
+
+</code></pre></div>
+<p>For this example we arbitrarily pick <code>geometry_msgs::msg::Point</code> and <code>std_msgs::msg::Empty</code> as message types for command and result.</p>
+
+<p>Next we define the class for our new primitive. This class should derive from <code>MotionPrimitive</code> and use the command and result messages defined on the corresponding task.</p>
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">SomePrimitive</span> <span class="o">:</span> <span class="k">public</span> <span class="n">MotionPrimitive</span><span class="o">&lt;</span><span class="n">nav2_tasks</span><span class="o">::</span><span class="n">SomePrimitiveCommand</span><span class="p">,</span> <span class="n">nav2_tasks</span><span class="o">::</span><span class="n">SomePrimitiveResult</span><span class="o">&gt;</span>
+
+</code></pre></div>
+<p>On the implementation of <code>SomePrimitive</code> all we do is override <code>onRun</code> and <code>onCycleUpdate</code>.</p>
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">using</span> <span class="n">nav2_tasks</span>
+
+<span class="n">TaskStatus</span> <span class="n">SomePrimitive</span><span class="o">::</span><span class="n">onRun</span><span class="p">(</span><span class="k">const</span> <span class="n">SomePrimitiveCommand</span><span class="o">::</span><span class="n">SharedPtr</span> <span class="n">command</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="cm">/* onRun code */</span>
+<span class="p">}</span>
+
+<span class="n">TaskStatus</span> <span class="n">SomePrimitive</span><span class="o">::</span><span class="n">onCycleUpdate</span><span class="p">(</span><span class="n">SomePrimitiveResult</span> <span class="o">&amp;</span> <span class="n">result</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="cm">/* onCycleUpdate code */</span>
+<span class="p">}</span>
+
+</code></pre></div>
+<p>The <code>onRun</code> method is the entry point for the primitive and here we should:
+- Catch the command.
+- Perform checks before the main execution loop.
+- Possibly do some initialization.
+- Return a <code>nav2_tasks::TaskStatus</code> given the initial checks.</p>
+
+<p>The <code>onCycleUpdate</code> method is called periodically until it returns <code>FAILED</code> or <code>SUCCEEDED</code>, here we should:
+- Set the robot in motion.
+- Perform some unit of work.
+- Check if the robot state, determine if work completed
+- Return a <code>nav2_tasks::TaskStatus</code>.</p>
+
+<h3 id="defining-the-primitives-client">Defining the primitive's client</h3>
+
+<p>Primitives use the <code>nav2_tasks</code> interface, so we need to define the task client:</p>
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">nav2_tasks</span><span class="o">::</span><span class="n">TaskClient</span><span class="o">&lt;</span><span class="n">SomePrimitiveCommand</span><span class="p">,</span> <span class="n">SomePrimitiveResult</span><span class="o">&gt;</span> <span class="n">some_primitive_task_client</span><span class="p">;</span>
+
+</code></pre></div>
+<p>To send requests we create the command and sent it over the client:</p>
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">SomePrimitiveCommand</span><span class="o">::</span><span class="n">SharedPtr</span> <span class="n">command</span><span class="p">;</span>
+<span class="c1">// Fill command</span>
+<span class="n">some_primitive_task_client</span><span class="p">.</span><span class="n">sendCommand</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+
+</code></pre></div>
+<h3 id="optional-define-the-behavior-tree-action-node">(optional) Define the Behavior Tree action node</h3>
+
+<p>For using motion primitivies within a behavior tree such as <a href="https://github.com/ros-planning/navigation2/tree/master/nav2_motion_primitives/../nav2_bt_navigator/README.md##Navigation-Behavior-Trees">bt_navigator</a>, then a corresponding <em>action node</em> needs to be defined. Checkout <code>nav2_tasks</code> for examples on how to implement one.</p>
+
+<h2 id="plans">Plans</h2>
+
+<ul>
+<li>Check for collision before executing a primitive. Issues <a href="https://github.com/ros-planning/navigation2/issues/379">379</a> and <a href="https://github.com/ros-planning/navigation2/issues/533">533</a>.</li>
+<li>Remove the stop primitive, move the funcionality to the robot class. Issue <a href="https://github.com/ros-planning/navigation2/issues/575">575</a>
+</li>
+<li>Consider moving <code>nav2_motion_primitives</code> altogether to the <code>nav2_robot</code> package. Issue <a href="https://github.com/ros-planning/navigation2/issues/378">378</a>.</li>
+<li>Depending on the feedback from the community we might want to develop this package to include a wide variety of primitives (arcs) to support all kinds of task, navigation (lattice-based), docking, etc.</li>
+<li>Define smooth transitions between motions. Issue <a href="https://github.com/ros-planning/navigation2/issues/411">411</a>.</li>
+<li>Make the existing motion primitives configurable for other robots.</li>
+</ul>
+
+<p>Refer to Github for an up-to-date <a href="https://github.com/ros-planning/navigation2/issues?q=is%3Aopen+is%3Aissue+label%3Anav2_motion_primitives">list</a>.</p>
 </div>
               </div>
             </div>
@@ -773,6 +894,26 @@ navigation2
                   <th style="width: 100%">Name</th>
                 </thead>
                 <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/nav2_common#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/nav2_common" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/nav2_common#crystal">nav2_common</a></td>
+                      </tr>
+                    
                   
                     
                     
@@ -954,6 +1095,146 @@ navigation2
                       </tr>
                     
                   
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_cmake#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_cmake" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_cmake#crystal">ament_cmake</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_lint_common#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_lint_common" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_lint_common#crystal">ament_lint_common</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_lint_auto#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_lint_auto" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_lint_auto#crystal">ament_lint_auto</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_cmake_gtest#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_cmake_gtest" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_cmake_gtest#crystal">ament_cmake_gtest</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_cmake_pytest#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_cmake_pytest" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_cmake_pytest#crystal">ament_cmake_pytest</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/launch#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/launch" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/launch#crystal">launch</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/launch_testing#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/launch_testing" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/launch_testing#crystal">launch_testing</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -976,7 +1257,30 @@ navigation2
           </div>
           <div class="panel-body">
             
-              <em>No known dependants.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                  <th>Repo</th>
+                  <th class="text-center">Deps</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/navigation2/github-ros-planning-navigation2#crystal">navigation2</a></td>
+                      <td><a href="/r/navigation2/github-ros-planning-navigation2">github-ros-planning-navigation2</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/navigation2/github-ros-planning-navigation2#crystal-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -1232,7 +1536,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

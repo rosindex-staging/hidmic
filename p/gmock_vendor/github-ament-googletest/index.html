@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/gmock_vendor/github-ament-googletest/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -364,7 +367,7 @@ gtest_vendor
     
     
     
-    <a href="#crystal-deps" data-toggle="tab"><span class="label label-primary">1</span> Dependencies</a>
+    <a href="#crystal-deps" data-toggle="tab"><span class="label label-primary">2</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -395,7 +398,7 @@ gtest_vendor
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>1.8.0</td>
+                <td>1.8.9000</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -443,7 +446,7 @@ gtest_vendor
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-04
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-08
         </span>
       </td>
     </tr>
@@ -558,7 +561,7 @@ and mock objects.</li>
 <li>Does automatic verification of expectations (no record-and-replay needed).</li>
 <li>Allows arbitrary (partial) ordering constraints on
 function calls to be expressed,.</li>
-<li>Lets an user extend it by defining new matchers and actions.</li>
+<li>Lets a user extend it by defining new matchers and actions.</li>
 <li>Does not use exceptions.</li>
 <li>Is easy to learn and use.</li>
 </ul>
@@ -578,9 +581,9 @@ the Apache License, which is different from Google Mock's license.</p>
 documentation in the following order:</p>
 
 <ul>
-<li>Learn the <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../../master/googletest/docs/Primer.md">basics</a> of
+<li>Learn the <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googletest/docs/primer.md">basics</a> of
 Google Test, if you choose to use Google Mock with it (recommended).</li>
-<li>Read <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../../master/googlemock/docs/ForDummies.md">Google Mock for Dummies</a>.</li>
+<li>Read <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googlemock/docs/ForDummies.md">Google Mock for Dummies</a>.</li>
 <li>Read the instructions below on how to build Google Mock.</li>
 </ul>
 
@@ -590,10 +593,10 @@ Google Test, if you choose to use Google Mock with it (recommended).</li>
 
 <ul>
 <li>
-<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../../master/googlemock/docs/CheatSheet.md">CheatSheet</a> - all the commonly used stuff
+<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googlemock/docs/CheatSheet.md">CheatSheet</a> - all the commonly used stuff
 at a glance.</li>
 <li>
-<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../../master/googlemock/docs/CookBook.md">CookBook</a> - recipes for getting things done,
+<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googlemock/docs/CookBook.md">CookBook</a> - recipes for getting things done,
 including advanced techniques.</li>
 </ul>
 
@@ -608,7 +611,7 @@ posting a question on the
 <p>Google Mock is not a testing framework itself.  Instead, it needs a
 testing framework for writing tests.  Google Mock works seamlessly
 with <a href="https://github.com/google/googletest">Google Test</a>, but
-you can also use it with <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../../master/googlemock/docs/ForDummies.md#using-google-mock-with-any-testing-framework">any C++ testing framework</a>.</p>
+you can also use it with <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googlemock/docs/ForDummies.md#using-google-mock-with-any-testing-framework">any C++ testing framework</a>.</p>
 
 <h3 id="requirements-for-end-users">Requirements for End Users</h3>
 
@@ -617,7 +620,7 @@ You must use the bundled version of Google Test when using Google Mock.</p>
 
 <p>You can also easily configure Google Mock to work with another testing
 framework, although it will still need Google Test.  Please read
-<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../../master/googlemock/docs/ForDummies.md#using-google-mock-with-any-testing-framework">"Using_Google_Mock_with_Any_Testing_Framework"</a>
+<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googlemock/docs/ForDummies.md#using-google-mock-with-any-testing-framework">"Using_Google_Mock_with_Any_Testing_Framework"</a>
 for instructions.</p>
 
 <p>Google Mock depends on advanced C++ features and thus requires a more
@@ -664,37 +667,19 @@ re-generating certain source files from templates)</li>
 
 <p>If you have CMake available, it is recommended that you follow the
 <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googletest/README.md#using-cmake" title="Using CMake">build instructions</a>
-as described for Google Test. </p>
+as described for Google Test.</p>
 
 <p>If are using Google Mock with an
 existing CMake project, the section
 <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googletest/README.md#incorporating-into-an-existing-cmake-project" title="Incorporating Into An Existing CMake Project">Incorporating Into An Existing CMake Project</a>
-may be of particular interest. 
-To make it work for Google Mock you will need to change </p>
+may be of particular interest.
+To make it work for Google Mock you will need to change</p>
 <div class="highlight"><pre><code class="language-" data-lang="">target_link_libraries(example gtest_main)
 </code></pre></div>
-<p>to </p>
+<p>to</p>
 <div class="highlight"><pre><code class="language-" data-lang="">target_link_libraries(example gmock_main)
 </code></pre></div>
-<p>This works because <code>gmock_main</code> library is compiled with Google Test.
-However, it does not automatically add Google Test includes.
-Therefore you will also have to change</p>
-<div class="highlight"><pre><code class="language-" data-lang="">if (CMAKE_VERSION VERSION_LESS 2.8.11)
-  include_directories("${gtest_SOURCE_DIR}/include")
-endif()
-</code></pre></div>
-<p>to</p>
-<div class="highlight"><pre><code class="language-" data-lang="">if (CMAKE_VERSION VERSION_LESS 2.8.11)
-  include_directories(BEFORE SYSTEM
-    "${gtest_SOURCE_DIR}/include" "${gmock_SOURCE_DIR}/include")
-else()
-  target_include_directories(gmock_main SYSTEM BEFORE INTERFACE
-    "${gtest_SOURCE_DIR}/include" "${gmock_SOURCE_DIR}/include")
-endif()
-</code></pre></div>
-<p>This will addtionally mark Google Mock includes as system, which will 
-silence compiler warnings when compiling your tests using clang with 
-<code>-Wpedantic -Wall -Wextra -Wconversion</code>.</p>
+<p>This works because <code>gmock_main</code> library is compiled with Google Test.</p>
 
 <h4 id="preparing-to-build-unix-only">Preparing to Build (Unix only)</h4>
 
@@ -792,33 +777,6 @@ or 0 to enable or disable a certain feature.</p>
 <p>We list the most frequently used macros below.  For a complete list,
 see file <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googletest/include/gtest/internal/gtest-port.h">${GTEST_DIR}/include/gtest/internal/gtest-port.h</a>.</p>
 
-<h3 id="choosing-a-tr1-tuple-library">Choosing a TR1 Tuple Library</h3>
-
-<p>Google Mock uses the C++ Technical Report 1 (TR1) tuple library
-heavily.  Unfortunately TR1 tuple is not yet widely available with all
-compilers.  The good news is that Google Test 1.4.0+ implements a
-subset of TR1 tuple that's enough for Google Mock's need.  Google Mock
-will automatically use that implementation when the compiler doesn't
-provide TR1 tuple.</p>
-
-<p>Usually you don't need to care about which tuple library Google Test
-and Google Mock use.  However, if your project already uses TR1 tuple,
-you need to tell Google Test and Google Mock to use the same TR1 tuple
-library the rest of your project uses, or the two tuple
-implementations will clash.  To do that, add</p>
-<div class="highlight"><pre><code class="language-" data-lang="">-DGTEST_USE_OWN_TR1_TUPLE=0
-</code></pre></div>
-<p>to the compiler flags while compiling Google Test, Google Mock, and
-your tests.  If you want to force Google Test and Google Mock to use
-their own tuple library, just add</p>
-<div class="highlight"><pre><code class="language-" data-lang="">-DGTEST_USE_OWN_TR1_TUPLE=1
-</code></pre></div>
-<p>to the compiler flags instead.</p>
-
-<p>If you want to use Boost's TR1 tuple library with Google Mock, please
-refer to the Boost website (<a href="http://www.boost.org/">http://www.boost.org/</a>) for how to obtain
-it and set it up.</p>
-
 <h3 id="as-a-shared-library-dll">As a Shared Library (DLL)</h3>
 
 <p>Google Mock is compact, so most users can build and link it as a static
@@ -842,7 +800,7 @@ do if you are upgrading from an earlier version of Google Mock.</p>
 <h4 id="upgrading-from-1-1-0-or-earlier">Upgrading from 1.1.0 or Earlier</h4>
 
 <p>You may need to explicitly enable or disable Google Test's own TR1
-tuple library.  See the instructions in section "<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googletest/#choosing-a-tr1-tuple-library">Choosing a TR1 Tuple
+tuple library.  See the instructions in section "<a href="https://github.com/ament/googletest/tree/ros2/googlemock/#choosing-a-tr1-tuple-library">Choosing a TR1 Tuple
 Library</a>".</p>
 
 <h4 id="upgrading-from-1-4-0-or-earlier">Upgrading from 1.4.0 or Earlier</h4>
@@ -850,7 +808,7 @@ Library</a>".</p>
 <p>On platforms where the pthread library is available, Google Test and
 Google Mock use it in order to be thread-safe.  For this to work, you
 may need to tweak your compiler and/or linker flags.  Please see the
-"<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googletest#multi-threaded-tests">Multi-threaded Tests</a>" section in file Google Test's README for what you may need to do.</p>
+"<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googletest/README.md#multi-threaded-tests">Multi-threaded Tests</a>" section in file Google Test's README for what you may need to do.</p>
 
 <p>If you have custom matchers defined using <code>MatcherInterface</code> or
 <code>MakePolymorphicMatcher()</code>, you'll need to update their definitions to
@@ -911,7 +869,36 @@ Matchers defined using <code>MATCHER()</code> or <code>MATCHER_P*()</code> aren'
           </div>
           <div class="panel-body">
             
-              <em>No dependencies on ROS packages.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th class="text-center">Deps</th>
+                  <th class="text-center"><span class="glyphicon glyphicon-th" title="Package instances"></span></th>
+                  <th style="width: 100%">Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/gtest_vendor#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/gtest_vendor" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/gtest_vendor#crystal">gtest_vendor</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
           <div class="panel-heading">
@@ -945,7 +932,30 @@ Matchers defined using <code>MATCHER()</code> or <code>MATCHER_P*()</code> aren'
           </div>
           <div class="panel-body">
             
-              <em>No known dependants.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                  <th>Repo</th>
+                  <th class="text-center">Deps</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/ament_cmake_gmock/github-ament-ament_cmake#crystal">ament_cmake_gmock</a></td>
+                      <td><a href="/r/ament_cmake/github-ament-ament_cmake">github-ament-ament_cmake</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/ament_cmake_gmock/github-ament-ament_cmake#crystal-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -1230,7 +1240,7 @@ gtest_vendor
     
     
     
-    <a href="#bouncy-deps" data-toggle="tab"><span class="label label-primary">1</span> Dependencies</a>
+    <a href="#bouncy-deps" data-toggle="tab"><span class="label label-primary">2</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1261,7 +1271,7 @@ gtest_vendor
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>1.8.0</td>
+                <td>1.8.9000</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -1309,7 +1319,7 @@ gtest_vendor
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-04
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-08
         </span>
       </td>
     </tr>
@@ -1424,7 +1434,7 @@ and mock objects.</li>
 <li>Does automatic verification of expectations (no record-and-replay needed).</li>
 <li>Allows arbitrary (partial) ordering constraints on
 function calls to be expressed,.</li>
-<li>Lets an user extend it by defining new matchers and actions.</li>
+<li>Lets a user extend it by defining new matchers and actions.</li>
 <li>Does not use exceptions.</li>
 <li>Is easy to learn and use.</li>
 </ul>
@@ -1444,9 +1454,9 @@ the Apache License, which is different from Google Mock's license.</p>
 documentation in the following order:</p>
 
 <ul>
-<li>Learn the <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../../master/googletest/docs/Primer.md">basics</a> of
+<li>Learn the <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googletest/docs/primer.md">basics</a> of
 Google Test, if you choose to use Google Mock with it (recommended).</li>
-<li>Read <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../../master/googlemock/docs/ForDummies.md">Google Mock for Dummies</a>.</li>
+<li>Read <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googlemock/docs/ForDummies.md">Google Mock for Dummies</a>.</li>
 <li>Read the instructions below on how to build Google Mock.</li>
 </ul>
 
@@ -1456,10 +1466,10 @@ Google Test, if you choose to use Google Mock with it (recommended).</li>
 
 <ul>
 <li>
-<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../../master/googlemock/docs/CheatSheet.md">CheatSheet</a> - all the commonly used stuff
+<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googlemock/docs/CheatSheet.md">CheatSheet</a> - all the commonly used stuff
 at a glance.</li>
 <li>
-<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../../master/googlemock/docs/CookBook.md">CookBook</a> - recipes for getting things done,
+<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googlemock/docs/CookBook.md">CookBook</a> - recipes for getting things done,
 including advanced techniques.</li>
 </ul>
 
@@ -1474,7 +1484,7 @@ posting a question on the
 <p>Google Mock is not a testing framework itself.  Instead, it needs a
 testing framework for writing tests.  Google Mock works seamlessly
 with <a href="https://github.com/google/googletest">Google Test</a>, but
-you can also use it with <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../../master/googlemock/docs/ForDummies.md#using-google-mock-with-any-testing-framework">any C++ testing framework</a>.</p>
+you can also use it with <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googlemock/docs/ForDummies.md#using-google-mock-with-any-testing-framework">any C++ testing framework</a>.</p>
 
 <h3 id="requirements-for-end-users">Requirements for End Users</h3>
 
@@ -1483,7 +1493,7 @@ You must use the bundled version of Google Test when using Google Mock.</p>
 
 <p>You can also easily configure Google Mock to work with another testing
 framework, although it will still need Google Test.  Please read
-<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../../master/googlemock/docs/ForDummies.md#using-google-mock-with-any-testing-framework">"Using_Google_Mock_with_Any_Testing_Framework"</a>
+<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googlemock/docs/ForDummies.md#using-google-mock-with-any-testing-framework">"Using_Google_Mock_with_Any_Testing_Framework"</a>
 for instructions.</p>
 
 <p>Google Mock depends on advanced C++ features and thus requires a more
@@ -1530,37 +1540,19 @@ re-generating certain source files from templates)</li>
 
 <p>If you have CMake available, it is recommended that you follow the
 <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googletest/README.md#using-cmake" title="Using CMake">build instructions</a>
-as described for Google Test. </p>
+as described for Google Test.</p>
 
 <p>If are using Google Mock with an
 existing CMake project, the section
 <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googletest/README.md#incorporating-into-an-existing-cmake-project" title="Incorporating Into An Existing CMake Project">Incorporating Into An Existing CMake Project</a>
-may be of particular interest. 
-To make it work for Google Mock you will need to change </p>
+may be of particular interest.
+To make it work for Google Mock you will need to change</p>
 <div class="highlight"><pre><code class="language-" data-lang="">target_link_libraries(example gtest_main)
 </code></pre></div>
-<p>to </p>
+<p>to</p>
 <div class="highlight"><pre><code class="language-" data-lang="">target_link_libraries(example gmock_main)
 </code></pre></div>
-<p>This works because <code>gmock_main</code> library is compiled with Google Test.
-However, it does not automatically add Google Test includes.
-Therefore you will also have to change</p>
-<div class="highlight"><pre><code class="language-" data-lang="">if (CMAKE_VERSION VERSION_LESS 2.8.11)
-  include_directories("${gtest_SOURCE_DIR}/include")
-endif()
-</code></pre></div>
-<p>to</p>
-<div class="highlight"><pre><code class="language-" data-lang="">if (CMAKE_VERSION VERSION_LESS 2.8.11)
-  include_directories(BEFORE SYSTEM
-    "${gtest_SOURCE_DIR}/include" "${gmock_SOURCE_DIR}/include")
-else()
-  target_include_directories(gmock_main SYSTEM BEFORE INTERFACE
-    "${gtest_SOURCE_DIR}/include" "${gmock_SOURCE_DIR}/include")
-endif()
-</code></pre></div>
-<p>This will addtionally mark Google Mock includes as system, which will 
-silence compiler warnings when compiling your tests using clang with 
-<code>-Wpedantic -Wall -Wextra -Wconversion</code>.</p>
+<p>This works because <code>gmock_main</code> library is compiled with Google Test.</p>
 
 <h4 id="preparing-to-build-unix-only">Preparing to Build (Unix only)</h4>
 
@@ -1658,33 +1650,6 @@ or 0 to enable or disable a certain feature.</p>
 <p>We list the most frequently used macros below.  For a complete list,
 see file <a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googletest/include/gtest/internal/gtest-port.h">${GTEST_DIR}/include/gtest/internal/gtest-port.h</a>.</p>
 
-<h3 id="choosing-a-tr1-tuple-library">Choosing a TR1 Tuple Library</h3>
-
-<p>Google Mock uses the C++ Technical Report 1 (TR1) tuple library
-heavily.  Unfortunately TR1 tuple is not yet widely available with all
-compilers.  The good news is that Google Test 1.4.0+ implements a
-subset of TR1 tuple that's enough for Google Mock's need.  Google Mock
-will automatically use that implementation when the compiler doesn't
-provide TR1 tuple.</p>
-
-<p>Usually you don't need to care about which tuple library Google Test
-and Google Mock use.  However, if your project already uses TR1 tuple,
-you need to tell Google Test and Google Mock to use the same TR1 tuple
-library the rest of your project uses, or the two tuple
-implementations will clash.  To do that, add</p>
-<div class="highlight"><pre><code class="language-" data-lang="">-DGTEST_USE_OWN_TR1_TUPLE=0
-</code></pre></div>
-<p>to the compiler flags while compiling Google Test, Google Mock, and
-your tests.  If you want to force Google Test and Google Mock to use
-their own tuple library, just add</p>
-<div class="highlight"><pre><code class="language-" data-lang="">-DGTEST_USE_OWN_TR1_TUPLE=1
-</code></pre></div>
-<p>to the compiler flags instead.</p>
-
-<p>If you want to use Boost's TR1 tuple library with Google Mock, please
-refer to the Boost website (<a href="http://www.boost.org/">http://www.boost.org/</a>) for how to obtain
-it and set it up.</p>
-
 <h3 id="as-a-shared-library-dll">As a Shared Library (DLL)</h3>
 
 <p>Google Mock is compact, so most users can build and link it as a static
@@ -1708,7 +1673,7 @@ do if you are upgrading from an earlier version of Google Mock.</p>
 <h4 id="upgrading-from-1-1-0-or-earlier">Upgrading from 1.1.0 or Earlier</h4>
 
 <p>You may need to explicitly enable or disable Google Test's own TR1
-tuple library.  See the instructions in section "<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googletest/#choosing-a-tr1-tuple-library">Choosing a TR1 Tuple
+tuple library.  See the instructions in section "<a href="https://github.com/ament/googletest/tree/ros2/googlemock/#choosing-a-tr1-tuple-library">Choosing a TR1 Tuple
 Library</a>".</p>
 
 <h4 id="upgrading-from-1-4-0-or-earlier">Upgrading from 1.4.0 or Earlier</h4>
@@ -1716,7 +1681,7 @@ Library</a>".</p>
 <p>On platforms where the pthread library is available, Google Test and
 Google Mock use it in order to be thread-safe.  For this to work, you
 may need to tweak your compiler and/or linker flags.  Please see the
-"<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googletest#multi-threaded-tests">Multi-threaded Tests</a>" section in file Google Test's README for what you may need to do.</p>
+"<a href="https://github.com/ament/googletest/tree/ros2/googlemock/../googletest/README.md#multi-threaded-tests">Multi-threaded Tests</a>" section in file Google Test's README for what you may need to do.</p>
 
 <p>If you have custom matchers defined using <code>MatcherInterface</code> or
 <code>MakePolymorphicMatcher()</code>, you'll need to update their definitions to
@@ -1777,7 +1742,36 @@ Matchers defined using <code>MATCHER()</code> or <code>MATCHER_P*()</code> aren'
           </div>
           <div class="panel-body">
             
-              <em>No dependencies on ROS packages.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th class="text-center">Deps</th>
+                  <th class="text-center"><span class="glyphicon glyphicon-th" title="Package instances"></span></th>
+                  <th style="width: 100%">Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/gtest_vendor#bouncy-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/gtest_vendor" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/gtest_vendor#bouncy">gtest_vendor</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
           <div class="panel-heading">
@@ -1811,7 +1805,30 @@ Matchers defined using <code>MATCHER()</code> or <code>MATCHER_P*()</code> aren'
           </div>
           <div class="panel-body">
             
-              <em>No known dependants.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                  <th>Repo</th>
+                  <th class="text-center">Deps</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/ament_cmake_gmock/github-ament-ament_cmake#bouncy">ament_cmake_gmock</a></td>
+                      <td><a href="/r/ament_cmake/github-ament-ament_cmake">github-ament-ament_cmake</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/ament_cmake_gmock/github-ament-ament_cmake#bouncy-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -2128,7 +2145,7 @@ gtest_vendor
     
     
     
-    <a href="#ardent-deps" data-toggle="tab"><span class="label label-primary">1</span> Dependencies</a>
+    <a href="#ardent-deps" data-toggle="tab"><span class="label label-primary">2</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -2669,7 +2686,36 @@ patch.</p>
           </div>
           <div class="panel-body">
             
-              <em>No dependencies on ROS packages.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th class="text-center">Deps</th>
+                  <th class="text-center"><span class="glyphicon glyphicon-th" title="Package instances"></span></th>
+                  <th style="width: 100%">Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/gtest_vendor#ardent-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/gtest_vendor" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/gtest_vendor#ardent">gtest_vendor</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
           <div class="panel-heading">
@@ -2703,7 +2749,30 @@ patch.</p>
           </div>
           <div class="panel-body">
             
-              <em>No known dependants.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                  <th>Repo</th>
+                  <th class="text-center">Deps</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/ament_cmake_gmock/github-ament-ament_cmake#ardent">ament_cmake_gmock</a></td>
+                      <td><a href="/r/ament_cmake/github-ament-ament_cmake">github-ament-ament_cmake</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/ament_cmake_gmock/github-ament-ament_cmake#ardent-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -2911,7 +2980,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

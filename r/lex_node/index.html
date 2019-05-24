@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//r/lex_node/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -363,7 +366,7 @@
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-08
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-20
         </span>
       </td>
     </tr>
@@ -406,12 +409,12 @@
                 
                   <tr>
                     <td><a href="/p/lex_common_msgs/github-aws-robotics-lex-ros1">lex_common_msgs</a></td>
-                    <td>1.0.0</td>
+                    <td>2.0.0</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/lex_node/github-aws-robotics-lex-ros1">lex_node</a></td>
-                    <td>1.0.0</td>
+                    <td>2.0.0</td>
                   </tr>
                 
                 </tbody>
@@ -449,7 +452,7 @@
 
 <ul>
 <li>Kinetic</li>
-<li>Lunar</li>
+<li>Melodic</li>
 </ul>
 
 <h3 id="build-status">Build status</h3>
@@ -459,12 +462,9 @@
 
 <ul>
 <li>ROS build farm:</li>
-<li>v1.0.0:
-
-<ul>
 <li>ROS Kinetic @ u16.04 Xenial <a href="http://build.ros.org/job/Kbin_uX64__lex_node__ubuntu_xenial_amd64__binary"><img src="http://build.ros.org/job/Kbin_uX64__lex_node__ubuntu_xenial_amd64__binary/badge/icon" alt="Build Status"></a>
 </li>
-</ul>
+<li>ROS Melodic @ u18.04 Bionic <a href="http://build.ros.org/job/Mbin_uB64__lex_node__ubuntu_bionic_amd64__binary"><img src="http://build.ros.org/job/Mbin_uB64__lex_node__ubuntu_bionic_amd64__binary/badge/icon" alt="Build Status"></a>
 </li>
 </ul>
 </li>
@@ -479,28 +479,42 @@
 <p>This node requires an IAM User with the following permission policy:
 - <code>AmazonLexRunBotsOnly</code></p>
 
+<h3 id="binaries">Binaries</h3>
+
+<p>On Ubuntu you can install the latest version of this package using the following command</p>
+<div class="highlight"><pre><code class="language-" data-lang="">    sudo apt-get update
+    sudo apt-get install -y ros-$ROS_DISTRO-lex-node
+</code></pre></div>
 <h3 id="building-from-source">Building from Source</h3>
 
-<p>Create a ROS workspace and a source directory</p>
-<div class="highlight"><pre><code class="language-" data-lang="">mkdir -p ~/ros-workspace/src
-</code></pre></div>
-<p>To build from source, clone the latest version from master branch and compile the package</p>
+<p>To build from source you'll need to create a new workspace, clone and checkout the latest release branch of this repository, install all the dependencies, and compile. If you need the latest development features you can clone from the <code>master</code> branch instead of the latest release branch. While we guarantee the release branches are stable, <strong>the <code>master</code> should be considered to have an unstable build</strong> due to ongoing development. </p>
 
 <ul>
 <li>
-<p>Clone the package into the source directory</p>
+<p>Create a ROS workspace and a source directory</p>
+<div class="highlight"><pre><code class="language-" data-lang="">mkdir -p ~/ros-workspace/src
+</code></pre></div>
+</li>
+<li>
+<p>Clone the package into the source directory . </p>
+
+<p><em>Note: Replace _</em><code>{MAJOR.VERSION}</code>__ below with the latest major version number to get the latest release branch._</p>
 <div class="highlight"><pre><code class="language-" data-lang="">cd ~/ros-workspace/src
-git clone https://github.com/aws-robotics/utils-common.git
-git clone https://github.com/aws-robotics/utils-ros1.git
-git clone https://github.com/aws-robotics/lex-ros1.git
+git clone https://github.com/aws-robotics/lex-ros1.git -b release-v{MAJOR.VERSION}
 </code></pre></div>
 </li>
 <li>
 <p>Install dependencies</p>
-<div class="highlight"><pre><code class="language-" data-lang="">cd ~/ros-workspace &amp;&amp; sudo apt-get update
+<div class="highlight"><pre><code class="language-" data-lang="">cd ~/ros-workspace 
+sudo apt-get update &amp;&amp; rosdep update
 rosdep install --from-paths src --ignore-src -r -y
 </code></pre></div>
 </li>
+</ul>
+
+<p><em>Note: If building the master branch instead of a release branch you may need to also checkout and build the master branches of the packages this package depends on.</em></p>
+
+<ul>
 <li>
 <p>Build the packages</p>
 <div class="highlight"><pre><code class="language-" data-lang="">cd ~/ros-workspace &amp;&amp; colcon build
@@ -867,7 +881,7 @@ rosservice call /lex_node/lex_conversation <span class="s2">"{content_type: 'tex
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

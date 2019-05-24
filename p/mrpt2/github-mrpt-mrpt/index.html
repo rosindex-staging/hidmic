@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/mrpt2/github-mrpt-mrpt/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -372,7 +375,7 @@ mrpt2
     
     
     
-    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">14</span> Dependencies</a>
+    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">15</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -451,7 +454,7 @@ mrpt2
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-24
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-23
         </span>
       </td>
     </tr>
@@ -533,27 +536,9 @@ mrpt2
                     <div class="rendered-markdown">
 <h1 align="center">The MRPT project</h1>
 
-<table>
- <tr>
-  <td>gcc/clang</td>
-  <td>
-<a href="https://travis-ci.org/MRPT/mrpt" alt="Travis:gcc,clang"><img src="https://travis-ci.org/MRPT/mrpt.png?branch=master"></a><br><a href="https://circleci.com/gh/MRPT/mrpt"><img src="https://circleci.com/gh/MRPT/mrpt.svg?style=svg"></a> </td>
-  <td>MSVC</td>
-  <td><a href="https://ci.appveyor.com/project/jlblancoc/mrpt" alt="AppVeyor:msvc"><img src="https://ci.appveyor.com/api/projects/status/yjs4lpj02f6a1ylg?svg=true"></a></td>
-  <td><a href="https://codecov.io/gh/MRPT/mrpt" alt="codecov"><img src="https://codecov.io/gh/MRPT/mrpt/branch/master/graph/badge.svg"></a></td>
-  <td><a href="https://gitter.im/MRPT/mrpt" alt="Gitter"><img src="https://badges.gitter.im/Join%20Chat.svg"></a></td>
-  <td><a href="https://www.codetriage.com/mrpt/mrpt" alt="Open Source Helpers"><img src="https://www.codetriage.com/mrpt/mrpt/badges/users.svg"></a></td>
- </tr>
- <tr>
-  <td>GH</td>
-  <td><a href="https://github.com/MRPT/mrpt/releases" alt="GitHub"><img src="https://img.shields.io/github/downloads/mrpt/mrpt/total.svg"></a></td>
-  <td>SF(datasets)</td>
-  <td><a href="https://sourceforge.net/projects/mrpt/files/" alt="SourceForge"><img src="https://img.shields.io/sourceforge/dt/mrpt.svg"></a></td>
-  <td>Stable</td>
-  <td><a href="https://github.com/MRPT/mrpt/releases" alt="Releases"><img src="https://img.shields.io/github/release/MRPT/mrpt.svg"></a></td>
+<p>gcc/clang: <a href="https://circleci.com/gh/MRPT/mrpt"><img src="https://circleci.com/gh/MRPT/mrpt.svg?style=svg"></a> MSVC: <a href="https://ci.appveyor.com/project/jlblancoc/mrpt" alt="AppVeyor:msvc"><img src="https://ci.appveyor.com/api/projects/status/yjs4lpj02f6a1ylg?svg=true"></a> Last stable release: <a href="https://github.com/MRPT/mrpt/releases" alt="Releases"><img src="https://img.shields.io/github/release/MRPT/mrpt.svg"></a> <a href="https://gitter.im/MRPT/mrpt" alt="Gitter"><img src="https://badges.gitter.im/Join%20Chat.svg"></a></p>
 
-</tr>
-</table>
+<p><a href="https://codecov.io/gh/MRPT/mrpt" alt="codecov"><img src="https://codecov.io/gh/MRPT/mrpt/branch/master/graph/badge.svg"></a>  GH downloads: <a href="https://github.com/MRPT/mrpt/releases" alt="GitHub"><img src="https://img.shields.io/github/downloads/mrpt/mrpt/total.svg"></a> SF downloads (datasets): <a href="https://sourceforge.net/projects/mrpt/files/" alt="SourceForge"><img src="https://img.shields.io/sourceforge/dt/mrpt.svg"></a></p>
 
 <h2 id="1-introduction">1. Introduction</h2>
 
@@ -631,7 +616,7 @@ for Windows instructions or to learn all the details.</p>
 <ul>
 <li>Install minimum recommended dependencies:</li>
 </ul>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>apt <span class="nb">install </span>build-essential pkg-config cmake libwxgtk3.0-dev <span class="se">\</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>apt <span class="nb">install </span>build-essential pkg-config cmake libwxgtk3.0-dev libwxgtk3.0-gtk3-dev <span class="se">\</span>
 libopencv-dev libeigen3-dev libgtest-dev
 
 </code></pre></div>
@@ -707,36 +692,7 @@ make
           </div>
           <div class="panel-body">
             
-              <table class="table table-condensed table-striped">
-                <thead>
-                  <th class="text-center">Deps</th>
-                  <th class="text-center"><span class="glyphicon glyphicon-th" title="Package instances"></span></th>
-                  <th style="width: 100%">Name</th>
-                </thead>
-                <tbody>
-                  
-                    
-                    
-                      <tr>
-                        <td class="text-center">
-                          
-                          
-                          
-                          <a href="/p/octomap#melodic-deps" >
-                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
-                          </a>
-                        </td>
-                        <td class="text-center">
-                          <a href="/packages/octomap" class="label label-default">
-                            1
-                          </a>
-                        </td>
-                        <td><a href="/p/octomap#melodic">octomap</a></td>
-                      </tr>
-                    
-                  
-                </tbody>
-              </table>
+              <em>No dependencies on ROS packages.</em>
             
           </div>
           <div class="panel-heading">
@@ -749,6 +705,18 @@ make
                   <th>Name</th>
                 </thead>
                 <tbody>
+                  
+                    
+                      <tr>
+                        <td><a href="/d/cmake">cmake</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/doxygen">doxygen</a></td>
+                      </tr>
+                    
                   
                     
                       <tr>
@@ -1082,7 +1050,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

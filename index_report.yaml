@@ -75067,7 +75067,7 @@ repo_instances:
       melodic: ''
       lunar: ''
       kinetic: ''
-      indigo: ''
+      indigo: indigo
       ardent: ''
       jade: ''
       hydro: hydro
@@ -75678,7 +75678,7 @@ repo_instances:
     type: git
     local_name: control_msgs
     versions:
-      crystal: ''
+      crystal: crystal-devel
       bouncy: bouncy-devel
       melodic: kinetic-devel
       lunar: kinetic-devel
@@ -76002,7 +76002,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: indigo-devel
       indigo: indigo-devel
@@ -76896,7 +76896,7 @@ repo_instances:
     type: git
     local_name: geometric_shapes
     versions:
-      crystal: ''
+      crystal: crystal-devel
       bouncy: ''
       melodic: melodic-devel
       lunar: kinetic-devel
@@ -77234,7 +77234,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: catkin
       indigo: catkin
@@ -77304,7 +77304,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: catkin
       indigo: catkin
@@ -77978,7 +77978,7 @@ repo_instances:
       bouncy: ''
       melodic: ''
       lunar: ''
-      kinetic: ''
+      kinetic: kinetic
       indigo: ''
       ardent: ''
       jade: ''
@@ -78103,7 +78103,7 @@ repo_instances:
       crystal: ''
       bouncy: ''
       melodic: debian/ros-melodic-eus-assimp_0.4.3-0_bionic
-      lunar: ''
+      lunar: debian/ros-lunar-eus-assimp_0.4.3-0_stretch
       kinetic: debian/ros-kinetic-eus-assimp_0.3.3-1_jessie
       indigo: debian/ros-indigo-eus-assimp_0.1.10-0_saucy
       ardent: ''
@@ -78146,7 +78146,7 @@ repo_instances:
       bouncy: ''
       melodic: ''
       lunar: ''
-      kinetic: 0.3.10
+      kinetic: 0.3.14
       indigo: master
       ardent: ''
       jade: master
@@ -78368,7 +78368,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic
       lunar: ''
       kinetic: kinetic
       indigo: indigo
@@ -78802,9 +78802,9 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
-      kinetic: ''
+      kinetic: kinetic-devel
       indigo: hydro-devel
       ardent: ''
       jade: ''
@@ -80606,7 +80606,7 @@ repo_instances:
     type: git
     local_name: perception_pcl
     versions:
-      crystal: ''
+      crystal: crystal-devel
       bouncy: ''
       melodic: melodic-devel
       lunar: lunar-devel
@@ -80820,7 +80820,7 @@ repo_instances:
       bouncy: ''
       melodic: ''
       lunar: ''
-      kinetic: ''
+      kinetic: kinetic-devel
       indigo: indigo-devel
       ardent: ''
       jade: ''
@@ -80930,7 +80930,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: indigo-devel
@@ -81588,7 +81588,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: ''
@@ -81602,7 +81602,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: develop
@@ -82022,7 +82022,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: 0.9-melodic
       lunar: ''
       kinetic: release/0.9-kinetic
       indigo: release/0.7-indigo
@@ -82274,7 +82274,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: indigo-devel
@@ -82512,7 +82512,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic
       lunar: ''
       kinetic: kinetic
       indigo: indigo
@@ -82932,7 +82932,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: debian/ros-melodic-rtctree_3.0.1-0_bionic
       lunar: debian/ros-lunar-rtctree_3.0.1-0_stretch
       kinetic: debian/ros-kinetic-rtctree_3.0.1-0_jessie
       indigo: debian/ros-indigo-rtctree_3.0.1-0_saucy
@@ -83450,7 +83450,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: indigo-devel
@@ -83700,7 +83700,7 @@ repo_instances:
     type: git
     local_name: srdfdom
     versions:
-      crystal: ''
+      crystal: crystal-devel
       bouncy: ''
       melodic: melodic-devel
       lunar: kinetic-devel
@@ -84010,7 +84010,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic
       lunar: ''
       kinetic: kinetic
       indigo: indigo
@@ -84624,7 +84624,7 @@ repo_instances:
     type: git
     local_name: velodyne
     versions:
-      crystal: ''
+      crystal: crystal-devel
       bouncy: ''
       melodic: master
       lunar: master
@@ -84834,7 +84834,7 @@ repo_instances:
     type: git
     local_name: visualization_tutorials
     versions:
-      crystal: ''
+      crystal: crystal-devel
       bouncy: ''
       melodic: kinetic-devel
       lunar: kinetic-devel
@@ -85438,7 +85438,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic
       lunar: lunar
       kinetic: kinetic
       indigo: indigo
@@ -86320,7 +86320,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: master
@@ -88280,7 +88280,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic
       lunar: lunar
       kinetic: kinetic
       indigo: indigo
@@ -88880,7 +88880,7 @@ repo_instances:
     type: git
     local_name: cartographer
     versions:
-      crystal: ''
+      crystal: crystal
       bouncy: bouncy
       melodic: ''
       lunar: ''
@@ -88908,7 +88908,7 @@ repo_instances:
     type: git
     local_name: cartographer_ros
     versions:
-      crystal: ''
+      crystal: crystal
       bouncy: bouncy
       melodic: ''
       lunar: ''
@@ -89792,7 +89792,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic
       lunar: ''
       kinetic: master
       indigo: master
@@ -91332,7 +91332,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic_support
       lunar: ''
       kinetic: ''
       indigo: master
@@ -91374,7 +91374,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic
       lunar: ''
       kinetic: kinetic
       indigo: indigo
@@ -91416,7 +91416,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic_support
       lunar: ''
       kinetic: ''
       indigo: master
@@ -91628,7 +91628,7 @@ repo_instances:
       bouncy: ''
       melodic: ''
       lunar: ''
-      kinetic: 1.0.29
+      kinetic: 1.0.30
       indigo: 1.0.7
       ardent: ''
       jade: ''
@@ -91808,7 +91808,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: indigo
@@ -92564,8 +92564,8 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
-      lunar: ''
+      melodic: melodic
+      lunar: lunar
       kinetic: kinetic
       indigo: indigo
       ardent: ''
@@ -92788,7 +92788,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: master
@@ -93082,9 +93082,9 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: kinetic_melodic
       lunar: ''
-      kinetic: indigo-devel
+      kinetic: kinetic-devel
       indigo: indigo-devel
       ardent: ''
       jade: ''
@@ -93656,7 +93656,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: indigo-devel
@@ -93670,7 +93670,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: indigo-devel
@@ -94118,7 +94118,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: indigo-devel
@@ -94244,7 +94244,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: 0.3-melodic
       lunar: ''
       kinetic: release/0.3-kinetic
       indigo: release/0.1-indigo
@@ -96542,7 +96542,7 @@ repo_instances:
       bouncy: ''
       melodic: master
       lunar: ''
-      kinetic: 0.5.95
+      kinetic: 0.5.96
       indigo: ''
       ardent: ''
       jade: ''
@@ -96752,7 +96752,7 @@ repo_instances:
       bouncy: ''
       melodic: ''
       lunar: ''
-      kinetic: 0.0.1
+      kinetic: 0.0.3
       indigo: ''
       ardent: ''
       jade: ''
@@ -96892,7 +96892,7 @@ repo_instances:
       bouncy: ''
       melodic: ''
       lunar: ''
-      kinetic: 0.1.6
+      kinetic: 0.1.8
       indigo: ''
       ardent: ''
       jade: ''
@@ -97674,7 +97674,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: ''
@@ -97688,7 +97688,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: ''
@@ -97716,7 +97716,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: ''
@@ -97730,7 +97730,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: ''
@@ -97744,7 +97744,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: ''
@@ -97758,7 +97758,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: ''
@@ -98388,7 +98388,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic
       lunar: master
       kinetic: master
       indigo: ''
@@ -98685,7 +98685,7 @@ repo_instances:
       melodic: ''
       lunar: ''
       kinetic: master
-      indigo: ''
+      indigo: devel_indigo
       ardent: ''
       jade: ''
       hydro: ''
@@ -99004,7 +99004,7 @@ repo_instances:
     versions:
       crystal: ''
       bouncy: ''
-      melodic: ''
+      melodic: melodic-devel
       lunar: ''
       kinetic: kinetic-devel
       indigo: ''
@@ -100799,6 +100799,7 @@ packages:
   - github-googlecartographer-cartographer_ros
   cartographer_rviz:
   - github-googlecartographer-cartographer_ros
+  - github-ros2-cartographer_ros
   cartographer_toyota_hsr:
   - github-googlecartographer-cartographer_toyota_hsr
   cartographer_turtlebot:
@@ -102234,20 +102235,27 @@ packages:
   - github-ros-industrial-fanuc
   fanuc_cr35ia_support:
   - github-ros-industrial-fanuc_experimental
+  - github-ros-industrial-fanuc
   fanuc_cr7ia_moveit_config:
   - github-ros-industrial-fanuc_experimental
+  - github-ros-industrial-fanuc
   fanuc_cr7ia_support:
   - github-ros-industrial-fanuc_experimental
+  - github-ros-industrial-fanuc
   fanuc_cr7ial_moveit_config:
   - github-ros-industrial-fanuc_experimental
+  - github-ros-industrial-fanuc
   fanuc_experimental:
   - github-ros-industrial-fanuc_experimental
   fanuc_lrmate200i_moveit_config:
   - github-ros-industrial-fanuc_experimental
+  - github-ros-industrial-fanuc
   fanuc_lrmate200i_moveit_plugins:
   - github-ros-industrial-fanuc_experimental
+  - github-ros-industrial-fanuc
   fanuc_lrmate200i_support:
   - github-ros-industrial-fanuc_experimental
+  - github-ros-industrial-fanuc
   fanuc_lrmate200id_moveit_config:
   - github-ros-industrial-fanuc_experimental
   fanuc_lrmate200id_moveit_plugins:
@@ -102258,16 +102266,22 @@ packages:
   - github-ros-industrial-fanuc_experimental
   fanuc_m710ic_support:
   - github-ros-industrial-fanuc_experimental
+  - github-ros-industrial-fanuc
   fanuc_m900ia_support:
   - github-ros-industrial-fanuc_experimental
+  - github-ros-industrial-fanuc
   fanuc_m900ib_support:
   - github-ros-industrial-fanuc_experimental
+  - github-ros-industrial-fanuc
   fanuc_r1000ia80f_moveit_config:
   - github-ros-industrial-fanuc_experimental
+  - github-ros-industrial-fanuc
   fanuc_r1000ia_moveit_plugins:
   - github-ros-industrial-fanuc_experimental
+  - github-ros-industrial-fanuc
   fanuc_r1000ia_support:
   - github-ros-industrial-fanuc_experimental
+  - github-ros-industrial-fanuc
   fanuc_post_processor:
   - gitlab-InstitutMaupertuis-fanuc_post_processor
   fanuc_post_processor_example:
@@ -110155,3 +110169,151 @@ packages:
   - github-rosjava-zeroconf_jmdns_suite
   zeroconf_msgs:
   - github-stonier-zeroconf_msgs
+  abb_irb6700_support:
+  - github-ros-industrial-abb_experimental
+  apriltag_ros:
+  - github-dmalyuta-apriltags2_ros
+  behaviortree_cpp_v3:
+  - github-BehaviorTree-BehaviorTree-CPP
+  test_catkin_virtualenv_py3_isolated:
+  - github-locusrobotics-catkin_virtualenv
+  ipa_3d_fov_visualization:
+  - github-ipa320-cob_perception_common
+  crane_x7_gazebo:
+  - github-rt-net-crane_x7_ros
+  action_tutorials:
+  - github-ros2-demos
+  quality_of_service_demo_cpp:
+  - github-ros2-demos
+  quality_of_service_demo_py:
+  - github-ros2-demos
+  ensenso_description:
+  - github-ensenso-ros_driver
+  examples_rclpy_minimal_action_client:
+  - github-ros2-examples
+  examples_rclpy_minimal_action_server:
+  - github-ros2-examples
+  exotica_double_integrator_dynamics_solver:
+  - github-ipab-slmc-exotica
+  exotica_pinocchio_dynamics_solver:
+  - github-ipab-slmc-exotica
+  exotica_quadrotor_dynamics_solver:
+  - github-ipab-slmc-exotica
+  exotica_scipy_solver:
+  - github-ipab-slmc-exotica
+  fetch_simulation:
+  - github-fetchrobotics-fetch_gazebo
+  fetchit_challenge:
+  - github-fetchrobotics-fetch_gazebo
+  fetch_ros:
+  - github-fetchrobotics-fetch_ros
+  gazebo_version_helpers:
+  - github-JenniferBuehler-gazebo-pkgs
+  industrial_moveit_test_moveit_config:
+  - github-ros-industrial-industrial_moveit
+  industrial_moveit_test_support:
+  - github-ros-industrial-industrial_moveit
+  kinova_bringup:
+  - github-Kinovarobotics-jaco-ros
+  kinova_control:
+  - github-Kinovarobotics-jaco-ros
+  kinova_demo:
+  - github-Kinovarobotics-jaco-ros
+  kinova_description:
+  - github-Kinovarobotics-jaco-ros
+  kinova_driver:
+  - github-Kinovarobotics-jaco-ros
+  kinova_gazebo:
+  - github-Kinovarobotics-jaco-ros
+  j2n6s300_ikfast:
+  - github-Kinovarobotics-jaco-ros
+  j2s7s300_ikfast:
+  - github-Kinovarobotics-jaco-ros
+  m1n6s300_ikfast:
+  - github-Kinovarobotics-jaco-ros
+  kinova_arm_moveit_demo:
+  - github-Kinovarobotics-jaco-ros
+  j2n6s300_moveit_config:
+  - github-Kinovarobotics-jaco-ros
+  j2s7s300_moveit_config:
+  - github-Kinovarobotics-jaco-ros
+  m1n6s300_moveit_config:
+  - github-Kinovarobotics-jaco-ros
+  kinova_msgs:
+  - github-Kinovarobotics-jaco-ros
+  launch_testing_ament_cmake:
+  - github-ros2-launch
+  test_launch_testing:
+  - github-ros2-launch
+  magni_desktop:
+  - github-UbiquityRobotics-magni_robot
+  magni_gazebo:
+  - github-UbiquityRobotics-magni_robot
+  microstrain_3dm:
+  - github-bsb808-microstrain_3dm_gx5_45
+  mir_dwb_critics:
+  - github-dfki-ric-mir_robot
+  nav2_common:
+  - github-ros-planning-navigation2
+  nav2_turtlebot3_rl:
+  - github-ros-planning-navigation2
+  open_manipulator_control_gui:
+  - github-ROBOTIS-GIT-open_manipulator
+  open_manipulator_controller:
+  - github-ROBOTIS-GIT-open_manipulator
+  open_manipulator_libs:
+  - github-ROBOTIS-GIT-open_manipulator
+  open_manipulator_teleop:
+  - github-ROBOTIS-GIT-open_manipulator
+  dbw_pacifica_joystick_demo:
+  - github-NewEagleRaptor-pacifica-dbw-ros
+  dbw_pacifica_joystick_speed_demo:
+  - github-NewEagleRaptor-pacifica-dbw-ros
+  rc_pick_client:
+  - github-roboception-rc_visard_ros
+  rc_tagdetect_client:
+  - github-roboception-rc_visard_ros
+  composition_interfaces:
+  - github-ros2-rcl_interfaces
+  rdl_msgs:
+  - gitlab-jlack-rdl
+  rdl_ros_tools:
+  - gitlab-jlack-rdl
+  ros2action:
+  - github-ros2-ros2cli
+  ros2component:
+  - github-ros2-ros2cli
+  test_rostest:
+  - github-ros-ros_comm
+  rosbridge_msgs:
+  - github-RobotWebTools-rosbridge_suite
+  rosidl_runtime_py:
+  - github-ros2-rosidl_python
+  rosmon_core:
+  - github-xqms-rosmon
+  rosmon_msgs:
+  - github-xqms-rosmon
+  rqt_rosmon:
+  - github-xqms-rosmon
+  rtt_tf2_msgs:
+  - github-orocos-rtt_ros_integration
+  sciurus17_gazebo:
+  - github-rt-net-sciurus17_ros
+  sr_data_visualization:
+  - github-shadow-robot-sr-visualization
+  sros2_cmake:
+  - github-ros2-sros2
+  universal_robots:
+  - github-ros-industrial-universal_robot
+  ur10_e_moveit_config:
+  - github-ros-industrial-universal_robot
+  ur3_e_moveit_config:
+  - github-ros-industrial-universal_robot
+  ur5_e_moveit_config:
+  - github-ros-industrial-universal_robot
+  ur_e_description:
+  - github-ros-industrial-universal_robot
+  ur_e_gazebo:
+  - github-ros-industrial-universal_robot
+  widowx_arm_moveit:
+  - github-RobotnikAutomation-widowx_arm

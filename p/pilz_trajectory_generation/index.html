@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/pilz_trajectory_generation/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -402,14 +405,14 @@ pilz_trajectory_generation
     
     
     
-    <a href="#melodic-assets" data-toggle="tab"><span class="label label-primary">6</span> Assets</a>
+    <a href="#melodic-assets" data-toggle="tab"><span class="label label-primary">8</span> Assets</a>
   </li>
   <li class="better-tabs">
     
     
     
     
-    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">17</span> Dependencies</a>
+    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">27</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -440,7 +443,7 @@ pilz_trajectory_generation
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.3.2</td>
+                <td>0.3.7</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -488,7 +491,7 @@ pilz_trajectory_generation
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-23
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-22
         </span>
       </td>
     </tr>
@@ -520,7 +523,7 @@ pilz_trajectory_generation
         <div class="panel panel-default">
           <div class="panel-heading"><h3 class="panel-title">Package Description</h3></div>
           <div class="panel-body">
-            The pilz_trajectory_generation package
+            The pilz_trajectory_generation package containing the MoveIt! plugin pilz_command_planner.
           </div>
           <div class="panel-heading"><h4 class="panel-title">Additional Links</h4></div>
           <div class="panel-body">
@@ -586,10 +589,10 @@ please refer to the <a href="http://moveit.ros.org/">MoveIt! website</a>.</p>
 <h2 id="user-interface-movegroup">User Interface MoveGroup</h2>
 
 <p>This package implements the <code>planning_interface::PlannerManager</code> interface of MoveIt!. By loading the corresponding
-planning pipeline (<code>command_planner_planning_pipeline.launch.xml</code> in <code>prbt_moveit_config</code> package), the trajectory
+planning pipeline (<code>pilz_command_planner_planning_pipeline.launch.xml</code> in <code>prbt_moveit_config</code> package), the trajectory
 generation functionalities can be accessed through the user interface (c++, python or rviz) provided by
 the <code>move_group</code> node, e.g. <code>/plan_kinematics_path</code> service and <code>/move_group</code> action. For detailed tutorials please
-refer to <a href="http://docs.ros.org/indigo/api/moveit_tutorials/html/index.html">MoveIt! Tutorials</a>.</p>
+refer to <a href="http://docs.ros.org/melodic/api/moveit_tutorials/html/index.html">MoveIt! Tutorials</a>.</p>
 
 <h2 id="joint-limits">Joint Limits</h2>
 
@@ -628,17 +631,17 @@ So the rotational acceleration is calculated as max_trans_acc / max_trans_vel * 
 comprehensive and general. The parameters needed by specific planning algorithm are explained below in detail.</p>
 
 <p>For a general introduction how to fill a <code>MotionPlanRequest</code> see the
-<a href="http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/pr2_tutorials/planning/src/doc/move_group_interface_tutorial.html">Move Group Interface Tutorial</a>.</p>
+<a href="http://docs.ros.org/melodic/api/moveit_tutorials/html/doc/move_group_interface/move_group_interface_tutorial.html#planning-to-a-pose-goal">Move Group Interface Tutorial</a>.</p>
 
 <p>The planner is able to handle all the different commands. Just put "PTP", "LIN" or "CIRC" as planner_id in
 the motion request.</p>
 
 <h2 id="the-ptp-motion-command">The PTP motion command</h2>
 
-<p>This planner generates full synchronized point to point trajectories with trapezoid joint velocity profile. All joints
+<p>This planner generates full synchronized point to point trajectories with trapezoidal joint velocity profile. All joints
 are assumed to have the same maximal joint velocity/acceleration/deceleration limits. If not, the strictest limits are
 adopted. The axis with the longest time to reach the goal is selected as the lead axis.
-Other axes are accelerated so that they share the same acceleration/constant velocity/deceleration phases
+Other axes are decelerated so that they share the same acceleration/constant velocity/deceleration phases
 as the lead axis.</p>
 
 <p><img src="https://raw.githubusercontent.com/PilzDE/pilz_industrial_motion/kinetic-devel/pilz_trajectory_generation/doc/figure/ptp.png" alt="ptp no vel"></p>
@@ -786,11 +789,12 @@ The last point will have zero velocity and acceleration.</li>
 
 <h2 id="the-circ-motion-command">The CIRC motion command</h2>
 
-<p>This planner generates an circular arc trajectory in Cartesian space between goal and start poses. The center point of
-the circle or a interim point on the arc needs to be given as path constraint. The planner always generates the shorter
-arc between start and goal poses and cannot generate half circle in case of given center point. The planner cannot generate
-full circle. The Cartesian limits, namely translational/rotational velocity/acceleration/deceleration need to be set
-and the planner uses these limits to generate a trapezoid velocity profile in Cartesian space. The rotational motion is
+<p>This planner generates a circular arc trajectory in Cartesian space between goal and start poses. There are two options for giving a path constraint:
+ - the <em>center</em> point of the circle: The planner always generates the shorter arc between start and goal and cannot generate a half circle,
+ - an <em>interim</em> point on the arc: The generated trajectory always goes through the interim point. The planner cannot generate a full circle.</p>
+
+<p>The Cartesian limits, namely translational/rotational velocity/acceleration/deceleration need to be set
+and the planner uses these limits to generate a trapezoidal velocity profile in Cartesian space. The rotational motion is
 quaternion slerp between start and goal orientation. The translational and rotational motion is synchronized in time.
 This planner only accepts start state with zero velocity. Planning result is a joint trajectory. The user needs to adapt
 the Cartesian velocity/acceleration scaling factor if motion plan fails due to violation of joint limits.</p>
@@ -892,12 +896,17 @@ The limits are expected to be under the namespace <code>&lt;robot_description&gt
 E.g. if the urdf was loaded into <code>/robot_description</code> the cartesian limits have to be defined at <code>/robot_description_planning</code>.</p>
 
 <p>An example showing the cartesian limits which have to be defined can be found
-<img src="https://github.com/PilzDE/pilz_robots/blob/kinetic-devel/prbt_moveit_config/config/cartesian_limits.yaml" alt="here">.</p>
+<img src="https://github.com/PilzDE/pilz_robots/blob/melodic-devel/prbt_moveit_config/config/cartesian_limits.yaml" alt="here">.</p>
 
 <h1 id="sequence-of-multiple-segments">Sequence of multiple segments</h1>
 
 <p>To concatenate multiple trajectories and plan the trajectory at once, you can use the sequence capability.
 This reduces the planning overhead and allows to follow a pre-desribed path without stopping at intermediate points.</p>
+
+<p><strong>Please note:</strong> In case the planning of a command in a sequence fails,
+non of the commands in the sequence are executed.</p>
+
+<p><strong>Please note:</strong> Sequences commands are allowed to contain commands for multiple groups (e.g. "Manipulator", "Gripper")</p>
 
 <h2 id="user-interface-sequence-capability">User interface sequence capability</h2>
 
@@ -908,7 +917,8 @@ with the following goal in a way, that the robot does not stop at the current go
 given <code>blend_radius</code>, it is allowed to travel towards the next goal already. When leaving a sphere around the current goal, the robot
 returns onto the trajectory he would have taken without blending.</p>
 
-<p>For details about the blend algorithm please refer to <code>/doc/MotionBlendAlgorithmDescription.pdf</code>.</p>
+<p>For details about the blend algorithm please refer to
+<img src="https://raw.githubusercontent.com/PilzDE/pilz_industrial_motion/kinetic-devel/pilz_trajectory_generation/doc/MotionBlendAlgorithmDescription.pdf" alt="doc/MotionBlendAlgorithmDescription.pdf">.</p>
 
 <p><img src="https://raw.githubusercontent.com/PilzDE/pilz_industrial_motion/kinetic-devel/pilz_trajectory_generation/doc/figure/blend_radius.png" alt="blend figure"></p>
 
@@ -997,6 +1007,246 @@ The trajectory is returned and not executed.</p>
                   <th style="width: 100%">Name</th>
                 </thead>
                 <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#melodic">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rostest#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rostest" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rostest#melodic">rostest</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rosunit#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rosunit" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rosunit#melodic">rosunit</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/cmake_modules#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/cmake_modules" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/cmake_modules#melodic">cmake_modules</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/pilz_testutils#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/pilz_testutils" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/pilz_testutils#melodic">pilz_testutils</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/pilz_industrial_motion_testutils#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/pilz_industrial_motion_testutils" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/pilz_industrial_motion_testutils#melodic">pilz_industrial_motion_testutils</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/prbt_moveit_config#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/prbt_moveit_config" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/prbt_moveit_config#melodic">prbt_moveit_config</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/prbt_support#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/prbt_support" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/prbt_support#melodic">prbt_support</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/prbt_pg70_support#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/prbt_pg70_support" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/prbt_pg70_support#melodic">prbt_pg70_support</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/panda_moveit_config#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/panda_moveit_config" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/panda_moveit_config#melodic">panda_moveit_config</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/abb_irb2400_moveit_config#melodic-deps" class="inactive">
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/abb_irb2400_moveit_config" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/abb_irb2400_moveit_config#melodic">abb_irb2400_moveit_config</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/code_coverage#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/code_coverage" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/code_coverage#melodic">code_coverage</a></td>
+                      </tr>
+                    
                   
                     
                     
@@ -1165,86 +1415,6 @@ The trajectory is returned and not executed.</p>
                           
                           
                           
-                          <a href="/p/tf2_eigen#melodic-deps" >
-                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
-                          </a>
-                        </td>
-                        <td class="text-center">
-                          <a href="/packages/tf2_eigen" class="label label-primary">
-                            2
-                          </a>
-                        </td>
-                        <td><a href="/p/tf2_eigen#melodic">tf2_eigen</a></td>
-                      </tr>
-                    
-                  
-                    
-                    
-                      <tr>
-                        <td class="text-center">
-                          
-                          
-                          
-                          <a href="/p/eigen_conversions#melodic-deps" >
-                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
-                          </a>
-                        </td>
-                        <td class="text-center">
-                          <a href="/packages/eigen_conversions" class="label label-default">
-                            1
-                          </a>
-                        </td>
-                        <td><a href="/p/eigen_conversions#melodic">eigen_conversions</a></td>
-                      </tr>
-                    
-                  
-                    
-                    
-                      <tr>
-                        <td class="text-center">
-                          
-                          
-                          
-                          <a href="/p/pluginlib#melodic-deps" >
-                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
-                          </a>
-                        </td>
-                        <td class="text-center">
-                          <a href="/packages/pluginlib" class="label label-default">
-                            1
-                          </a>
-                        </td>
-                        <td><a href="/p/pluginlib#melodic">pluginlib</a></td>
-                      </tr>
-                    
-                  
-                    
-                    
-                      <tr>
-                        <td class="text-center">
-                          
-                          
-                          
-                          <a href="/p/pilz_extensions#melodic-deps" >
-                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
-                          </a>
-                        </td>
-                        <td class="text-center">
-                          <a href="/packages/pilz_extensions" class="label label-default">
-                            1
-                          </a>
-                        </td>
-                        <td><a href="/p/pilz_extensions#melodic">pilz_extensions</a></td>
-                      </tr>
-                    
-                  
-                    
-                    
-                      <tr>
-                        <td class="text-center">
-                          
-                          
-                          
                           <a href="/p/pilz_msgs#melodic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
@@ -1285,16 +1455,56 @@ The trajectory is returned and not executed.</p>
                           
                           
                           
-                          <a href="/p/moveit_commander#melodic-deps" >
+                          <a href="/p/eigen_conversions#melodic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
                         <td class="text-center">
-                          <a href="/packages/moveit_commander" class="label label-primary">
+                          <a href="/packages/eigen_conversions" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/eigen_conversions#melodic">eigen_conversions</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/pilz_extensions#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/pilz_extensions" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/pilz_extensions#melodic">pilz_extensions</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/tf2_eigen#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/tf2_eigen" class="label label-primary">
                             2
                           </a>
                         </td>
-                        <td><a href="/p/moveit_commander#melodic">moveit_commander</a></td>
+                        <td><a href="/p/tf2_eigen#melodic">tf2_eigen</a></td>
                       </tr>
                     
                   
@@ -1305,16 +1515,16 @@ The trajectory is returned and not executed.</p>
                           
                           
                           
-                          <a href="/p/prbt_ikfast_manipulator_plugin#melodic-deps" >
+                          <a href="/p/pluginlib#melodic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
                         <td class="text-center">
-                          <a href="/packages/prbt_ikfast_manipulator_plugin" class="label label-default">
+                          <a href="/packages/pluginlib" class="label label-default">
                             1
                           </a>
                         </td>
-                        <td><a href="/p/prbt_ikfast_manipulator_plugin#melodic">prbt_ikfast_manipulator_plugin</a></td>
+                        <td><a href="/p/pluginlib#melodic">pluginlib</a></td>
                       </tr>
                     
                   
@@ -1325,16 +1535,16 @@ The trajectory is returned and not executed.</p>
                           
                           
                           
-                          <a href="/p/message_runtime#melodic-deps" >
+                          <a href="/p/kdl_conversions#melodic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
                         <td class="text-center">
-                          <a href="/packages/message_runtime" class="label label-default">
+                          <a href="/packages/kdl_conversions" class="label label-default">
                             1
                           </a>
                         </td>
-                        <td><a href="/p/message_runtime#melodic">message_runtime</a></td>
+                        <td><a href="/p/kdl_conversions#melodic">kdl_conversions</a></td>
                       </tr>
                     
                   
@@ -1371,11 +1581,25 @@ The trajectory is returned and not executed.</p>
                     
                     
                     <tr>
+                      <td><a href="/p/pilz_industrial_motion/github-PilzDE-pilz_industrial_motion#melodic">pilz_industrial_motion</a></td>
+                      <td><a href="/r/pilz_industrial_motion/github-PilzDE-pilz_industrial_motion">github-PilzDE-pilz_industrial_motion</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/pilz_industrial_motion/github-PilzDE-pilz_industrial_motion#melodic-deps" class="inactive">
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
                       <td><a href="/p/pilz_robot_programming/github-PilzDE-pilz_industrial_motion#melodic">pilz_robot_programming</a></td>
                       <td><a href="/r/pilz_industrial_motion/github-PilzDE-pilz_industrial_motion">github-PilzDE-pilz_industrial_motion</a></td>
                       <td class="text-center">
                         
-                        <a href="/p/pilz_robot_programming/github-PilzDE-pilz_industrial_motion#melodic-deps" class="inactive">
+                        <a href="/p/pilz_robot_programming/github-PilzDE-pilz_industrial_motion#melodic-deps" >
                           <span class="glyphicon glyphicon-arrow-right"></span>
                         </a>
                       </td>
@@ -1429,8 +1653,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                       
                         
                           <li><strong>load_robot_description</strong> <em>&#91;default: true&#93; </em></li>
-                        
-                      
                         
                       
                         
@@ -1513,6 +1735,71 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 </ul>
               </li>
             
+              <li><a href="https://github.com/PilzDE/pilz_industrial_motion/tree/kinetic-devel/pilz_trajectory_generation/test/test_robots/prbt/launch/test_context.launch" target="_blank">test/test_robots/prbt/launch/test_context.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>gripper</strong> <em>&#91;default: &#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>robot_description</strong> <em>&#91;default: robot_description&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>robot_description</strong> <em>&#91;default: robot_description_$(arg gripper)&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/PilzDE/pilz_industrial_motion/tree/kinetic-devel/pilz_trajectory_generation/test/test_robots/abb_irb2400/launch/run_abb_irb2400.launch" target="_blank">test/test_robots/abb_irb2400/launch/run_abb_irb2400.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+Copyright (c) 2018 Pilz GmbH & Co. KG
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>debug</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
               <li><a href="https://github.com/PilzDE/pilz_industrial_motion/tree/kinetic-devel/pilz_trajectory_generation/test/test_robots/abb_irb2400/launch/move_group.launch" target="_blank">test/test_robots/abb_irb2400/launch/move_group.launch</a>
                 <ul class="list-unstyled">
                   
@@ -1524,7 +1811,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                         
                       
                         
-                          <li><strong>pipeline</strong> <em>&#91;default: command_planner&#93; </em></li>
+                          <li><strong>pipeline</strong> <em>&#91;default: pilz_command_planner&#93; </em></li>
                         
                       
                         
@@ -1609,7 +1896,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         
           <ul>
             
-              <li><a href="https://github.com/PilzDE/pilz_industrial_motion/tree/kinetic-devel/pilz_trajectory_generation//plugins/command_planner_plugin_description.xml" target="_blank">moveit_core</a></li>
+              <li><a href="https://github.com/PilzDE/pilz_industrial_motion/tree/kinetic-devel/pilz_trajectory_generation//plugins/pilz_command_planner_plugin_description.xml" target="_blank">moveit_core</a></li>
             
               <li><a href="https://github.com/PilzDE/pilz_industrial_motion/tree/kinetic-devel/pilz_trajectory_generation//plugins/sequence_capability_plugin_description.xml" target="_blank">moveit_ros_move_group</a></li>
             
@@ -1885,14 +2172,14 @@ pilz_trajectory_generation
     
     
     
-    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">6</span> Assets</a>
+    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">8</span> Assets</a>
   </li>
   <li class="better-tabs">
     
     
     
     
-    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">17</span> Dependencies</a>
+    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">27</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1923,7 +2210,7 @@ pilz_trajectory_generation
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.3.2</td>
+                <td>0.3.7</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -1971,7 +2258,7 @@ pilz_trajectory_generation
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-23
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-22
         </span>
       </td>
     </tr>
@@ -2003,7 +2290,7 @@ pilz_trajectory_generation
         <div class="panel panel-default">
           <div class="panel-heading"><h3 class="panel-title">Package Description</h3></div>
           <div class="panel-body">
-            The pilz_trajectory_generation package
+            The pilz_trajectory_generation package containing the MoveIt! plugin pilz_command_planner.
           </div>
           <div class="panel-heading"><h4 class="panel-title">Additional Links</h4></div>
           <div class="panel-body">
@@ -2069,10 +2356,10 @@ please refer to the <a href="http://moveit.ros.org/">MoveIt! website</a>.</p>
 <h2 id="user-interface-movegroup">User Interface MoveGroup</h2>
 
 <p>This package implements the <code>planning_interface::PlannerManager</code> interface of MoveIt!. By loading the corresponding
-planning pipeline (<code>command_planner_planning_pipeline.launch.xml</code> in <code>prbt_moveit_config</code> package), the trajectory
+planning pipeline (<code>pilz_command_planner_planning_pipeline.launch.xml</code> in <code>prbt_moveit_config</code> package), the trajectory
 generation functionalities can be accessed through the user interface (c++, python or rviz) provided by
 the <code>move_group</code> node, e.g. <code>/plan_kinematics_path</code> service and <code>/move_group</code> action. For detailed tutorials please
-refer to <a href="http://docs.ros.org/indigo/api/moveit_tutorials/html/index.html">MoveIt! Tutorials</a>.</p>
+refer to <a href="http://docs.ros.org/melodic/api/moveit_tutorials/html/index.html">MoveIt! Tutorials</a>.</p>
 
 <h2 id="joint-limits">Joint Limits</h2>
 
@@ -2111,17 +2398,17 @@ So the rotational acceleration is calculated as max_trans_acc / max_trans_vel * 
 comprehensive and general. The parameters needed by specific planning algorithm are explained below in detail.</p>
 
 <p>For a general introduction how to fill a <code>MotionPlanRequest</code> see the
-<a href="http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/pr2_tutorials/planning/src/doc/move_group_interface_tutorial.html">Move Group Interface Tutorial</a>.</p>
+<a href="http://docs.ros.org/melodic/api/moveit_tutorials/html/doc/move_group_interface/move_group_interface_tutorial.html#planning-to-a-pose-goal">Move Group Interface Tutorial</a>.</p>
 
 <p>The planner is able to handle all the different commands. Just put "PTP", "LIN" or "CIRC" as planner_id in
 the motion request.</p>
 
 <h2 id="the-ptp-motion-command">The PTP motion command</h2>
 
-<p>This planner generates full synchronized point to point trajectories with trapezoid joint velocity profile. All joints
+<p>This planner generates full synchronized point to point trajectories with trapezoidal joint velocity profile. All joints
 are assumed to have the same maximal joint velocity/acceleration/deceleration limits. If not, the strictest limits are
 adopted. The axis with the longest time to reach the goal is selected as the lead axis.
-Other axes are accelerated so that they share the same acceleration/constant velocity/deceleration phases
+Other axes are decelerated so that they share the same acceleration/constant velocity/deceleration phases
 as the lead axis.</p>
 
 <p><img src="https://raw.githubusercontent.com/PilzDE/pilz_industrial_motion/kinetic-devel/pilz_trajectory_generation/doc/figure/ptp.png" alt="ptp no vel"></p>
@@ -2269,11 +2556,12 @@ The last point will have zero velocity and acceleration.</li>
 
 <h2 id="the-circ-motion-command">The CIRC motion command</h2>
 
-<p>This planner generates an circular arc trajectory in Cartesian space between goal and start poses. The center point of
-the circle or a interim point on the arc needs to be given as path constraint. The planner always generates the shorter
-arc between start and goal poses and cannot generate half circle in case of given center point. The planner cannot generate
-full circle. The Cartesian limits, namely translational/rotational velocity/acceleration/deceleration need to be set
-and the planner uses these limits to generate a trapezoid velocity profile in Cartesian space. The rotational motion is
+<p>This planner generates a circular arc trajectory in Cartesian space between goal and start poses. There are two options for giving a path constraint:
+ - the <em>center</em> point of the circle: The planner always generates the shorter arc between start and goal and cannot generate a half circle,
+ - an <em>interim</em> point on the arc: The generated trajectory always goes through the interim point. The planner cannot generate a full circle.</p>
+
+<p>The Cartesian limits, namely translational/rotational velocity/acceleration/deceleration need to be set
+and the planner uses these limits to generate a trapezoidal velocity profile in Cartesian space. The rotational motion is
 quaternion slerp between start and goal orientation. The translational and rotational motion is synchronized in time.
 This planner only accepts start state with zero velocity. Planning result is a joint trajectory. The user needs to adapt
 the Cartesian velocity/acceleration scaling factor if motion plan fails due to violation of joint limits.</p>
@@ -2375,12 +2663,17 @@ The limits are expected to be under the namespace <code>&lt;robot_description&gt
 E.g. if the urdf was loaded into <code>/robot_description</code> the cartesian limits have to be defined at <code>/robot_description_planning</code>.</p>
 
 <p>An example showing the cartesian limits which have to be defined can be found
-<img src="https://github.com/PilzDE/pilz_robots/blob/kinetic-devel/prbt_moveit_config/config/cartesian_limits.yaml" alt="here">.</p>
+<img src="https://github.com/PilzDE/pilz_robots/blob/melodic-devel/prbt_moveit_config/config/cartesian_limits.yaml" alt="here">.</p>
 
 <h1 id="sequence-of-multiple-segments">Sequence of multiple segments</h1>
 
 <p>To concatenate multiple trajectories and plan the trajectory at once, you can use the sequence capability.
 This reduces the planning overhead and allows to follow a pre-desribed path without stopping at intermediate points.</p>
+
+<p><strong>Please note:</strong> In case the planning of a command in a sequence fails,
+non of the commands in the sequence are executed.</p>
+
+<p><strong>Please note:</strong> Sequences commands are allowed to contain commands for multiple groups (e.g. "Manipulator", "Gripper")</p>
 
 <h2 id="user-interface-sequence-capability">User interface sequence capability</h2>
 
@@ -2391,7 +2684,8 @@ with the following goal in a way, that the robot does not stop at the current go
 given <code>blend_radius</code>, it is allowed to travel towards the next goal already. When leaving a sphere around the current goal, the robot
 returns onto the trajectory he would have taken without blending.</p>
 
-<p>For details about the blend algorithm please refer to <code>/doc/MotionBlendAlgorithmDescription.pdf</code>.</p>
+<p>For details about the blend algorithm please refer to
+<img src="https://raw.githubusercontent.com/PilzDE/pilz_industrial_motion/kinetic-devel/pilz_trajectory_generation/doc/MotionBlendAlgorithmDescription.pdf" alt="doc/MotionBlendAlgorithmDescription.pdf">.</p>
 
 <p><img src="https://raw.githubusercontent.com/PilzDE/pilz_industrial_motion/kinetic-devel/pilz_trajectory_generation/doc/figure/blend_radius.png" alt="blend figure"></p>
 
@@ -2480,6 +2774,246 @@ The trajectory is returned and not executed.</p>
                   <th style="width: 100%">Name</th>
                 </thead>
                 <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#kinetic">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rostest#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rostest" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rostest#kinetic">rostest</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rosunit#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rosunit" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rosunit#kinetic">rosunit</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/cmake_modules#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/cmake_modules" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/cmake_modules#kinetic">cmake_modules</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/pilz_testutils#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/pilz_testutils" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/pilz_testutils#kinetic">pilz_testutils</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/pilz_industrial_motion_testutils#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/pilz_industrial_motion_testutils" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/pilz_industrial_motion_testutils#kinetic">pilz_industrial_motion_testutils</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/prbt_moveit_config#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/prbt_moveit_config" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/prbt_moveit_config#kinetic">prbt_moveit_config</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/prbt_support#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/prbt_support" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/prbt_support#kinetic">prbt_support</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/prbt_pg70_support#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/prbt_pg70_support" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/prbt_pg70_support#kinetic">prbt_pg70_support</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/panda_moveit_config#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/panda_moveit_config" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/panda_moveit_config#kinetic">panda_moveit_config</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/abb_irb2400_moveit_config#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/abb_irb2400_moveit_config" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/abb_irb2400_moveit_config#kinetic">abb_irb2400_moveit_config</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/code_coverage#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/code_coverage" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/code_coverage#kinetic">code_coverage</a></td>
+                      </tr>
+                    
                   
                     
                     
@@ -2648,86 +3182,6 @@ The trajectory is returned and not executed.</p>
                           
                           
                           
-                          <a href="/p/tf2_eigen#kinetic-deps" >
-                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
-                          </a>
-                        </td>
-                        <td class="text-center">
-                          <a href="/packages/tf2_eigen" class="label label-primary">
-                            2
-                          </a>
-                        </td>
-                        <td><a href="/p/tf2_eigen#kinetic">tf2_eigen</a></td>
-                      </tr>
-                    
-                  
-                    
-                    
-                      <tr>
-                        <td class="text-center">
-                          
-                          
-                          
-                          <a href="/p/eigen_conversions#kinetic-deps" >
-                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
-                          </a>
-                        </td>
-                        <td class="text-center">
-                          <a href="/packages/eigen_conversions" class="label label-default">
-                            1
-                          </a>
-                        </td>
-                        <td><a href="/p/eigen_conversions#kinetic">eigen_conversions</a></td>
-                      </tr>
-                    
-                  
-                    
-                    
-                      <tr>
-                        <td class="text-center">
-                          
-                          
-                          
-                          <a href="/p/pluginlib#kinetic-deps" >
-                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
-                          </a>
-                        </td>
-                        <td class="text-center">
-                          <a href="/packages/pluginlib" class="label label-default">
-                            1
-                          </a>
-                        </td>
-                        <td><a href="/p/pluginlib#kinetic">pluginlib</a></td>
-                      </tr>
-                    
-                  
-                    
-                    
-                      <tr>
-                        <td class="text-center">
-                          
-                          
-                          
-                          <a href="/p/pilz_extensions#kinetic-deps" >
-                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
-                          </a>
-                        </td>
-                        <td class="text-center">
-                          <a href="/packages/pilz_extensions" class="label label-default">
-                            1
-                          </a>
-                        </td>
-                        <td><a href="/p/pilz_extensions#kinetic">pilz_extensions</a></td>
-                      </tr>
-                    
-                  
-                    
-                    
-                      <tr>
-                        <td class="text-center">
-                          
-                          
-                          
                           <a href="/p/pilz_msgs#kinetic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
@@ -2768,16 +3222,56 @@ The trajectory is returned and not executed.</p>
                           
                           
                           
-                          <a href="/p/moveit_commander#kinetic-deps" >
+                          <a href="/p/eigen_conversions#kinetic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
                         <td class="text-center">
-                          <a href="/packages/moveit_commander" class="label label-primary">
+                          <a href="/packages/eigen_conversions" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/eigen_conversions#kinetic">eigen_conversions</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/pilz_extensions#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/pilz_extensions" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/pilz_extensions#kinetic">pilz_extensions</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/tf2_eigen#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/tf2_eigen" class="label label-primary">
                             2
                           </a>
                         </td>
-                        <td><a href="/p/moveit_commander#kinetic">moveit_commander</a></td>
+                        <td><a href="/p/tf2_eigen#kinetic">tf2_eigen</a></td>
                       </tr>
                     
                   
@@ -2788,16 +3282,16 @@ The trajectory is returned and not executed.</p>
                           
                           
                           
-                          <a href="/p/prbt_ikfast_manipulator_plugin#kinetic-deps" >
+                          <a href="/p/pluginlib#kinetic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
                         <td class="text-center">
-                          <a href="/packages/prbt_ikfast_manipulator_plugin" class="label label-default">
+                          <a href="/packages/pluginlib" class="label label-default">
                             1
                           </a>
                         </td>
-                        <td><a href="/p/prbt_ikfast_manipulator_plugin#kinetic">prbt_ikfast_manipulator_plugin</a></td>
+                        <td><a href="/p/pluginlib#kinetic">pluginlib</a></td>
                       </tr>
                     
                   
@@ -2808,16 +3302,16 @@ The trajectory is returned and not executed.</p>
                           
                           
                           
-                          <a href="/p/message_runtime#kinetic-deps" >
+                          <a href="/p/kdl_conversions#kinetic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
                         <td class="text-center">
-                          <a href="/packages/message_runtime" class="label label-default">
+                          <a href="/packages/kdl_conversions" class="label label-default">
                             1
                           </a>
                         </td>
-                        <td><a href="/p/message_runtime#kinetic">message_runtime</a></td>
+                        <td><a href="/p/kdl_conversions#kinetic">kdl_conversions</a></td>
                       </tr>
                     
                   
@@ -2854,11 +3348,25 @@ The trajectory is returned and not executed.</p>
                     
                     
                     <tr>
+                      <td><a href="/p/pilz_industrial_motion/github-PilzDE-pilz_industrial_motion#kinetic">pilz_industrial_motion</a></td>
+                      <td><a href="/r/pilz_industrial_motion/github-PilzDE-pilz_industrial_motion">github-PilzDE-pilz_industrial_motion</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/pilz_industrial_motion/github-PilzDE-pilz_industrial_motion#kinetic-deps" class="inactive">
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
                       <td><a href="/p/pilz_robot_programming/github-PilzDE-pilz_industrial_motion#kinetic">pilz_robot_programming</a></td>
                       <td><a href="/r/pilz_industrial_motion/github-PilzDE-pilz_industrial_motion">github-PilzDE-pilz_industrial_motion</a></td>
                       <td class="text-center">
                         
-                        <a href="/p/pilz_robot_programming/github-PilzDE-pilz_industrial_motion#kinetic-deps" class="inactive">
+                        <a href="/p/pilz_robot_programming/github-PilzDE-pilz_industrial_motion#kinetic-deps" >
                           <span class="glyphicon glyphicon-arrow-right"></span>
                         </a>
                       </td>
@@ -2912,8 +3420,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                       
                         
                           <li><strong>load_robot_description</strong> <em>&#91;default: true&#93; </em></li>
-                        
-                      
                         
                       
                         
@@ -2996,6 +3502,71 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 </ul>
               </li>
             
+              <li><a href="https://github.com/PilzDE/pilz_industrial_motion/tree/kinetic-devel/pilz_trajectory_generation/test/test_robots/prbt/launch/test_context.launch" target="_blank">test/test_robots/prbt/launch/test_context.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>gripper</strong> <em>&#91;default: &#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>robot_description</strong> <em>&#91;default: robot_description&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>robot_description</strong> <em>&#91;default: robot_description_$(arg gripper)&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/PilzDE/pilz_industrial_motion/tree/kinetic-devel/pilz_trajectory_generation/test/test_robots/abb_irb2400/launch/run_abb_irb2400.launch" target="_blank">test/test_robots/abb_irb2400/launch/run_abb_irb2400.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+Copyright (c) 2018 Pilz GmbH & Co. KG
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>debug</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
               <li><a href="https://github.com/PilzDE/pilz_industrial_motion/tree/kinetic-devel/pilz_trajectory_generation/test/test_robots/abb_irb2400/launch/move_group.launch" target="_blank">test/test_robots/abb_irb2400/launch/move_group.launch</a>
                 <ul class="list-unstyled">
                   
@@ -3007,7 +3578,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                         
                       
                         
-                          <li><strong>pipeline</strong> <em>&#91;default: command_planner&#93; </em></li>
+                          <li><strong>pipeline</strong> <em>&#91;default: pilz_command_planner&#93; </em></li>
                         
                       
                         
@@ -3092,7 +3663,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         
           <ul>
             
-              <li><a href="https://github.com/PilzDE/pilz_industrial_motion/tree/kinetic-devel/pilz_trajectory_generation//plugins/command_planner_plugin_description.xml" target="_blank">moveit_core</a></li>
+              <li><a href="https://github.com/PilzDE/pilz_industrial_motion/tree/kinetic-devel/pilz_trajectory_generation//plugins/pilz_command_planner_plugin_description.xml" target="_blank">moveit_core</a></li>
             
               <li><a href="https://github.com/PilzDE/pilz_industrial_motion/tree/kinetic-devel/pilz_trajectory_generation//plugins/sequence_capability_plugin_description.xml" target="_blank">moveit_ros_move_group</a></li>
             
@@ -3274,7 +3845,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

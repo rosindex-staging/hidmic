@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/jsk_fetch_startup/github-jsk-ros-pkg-jsk_robot/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -573,14 +576,14 @@ roseus_remote
     
     
     
-    <a href="#indigo-assets" data-toggle="tab"><span class="label label-primary">14</span> Assets</a>
+    <a href="#indigo-assets" data-toggle="tab"><span class="label label-primary">16</span> Assets</a>
   </li>
   <li class="better-tabs">
     
     
     
     
-    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">21</span> Dependencies</a>
+    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">23</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -659,7 +662,7 @@ roseus_remote
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-12
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-23
         </span>
       </td>
     </tr>
@@ -853,14 +856,56 @@ Please connect display, open a window of network manager, and check that wired c
 <code>fetch</code> goes to 73B2 kitchen at 10:00 AM from Monday to Friday.</li>
 </ul>
 </li>
+<li>2019/04/19: add <code>fetch</code> user in <code>pulse-access</code> group.</li>
+<li>2019/04/19: set <code>start on runlevel [2345]</code> in <code>/etc/init/pulseaudio.conf</code>.
+
+<ul>
+<li>this modification is needed for starting <code>pulseaudio</code> in boot.</li>
+<li>
+<code>pulseaudio</code> is required to register USB speaker on head in boot.</li>
+</ul>
+</li>
+<li>2019/04/19: set <code>env DISALLOW_MODULE_LOADING=0</code> in <code>/etc/init/pulseaudio.conf</code>.
+
+<ul>
+<li>this modification is needed for overriding default speaker setting in <code>/etc/init/jsk-fetch-startup.conf</code>
+</li>
+<li>overriding default speaker setting to use USB speaker on head is done with <code>pactl set-default-sink $AUDIO_DEVICE</code> in <code>/etc/init/jsk-fetch-startup.conf</code>
+</li>
+</ul>
+</li>
+<li>2019/04/19: launch <code>jsk_fetch_startup/fetch_bringup.launch</code> by <code>fetch</code> user in <code>/etc/init/jsk-fetch-startup.conf</code>
+
+<ul>
+<li>some nodes save files by <code>fetch</code> user</li>
+</ul>
+</li>
+<li>2019/04/19: add arg <code>launch_teleop</code> in <code>/etc/ros/indigo/robot.launch</code>.
+
+<ul>
+<li>We sent PR to upstream <a href="https://github.com/fetchrobotics/fetch_robots/pull/40">fetchrobotics/fetch_robots PR#40</a>.</li>
+</ul>
+</li>
+<li>2019/04/19: run <code>/etc/ros/indigo/robot.launch</code> with <code>arg</code> <code>launch_teleop:=false</code>.
+
+<ul>
+<li>
+<code>teleop</code> in <code>/etc/ros/indigo/robot.launch</code> nodes were conflicted with <code>teleop</code> nodes in <a href="https://github.com/jsk-ros-pkg/jsk_robot/blob/master/jsk_fetch_robot/jsk_fetch_startup/launch/fetch_teleop.xml">jsk_fetch_startup/launch/fetch_teleop.xml</a>
+</li>
+</ul>
+</li>
 </ul>
 
 <h2 id="apps">Apps</h2>
 
+<h3 id="note">Note</h3>
+
+<p>You can not run this on Firefox. Please use Google Chrome.</p>
+
 <h3 id="add-fetch-to-rwt_app_chooser">Add fetch to rwt_app_chooser</h3>
 
 <ol>
-<li>Access <a href="http://furushchev.ru/rwt_app_chooser" title="website">http://furushchev.ru/rwt_app_chooser</a>.</li>
+<li>Access <a href="http://tork-a.github.io/visualization_rwt/rwt_app_chooser" title="website">http://tork-a.github.io/visualization_rwt/rwt_app_chooser</a>.</li>
 <li>Click <code>ADD A ROBOT</code> button</li>
 <li>Select <code>Fetch</code> at <code>Robot type</code>
 </li>
@@ -957,6 +1002,26 @@ Please connect display, open a window of network manager, and check that wired c
                           </a>
                         </td>
                         <td><a href="/p/fetch_teleop#indigo">fetch_teleop</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#indigo">catkin</a></td>
                       </tr>
                     
                   
@@ -1351,6 +1416,26 @@ Please connect display, open a window of network manager, and check that wired c
                       </tr>
                     
                   
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rostest#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rostest" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rostest#indigo">rostest</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -1546,6 +1631,10 @@ Please connect display, open a window of network manager, and check that wired c
                       
                         
                       
+                        
+                      
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -1596,6 +1685,41 @@ Please connect display, open a window of network manager, and check that wired c
                       
                         
                       
+                        
+                      
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/jsk-ros-pkg/jsk_robot/tree/master/jsk_fetch_robot/jsk_fetch_startup/launch/fetch_tweet.launch" target="_blank">launch/fetch_tweet.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                      
+                        
+                          <li><strong>image_topics</strong> <em>&#91;default: /head_camera/rgb/image_rect_color&#93; </em></li>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                          <li><strong>remap_odom_state</strong> <em>&#91;default: /odom_combined&#93; </em></li>
                         
                       
                         
@@ -1698,6 +1822,23 @@ Please connect display, open a window of network manager, and check that wired c
                 </ul>
               </li>
             
+              <li><a href="https://github.com/jsk-ros-pkg/jsk_robot/tree/master/jsk_fetch_robot/jsk_fetch_startup/apps/patrol/patrol.xml" target="_blank">apps/patrol/patrol.xml</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                      
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
               <li><a href="https://github.com/jsk-ros-pkg/jsk_robot/tree/master/jsk_fetch_robot/jsk_fetch_startup/launch/fetch_teleop.xml" target="_blank">launch/fetch_teleop.xml</a>
                 <ul class="list-unstyled">
                   
@@ -1715,7 +1856,7 @@ Please connect display, open a window of network manager, and check that wired c
                         
                       
                         
-                          <li><strong>disable_arm_teleop</strong> <em>&#91;default: true&#93; </em></li>
+                          <li><strong>launch_fetch_bringup_teleop</strong> <em>&#91;default: false&#93; </em></li>
                         
                       
                     </ul>
@@ -1737,6 +1878,12 @@ Please connect display, open a window of network manager, and check that wired c
                       
                         
                           <li><strong>map_frame</strong> <em>&#91;default: map&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>vital_check</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
                         
                       
                         
@@ -2284,14 +2431,14 @@ roseus_remote
     
     
     
-    <a href="#hydro-assets" data-toggle="tab"><span class="label label-primary">14</span> Assets</a>
+    <a href="#hydro-assets" data-toggle="tab"><span class="label label-primary">16</span> Assets</a>
   </li>
   <li class="better-tabs">
     
     
     
     
-    <a href="#hydro-deps" data-toggle="tab"><span class="label label-primary">21</span> Dependencies</a>
+    <a href="#hydro-deps" data-toggle="tab"><span class="label label-primary">23</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -2370,7 +2517,7 @@ roseus_remote
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-12
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-23
         </span>
       </td>
     </tr>
@@ -2564,14 +2711,56 @@ Please connect display, open a window of network manager, and check that wired c
 <code>fetch</code> goes to 73B2 kitchen at 10:00 AM from Monday to Friday.</li>
 </ul>
 </li>
+<li>2019/04/19: add <code>fetch</code> user in <code>pulse-access</code> group.</li>
+<li>2019/04/19: set <code>start on runlevel [2345]</code> in <code>/etc/init/pulseaudio.conf</code>.
+
+<ul>
+<li>this modification is needed for starting <code>pulseaudio</code> in boot.</li>
+<li>
+<code>pulseaudio</code> is required to register USB speaker on head in boot.</li>
+</ul>
+</li>
+<li>2019/04/19: set <code>env DISALLOW_MODULE_LOADING=0</code> in <code>/etc/init/pulseaudio.conf</code>.
+
+<ul>
+<li>this modification is needed for overriding default speaker setting in <code>/etc/init/jsk-fetch-startup.conf</code>
+</li>
+<li>overriding default speaker setting to use USB speaker on head is done with <code>pactl set-default-sink $AUDIO_DEVICE</code> in <code>/etc/init/jsk-fetch-startup.conf</code>
+</li>
+</ul>
+</li>
+<li>2019/04/19: launch <code>jsk_fetch_startup/fetch_bringup.launch</code> by <code>fetch</code> user in <code>/etc/init/jsk-fetch-startup.conf</code>
+
+<ul>
+<li>some nodes save files by <code>fetch</code> user</li>
+</ul>
+</li>
+<li>2019/04/19: add arg <code>launch_teleop</code> in <code>/etc/ros/indigo/robot.launch</code>.
+
+<ul>
+<li>We sent PR to upstream <a href="https://github.com/fetchrobotics/fetch_robots/pull/40">fetchrobotics/fetch_robots PR#40</a>.</li>
+</ul>
+</li>
+<li>2019/04/19: run <code>/etc/ros/indigo/robot.launch</code> with <code>arg</code> <code>launch_teleop:=false</code>.
+
+<ul>
+<li>
+<code>teleop</code> in <code>/etc/ros/indigo/robot.launch</code> nodes were conflicted with <code>teleop</code> nodes in <a href="https://github.com/jsk-ros-pkg/jsk_robot/blob/master/jsk_fetch_robot/jsk_fetch_startup/launch/fetch_teleop.xml">jsk_fetch_startup/launch/fetch_teleop.xml</a>
+</li>
+</ul>
+</li>
 </ul>
 
 <h2 id="apps">Apps</h2>
 
+<h3 id="note">Note</h3>
+
+<p>You can not run this on Firefox. Please use Google Chrome.</p>
+
 <h3 id="add-fetch-to-rwt_app_chooser">Add fetch to rwt_app_chooser</h3>
 
 <ol>
-<li>Access <a href="http://furushchev.ru/rwt_app_chooser" title="website">http://furushchev.ru/rwt_app_chooser</a>.</li>
+<li>Access <a href="http://tork-a.github.io/visualization_rwt/rwt_app_chooser" title="website">http://tork-a.github.io/visualization_rwt/rwt_app_chooser</a>.</li>
 <li>Click <code>ADD A ROBOT</code> button</li>
 <li>Select <code>Fetch</code> at <code>Robot type</code>
 </li>
@@ -2668,6 +2857,26 @@ Please connect display, open a window of network manager, and check that wired c
                           </a>
                         </td>
                         <td><a href="/p/fetch_teleop#hydro">fetch_teleop</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#hydro-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#hydro">catkin</a></td>
                       </tr>
                     
                   
@@ -3062,6 +3271,26 @@ Please connect display, open a window of network manager, and check that wired c
                       </tr>
                     
                   
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rostest#hydro-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rostest" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rostest#hydro">rostest</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -3257,6 +3486,10 @@ Please connect display, open a window of network manager, and check that wired c
                       
                         
                       
+                        
+                      
+                        
+                      
                     </ul>
                   </li>
                 </ul>
@@ -3307,6 +3540,41 @@ Please connect display, open a window of network manager, and check that wired c
                       
                         
                       
+                        
+                      
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/jsk-ros-pkg/jsk_robot/tree/master/jsk_fetch_robot/jsk_fetch_startup/launch/fetch_tweet.launch" target="_blank">launch/fetch_tweet.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                      
+                        
+                          <li><strong>image_topics</strong> <em>&#91;default: /head_camera/rgb/image_rect_color&#93; </em></li>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                          <li><strong>remap_odom_state</strong> <em>&#91;default: /odom_combined&#93; </em></li>
                         
                       
                         
@@ -3409,6 +3677,23 @@ Please connect display, open a window of network manager, and check that wired c
                 </ul>
               </li>
             
+              <li><a href="https://github.com/jsk-ros-pkg/jsk_robot/tree/master/jsk_fetch_robot/jsk_fetch_startup/apps/patrol/patrol.xml" target="_blank">apps/patrol/patrol.xml</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                      
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
               <li><a href="https://github.com/jsk-ros-pkg/jsk_robot/tree/master/jsk_fetch_robot/jsk_fetch_startup/launch/fetch_teleop.xml" target="_blank">launch/fetch_teleop.xml</a>
                 <ul class="list-unstyled">
                   
@@ -3426,7 +3711,7 @@ Please connect display, open a window of network manager, and check that wired c
                         
                       
                         
-                          <li><strong>disable_arm_teleop</strong> <em>&#91;default: true&#93; </em></li>
+                          <li><strong>launch_fetch_bringup_teleop</strong> <em>&#91;default: false&#93; </em></li>
                         
                       
                     </ul>
@@ -3448,6 +3733,12 @@ Please connect display, open a window of network manager, and check that wired c
                       
                         
                           <li><strong>map_frame</strong> <em>&#91;default: map&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>vital_check</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
                         
                       
                         
@@ -3717,7 +4008,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//r/ros_additive_manufacturing/gitlab-InstitutMaupertuis-ros_additive_manufacturing/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -347,7 +350,7 @@
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-21
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-23
         </span>
       </td>
     </tr>
@@ -390,52 +393,52 @@
                 
                   <tr>
                     <td><a href="/p/ram_display/gitlab-InstitutMaupertuis-ros_additive_manufacturing">ram_display</a></td>
-                    <td>0.0.3</td>
+                    <td>0.0.4</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/ram_documentation/gitlab-InstitutMaupertuis-ros_additive_manufacturing">ram_documentation</a></td>
-                    <td>0.0.3</td>
+                    <td>0.0.4</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/ram_modify_trajectory/gitlab-InstitutMaupertuis-ros_additive_manufacturing">ram_modify_trajectory</a></td>
-                    <td>0.0.3</td>
+                    <td>0.0.4</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/ram_msgs/gitlab-InstitutMaupertuis-ros_additive_manufacturing">ram_msgs</a></td>
-                    <td>0.0.3</td>
+                    <td>0.0.4</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/ram_path_planning/gitlab-InstitutMaupertuis-ros_additive_manufacturing">ram_path_planning</a></td>
-                    <td>0.0.3</td>
+                    <td>0.0.4</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/ram_post_processor/gitlab-InstitutMaupertuis-ros_additive_manufacturing">ram_post_processor</a></td>
-                    <td>0.0.3</td>
+                    <td>0.0.4</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/ram_qt_guis/gitlab-InstitutMaupertuis-ros_additive_manufacturing">ram_qt_guis</a></td>
-                    <td>0.0.3</td>
+                    <td>0.0.4</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/ram_trajectory/gitlab-InstitutMaupertuis-ros_additive_manufacturing">ram_trajectory</a></td>
-                    <td>0.0.3</td>
+                    <td>0.0.4</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/ram_utils/gitlab-InstitutMaupertuis-ros_additive_manufacturing">ram_utils</a></td>
-                    <td>0.0.3</td>
+                    <td>0.0.4</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/ros_additive_manufacturing/gitlab-InstitutMaupertuis-ros_additive_manufacturing">ros_additive_manufacturing</a></td>
-                    <td>0.0.3</td>
+                    <td>0.0.4</td>
                   </tr>
                 
                 </tbody>
@@ -453,8 +456,80 @@
 
 <p><a href="https://gitlab.com/InstitutMaupertuis/ros_additive_manufacturing/commits/melodic"><img src="https://gitlab.com/InstitutMaupertuis/ros_additive_manufacturing/badges/melodic/build.svg" alt="build status"></a></p>
 
-<p>For more information please visit the offical wiki page:
-<a href="http://wiki.ros.org/ros_additive_manufacturing">http://wiki.ros.org/ros_additive_manufacturing</a></p>
+<h1 id="overview">Overview</h1>
+
+<p>This repository is part of the <a href="https://wiki.ros.org/Industrial">ROS-Industrial</a> program.</p>
+
+<p><strong>R</strong>OS <strong>A</strong>dditive <strong>M</strong>anufacturing (RAM) provides a set of tools (mostly algorithms and GUIs) to help end users create complex trajectories for additive manufacturing. The project is especially focused on printing metallic parts with industrial robots. This project contains multiple tools: path planning algorithm able to generate complex trajectories, visualisation tools, editing tools, etc.</p>
+
+<p>:information_source: As of today this project aims at generating a robot program specific to the robot brand you use, and then upload/run the program on the robot. It's not designed to directly control your robot, though it would be possible quite easily.</p>
+
+<h1 id="media">Media</h1>
+
+<p><a href="https://www.youtube.com/watch?v=6U0zRbDbjQs">https://www.youtube.com/watch?v=6U0zRbDbjQs</a></p>
+
+<p><img src="https://gitlab.com/InstitutMaupertuis/ros_additive_manufacturing.git/ram_documentation/sphinx/temp_static/twisted_pyramid.png" alt="twisted_pyramid"></p>
+
+<p><img src="https://gitlab.com/InstitutMaupertuis/ros_additive_manufacturing.git/ram_documentation/sphinx/temp_static/star.png" alt="star"></p>
+
+<h1 id="dependencies">Dependencies</h1>
+
+<h2 id="sphinx-and-latex">Sphinx and Latex</h2>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> python-pip latexmk texlive-base texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
+<span class="nb">sudo </span>pip <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span class="nv">sphinx</span><span class="o">==</span>1.7.4 sphinx_rtd_theme
+
+</code></pre></div>
+<h2 id="visualisation-toolkit">Visualisation ToolKit</h2>
+
+<p>You need VTK 7.1 or higher in order to compile this project.</p>
+
+<p>Here are quick steps to download, compile and install VTK latest release:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> libglew-dev libxt-dev libqt5x11extras5
+<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$HOME</span>/libraries/VTK-8.1/build_release
+<span class="nb">cd</span> <span class="nv">$HOME</span>/libraries/VTK-8.1/
+wget http://www.vtk.org/files/release/8.1/VTK-8.1.0.zip
+unzip VTK-8.1.0.zip
+<span class="nb">mv </span>VTK-8.1.0 src
+<span class="nb">cd </span>build_release
+cmake ../src <span class="nt">-DCMAKE_BUILD_TYPE</span><span class="o">=</span>Release
+make <span class="nt">-j4</span>
+
+</code></pre></div>
+<p>Install with:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>make <span class="nt">-j4</span> <span class="nb">install
+sudo </span>ldconfig
+
+</code></pre></div>
+<h2 id="wstool">wstool</h2>
+
+<p>Install <a href="https://wiki.ros.org/wstool">wstool</a>.</p>
+
+<h2 id="rosdep">rosdep</h2>
+
+<p>Install, initialize and update <a href="https://wiki.ros.org/rosdep">rosdep</a>.</p>
+
+<h1 id="clone">Clone</h1>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">mkdir</span> <span class="nt">-p</span> catkin_workspace/src
+<span class="nb">cd </span>catkin_workspace/src
+git clone https://gitlab.com/InstitutMaupertuis/ros_additive_manufacturing.git
+<span class="nb">cd</span> ..
+wstool init src src/ros_additive_manufacturing/ros_additive_manufacturing.rosinstall
+
+</code></pre></div>
+<h2 id="resolve-ros-dependencies">Resolve ROS dependencies</h2>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">rosdep <span class="nb">install</span> <span class="nt">--from-paths</span> src <span class="nt">--ignore-src</span> <span class="nt">--rosdistro</span> <span class="nv">$ROS_DISTRO</span> <span class="nt">-y</span>
+
+</code></pre></div>
+<h2 id="compile-and-install">Compile and install</h2>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">catkin_make <span class="nb">install</span>
+
+</code></pre></div>
+<h1 id="running-the-tests-locally">Running the tests locally</h1>
+
+<p>The tests can be run locally with a GUI; for each package that allows that the commands are detailed in a README file; for example in <a href="https://gitlab.com/InstitutMaupertuis/ros_additive_manufacturing.git/ram_path_planning/README.md">ram_path_planning/README.md</a></p>
+
+<p>Please check inside the repository if there is a <code>README</code> file in the package you are interested in testing!</p>
 </div>
             
           </div>
@@ -676,7 +751,7 @@
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

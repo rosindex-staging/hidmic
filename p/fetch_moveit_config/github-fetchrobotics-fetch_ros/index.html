@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/fetch_moveit_config/github-fetchrobotics-fetch_ros/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -348,6 +351,14 @@ fetch_teleop
 </a>
             
           
+            
+            
+              <a class="label label-primary pkg-label" href="/p/fetch_ros/github-fetchrobotics-fetch_ros">
+
+fetch_ros
+</a>
+            
+          
       </td>
     </tr>
   </table>
@@ -428,7 +439,7 @@ fetch_teleop
     
     
     
-    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">13</span> Dependencies</a>
+    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">15</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -459,7 +470,7 @@ fetch_teleop
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.7.14</td>
+                <td>0.8.1</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -507,7 +518,7 @@ fetch_teleop
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-11-26
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-26
         </span>
       </td>
     </tr>
@@ -549,7 +560,7 @@ fetch_teleop
             
               <ul class="list-unstyled">
                 
-                  <li><a href="http://ros.org/wiki/fetch_moveit_config">Website</a></li>
+                  <li><a href="http://ros.org/wiki/fetch_moveit_config">Wiki</a></li>
                 
                   <li><a href="http://moveit.ros.org/">Website</a></li>
                 
@@ -662,16 +673,16 @@ fetch_teleop
                           
                           
                           
-                          <a href="/p/fetch_description#melodic-deps" >
+                          <a href="/p/catkin#melodic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
                         <td class="text-center">
-                          <a href="/packages/fetch_description" class="label label-default">
+                          <a href="/packages/catkin" class="label label-default">
                             1
                           </a>
                         </td>
-                        <td><a href="/p/fetch_description#melodic">fetch_description</a></td>
+                        <td><a href="/p/catkin#melodic">catkin</a></td>
                       </tr>
                     
                   
@@ -702,7 +713,7 @@ fetch_teleop
                           
                           
                           
-                          <a href="/p/joint_state_publisher#melodic-deps" class="inactive">
+                          <a href="/p/joint_state_publisher#melodic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -915,6 +926,46 @@ fetch_teleop
                       </tr>
                     
                   
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rostest#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rostest" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rostest#melodic">rostest</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/fetch_description#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/fetch_description" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/fetch_description#melodic">fetch_description</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -937,7 +988,30 @@ fetch_teleop
           </div>
           <div class="panel-body">
             
-              <em>No known dependants.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                  <th>Repo</th>
+                  <th class="text-center">Deps</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/fetch_ros/github-fetchrobotics-fetch_ros#melodic">fetch_ros</a></td>
+                      <td><a href="/r/fetch_ros/github-fetchrobotics-fetch_ros">github-fetchrobotics-fetch_ros</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/fetch_ros/github-fetchrobotics-fetch_ros#melodic-deps" class="inactive">
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -1193,6 +1267,10 @@ fetch_teleop
                         
                       
                         
+                          <li><strong>moveit_octomap_sensor_params_file</strong> <em>&#91;default: $(find fetch_moveit_config)/config/sensors.yaml&#93; </em></li>
+                        
+                      
+                        
                           <li><strong>fake_execution</strong> <em>&#91;default: false&#93; </em></li>
                         
                       
@@ -1210,6 +1288,8 @@ fetch_teleop
                       
                         
                           <li><strong>pipeline</strong> <em>&#91;default: $(optenv PLANNING_PIPELINE ompl)&#93; </em></li>
+                        
+                      
                         
                       
                         
@@ -1357,7 +1437,13 @@ fetch_teleop
                     <ul>
                       
                         
+                          <li><strong>moveit_octomap_sensor_params_file</strong> <em>&#91;default: $(find fetch_moveit_config)/config/sensors.yaml&#93; </em></li>
+                        
+                      
+                        
                           <li><strong>moveit_sensor_manager</strong> <em>&#91;default: fetch&#93; </em></li>
+                        
+                      
                         
                       
                     </ul>
@@ -1630,6 +1716,14 @@ fetch_navigation
           
             
             
+              <a class="label label-primary pkg-label" href="/p/fetch_ros/github-fetchrobotics-fetch_ros">
+
+fetch_ros
+</a>
+            
+          
+            
+            
               <a class="label label-primary pkg-label" href="/p/fetch_teleop/github-fetchrobotics-fetch_ros">
 
 fetch_teleop
@@ -1716,7 +1810,7 @@ fetch_teleop
     
     
     
-    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">13</span> Dependencies</a>
+    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">15</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1747,7 +1841,7 @@ fetch_teleop
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.7.14</td>
+                <td>0.7.15</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -1795,7 +1889,7 @@ fetch_teleop
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-11-01
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-26
         </span>
       </td>
     </tr>
@@ -1836,6 +1930,8 @@ fetch_teleop
             
             
               <ul class="list-unstyled">
+                
+                  <li><a href="http://ros.org/wiki/fetch_moveit_config">Website</a></li>
                 
                   <li><a href="http://moveit.ros.org/">Website</a></li>
                 
@@ -1958,6 +2054,26 @@ fetch_teleop
                           </a>
                         </td>
                         <td><a href="/p/fetch_description#indigo">fetch_description</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#indigo">catkin</a></td>
                       </tr>
                     
                   
@@ -2201,6 +2317,26 @@ fetch_teleop
                       </tr>
                     
                   
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rostest#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rostest" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rostest#indigo">rostest</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -2234,6 +2370,20 @@ fetch_teleop
                     
                     
                     <tr>
+                      <td><a href="/p/fetcheus/github-jsk-ros-pkg-jsk_robot#indigo">fetcheus</a></td>
+                      <td><a href="/r/jsk_robot/github-jsk-ros-pkg-jsk_robot">github-jsk-ros-pkg-jsk_robot</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/fetcheus/github-jsk-ros-pkg-jsk_robot#indigo-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
                       <td><a href="/p/jsk_fetch_startup/github-jsk-ros-pkg-jsk_robot#indigo">jsk_fetch_startup</a></td>
                       <td><a href="/r/jsk_robot/github-jsk-ros-pkg-jsk_robot">github-jsk-ros-pkg-jsk_robot</a></td>
                       <td class="text-center">
@@ -2252,7 +2402,21 @@ fetch_teleop
                       <td><a href="/r/fetch_gazebo/github-fetchrobotics-fetch_gazebo">github-fetchrobotics-fetch_gazebo</a></td>
                       <td class="text-center">
                         
-                        <a href="/p/fetch_gazebo_demo/github-fetchrobotics-fetch_gazebo#indigo-deps" class="inactive">
+                        <a href="/p/fetch_gazebo_demo/github-fetchrobotics-fetch_gazebo#indigo-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/fetch_ros/github-fetchrobotics-fetch_ros#indigo">fetch_ros</a></td>
+                      <td><a href="/r/fetch_ros/github-fetchrobotics-fetch_ros">github-fetchrobotics-fetch_ros</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/fetch_ros/github-fetchrobotics-fetch_ros#indigo-deps" class="inactive">
                           <span class="glyphicon glyphicon-arrow-right"></span>
                         </a>
                       </td>
@@ -2945,6 +3109,14 @@ fetch_navigation
           
             
             
+              <a class="label label-primary pkg-label" href="/p/fetch_ros/github-fetchrobotics-fetch_ros">
+
+fetch_ros
+</a>
+            
+          
+            
+            
               <a class="label label-primary pkg-label" href="/p/fetch_teleop/github-fetchrobotics-fetch_ros">
 
 fetch_teleop
@@ -3031,7 +3203,7 @@ fetch_teleop
     
     
     
-    <a href="#jade-deps" data-toggle="tab"><span class="label label-primary">13</span> Dependencies</a>
+    <a href="#jade-deps" data-toggle="tab"><span class="label label-primary">15</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -3062,7 +3234,7 @@ fetch_teleop
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.7.14</td>
+                <td>0.7.15</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -3110,7 +3282,7 @@ fetch_teleop
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-11-01
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-26
         </span>
       </td>
     </tr>
@@ -3151,6 +3323,8 @@ fetch_teleop
             
             
               <ul class="list-unstyled">
+                
+                  <li><a href="http://ros.org/wiki/fetch_moveit_config">Website</a></li>
                 
                   <li><a href="http://moveit.ros.org/">Website</a></li>
                 
@@ -3273,6 +3447,26 @@ fetch_teleop
                           </a>
                         </td>
                         <td><a href="/p/fetch_description#jade">fetch_description</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#jade-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#jade">catkin</a></td>
                       </tr>
                     
                   
@@ -3516,6 +3710,26 @@ fetch_teleop
                       </tr>
                     
                   
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rostest#jade-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rostest" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rostest#jade">rostest</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -3554,6 +3768,20 @@ fetch_teleop
                       <td class="text-center">
                         
                         <a href="/p/fetch_gazebo_demo/github-fetchrobotics-fetch_gazebo#jade-deps" class="inactive">
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/fetch_ros/github-fetchrobotics-fetch_ros#jade">fetch_ros</a></td>
+                      <td><a href="/r/fetch_ros/github-fetchrobotics-fetch_ros">github-fetchrobotics-fetch_ros</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/fetch_ros/github-fetchrobotics-fetch_ros#jade-deps" class="inactive">
                           <span class="glyphicon glyphicon-arrow-right"></span>
                         </a>
                       </td>
@@ -4191,7 +4419,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

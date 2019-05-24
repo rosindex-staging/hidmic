@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//r/industrial_core/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -363,7 +366,7 @@
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2017-01-16
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-02-12
         </span>
       </td>
     </tr>
@@ -406,42 +409,42 @@
                 
                   <tr>
                     <td><a href="/p/industrial_core/github-ros-industrial-industrial_core">industrial_core</a></td>
-                    <td>0.6.0</td>
+                    <td>0.7.0</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/industrial_deprecated/github-ros-industrial-industrial_core">industrial_deprecated</a></td>
-                    <td>0.6.0</td>
+                    <td>0.7.0</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/industrial_msgs/github-ros-industrial-industrial_core">industrial_msgs</a></td>
-                    <td>0.6.0</td>
+                    <td>0.7.0</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/industrial_robot_client/github-ros-industrial-industrial_core">industrial_robot_client</a></td>
-                    <td>0.6.0</td>
+                    <td>0.7.0</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/industrial_robot_simulator/github-ros-industrial-industrial_core">industrial_robot_simulator</a></td>
-                    <td>0.6.0</td>
+                    <td>0.7.0</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/industrial_trajectory_filters/github-ros-industrial-industrial_core">industrial_trajectory_filters</a></td>
-                    <td>0.6.0</td>
+                    <td>0.7.0</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/industrial_utils/github-ros-industrial-industrial_core">industrial_utils</a></td>
-                    <td>0.6.0</td>
+                    <td>0.7.0</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/simple_message/github-ros-industrial-industrial_core">simple_message</a></td>
-                    <td>0.6.0</td>
+                    <td>0.7.0</td>
                   </tr>
                 
                 </tbody>
@@ -457,7 +460,69 @@
               <div class="rendered-markdown">
 <h1 id="industrial-core">Industrial Core</h1>
 
-<p><a href="http://build.ros.org/job/Idev__industrial_core__ubuntu_trusty_amd64"><img src="http://build.ros.org/job/Idev__industrial_core__ubuntu_trusty_amd64/badge/icon" alt="Build Status"></a></p>
+<h2 id="ros-distro-support">ROS Distro Support</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center"></th>
+<th style="text-align: center">Indigo</th>
+<th style="text-align: center">Jade</th>
+<th style="text-align: center">Kinetic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">Branch</td>
+<td style="text-align: center"><a href="https://github.com/ros-industrial/industrial_core/tree/indigo-devel"><code>indigo-devel</code></a></td>
+<td style="text-align: center"><a href="https://github.com/ros-industrial/industrial_core/tree/jade-devel"><code>jade-devel</code></a></td>
+<td style="text-align: center"><a href="https://github.com/ros-industrial/industrial_core/tree/kinetic-devel"><code>kinetic-devel</code></a></td>
+</tr>
+<tr>
+<td style="text-align: center">Status</td>
+<td style="text-align: center">supported</td>
+<td style="text-align: center">supported</td>
+<td style="text-align: center">supported</td>
+</tr>
+<tr>
+<td style="text-align: center">Version</td>
+<td style="text-align: center"><a href="http://repositories.ros.org/status_page/ros_indigo_default.html?q=industrial_core">version</a></td>
+<td style="text-align: center"><a href="http://repositories.ros.org/status_page/ros_jade_default.html?q=industrial_core">version</a></td>
+<td style="text-align: center"><a href="http://repositories.ros.org/status_page/ros_kinetic_default.html?q=industrial_core">version</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="travis-continuous-integration">Travis - Continuous Integration</h2>
+
+<p>Status: <a href="https://travis-ci.org/ros-industrial/industrial_core"><img src="https://travis-ci.org/ros-industrial/industrial_core.svg?branch=kinetic-devel" alt="Build Status"></a></p>
+
+<h2 id="ros-buildfarm">ROS Buildfarm</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center"></th>
+<th style="text-align: center">Indigo Source</th>
+<th style="text-align: center">Indigo Debian</th>
+<th style="text-align: center">Jade Source</th>
+<th style="text-align: center">Jade Debian</th>
+<th style="text-align: center">Kinetic Source</th>
+<th style="text-align: center">Kinetic Debian</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">industrial_core</td>
+<td style="text-align: center"><a href="http://build.ros.org/view/Isrc_uT/job/Isrc_uT__industrial_core__ubuntu_trusty__source/"><img src="http://build.ros.org/buildStatus/icon?job=Isrc_uT__industrial_core__ubuntu_trusty__source" alt="not released"></a></td>
+<td style="text-align: center"><a href="http://build.ros.org/view/Ibin_uT64/job/Ibin_uT64__industrial_core__ubuntu_trusty_amd64__binary/"><img src="http://build.ros.org/buildStatus/icon?job=Ibin_uT64__industrial_core__ubuntu_trusty_amd64__binary" alt="not released"></a></td>
+<td style="text-align: center"><a href="http://build.ros.org/view/Jsrc_uT/job/Jsrc_uT__industrial_core__ubuntu_trusty__source/"><img src="http://build.ros.org/buildStatus/icon?job=Jsrc_uT__industrial_core__ubuntu_trusty__source" alt="not released"></a></td>
+<td style="text-align: center"><a href="http://build.ros.org/view/Jbin_uT64/job/Jbin_uT64__industrial_core__ubuntu_trusty_amd64__binary/"><img src="http://build.ros.org/buildStatus/icon?job=Jbin_uT64__industrial_core__ubuntu_trusty_amd64__binary" alt="not released"></a></td>
+<td style="text-align: center"><a href="http://build.ros.org/view/Ksrc_uX/job/Ksrc_uX__industrial_core__ubuntu_xenial__source/"><img src="http://build.ros.org/buildStatus/icon?job=Ksrc_uX__industrial_core__ubuntu_xenial__source" alt="not released"></a></td>
+<td style="text-align: center"><a href="http://build.ros.org/view/Kbin_uX64/job/Kbin_uX64__industrial_core__ubuntu_xenial_amd64__binary/"><img src="http://build.ros.org/buildStatus/icon?job=Kbin_uX64__industrial_core__ubuntu_xenial_amd64__binary" alt="not released"></a></td>
+</tr>
+</tbody>
+</table>
 
 <p><a href="http://wiki.ros.org/Industrial">ROS-Industrial</a> core meta-package. See the <a href="http://wiki.ros.org/industrial_core">ROS wiki</a> page for more
 information.</p>
@@ -469,6 +534,15 @@ branches may be unstable. Releases are made from the distribution branches
 (<code>hydro</code>, <code>indigo</code>, <code>jade</code>).</p>
 
 <p>Older releases may be found in the old ROS-Industrial <a href="https://github.com/ros-industrial/swri-ros-pkg">subversion repository</a>.</p>
+
+<h2 id="docker">Docker</h2>
+
+<p>Industrial Core is also available as a Docker image from the <a href="https://hub.docker.com/u/rosindustrial">ROS-Industrial Docker Hub</a>.</p>
+
+<p>Example usage:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">docker run -it --rm rosindustrial/core:kinetic rosmsg show industrial_msgs/RobotStatus
+
+</code></pre></div>
 </div>
             
           </div>
@@ -933,7 +1007,7 @@ branches may be unstable. Releases are made from the distribution branches
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

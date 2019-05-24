@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/vtec_tracker/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -299,14 +302,6 @@
           
             
             
-              <a class="label label-primary pkg-label" href="/p/cv_wrapper/github-lukscasanova-vtec_ros">
-
-cv_wrapper
-</a>
-            
-          
-            
-            
               <a class="label label-primary pkg-label" href="/p/vtec_msgs/github-lukscasanova-vtec_ros">
 
 vtec_msgs
@@ -402,14 +397,14 @@ vtec_tracker
     
     
     
-    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">2</span> Assets</a>
+    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">3</span> Assets</a>
   </li>
   <li class="better-tabs">
     
     
     
     
-    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">3</span> Dependencies</a>
+    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -488,7 +483,7 @@ vtec_tracker
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-12-14
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-25
         </span>
       </td>
     </tr>
@@ -673,6 +668,37 @@ vtec_tracker
                       </tr>
                     
                   
+                    
+                    
+                      <tr>
+                        <td class="text-center"></td>
+                        <td class="text-center">
+                          <span class="label label-danger">0</span>
+                        </td>
+                        <td>cv_optimizer</td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#kinetic">catkin</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -744,7 +770,17 @@ vtec_tracker
                     <ul>
                       
                         
+                          <li><strong>video_device</strong> <em>&#91;default: /dev/video0&#93; </em></li>
+                        
+                      
+                        
                           <li><strong>use_ptgrey</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>config_file</strong> <em>&#91;default: config.yaml&#93; </em></li>
+                        
+                      
                         
                       
                     </ul>
@@ -766,6 +802,31 @@ vtec_tracker
                       
                         
                           <li><strong>config_file</strong> <em>&#91;default: config.yaml&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/lukscasanova/vtec_ros/tree/master/vtec_tracker/launch/tracker_live_occlusion.launch" target="_blank">launch/tracker_live_occlusion.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>video_device</strong> <em>&#91;default: /dev/video0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>use_ptgrey</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>config_file</strong> <em>&#91;default: config_robust.yaml&#93; </em></li>
                         
                       
                     </ul>
@@ -982,7 +1043,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

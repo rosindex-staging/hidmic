@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/fiducial_slam/github-UbiquityRobotics-fiducials/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -405,7 +408,7 @@ fiducials
     
     
     
-    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">5</span> Assets</a>
+    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">4</span> Assets</a>
   </li>
   <li class="better-tabs">
     
@@ -443,7 +446,7 @@ fiducials
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.10.0</td>
+                <td>0.11.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -491,7 +494,7 @@ fiducials
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-04
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-09
         </span>
       </td>
     </tr>
@@ -636,6 +639,26 @@ to estimate the camera pose (and hence the robot pose).</p>
                   <th style="width: 100%">Name</th>
                 </thead>
                 <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#kinetic">catkin</a></td>
+                      </tr>
+                    
                   
                     
                     
@@ -800,17 +823,6 @@ to estimate the camera pose (and hence the robot pose).</p>
                     
                     
                       <tr>
-                        <td class="text-center"></td>
-                        <td class="text-center">
-                          <span class="label label-danger">0</span>
-                        </td>
-                        <td>opencv3</td>
-                      </tr>
-                    
-                  
-                    
-                    
-                      <tr>
                         <td class="text-center">
                           
                           
@@ -870,7 +882,58 @@ to estimate the camera pose (and hence the robot pose).</p>
           </div>
           <div class="panel-body">
             
-              <em>No known dependants.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                  <th>Repo</th>
+                  <th class="text-center">Deps</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/fiducials/github-UbiquityRobotics-fiducials#kinetic">fiducials</a></td>
+                      <td><a href="/r/fiducials/github-UbiquityRobotics-fiducials">github-UbiquityRobotics-fiducials</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/fiducials/github-UbiquityRobotics-fiducials#kinetic-deps" class="inactive">
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/loki_nav/github-UbiquityRobotics-loki_robot#kinetic">loki_nav</a></td>
+                      <td><a href="/r/loki_robot/github-UbiquityRobotics-loki_robot">github-UbiquityRobotics-loki_robot</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/loki_nav/github-UbiquityRobotics-loki_robot#kinetic-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/magni_nav/github-UbiquityRobotics-magni_robot#kinetic">magni_nav</a></td>
+                      <td><a href="/r/magni_robot/github-UbiquityRobotics-magni_robot">github-UbiquityRobotics-magni_robot</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/magni_nav/github-UbiquityRobotics-magni_robot#kinetic-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -931,6 +994,10 @@ to estimate the camera pose (and hence the robot pose).</p>
                         
                       
                         
+                          <li><strong>tf_publish_interval</strong> <em>&#91;default: 0.2&#93; </em></li>
+                        
+                      
+                        
                           <li><strong>future_date_transforms</strong> <em>&#91;default: 0.0&#93; </em></li>
                         
                       
@@ -948,6 +1015,10 @@ to estimate the camera pose (and hence the robot pose).</p>
                       
                         
                           <li><strong>do_pose_estimation</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>covariance_diagonal</strong> <em>&#91;default: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]&#93; </em></li>
                         
                       
                     </ul>
@@ -977,22 +1048,6 @@ to estimate the camera pose (and hence the robot pose).</p>
                     <li><em>
   Verify that a map is constructed when a set of fiducual transforms is sent to
   fiducial_slam when an initial fiducial is specified
-</em></li>
-                  
-                  <li>
-                    <ul>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            
-              <li><a href="https://github.com/UbiquityRobotics/fiducials/tree/kinetic-devel/fiducial_slam/test/create_map.xml" target="_blank">test/create_map.xml</a>
-                <ul class="list-unstyled">
-                  
-                    <li><em>
-  Verify that a map is created when a set of fiducual transforms is sent to
-  fiducial_slam
 </em></li>
                   
                   <li>
@@ -1297,7 +1352,7 @@ fiducials
     
     
     
-    <a href="#indigo-deps" data-toggle="tab"><span class="label label-default">0</span> Dependencies</a>
+    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">1</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1502,7 +1557,36 @@ fiducials
           </div>
           <div class="panel-body">
             
-              <em>No dependencies on ROS packages.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th class="text-center">Deps</th>
+                  <th class="text-center"><span class="glyphicon glyphicon-th" title="Package instances"></span></th>
+                  <th style="width: 100%">Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#indigo">catkin</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
           <div class="panel-heading">
@@ -1523,7 +1607,44 @@ fiducials
           </div>
           <div class="panel-body">
             
-              <em>No known dependants.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                  <th>Repo</th>
+                  <th class="text-center">Deps</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/fiducials/github-UbiquityRobotics-fiducials#indigo">fiducials</a></td>
+                      <td><a href="/r/fiducials/github-UbiquityRobotics-fiducials">github-UbiquityRobotics-fiducials</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/fiducials/github-UbiquityRobotics-fiducials#indigo-deps" class="inactive">
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/magni_nav/github-UbiquityRobotics-magni_robot#indigo">magni_nav</a></td>
+                      <td><a href="/r/magni_robot/github-UbiquityRobotics-magni_robot">github-UbiquityRobotics-magni_robot</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/magni_nav/github-UbiquityRobotics-magni_robot#indigo-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -2024,7 +2145,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

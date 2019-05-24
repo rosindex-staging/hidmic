@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//r/crane_x7/github-rt-net-crane_x7_ros/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -363,7 +366,7 @@
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-11-29
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-09
         </span>
       </td>
     </tr>
@@ -426,6 +429,11 @@
                 
                   <tr>
                     <td><a href="/p/crane_x7_examples/github-rt-net-crane_x7_ros">crane_x7_examples</a></td>
+                    <td>0.0.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/crane_x7_gazebo/github-rt-net-crane_x7_ros">crane_x7_gazebo</a></td>
                     <td>0.0.0</td>
                   </tr>
                 
@@ -497,6 +505,10 @@
 <li>依存関係にあるパッケージをインストールします。</li>
 </ul>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">cd</span> ~/catkin_ws/src
+
+  <span class="c"># package for crane_x7_gazebo</span>
+  git clone https://github.com/roboticsgroup/roboticsgroup_gazebo_plugins.git
+
   rosdep <span class="nb">install</span> <span class="nt">-r</span> <span class="nt">-y</span> <span class="nt">--from-paths</span> crane_x7_ros
 
 </code></pre></div>
@@ -557,6 +569,18 @@ dynamixel_sdkのC++ライブラリが必要です。<br>
 <p>初めて<code>crane_x7</code>を使うことを意識して作成されたbringupパッケージです。</p>
 
 <p><code>crane_x7_examples</code> の使い方については<a href="https://github.com/rt-net/crane_x7_ros/tree/master/./crane_x7_examples/README.md">./crane_x7_examples/README.md</a>を参照してください。</p>
+
+<h3 id="crane_x7_gazebo">crane_x7_gazebo</h3>
+
+<p>GazeboでCRANE-X7のシミュレーションを行うパッケージです。</p>
+
+<p>次のコマンドで起動します。実機との接続やcrane_x7_bringupの実行は必要ありません。</p>
+
+<p><code>roslaunch crane_x7_gazebo crane_x7_with_table.launch</code></p>
+
+<p><img src="https://github.com/rt-net/crane_x7_ros/blob/images/images/crane_x7_gazebo.png" alt="crane_x7_gazebo" title="crane_x7_gazebo"></p>
+
+<hr>
 
 <h3 id="part-4fe8cc9e90c4d94e">知的財産権について</h3>
 
@@ -643,7 +667,7 @@ CRANE-X7に使用されているROBOTIS社の部品類にかかる著作権、�
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

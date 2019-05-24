@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//r/sciurus17/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -363,7 +366,7 @@
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-11
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-09
         </span>
       </td>
     </tr>
@@ -426,6 +429,11 @@
                 
                   <tr>
                     <td><a href="/p/sciurus17_examples/github-rt-net-sciurus17_ros">sciurus17_examples</a></td>
+                    <td>0.0.0</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/sciurus17_gazebo/github-rt-net-sciurus17_ros">sciurus17_gazebo</a></td>
                     <td>0.0.0</td>
                   </tr>
                 
@@ -497,7 +505,7 @@
 <ul>
 <li><p><a href="http://wiki.ros.org/ja/kinetic/Installation/Ubuntu">ROS Wiki</a>を参照しROSをインストールします。</p></li>
 <li>
-<p><a href="https://github.com/IntelRealSense/librealsense">Intel RealeSense SDK 2.0</a>をインストールします。</p>
+<p><a href="https://github.com/IntelRealSense/librealsense">Intel RealSense SDK 2.0</a>をインストールします。</p>
 
 <ul>
 <li>
@@ -505,7 +513,14 @@
 従って、SDK(librealsense2-*)をインストールしてください。</li>
 </ul>
 </li>
-<li><p>ROSパッケージ<a href="http://wiki.ros.org/realsense2_camera">realsense2_camera</a>をダウンロード&amp;ビルドします。</p></li>
+<li>
+<p>ROSパッケージ<a href="http://wiki.ros.org/realsense2_camera">realsense2_camera</a>をダウンロード&amp;ビルドします。</p>
+
+<ul>
+<li>ver 2.2.0に対応しています。詳しくは<a href="https://github.com/intel-ros/realsense/releases"><code>Releases</code></a>を参照してください。</li>
+<li><strong>librealsenseとrealsense2_cameraが対応するように適切なバージョンを使用してください</strong></li>
+</ul>
+</li>
 </ul>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nb">cd</span> ~/catkin_ws/src/
   git clone https://github.com/intel-ros/realsense
@@ -535,6 +550,10 @@
   <span class="nb">source</span> ~/catkin_ws/devel/setup.bash
 
 </code></pre></div>
+<p>※画像処理を行うサンプルを動かすためには
+<a href="https://github.com/rt-net/sciurus17_ros/tree/master/./sciurus17_examples/README.md">sciurus17_examples/README.md</a>
+に従ってOpenCVをインストールして下さい。</p>
+
 <h3 id="apt">
 <code>apt</code>を使用してインストールする方法</h3>
 
@@ -601,6 +620,14 @@ MoveIt!やGazeboから呼び出されます。</p>
 <p>Sciurus17を活用するためのオプションツールをまとめたパッケージです。
 頭部カメラを使用する場合、先に次のコマンドでカメラのリセットを行うと動作が安定しやすくなります。</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">rosrun sciurus17_tools realsense_hwreset
+
+</code></pre></div>
+<h3 id="sciurus17_gazebo">sciurus17_gazebo</h3>
+
+<p>GazeboでSciurus17のシミュレーションを行うパッケージです。<br>
+次のコマンドで起動します。実機との接続やsciurus17_bringupの実行は必要ありません。<br>
+初回起動時のみモデルのローディングに時間がかかります。Gazeboの画面が表示されるまで十分待って下さい。  </p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">roslaunch sciurus17_gazebo sciurus17_with_table.launch
 
 </code></pre></div>
 <h3 id="sciurus17_examples">sciurus17_examples</h3>
@@ -693,7 +720,7 @@ Sciurus17に使用されているROBOTIS社の部品類にかかる著作権、�
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

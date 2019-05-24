@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/sciurus17_vision/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -339,6 +342,14 @@ sciurus17_examples
           
             
             
+              <a class="label label-primary pkg-label" href="/p/sciurus17_gazebo/github-rt-net-sciurus17_ros">
+
+sciurus17_gazebo
+</a>
+            
+          
+            
+            
               <a class="label label-primary pkg-label" href="/p/sciurus17_moveit_config/github-rt-net-sciurus17_ros">
 
 sciurus17_moveit_config
@@ -449,7 +460,7 @@ sciurus17_vision
     
     
     
-    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">14</span> Dependencies</a>
+    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">17</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -528,7 +539,7 @@ sciurus17_vision
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-11
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-09
         </span>
       </td>
     </tr>
@@ -927,6 +938,66 @@ sciurus17_vision
                           
                           
                           
+                          <a href="/p/catkin#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#kinetic">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/image_transport_plugins#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/image_transport_plugins" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/image_transport_plugins#kinetic">image_transport_plugins</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/uvc_camera#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/uvc_camera" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/uvc_camera#kinetic">uvc_camera</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
                           <a href="/p/sciurus17_msgs#kinetic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
@@ -1029,6 +1100,134 @@ sciurus17_vision
                       
                         
                           <li><strong>json_file_path</strong> <em>&#91;default: &#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>camera</strong> <em>&#91;default: camera&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>tf_prefix</strong> <em>&#91;default: $(arg camera)&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>enable_pointcloud</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>pointcloud_texture_stream</strong> <em>&#91;default: RS2_STREAM_COLOR&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>pointcloud_texture_index</strong> <em>&#91;default: 0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>enable_sync</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>align_depth</strong> <em>&#91;default: true&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>depth_width</strong> <em>&#91;default: 640&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>depth_height</strong> <em>&#91;default: 480&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>enable_depth</strong> <em>&#91;default: true&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>depth_fps</strong> <em>&#91;default: 30&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>infra_width</strong> <em>&#91;default: 640&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>infra_height</strong> <em>&#91;default: 480&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>enable_infra1</strong> <em>&#91;default: true&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>enable_infra2</strong> <em>&#91;default: true&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>infra_fps</strong> <em>&#91;default: 30&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>color_width</strong> <em>&#91;default: 640&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>color_height</strong> <em>&#91;default: 480&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>enable_color</strong> <em>&#91;default: true&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>color_fps</strong> <em>&#91;default: 30&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>filters</strong> <em>&#91;default: pointcloud&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>clip_distance</strong> <em>&#91;default: -1&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>initial_reset</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
                         
                       
                         
@@ -1265,7 +1464,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

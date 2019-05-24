@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/mavros_extras/github-mavlink-mavros/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -404,7 +407,7 @@ test_mavros
     
     
     
-    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">10</span> Dependencies</a>
+    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">12</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -435,7 +438,7 @@ test_mavros
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.28.0</td>
+                <td>0.30.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -483,7 +486,7 @@ test_mavros
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-23
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-22
         </span>
       </td>
     </tr>
@@ -570,19 +573,83 @@ test_mavros
 
 <p>Some extra plugins and nodes for <a href="https://github.com/mavlink/mavros">mavros</a>.</p>
 
+<h2 id="adsb">ADSB</h2>
+
+<p>Publish/subscribe to the location and information of an ADS-B vehicle.</p>
+
+<h2 id="cam_imu_sync">cam_imu_sync</h2>
+
+<p>Publish camera trigger data for synchronisation of IMU and camera frames.</p>
+
+<h2 id="debug_value">debug_value</h2>
+
+<p>Subs/Pubs debug msgs from and to the FCU.</p>
+
+<h2 id="distance_sensor">distance_sensor</h2>
+
+<p>Publish DISTANCE_SENSOR message data from FCU or connected sensors in companion computer.</p>
+
+<h2 id="fake_gps">fake_gps</h2>
+
+<p>Sends fake GPS from local position estimation source data (motion capture, vision) to FCU.</p>
+
+<h2 id="gps_rtk">gps_rtk</h2>
+
+<p>Sends the RTCM messages to the FCU for the RTK Fix.</p>
+
+<h2 id="log_transfer">log_transfer</h2>
+
+<p>Expose firmware functionality, that is related to log transfer</p>
+
+<h2 id="mocap_pose_estimate">mocap_pose_estimate</h2>
+
+<p>Send motion capture pose estimate to FCU.  Currently, not used by the FCU.
+Data can be send via <code>vision_position</code> plugin.</p>
+
+<h2 id="obstacle_distance">obstacle_distance</h2>
+
+<p>Send obstacle distance report to the FCU.</p>
+
+<h2 id="odom">odom</h2>
+
+<p>Send odometry to FCU from another estimator.</p>
+
+<h2 id="px4flow">px4flow</h2>
+
+<p>Publish <code>OPTICAL_FLOW_RAD</code> data from FCU or PX4Flow module.</p>
+
+<h2 id="rangefinder">rangefinder</h2>
+
+<p>Publish RANGEFINDER message data from FCU sensors in companion computer.</p>
+
+<h2 id="trajectory">trajectory</h2>
+
+<p>Receive planned path from the FCU and send back corrected path (collision free, smoothed) to the FCU.</p>
+
+<h2 id="wheel_odometry">wheel_odometry</h2>
+
+<p>Compute and publish wheel odometry coming from FCU sensors.</p>
+
+<h2 id="vibration">vibration</h2>
+
+<p>Publish VIBRATION message data from FCU.</p>
+
+<h2 id="vision_pose_estimate">vision_pose_estimate</h2>
+
+<p>Send vision pose estimate to FCU.</p>
+
+<h2 id="vision_speed_estimate">vision_speed_estimate</h2>
+
+<p>Send vision speed estimate to FCU.</p>
+
+<h2 id="companion_process_status">companion_process_status</h2>
+
+<p>Send companion process status report to the FCU.</p>
+
 <h2 id="servo_state_publisher">servo_state_publisher</h2>
 
 <p>Convert <code>mavros_msgs/RCOut</code> to <code>sensor_msgs/JointState</code> messages.
 It is required to bind URDF model and real servos.</p>
-
-<h2 id="px4flow">px4flow</h2>
-
-<p>Plugin for mavros. Publish <code>OPTICAL_FLOW_RAD</code> data.</p>
-
-<h2 id="mocap_pose_estimate">mocap_pose_estimate</h2>
-
-<p>Plugin for mavros, to send mocap data to FCU.  Currently, not used by the FCU.
-Data can be send via <code>vision_position</code> plugin.</p>
 
 <h2 id="px-ros-pkg-replacement">px-ros-pkg replacement</h2>
 
@@ -655,7 +722,7 @@ Data can be send via <code>vision_position</code> plugin.</p>
                           
                           
                           
-                          <a href="/p/cmake_modules#melodic-deps" class="inactive">
+                          <a href="/p/cmake_modules#melodic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -665,6 +732,26 @@ Data can be send via <code>vision_position</code> plugin.</p>
                           </a>
                         </td>
                         <td><a href="/p/cmake_modules#melodic">cmake_modules</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#melodic">catkin</a></td>
                       </tr>
                     
                   
@@ -845,6 +932,26 @@ Data can be send via <code>vision_position</code> plugin.</p>
                           </a>
                         </td>
                         <td><a href="/p/tf#melodic">tf</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/tf2_eigen#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/tf2_eigen" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/tf2_eigen#melodic">tf2_eigen</a></td>
                       </tr>
                     
                   
@@ -1291,7 +1398,7 @@ test_mavros
     
     
     
-    <a href="#lunar-deps" data-toggle="tab"><span class="label label-primary">10</span> Dependencies</a>
+    <a href="#lunar-deps" data-toggle="tab"><span class="label label-primary">12</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1322,7 +1429,7 @@ test_mavros
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.28.0</td>
+                <td>0.30.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -1370,7 +1477,7 @@ test_mavros
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-23
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-22
         </span>
       </td>
     </tr>
@@ -1457,19 +1564,83 @@ test_mavros
 
 <p>Some extra plugins and nodes for <a href="https://github.com/mavlink/mavros">mavros</a>.</p>
 
+<h2 id="adsb">ADSB</h2>
+
+<p>Publish/subscribe to the location and information of an ADS-B vehicle.</p>
+
+<h2 id="cam_imu_sync">cam_imu_sync</h2>
+
+<p>Publish camera trigger data for synchronisation of IMU and camera frames.</p>
+
+<h2 id="debug_value">debug_value</h2>
+
+<p>Subs/Pubs debug msgs from and to the FCU.</p>
+
+<h2 id="distance_sensor">distance_sensor</h2>
+
+<p>Publish DISTANCE_SENSOR message data from FCU or connected sensors in companion computer.</p>
+
+<h2 id="fake_gps">fake_gps</h2>
+
+<p>Sends fake GPS from local position estimation source data (motion capture, vision) to FCU.</p>
+
+<h2 id="gps_rtk">gps_rtk</h2>
+
+<p>Sends the RTCM messages to the FCU for the RTK Fix.</p>
+
+<h2 id="log_transfer">log_transfer</h2>
+
+<p>Expose firmware functionality, that is related to log transfer</p>
+
+<h2 id="mocap_pose_estimate">mocap_pose_estimate</h2>
+
+<p>Send motion capture pose estimate to FCU.  Currently, not used by the FCU.
+Data can be send via <code>vision_position</code> plugin.</p>
+
+<h2 id="obstacle_distance">obstacle_distance</h2>
+
+<p>Send obstacle distance report to the FCU.</p>
+
+<h2 id="odom">odom</h2>
+
+<p>Send odometry to FCU from another estimator.</p>
+
+<h2 id="px4flow">px4flow</h2>
+
+<p>Publish <code>OPTICAL_FLOW_RAD</code> data from FCU or PX4Flow module.</p>
+
+<h2 id="rangefinder">rangefinder</h2>
+
+<p>Publish RANGEFINDER message data from FCU sensors in companion computer.</p>
+
+<h2 id="trajectory">trajectory</h2>
+
+<p>Receive planned path from the FCU and send back corrected path (collision free, smoothed) to the FCU.</p>
+
+<h2 id="wheel_odometry">wheel_odometry</h2>
+
+<p>Compute and publish wheel odometry coming from FCU sensors.</p>
+
+<h2 id="vibration">vibration</h2>
+
+<p>Publish VIBRATION message data from FCU.</p>
+
+<h2 id="vision_pose_estimate">vision_pose_estimate</h2>
+
+<p>Send vision pose estimate to FCU.</p>
+
+<h2 id="vision_speed_estimate">vision_speed_estimate</h2>
+
+<p>Send vision speed estimate to FCU.</p>
+
+<h2 id="companion_process_status">companion_process_status</h2>
+
+<p>Send companion process status report to the FCU.</p>
+
 <h2 id="servo_state_publisher">servo_state_publisher</h2>
 
 <p>Convert <code>mavros_msgs/RCOut</code> to <code>sensor_msgs/JointState</code> messages.
 It is required to bind URDF model and real servos.</p>
-
-<h2 id="px4flow">px4flow</h2>
-
-<p>Plugin for mavros. Publish <code>OPTICAL_FLOW_RAD</code> data.</p>
-
-<h2 id="mocap_pose_estimate">mocap_pose_estimate</h2>
-
-<p>Plugin for mavros, to send mocap data to FCU.  Currently, not used by the FCU.
-Data can be send via <code>vision_position</code> plugin.</p>
 
 <h2 id="px-ros-pkg-replacement">px-ros-pkg replacement</h2>
 
@@ -1542,7 +1713,7 @@ Data can be send via <code>vision_position</code> plugin.</p>
                           
                           
                           
-                          <a href="/p/cmake_modules#lunar-deps" class="inactive">
+                          <a href="/p/cmake_modules#lunar-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -1552,6 +1723,26 @@ Data can be send via <code>vision_position</code> plugin.</p>
                           </a>
                         </td>
                         <td><a href="/p/cmake_modules#lunar">cmake_modules</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#lunar-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#lunar">catkin</a></td>
                       </tr>
                     
                   
@@ -1732,6 +1923,26 @@ Data can be send via <code>vision_position</code> plugin.</p>
                           </a>
                         </td>
                         <td><a href="/p/tf#lunar">tf</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/tf2_eigen#lunar-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/tf2_eigen" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/tf2_eigen#lunar">tf2_eigen</a></td>
                       </tr>
                     
                   
@@ -2178,7 +2389,7 @@ test_mavros
     
     
     
-    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">10</span> Dependencies</a>
+    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">12</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -2209,7 +2420,7 @@ test_mavros
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.28.0</td>
+                <td>0.30.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -2257,7 +2468,7 @@ test_mavros
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-23
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-22
         </span>
       </td>
     </tr>
@@ -2344,19 +2555,83 @@ test_mavros
 
 <p>Some extra plugins and nodes for <a href="https://github.com/mavlink/mavros">mavros</a>.</p>
 
+<h2 id="adsb">ADSB</h2>
+
+<p>Publish/subscribe to the location and information of an ADS-B vehicle.</p>
+
+<h2 id="cam_imu_sync">cam_imu_sync</h2>
+
+<p>Publish camera trigger data for synchronisation of IMU and camera frames.</p>
+
+<h2 id="debug_value">debug_value</h2>
+
+<p>Subs/Pubs debug msgs from and to the FCU.</p>
+
+<h2 id="distance_sensor">distance_sensor</h2>
+
+<p>Publish DISTANCE_SENSOR message data from FCU or connected sensors in companion computer.</p>
+
+<h2 id="fake_gps">fake_gps</h2>
+
+<p>Sends fake GPS from local position estimation source data (motion capture, vision) to FCU.</p>
+
+<h2 id="gps_rtk">gps_rtk</h2>
+
+<p>Sends the RTCM messages to the FCU for the RTK Fix.</p>
+
+<h2 id="log_transfer">log_transfer</h2>
+
+<p>Expose firmware functionality, that is related to log transfer</p>
+
+<h2 id="mocap_pose_estimate">mocap_pose_estimate</h2>
+
+<p>Send motion capture pose estimate to FCU.  Currently, not used by the FCU.
+Data can be send via <code>vision_position</code> plugin.</p>
+
+<h2 id="obstacle_distance">obstacle_distance</h2>
+
+<p>Send obstacle distance report to the FCU.</p>
+
+<h2 id="odom">odom</h2>
+
+<p>Send odometry to FCU from another estimator.</p>
+
+<h2 id="px4flow">px4flow</h2>
+
+<p>Publish <code>OPTICAL_FLOW_RAD</code> data from FCU or PX4Flow module.</p>
+
+<h2 id="rangefinder">rangefinder</h2>
+
+<p>Publish RANGEFINDER message data from FCU sensors in companion computer.</p>
+
+<h2 id="trajectory">trajectory</h2>
+
+<p>Receive planned path from the FCU and send back corrected path (collision free, smoothed) to the FCU.</p>
+
+<h2 id="wheel_odometry">wheel_odometry</h2>
+
+<p>Compute and publish wheel odometry coming from FCU sensors.</p>
+
+<h2 id="vibration">vibration</h2>
+
+<p>Publish VIBRATION message data from FCU.</p>
+
+<h2 id="vision_pose_estimate">vision_pose_estimate</h2>
+
+<p>Send vision pose estimate to FCU.</p>
+
+<h2 id="vision_speed_estimate">vision_speed_estimate</h2>
+
+<p>Send vision speed estimate to FCU.</p>
+
+<h2 id="companion_process_status">companion_process_status</h2>
+
+<p>Send companion process status report to the FCU.</p>
+
 <h2 id="servo_state_publisher">servo_state_publisher</h2>
 
 <p>Convert <code>mavros_msgs/RCOut</code> to <code>sensor_msgs/JointState</code> messages.
 It is required to bind URDF model and real servos.</p>
-
-<h2 id="px4flow">px4flow</h2>
-
-<p>Plugin for mavros. Publish <code>OPTICAL_FLOW_RAD</code> data.</p>
-
-<h2 id="mocap_pose_estimate">mocap_pose_estimate</h2>
-
-<p>Plugin for mavros, to send mocap data to FCU.  Currently, not used by the FCU.
-Data can be send via <code>vision_position</code> plugin.</p>
 
 <h2 id="px-ros-pkg-replacement">px-ros-pkg replacement</h2>
 
@@ -2429,7 +2704,7 @@ Data can be send via <code>vision_position</code> plugin.</p>
                           
                           
                           
-                          <a href="/p/cmake_modules#kinetic-deps" class="inactive">
+                          <a href="/p/cmake_modules#kinetic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -2439,6 +2714,26 @@ Data can be send via <code>vision_position</code> plugin.</p>
                           </a>
                         </td>
                         <td><a href="/p/cmake_modules#kinetic">cmake_modules</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#kinetic">catkin</a></td>
                       </tr>
                     
                   
@@ -2619,6 +2914,26 @@ Data can be send via <code>vision_position</code> plugin.</p>
                           </a>
                         </td>
                         <td><a href="/p/tf#kinetic">tf</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/tf2_eigen#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/tf2_eigen" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/tf2_eigen#kinetic">tf2_eigen</a></td>
                       </tr>
                     
                   
@@ -3065,7 +3380,7 @@ test_mavros
     
     
     
-    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">12</span> Dependencies</a>
+    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">13</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -3319,7 +3634,7 @@ Data can be send via <code>vision_position</code> plugin.</p>
                           
                           
                           
-                          <a href="/p/cmake_modules#indigo-deps" class="inactive">
+                          <a href="/p/cmake_modules#indigo-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -3329,6 +3644,26 @@ Data can be send via <code>vision_position</code> plugin.</p>
                           </a>
                         </td>
                         <td><a href="/p/cmake_modules#indigo">cmake_modules</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#indigo">catkin</a></td>
                       </tr>
                     
                   
@@ -4003,7 +4338,7 @@ test_mavros
     
     
     
-    <a href="#jade-deps" data-toggle="tab"><span class="label label-primary">12</span> Dependencies</a>
+    <a href="#jade-deps" data-toggle="tab"><span class="label label-primary">13</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -4257,7 +4592,7 @@ Data can be send via <code>vision_position</code> plugin.</p>
                           
                           
                           
-                          <a href="/p/cmake_modules#jade-deps" class="inactive">
+                          <a href="/p/cmake_modules#jade-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -4267,6 +4602,26 @@ Data can be send via <code>vision_position</code> plugin.</p>
                           </a>
                         </td>
                         <td><a href="/p/cmake_modules#jade">cmake_modules</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#jade-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#jade">catkin</a></td>
                       </tr>
                     
                   
@@ -4917,7 +5272,7 @@ mavros_extras
     
     
     
-    <a href="#hydro-deps" data-toggle="tab"><span class="label label-primary">6</span> Dependencies</a>
+    <a href="#hydro-deps" data-toggle="tab"><span class="label label-primary">7</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -5278,6 +5633,26 @@ mavros_extras
                       </tr>
                     
                   
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#hydro-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#hydro">catkin</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -5585,7 +5960,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

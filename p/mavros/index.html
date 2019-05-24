@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/mavros/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -401,7 +404,7 @@ test_mavros
     
     
     
-    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">23</span> Dependencies</a>
+    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">28</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -432,7 +435,7 @@ test_mavros
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.28.0</td>
+                <td>0.30.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -480,7 +483,7 @@ test_mavros
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-23
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-22
         </span>
       </td>
     </tr>
@@ -735,7 +738,7 @@ Kinetic also support Debian Jessie amd64 and arm64 (ARMv8).</p>
 <p>NOTE: The source installation instructions are for the ROS Kinetic release.</p>
 <div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">sudo </span>apt-get <span class="nb">install </span>python-catkin-tools python-rosinstall-generator <span class="nt">-y</span>
 
-<span class="c"># 1. Create the workspace: unneded if you already has workspace</span>
+<span class="c"># 1. Create the workspace: unneeded if you already has workspace</span>
 <span class="nb">mkdir</span> <span class="nt">-p</span> ~/catkin_ws/src
 <span class="nb">cd</span> ~/catkin_ws
 catkin init
@@ -809,7 +812,7 @@ Load order always:</p>
 
 <ul>
 <li>
-<a href="http://mavlink.org/mavlink/start">MAVLink</a> -- communication protocol</li>
+<a href="https://mavlink.io/en/">MAVLink</a> -- communication protocol</li>
 <li>
 <a href="https://github.com/mavlink/mavlink_ros">mavlink_ros</a> -- original ROS node (few messages, no proxy)</li>
 <li>
@@ -911,7 +914,7 @@ Load order always:</p>
                           
                           
                           
-                          <a href="/p/angles#melodic-deps" class="inactive">
+                          <a href="/p/angles#melodic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -931,7 +934,7 @@ Load order always:</p>
                           
                           
                           
-                          <a href="/p/cmake_modules#melodic-deps" class="inactive">
+                          <a href="/p/cmake_modules#melodic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -941,6 +944,86 @@ Load order always:</p>
                           </a>
                         </td>
                         <td><a href="/p/cmake_modules#melodic">cmake_modules</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#melodic">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/message_runtime#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/message_runtime" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/message_runtime#melodic">message_runtime</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rospy#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rospy" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rospy#melodic">rospy</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rosunit#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rosunit" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rosunit#melodic">rosunit</a></td>
                       </tr>
                     
                   
@@ -1299,6 +1382,12 @@ Load order always:</p>
                   
                     
                       <tr>
+                        <td><a href="/d/gtest">gtest</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
                         <td><a href="/d/boost">boost</a></td>
                       </tr>
                     
@@ -1374,7 +1463,7 @@ Load order always:</p>
                       <td><a href="/r/rotors_simulator/github-ethz-asl-rotors_simulator">github-ethz-asl-rotors_simulator</a></td>
                       <td class="text-center">
                         
-                        <a href="/p/rotors_hil_interface/github-ethz-asl-rotors_simulator#melodic-deps" class="inactive">
+                        <a href="/p/rotors_hil_interface/github-ethz-asl-rotors_simulator#melodic-deps" >
                           <span class="glyphicon glyphicon-arrow-right"></span>
                         </a>
                       </td>
@@ -1950,7 +2039,7 @@ test_mavros
     
     
     
-    <a href="#lunar-deps" data-toggle="tab"><span class="label label-primary">23</span> Dependencies</a>
+    <a href="#lunar-deps" data-toggle="tab"><span class="label label-primary">28</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1981,7 +2070,7 @@ test_mavros
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.28.0</td>
+                <td>0.30.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -2029,7 +2118,7 @@ test_mavros
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-23
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-22
         </span>
       </td>
     </tr>
@@ -2284,7 +2373,7 @@ Kinetic also support Debian Jessie amd64 and arm64 (ARMv8).</p>
 <p>NOTE: The source installation instructions are for the ROS Kinetic release.</p>
 <div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">sudo </span>apt-get <span class="nb">install </span>python-catkin-tools python-rosinstall-generator <span class="nt">-y</span>
 
-<span class="c"># 1. Create the workspace: unneded if you already has workspace</span>
+<span class="c"># 1. Create the workspace: unneeded if you already has workspace</span>
 <span class="nb">mkdir</span> <span class="nt">-p</span> ~/catkin_ws/src
 <span class="nb">cd</span> ~/catkin_ws
 catkin init
@@ -2358,7 +2447,7 @@ Load order always:</p>
 
 <ul>
 <li>
-<a href="http://mavlink.org/mavlink/start">MAVLink</a> -- communication protocol</li>
+<a href="https://mavlink.io/en/">MAVLink</a> -- communication protocol</li>
 <li>
 <a href="https://github.com/mavlink/mavlink_ros">mavlink_ros</a> -- original ROS node (few messages, no proxy)</li>
 <li>
@@ -2460,7 +2549,7 @@ Load order always:</p>
                           
                           
                           
-                          <a href="/p/angles#lunar-deps" class="inactive">
+                          <a href="/p/angles#lunar-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -2480,7 +2569,7 @@ Load order always:</p>
                           
                           
                           
-                          <a href="/p/cmake_modules#lunar-deps" class="inactive">
+                          <a href="/p/cmake_modules#lunar-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -2490,6 +2579,86 @@ Load order always:</p>
                           </a>
                         </td>
                         <td><a href="/p/cmake_modules#lunar">cmake_modules</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#lunar-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#lunar">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/message_runtime#lunar-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/message_runtime" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/message_runtime#lunar">message_runtime</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rospy#lunar-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rospy" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rospy#lunar">rospy</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rosunit#lunar-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rosunit" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rosunit#lunar">rosunit</a></td>
                       </tr>
                     
                   
@@ -2843,6 +3012,12 @@ Load order always:</p>
                     
                       <tr>
                         <td><a href="/d/geographiclib-tools">geographiclib-tools</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/gtest">gtest</a></td>
                       </tr>
                     
                   
@@ -3471,7 +3646,7 @@ test_mavros
     
     
     
-    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">23</span> Dependencies</a>
+    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">28</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -3502,7 +3677,7 @@ test_mavros
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.28.0</td>
+                <td>0.30.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -3550,7 +3725,7 @@ test_mavros
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-23
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-22
         </span>
       </td>
     </tr>
@@ -3805,7 +3980,7 @@ Kinetic also support Debian Jessie amd64 and arm64 (ARMv8).</p>
 <p>NOTE: The source installation instructions are for the ROS Kinetic release.</p>
 <div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">sudo </span>apt-get <span class="nb">install </span>python-catkin-tools python-rosinstall-generator <span class="nt">-y</span>
 
-<span class="c"># 1. Create the workspace: unneded if you already has workspace</span>
+<span class="c"># 1. Create the workspace: unneeded if you already has workspace</span>
 <span class="nb">mkdir</span> <span class="nt">-p</span> ~/catkin_ws/src
 <span class="nb">cd</span> ~/catkin_ws
 catkin init
@@ -3879,7 +4054,7 @@ Load order always:</p>
 
 <ul>
 <li>
-<a href="http://mavlink.org/mavlink/start">MAVLink</a> -- communication protocol</li>
+<a href="https://mavlink.io/en/">MAVLink</a> -- communication protocol</li>
 <li>
 <a href="https://github.com/mavlink/mavlink_ros">mavlink_ros</a> -- original ROS node (few messages, no proxy)</li>
 <li>
@@ -3981,7 +4156,7 @@ Load order always:</p>
                           
                           
                           
-                          <a href="/p/angles#kinetic-deps" class="inactive">
+                          <a href="/p/angles#kinetic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -4001,7 +4176,7 @@ Load order always:</p>
                           
                           
                           
-                          <a href="/p/cmake_modules#kinetic-deps" class="inactive">
+                          <a href="/p/cmake_modules#kinetic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -4011,6 +4186,86 @@ Load order always:</p>
                           </a>
                         </td>
                         <td><a href="/p/cmake_modules#kinetic">cmake_modules</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#kinetic">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/message_runtime#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/message_runtime" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/message_runtime#kinetic">message_runtime</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rospy#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rospy" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rospy#kinetic">rospy</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rosunit#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rosunit" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rosunit#kinetic">rosunit</a></td>
                       </tr>
                     
                   
@@ -4364,6 +4619,12 @@ Load order always:</p>
                     
                       <tr>
                         <td><a href="/d/geographiclib-tools">geographiclib-tools</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/gtest">gtest</a></td>
                       </tr>
                     
                   
@@ -4992,7 +5253,7 @@ test_mavros
     
     
     
-    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">19</span> Dependencies</a>
+    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">23</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -5448,7 +5709,7 @@ so mavros package (and all plugin packages) have compile-time option <code>MAVLI
                           
                           
                           
-                          <a href="/p/angles#indigo-deps" class="inactive">
+                          <a href="/p/angles#indigo-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -5468,7 +5729,7 @@ so mavros package (and all plugin packages) have compile-time option <code>MAVLI
                           
                           
                           
-                          <a href="/p/cmake_modules#indigo-deps" class="inactive">
+                          <a href="/p/cmake_modules#indigo-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -5478,6 +5739,66 @@ so mavros package (and all plugin packages) have compile-time option <code>MAVLI
                           </a>
                         </td>
                         <td><a href="/p/cmake_modules#indigo">cmake_modules</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#indigo">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/message_runtime#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/message_runtime" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/message_runtime#indigo">message_runtime</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rospy#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rospy" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rospy#indigo">rospy</a></td>
                       </tr>
                     
                   
@@ -5784,6 +6105,12 @@ so mavros package (and all plugin packages) have compile-time option <code>MAVLI
                   
                     
                       <tr>
+                        <td><a href="/d/gtest">gtest</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
                         <td><a href="/d/boost">boost</a></td>
                       </tr>
                     
@@ -5841,11 +6168,11 @@ so mavros package (and all plugin packages) have compile-time option <code>MAVLI
                     
                     
                     <tr>
-                      <td><a href="/p/rotors_hil_interface/github-ethz-asl-rotors_simulator#indigo">rotors_hil_interface</a></td>
+                      <td><a href="/p/rotors_gazebo_plugins/github-ethz-asl-rotors_simulator#indigo">rotors_gazebo_plugins</a></td>
                       <td><a href="/r/rotors_simulator/github-ethz-asl-rotors_simulator">github-ethz-asl-rotors_simulator</a></td>
                       <td class="text-center">
                         
-                        <a href="/p/rotors_hil_interface/github-ethz-asl-rotors_simulator#indigo-deps" >
+                        <a href="/p/rotors_gazebo_plugins/github-ethz-asl-rotors_simulator#indigo-deps" >
                           <span class="glyphicon glyphicon-arrow-right"></span>
                         </a>
                       </td>
@@ -6379,7 +6706,7 @@ test_mavros
     
     
     
-    <a href="#jade-deps" data-toggle="tab"><span class="label label-primary">19</span> Dependencies</a>
+    <a href="#jade-deps" data-toggle="tab"><span class="label label-primary">23</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -6835,7 +7162,7 @@ so mavros package (and all plugin packages) have compile-time option <code>MAVLI
                           
                           
                           
-                          <a href="/p/angles#jade-deps" class="inactive">
+                          <a href="/p/angles#jade-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -6855,7 +7182,7 @@ so mavros package (and all plugin packages) have compile-time option <code>MAVLI
                           
                           
                           
-                          <a href="/p/cmake_modules#jade-deps" class="inactive">
+                          <a href="/p/cmake_modules#jade-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -6865,6 +7192,66 @@ so mavros package (and all plugin packages) have compile-time option <code>MAVLI
                           </a>
                         </td>
                         <td><a href="/p/cmake_modules#jade">cmake_modules</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#jade-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#jade">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/message_runtime#jade-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/message_runtime" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/message_runtime#jade">message_runtime</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rospy#jade-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rospy" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rospy#jade">rospy</a></td>
                       </tr>
                     
                   
@@ -7166,6 +7553,12 @@ so mavros package (and all plugin packages) have compile-time option <code>MAVLI
                     
                       <tr>
                         <td><a href="/d/eigen">eigen</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/gtest">gtest</a></td>
                       </tr>
                     
                   
@@ -7742,7 +8135,7 @@ mavros_extras
     
     
     
-    <a href="#hydro-deps" data-toggle="tab"><span class="label label-primary">17</span> Dependencies</a>
+    <a href="#hydro-deps" data-toggle="tab"><span class="label label-primary">19</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -8372,7 +8765,7 @@ Or you could build debian package by pulling right bloom branch from <a href="ht
                           
                           
                           
-                          <a href="/p/angles#hydro-deps" class="inactive">
+                          <a href="/p/angles#hydro-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
                         </td>
@@ -8432,6 +8825,26 @@ Or you could build debian package by pulling right bloom branch from <a href="ht
                           
                           
                           
+                          <a href="/p/catkin#hydro-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#hydro">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
                           <a href="/p/message_runtime#hydro-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
@@ -8463,6 +8876,12 @@ Or you could build debian package by pulling right bloom branch from <a href="ht
                     
                       <tr>
                         <td><a href="/d/boost">boost</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/gtest">gtest</a></td>
                       </tr>
                     
                   
@@ -8996,7 +9415,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/rplidar_ros/github-Slamtec-rplidar_ros/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -372,14 +375,14 @@ rplidar_ros
     
     
     
-    <a href="#melodic-assets" data-toggle="tab"><span class="label label-primary">6</span> Assets</a>
+    <a href="#melodic-assets" data-toggle="tab"><span class="label label-primary">10</span> Assets</a>
   </li>
   <li class="better-tabs">
     
     
     
     
-    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">4</span> Dependencies</a>
+    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -410,7 +413,7 @@ rplidar_ros
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>1.9.0</td>
+                <td>1.10.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -458,7 +461,7 @@ rplidar_ros
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-08-24
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-03-17
         </span>
       </td>
     </tr>
@@ -490,7 +493,7 @@ rplidar_ros
         <div class="panel panel-default">
           <div class="panel-heading"><h3 class="panel-title">Package Description</h3></div>
           <div class="panel-body">
-            The rplidar ros package, support rplidar A2/A1 and A3
+            The rplidar ros package, support rplidar A2/A1 and A3/S1
           </div>
           <div class="panel-heading"><h4 class="panel-title">Additional Links</h4></div>
           <div class="panel-body">
@@ -553,22 +556,26 @@ rplidar_ros
 <h2 id="i-run-rplidar-node-and-view-in-the-rviz">I. Run rplidar node and view in the rviz</h2>
 
 <p>roslaunch rplidar_ros view_rplidar.launch (for RPLIDAR A1/A2)
+,
+roslaunch rplidar_ros view_rplidar_a3.launch (for RPLIDAR A3)
 or
-roslaunch rplidar_ros view_rplidar_a3.launch (for RPLIDAR A3)</p>
+roslaunch rplidar_ros view_rplidar_s1.launch (for RPLIDAR S1)</p>
 
 <p>You should see rplidar's scan result in the rviz.</p>
 
 <h2 id="ii-run-rplidar-node-and-view-using-test-application">II. Run rplidar node and view using test application</h2>
 
 <p>roslaunch rplidar_ros rplidar.launch (for RPLIDAR A1/A2)
+,
+roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)
 or
-roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
+roslaunch rplidar_ros rplidar_s1.launch (for RPLIDAR S1)</p>
 
 <p>rosrun rplidar_ros rplidarNodeClient</p>
 
 <p>You should see rplidar's scan result in the console</p>
 
-<p>Notice: the different is serial_baudrate between A1/A2 and A3</p>
+<p>Notice: the different is serial_baudrate between A1/A2 and A3/S1</p>
 
 <h1 id="rplidar-frame">RPLidar frame</h1>
 
@@ -714,6 +721,26 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
                       </tr>
                     
                   
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#melodic">catkin</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -751,7 +778,7 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
                       <td><a href="/r/xiaoqiang/github-bluewhalerobot-xiaoqiang">github-bluewhalerobot-xiaoqiang</a></td>
                       <td class="text-center">
                         
-                        <a href="/p/xiaoqiang_bringup/github-bluewhalerobot-xiaoqiang#melodic-deps" class="inactive">
+                        <a href="/p/xiaoqiang_bringup/github-bluewhalerobot-xiaoqiang#melodic-deps" >
                           <span class="glyphicon glyphicon-arrow-right"></span>
                         </a>
                       </td>
@@ -775,6 +802,36 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
       <div class="panel-body">
         
           <ul>
+            
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/rplidar_s1_tcp.launch" target="_blank">launch/rplidar_s1_tcp.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/view_rplidar_s1.launch" target="_blank">launch/view_rplidar_s1.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+  Used for visualising rplidar in action.  
+  
+  It requires rplidar.launch.
+ </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
             
               <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/rplidar.launch" target="_blank">launch/rplidar.launch</a>
                 <ul class="list-unstyled">
@@ -803,6 +860,36 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
               </li>
             
               <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/view_rplidar_a3.launch" target="_blank">launch/view_rplidar_a3.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+  Used for visualising rplidar in action.  
+  
+  It requires rplidar.launch.
+ </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/rplidar_s1.launch" target="_blank">launch/rplidar_s1.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/view_rplidar_s1_tcp.launch" target="_blank">launch/view_rplidar_s1_tcp.launch</a>
                 <ul class="list-unstyled">
                   
                     <li><em>
@@ -1124,14 +1211,14 @@ rplidar_ros
     
     
     
-    <a href="#lunar-assets" data-toggle="tab"><span class="label label-primary">6</span> Assets</a>
+    <a href="#lunar-assets" data-toggle="tab"><span class="label label-primary">10</span> Assets</a>
   </li>
   <li class="better-tabs">
     
     
     
     
-    <a href="#lunar-deps" data-toggle="tab"><span class="label label-primary">4</span> Dependencies</a>
+    <a href="#lunar-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1162,7 +1249,7 @@ rplidar_ros
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>1.9.0</td>
+                <td>1.10.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -1210,7 +1297,7 @@ rplidar_ros
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-08-24
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-03-17
         </span>
       </td>
     </tr>
@@ -1242,7 +1329,7 @@ rplidar_ros
         <div class="panel panel-default">
           <div class="panel-heading"><h3 class="panel-title">Package Description</h3></div>
           <div class="panel-body">
-            The rplidar ros package, support rplidar A2/A1 and A3
+            The rplidar ros package, support rplidar A2/A1 and A3/S1
           </div>
           <div class="panel-heading"><h4 class="panel-title">Additional Links</h4></div>
           <div class="panel-body">
@@ -1305,22 +1392,26 @@ rplidar_ros
 <h2 id="i-run-rplidar-node-and-view-in-the-rviz">I. Run rplidar node and view in the rviz</h2>
 
 <p>roslaunch rplidar_ros view_rplidar.launch (for RPLIDAR A1/A2)
+,
+roslaunch rplidar_ros view_rplidar_a3.launch (for RPLIDAR A3)
 or
-roslaunch rplidar_ros view_rplidar_a3.launch (for RPLIDAR A3)</p>
+roslaunch rplidar_ros view_rplidar_s1.launch (for RPLIDAR S1)</p>
 
 <p>You should see rplidar's scan result in the rviz.</p>
 
 <h2 id="ii-run-rplidar-node-and-view-using-test-application">II. Run rplidar node and view using test application</h2>
 
 <p>roslaunch rplidar_ros rplidar.launch (for RPLIDAR A1/A2)
+,
+roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)
 or
-roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
+roslaunch rplidar_ros rplidar_s1.launch (for RPLIDAR S1)</p>
 
 <p>rosrun rplidar_ros rplidarNodeClient</p>
 
 <p>You should see rplidar's scan result in the console</p>
 
-<p>Notice: the different is serial_baudrate between A1/A2 and A3</p>
+<p>Notice: the different is serial_baudrate between A1/A2 and A3/S1</p>
 
 <h1 id="rplidar-frame">RPLidar frame</h1>
 
@@ -1466,6 +1557,26 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
                       </tr>
                     
                   
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#lunar-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#lunar">catkin</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -1505,6 +1616,36 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
         
           <ul>
             
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/rplidar_s1_tcp.launch" target="_blank">launch/rplidar_s1_tcp.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/view_rplidar_s1.launch" target="_blank">launch/view_rplidar_s1.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+  Used for visualising rplidar in action.  
+  
+  It requires rplidar.launch.
+ </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
               <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/rplidar.launch" target="_blank">launch/rplidar.launch</a>
                 <ul class="list-unstyled">
                   
@@ -1532,6 +1673,36 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
               </li>
             
               <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/view_rplidar_a3.launch" target="_blank">launch/view_rplidar_a3.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+  Used for visualising rplidar in action.  
+  
+  It requires rplidar.launch.
+ </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/rplidar_s1.launch" target="_blank">launch/rplidar_s1.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/view_rplidar_s1_tcp.launch" target="_blank">launch/view_rplidar_s1_tcp.launch</a>
                 <ul class="list-unstyled">
                   
                     <li><em>
@@ -1853,14 +2024,14 @@ rplidar_ros
     
     
     
-    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">6</span> Assets</a>
+    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">10</span> Assets</a>
   </li>
   <li class="better-tabs">
     
     
     
     
-    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">4</span> Dependencies</a>
+    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1891,7 +2062,7 @@ rplidar_ros
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>1.9.0</td>
+                <td>1.10.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -1939,7 +2110,7 @@ rplidar_ros
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-08-24
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-03-17
         </span>
       </td>
     </tr>
@@ -1971,7 +2142,7 @@ rplidar_ros
         <div class="panel panel-default">
           <div class="panel-heading"><h3 class="panel-title">Package Description</h3></div>
           <div class="panel-body">
-            The rplidar ros package, support rplidar A2/A1 and A3
+            The rplidar ros package, support rplidar A2/A1 and A3/S1
           </div>
           <div class="panel-heading"><h4 class="panel-title">Additional Links</h4></div>
           <div class="panel-body">
@@ -2034,22 +2205,26 @@ rplidar_ros
 <h2 id="i-run-rplidar-node-and-view-in-the-rviz">I. Run rplidar node and view in the rviz</h2>
 
 <p>roslaunch rplidar_ros view_rplidar.launch (for RPLIDAR A1/A2)
+,
+roslaunch rplidar_ros view_rplidar_a3.launch (for RPLIDAR A3)
 or
-roslaunch rplidar_ros view_rplidar_a3.launch (for RPLIDAR A3)</p>
+roslaunch rplidar_ros view_rplidar_s1.launch (for RPLIDAR S1)</p>
 
 <p>You should see rplidar's scan result in the rviz.</p>
 
 <h2 id="ii-run-rplidar-node-and-view-using-test-application">II. Run rplidar node and view using test application</h2>
 
 <p>roslaunch rplidar_ros rplidar.launch (for RPLIDAR A1/A2)
+,
+roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)
 or
-roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
+roslaunch rplidar_ros rplidar_s1.launch (for RPLIDAR S1)</p>
 
 <p>rosrun rplidar_ros rplidarNodeClient</p>
 
 <p>You should see rplidar's scan result in the console</p>
 
-<p>Notice: the different is serial_baudrate between A1/A2 and A3</p>
+<p>Notice: the different is serial_baudrate between A1/A2 and A3/S1</p>
 
 <h1 id="rplidar-frame">RPLidar frame</h1>
 
@@ -2195,6 +2370,26 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
                       </tr>
                     
                   
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#kinetic">catkin</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -2228,6 +2423,20 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
                     
                     
                     <tr>
+                      <td><a href="/p/cob_bringup/github-ipa320-cob_robots#kinetic">cob_bringup</a></td>
+                      <td><a href="/r/cob_robots/github-ipa320-cob_robots">github-ipa320-cob_robots</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/cob_bringup/github-ipa320-cob_robots#kinetic-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
                       <td><a href="/p/roomblock_bringup/github-tork-a-roomblock#kinetic">roomblock_bringup</a></td>
                       <td><a href="/r/roomblock/github-tork-a-roomblock">github-tork-a-roomblock</a></td>
                       <td class="text-center">
@@ -2246,7 +2455,7 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
                       <td><a href="/r/xiaoqiang/github-bluewhalerobot-xiaoqiang">github-bluewhalerobot-xiaoqiang</a></td>
                       <td class="text-center">
                         
-                        <a href="/p/xiaoqiang_bringup/github-bluewhalerobot-xiaoqiang#kinetic-deps" class="inactive">
+                        <a href="/p/xiaoqiang_bringup/github-bluewhalerobot-xiaoqiang#kinetic-deps" >
                           <span class="glyphicon glyphicon-arrow-right"></span>
                         </a>
                       </td>
@@ -2270,6 +2479,36 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
       <div class="panel-body">
         
           <ul>
+            
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/rplidar_s1_tcp.launch" target="_blank">launch/rplidar_s1_tcp.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/view_rplidar_s1.launch" target="_blank">launch/view_rplidar_s1.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+  Used for visualising rplidar in action.  
+  
+  It requires rplidar.launch.
+ </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
             
               <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/rplidar.launch" target="_blank">launch/rplidar.launch</a>
                 <ul class="list-unstyled">
@@ -2298,6 +2537,36 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
               </li>
             
               <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/view_rplidar_a3.launch" target="_blank">launch/view_rplidar_a3.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+  Used for visualising rplidar in action.  
+  
+  It requires rplidar.launch.
+ </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/rplidar_s1.launch" target="_blank">launch/rplidar_s1.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/view_rplidar_s1_tcp.launch" target="_blank">launch/view_rplidar_s1_tcp.launch</a>
                 <ul class="list-unstyled">
                   
                     <li><em>
@@ -2619,14 +2888,14 @@ rplidar_ros
     
     
     
-    <a href="#indigo-assets" data-toggle="tab"><span class="label label-primary">6</span> Assets</a>
+    <a href="#indigo-assets" data-toggle="tab"><span class="label label-primary">10</span> Assets</a>
   </li>
   <li class="better-tabs">
     
     
     
     
-    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">4</span> Dependencies</a>
+    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -2657,7 +2926,7 @@ rplidar_ros
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>1.9.0</td>
+                <td>1.10.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -2705,7 +2974,7 @@ rplidar_ros
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-08-24
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-03-17
         </span>
       </td>
     </tr>
@@ -2737,7 +3006,7 @@ rplidar_ros
         <div class="panel panel-default">
           <div class="panel-heading"><h3 class="panel-title">Package Description</h3></div>
           <div class="panel-body">
-            The rplidar ros package, support rplidar A2/A1 and A3
+            The rplidar ros package, support rplidar A2/A1 and A3/S1
           </div>
           <div class="panel-heading"><h4 class="panel-title">Additional Links</h4></div>
           <div class="panel-body">
@@ -2800,22 +3069,26 @@ rplidar_ros
 <h2 id="i-run-rplidar-node-and-view-in-the-rviz">I. Run rplidar node and view in the rviz</h2>
 
 <p>roslaunch rplidar_ros view_rplidar.launch (for RPLIDAR A1/A2)
+,
+roslaunch rplidar_ros view_rplidar_a3.launch (for RPLIDAR A3)
 or
-roslaunch rplidar_ros view_rplidar_a3.launch (for RPLIDAR A3)</p>
+roslaunch rplidar_ros view_rplidar_s1.launch (for RPLIDAR S1)</p>
 
 <p>You should see rplidar's scan result in the rviz.</p>
 
 <h2 id="ii-run-rplidar-node-and-view-using-test-application">II. Run rplidar node and view using test application</h2>
 
 <p>roslaunch rplidar_ros rplidar.launch (for RPLIDAR A1/A2)
+,
+roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)
 or
-roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
+roslaunch rplidar_ros rplidar_s1.launch (for RPLIDAR S1)</p>
 
 <p>rosrun rplidar_ros rplidarNodeClient</p>
 
 <p>You should see rplidar's scan result in the console</p>
 
-<p>Notice: the different is serial_baudrate between A1/A2 and A3</p>
+<p>Notice: the different is serial_baudrate between A1/A2 and A3/S1</p>
 
 <h1 id="rplidar-frame">RPLidar frame</h1>
 
@@ -2961,6 +3234,26 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
                       </tr>
                     
                   
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#indigo">catkin</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -2990,6 +3283,20 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
                   <th class="text-center">Deps</th>
                 </thead>
                 <tbody>
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/cob_bringup/github-ipa320-cob_robots#indigo">cob_bringup</a></td>
+                      <td><a href="/r/cob_robots/github-ipa320-cob_robots">github-ipa320-cob_robots</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/cob_bringup/github-ipa320-cob_robots#indigo-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
                   
                     
                     
@@ -3065,6 +3372,36 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
         
           <ul>
             
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/rplidar_s1_tcp.launch" target="_blank">launch/rplidar_s1_tcp.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/view_rplidar_s1.launch" target="_blank">launch/view_rplidar_s1.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+  Used for visualising rplidar in action.  
+  
+  It requires rplidar.launch.
+ </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
               <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/rplidar.launch" target="_blank">launch/rplidar.launch</a>
                 <ul class="list-unstyled">
                   
@@ -3092,6 +3429,36 @@ roslaunch rplidar_ros rplidar_a3.launch (for RPLIDAR A3)</p>
               </li>
             
               <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/view_rplidar_a3.launch" target="_blank">launch/view_rplidar_a3.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+  Used for visualising rplidar in action.  
+  
+  It requires rplidar.launch.
+ </em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/rplidar_s1.launch" target="_blank">launch/rplidar_s1.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/Slamtec/rplidar_ros/tree/master/./launch/view_rplidar_s1_tcp.launch" target="_blank">launch/view_rplidar_s1_tcp.launch</a>
                 <ul class="list-unstyled">
                   
                     <li><em>
@@ -3352,7 +3719,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/ypspur/github-openspur-yp-spur/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -372,7 +375,7 @@ ypspur
     
     
     
-    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">1</span> Dependencies</a>
+    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">4</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -403,7 +406,7 @@ ypspur
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>1.15.3</td>
+                <td>1.16.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -451,7 +454,7 @@ ypspur
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-06
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-09
         </span>
       </td>
     </tr>
@@ -574,6 +577,29 @@ $ sudo make install
             
               <div class="rendered-markdown">
 <h1 id="changelog-for-yp-spur">ChangeLog for YP-Spur</h1>
+
+<h2 id="1-16-0">1.16.0</h2>
+
+<ul>
+<li>Fix deployment (#108)</li>
+<li>Fix serial communication error handling (#107)</li>
+<li>Fix ENCODER_DENOMINATOR handling to make param units corresponding to hardware (#104)</li>
+<li>Reorganize console output (#105)</li>
+<li>Generate and install pkg-config file (#101)</li>
+<li>Fix protocol version send target (#106)</li>
+<li>Fix initial absolute encoder value handling (#103)</li>
+<li>Correct invalid links (#99)</li>
+<li>Expose the communication functions (#97)</li>
+<li>Fix deceleration factor during over speed (#95)</li>
+<li>Update motor error ID (#93)</li>
+<li>Add flag to check availability of get_device_error_state (#92)</li>
+<li>Fix joint state initialization (#91)</li>
+<li>Receive error status of connected device (#89)</li>
+<li>Stricten parameter error check (#88)</li>
+<li>Add encoder denominator parameter (#86)</li>
+<li>Enable build on semantic version tag (#83)</li>
+<li>Modernize coding styles (#10)</li>
+</ul>
 
 <h2 id="1-15-3">1.15.3</h2>
 
@@ -1234,7 +1260,36 @@ $ sudo make install
           </div>
           <div class="panel-body">
             
-              <em>No dependencies on ROS packages.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th class="text-center">Deps</th>
+                  <th class="text-center"><span class="glyphicon glyphicon-th" title="Package instances"></span></th>
+                  <th style="width: 100%">Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#melodic">catkin</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
           <div class="panel-heading">
@@ -1251,6 +1306,18 @@ $ sudo make install
                     
                       <tr>
                         <td><a href="/d/libreadline-dev">libreadline-dev</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/cmake">cmake</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/libreadline">libreadline</a></td>
                       </tr>
                     
                   
@@ -1568,7 +1635,7 @@ ypspur
     
     
     
-    <a href="#lunar-deps" data-toggle="tab"><span class="label label-primary">1</span> Dependencies</a>
+    <a href="#lunar-deps" data-toggle="tab"><span class="label label-primary">4</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1599,7 +1666,7 @@ ypspur
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>1.15.3</td>
+                <td>1.16.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -1647,7 +1714,7 @@ ypspur
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-06
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-09
         </span>
       </td>
     </tr>
@@ -1770,6 +1837,29 @@ $ sudo make install
             
               <div class="rendered-markdown">
 <h1 id="changelog-for-yp-spur">ChangeLog for YP-Spur</h1>
+
+<h2 id="1-16-0">1.16.0</h2>
+
+<ul>
+<li>Fix deployment (#108)</li>
+<li>Fix serial communication error handling (#107)</li>
+<li>Fix ENCODER_DENOMINATOR handling to make param units corresponding to hardware (#104)</li>
+<li>Reorganize console output (#105)</li>
+<li>Generate and install pkg-config file (#101)</li>
+<li>Fix protocol version send target (#106)</li>
+<li>Fix initial absolute encoder value handling (#103)</li>
+<li>Correct invalid links (#99)</li>
+<li>Expose the communication functions (#97)</li>
+<li>Fix deceleration factor during over speed (#95)</li>
+<li>Update motor error ID (#93)</li>
+<li>Add flag to check availability of get_device_error_state (#92)</li>
+<li>Fix joint state initialization (#91)</li>
+<li>Receive error status of connected device (#89)</li>
+<li>Stricten parameter error check (#88)</li>
+<li>Add encoder denominator parameter (#86)</li>
+<li>Enable build on semantic version tag (#83)</li>
+<li>Modernize coding styles (#10)</li>
+</ul>
 
 <h2 id="1-15-3">1.15.3</h2>
 
@@ -2430,7 +2520,36 @@ $ sudo make install
           </div>
           <div class="panel-body">
             
-              <em>No dependencies on ROS packages.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th class="text-center">Deps</th>
+                  <th class="text-center"><span class="glyphicon glyphicon-th" title="Package instances"></span></th>
+                  <th style="width: 100%">Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#lunar-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#lunar">catkin</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
           <div class="panel-heading">
@@ -2447,6 +2566,18 @@ $ sudo make install
                     
                       <tr>
                         <td><a href="/d/libreadline-dev">libreadline-dev</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/cmake">cmake</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/libreadline">libreadline</a></td>
                       </tr>
                     
                   
@@ -2764,7 +2895,7 @@ ypspur
     
     
     
-    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">1</span> Dependencies</a>
+    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">4</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -2795,7 +2926,7 @@ ypspur
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>1.15.3</td>
+                <td>1.16.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -2843,7 +2974,7 @@ ypspur
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-06
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-09
         </span>
       </td>
     </tr>
@@ -2966,6 +3097,29 @@ $ sudo make install
             
               <div class="rendered-markdown">
 <h1 id="changelog-for-yp-spur">ChangeLog for YP-Spur</h1>
+
+<h2 id="1-16-0">1.16.0</h2>
+
+<ul>
+<li>Fix deployment (#108)</li>
+<li>Fix serial communication error handling (#107)</li>
+<li>Fix ENCODER_DENOMINATOR handling to make param units corresponding to hardware (#104)</li>
+<li>Reorganize console output (#105)</li>
+<li>Generate and install pkg-config file (#101)</li>
+<li>Fix protocol version send target (#106)</li>
+<li>Fix initial absolute encoder value handling (#103)</li>
+<li>Correct invalid links (#99)</li>
+<li>Expose the communication functions (#97)</li>
+<li>Fix deceleration factor during over speed (#95)</li>
+<li>Update motor error ID (#93)</li>
+<li>Add flag to check availability of get_device_error_state (#92)</li>
+<li>Fix joint state initialization (#91)</li>
+<li>Receive error status of connected device (#89)</li>
+<li>Stricten parameter error check (#88)</li>
+<li>Add encoder denominator parameter (#86)</li>
+<li>Enable build on semantic version tag (#83)</li>
+<li>Modernize coding styles (#10)</li>
+</ul>
 
 <h2 id="1-15-3">1.15.3</h2>
 
@@ -3626,7 +3780,36 @@ $ sudo make install
           </div>
           <div class="panel-body">
             
-              <em>No dependencies on ROS packages.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th class="text-center">Deps</th>
+                  <th class="text-center"><span class="glyphicon glyphicon-th" title="Package instances"></span></th>
+                  <th style="width: 100%">Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#kinetic">catkin</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
           <div class="panel-heading">
@@ -3643,6 +3826,18 @@ $ sudo make install
                     
                       <tr>
                         <td><a href="/d/libreadline-dev">libreadline-dev</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/cmake">cmake</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/libreadline">libreadline</a></td>
                       </tr>
                     
                   
@@ -3974,7 +4169,7 @@ ypspur
     
     
     
-    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">1</span> Dependencies</a>
+    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">4</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -4005,7 +4200,7 @@ ypspur
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>1.15.3</td>
+                <td>1.16.0</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -4053,7 +4248,7 @@ ypspur
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-06
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-09
         </span>
       </td>
     </tr>
@@ -4176,6 +4371,29 @@ $ sudo make install
             
               <div class="rendered-markdown">
 <h1 id="changelog-for-yp-spur">ChangeLog for YP-Spur</h1>
+
+<h2 id="1-16-0">1.16.0</h2>
+
+<ul>
+<li>Fix deployment (#108)</li>
+<li>Fix serial communication error handling (#107)</li>
+<li>Fix ENCODER_DENOMINATOR handling to make param units corresponding to hardware (#104)</li>
+<li>Reorganize console output (#105)</li>
+<li>Generate and install pkg-config file (#101)</li>
+<li>Fix protocol version send target (#106)</li>
+<li>Fix initial absolute encoder value handling (#103)</li>
+<li>Correct invalid links (#99)</li>
+<li>Expose the communication functions (#97)</li>
+<li>Fix deceleration factor during over speed (#95)</li>
+<li>Update motor error ID (#93)</li>
+<li>Add flag to check availability of get_device_error_state (#92)</li>
+<li>Fix joint state initialization (#91)</li>
+<li>Receive error status of connected device (#89)</li>
+<li>Stricten parameter error check (#88)</li>
+<li>Add encoder denominator parameter (#86)</li>
+<li>Enable build on semantic version tag (#83)</li>
+<li>Modernize coding styles (#10)</li>
+</ul>
 
 <h2 id="1-15-3">1.15.3</h2>
 
@@ -4836,7 +5054,36 @@ $ sudo make install
           </div>
           <div class="panel-body">
             
-              <em>No dependencies on ROS packages.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th class="text-center">Deps</th>
+                  <th class="text-center"><span class="glyphicon glyphicon-th" title="Package instances"></span></th>
+                  <th style="width: 100%">Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#indigo">catkin</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
           <div class="panel-heading">
@@ -4853,6 +5100,18 @@ $ sudo make install
                     
                       <tr>
                         <td><a href="/d/libreadline-dev">libreadline-dev</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/cmake">cmake</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/libreadline">libreadline</a></td>
                       </tr>
                     
                   
@@ -5123,7 +5382,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

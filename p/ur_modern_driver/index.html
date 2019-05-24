@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/ur_modern_driver/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -385,7 +388,7 @@ ur_modern_driver
     
     
     
-    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">12</span> Dependencies</a>
+    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">20</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -464,7 +467,7 @@ ur_modern_driver
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-11-29
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-08
         </span>
       </td>
     </tr>
@@ -521,6 +524,8 @@ ur_modern_driver
                 
                   <li>G.A. vd. Hoorn (TU Delft Robotics Institute)</li>
                 
+                  <li>Miguel Prada Sarasola</li>
+                
                   <li>Nadia Hammoudeh Garcia</li>
                 
               </ul>
@@ -572,6 +577,7 @@ ur_modern_driver
 </li>
 <li>Publishes IO state on <em>/ur_driver/io_states</em> (Note that the string <em>/ur_driver</em> has been prepended compared to the old driver)</li>
 <li>Service call to set outputs and payload - Again, the string <em>/ur_driver</em> has been prepended compared to the old driver (Note: I am not sure if setting the payload actually works, as the robot GUI does not update. This is also true for the old ur_driver  )</li>
+<li>Additionally, the masterboard state and robot mode are published to <em>/ur_driver/masterboard_state</em> and <em>/ur_driver/robot_mode_state</em>. (Note: Only the parameters that are shared between all robot firmwares are published. The <code>digital_input_bits</code> and <code>digital_output_bits</code> fields of the MasterboardDataMsg are not set. Use the IOStates message for these.)</li>
 </ul>
 </li>
 <li>
@@ -579,7 +585,7 @@ ur_modern_driver
 
 <ul>
 <li>
-<em>/ur_driver/URScript</em> : Takes messages of type <em>std_msgs/String</em> and directly forwards it to the robot. Note that no control is done on the input, so use at your own risk! Intended for sending movel/movej commands directly to the robot, conveyor tracking and the like.</li>
+<em>/ur_driver/URScript</em> : Takes messages of type <em>std_msgs/String</em> and directly forwards it to the robot. Note that no control is done on the input, so use at your own risk! Intended for sending movel/movej commands directly to the robot, conveyor tracking and the like. Completion can be checked with the <em>/ur_driver/robot_mode_state</em> topic. Include <em>ur_modern_driver/wait_for_program.h</em> for a convenience function.</li>
 <li>
 <em>/joint_speed</em> : Takes messages of type <em>trajectory_msgs/JointTrajectory</em>. Parses the first JointTrajectoryPoint and sends the specified joint speeds and accelerations to the robot. This interface is intended for doing visual servoing and other kind of control that requires speed control rather than position control of the robot. Remember to set values for all 6 joints. Ignores the field joint_names, so set the values in the correct order.</li>
 </ul>
@@ -594,7 +600,7 @@ ur_modern_driver
 <li>The velocity based controller sends joint speed commands to the robot, using the speedj command</li>
 <li>The position based controller sends joint position commands to the robot, using the servoj command</li>
 <li>I have so far only used the velocity based controller, but which one is optimal depends on the application.</li>
-<li>As ros_control continuesly controls the robot, using the teach pendant while a controller is running will cause the controller <strong>on the robot</strong> to crash, as it obviously can't handle conflicting control input from two sources. Thus be sure to stop the running controller <strong>before</strong> moving the robot via the teach pendant:</li>
+<li>As ros_control continuously controls the robot, using the teach pendant while a controller is running will cause the controller <strong>on the robot</strong> to crash, as it obviously can't handle conflicting control input from two sources. Thus be sure to stop the running controller <strong>before</strong> moving the robot via the teach pendant:</li>
 <li>A list of the loaded and running controllers can be found by a call to the controller_manager 
 <code>rosservice call /controller_manager/list_controllers {} 
 </code>
@@ -690,7 +696,7 @@ roslaunch urXX_moveit_config moveit_rviz.launch config:=true
 </code></pre></div>
 <hr>
 
-<p>If you would like to use the ros_control-based approach, use the launch files urXX_ros_control.launch, where XX is '5' or '10' depending on your robot.</p>
+<p>If you would like to use the ros_control-based approach, use the launch file urXX_ros_control.launch instead of urXX_bringup.launch, where XX is '5' or '10' depending on your robot.</p>
 
 <p><strong>Note:</strong> If you are using the ros_control-based approach you will need 2 packages that can be found in the ur_driver package. If you do not have the ur_driver package in your workspace simply copy these packages into your workspace /src folder:
  * urXX_moveit_config
@@ -755,6 +761,8 @@ the end-effector as reported by the controller itself.</p>
 <h3 id="tested-with">Tested with:</h3>
 
 <ul>
+<li>Real UR5 with 3.9.0.46176 (Mar 01 2019)</li>
+<li>Real UR5 and UR3 with 3.5.1.10661 (Dec 13 2017)</li>
 <li>Real UR10 with CB2 running 1.8.14035</li>
 <li>Real UR5 with CB2 running 1.8.14035</li>
 <li>Simulated UR3 running 3.1.18024</li>
@@ -835,6 +843,166 @@ the end-effector as reported by the controller itself.</p>
                   <th style="width: 100%">Name</th>
                 </thead>
                 <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#kinetic">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/force_torque_sensor_controller#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/force_torque_sensor_controller" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/force_torque_sensor_controller#kinetic">force_torque_sensor_controller</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/joint_state_controller#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/joint_state_controller" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/joint_state_controller#kinetic">joint_state_controller</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/joint_trajectory_controller#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/joint_trajectory_controller" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/joint_trajectory_controller#kinetic">joint_trajectory_controller</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ur_description#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ur_description" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ur_description#kinetic">ur_description</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/robot_state_publisher#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/robot_state_publisher" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/robot_state_publisher#kinetic">robot_state_publisher</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/velocity_controllers#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/velocity_controllers" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/velocity_controllers#kinetic">velocity_controllers</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rosunit#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rosunit" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rosunit#kinetic">rosunit</a></td>
+                      </tr>
+                    
                   
                     
                     
@@ -1153,7 +1321,15 @@ the end-effector as reported by the controller itself.</p>
                     <ul>
                       
                         
-                          <li><strong>robot_ip</strong>  </em></li>
+                          <li><strong>robot_ip</strong>   &#8212; IP of the controller</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_ip</strong> <em>&#91;default: &#93;  &#8212; IP of the computer running the driver</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_port</strong> <em>&#91;default: 50001&#93; </em></li>
                         
                       
                         
@@ -1225,6 +1401,10 @@ the end-effector as reported by the controller itself.</p>
                         
                       
                         
+                      
+                        
+                      
+                        
                           <li><strong>prefix</strong> <em>&#91;default: &#93; </em></li>
                         
                       
@@ -1272,7 +1452,15 @@ the end-effector as reported by the controller itself.</p>
                     <ul>
                       
                         
-                          <li><strong>robot_ip</strong>  </em></li>
+                          <li><strong>robot_ip</strong>   &#8212; IP of the controller</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_ip</strong> <em>&#91;default: &#93;  &#8212; IP of the computer running the driver</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_port</strong> <em>&#91;default: 50001&#93; </em></li>
                         
                       
                         
@@ -1352,6 +1540,10 @@ the end-effector as reported by the controller itself.</p>
                         
                       
                         
+                      
+                        
+                      
+                        
                           <li><strong>servoj_time_waiting</strong> <em>&#91;default: $(arg servoj_time_waiting)&#93; </em></li>
                         
                       
@@ -1391,7 +1583,15 @@ the end-effector as reported by the controller itself.</p>
                         
                       
                         
-                          <li><strong>robot_ip</strong>  </em></li>
+                          <li><strong>robot_ip</strong>   &#8212; IP of the controller</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_ip</strong> <em>&#91;default: &#93;  &#8212; IP of the computer running the driver</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_port</strong> <em>&#91;default: 50001&#93; </em></li>
                         
                       
                         
@@ -1456,7 +1656,15 @@ the end-effector as reported by the controller itself.</p>
                     <ul>
                       
                         
-                          <li><strong>robot_ip</strong>  </em></li>
+                          <li><strong>robot_ip</strong>   &#8212; IP of the controller</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_ip</strong> <em>&#91;default: &#93;  &#8212; IP of the computer running the driver</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_port</strong> <em>&#91;default: 50001&#93; </em></li>
                         
                       
                         
@@ -1532,6 +1740,10 @@ the end-effector as reported by the controller itself.</p>
                         
                       
                         
+                      
+                        
+                      
+                        
                           <li><strong>servoj_time_waiting</strong> <em>&#91;default: $(arg servoj_time_waiting)&#93; </em></li>
                         
                       
@@ -1569,7 +1781,15 @@ the end-effector as reported by the controller itself.</p>
                     <ul>
                       
                         
-                          <li><strong>robot_ip</strong>  </em></li>
+                          <li><strong>robot_ip</strong>   &#8212; IP of the controller</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_ip</strong> <em>&#91;default: &#93;  &#8212; IP of the computer running the driver</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_port</strong> <em>&#91;default: 50001&#93; </em></li>
                         
                       
                         
@@ -1649,6 +1869,10 @@ the end-effector as reported by the controller itself.</p>
                         
                       
                         
+                      
+                        
+                      
+                        
                           <li><strong>servoj_time_waiting</strong> <em>&#91;default: $(arg servoj_time_waiting)&#93; </em></li>
                         
                       
@@ -1686,7 +1910,15 @@ the end-effector as reported by the controller itself.</p>
                     <ul>
                       
                         
-                          <li><strong>robot_ip</strong>  </em></li>
+                          <li><strong>robot_ip</strong>   &#8212; IP of the controller</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_ip</strong> <em>&#91;default: &#93;  &#8212; IP of the computer running the driver</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_port</strong> <em>&#91;default: 50001&#93; </em></li>
                         
                       
                         
@@ -1758,6 +1990,10 @@ the end-effector as reported by the controller itself.</p>
                         
                       
                         
+                      
+                        
+                      
+                        
                           <li><strong>prefix</strong> <em>&#91;default: &#93; </em></li>
                         
                       
@@ -1807,7 +2043,15 @@ the end-effector as reported by the controller itself.</p>
                         
                       
                         
-                          <li><strong>robot_ip</strong>  </em></li>
+                          <li><strong>robot_ip</strong>   &#8212; IP of the controller</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_ip</strong> <em>&#91;default: &#93;  &#8212; IP of the computer running the driver</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_port</strong> <em>&#91;default: 50001&#93; </em></li>
                         
                       
                         
@@ -1872,7 +2116,15 @@ the end-effector as reported by the controller itself.</p>
                     <ul>
                       
                         
-                          <li><strong>robot_ip</strong>  </em></li>
+                          <li><strong>robot_ip</strong>   &#8212; IP of the controller</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_ip</strong> <em>&#91;default: &#93;  &#8212; IP of the computer running the driver</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_port</strong> <em>&#91;default: 50001&#93; </em></li>
                         
                       
                         
@@ -1948,6 +2200,10 @@ the end-effector as reported by the controller itself.</p>
                         
                       
                         
+                      
+                        
+                      
+                        
                           <li><strong>servoj_time_waiting</strong> <em>&#91;default: $(arg servoj_time_waiting)&#93; </em></li>
                         
                       
@@ -1987,7 +2243,15 @@ the end-effector as reported by the controller itself.</p>
                         
                       
                         
-                          <li><strong>robot_ip</strong>  </em></li>
+                          <li><strong>robot_ip</strong>   &#8212; IP of the controller</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_ip</strong> <em>&#91;default: &#93;  &#8212; IP of the computer running the driver</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_port</strong> <em>&#91;default: 50001&#93; </em></li>
                         
                       
                         
@@ -2052,7 +2316,15 @@ the end-effector as reported by the controller itself.</p>
                     <ul>
                       
                         
-                          <li><strong>robot_ip</strong>  </em></li>
+                          <li><strong>robot_ip</strong>   &#8212; IP of the controller</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_ip</strong> <em>&#91;default: &#93;  &#8212; IP of the computer running the driver</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_port</strong> <em>&#91;default: 50001&#93; </em></li>
                         
                       
                         
@@ -2128,6 +2400,10 @@ the end-effector as reported by the controller itself.</p>
                         
                       
                         
+                      
+                        
+                      
+                        
                           <li><strong>servoj_time_waiting</strong> <em>&#91;default: $(arg servoj_time_waiting)&#93; </em></li>
                         
                       
@@ -2165,7 +2441,15 @@ the end-effector as reported by the controller itself.</p>
                     <ul>
                       
                         
-                          <li><strong>robot_ip</strong>  </em></li>
+                          <li><strong>robot_ip</strong>   &#8212; IP of the controller</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_ip</strong> <em>&#91;default: &#93;  &#8212; IP of the computer running the driver</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_port</strong> <em>&#91;default: 50001&#93; </em></li>
                         
                       
                         
@@ -2245,6 +2529,10 @@ the end-effector as reported by the controller itself.</p>
                         
                       
                         
+                      
+                        
+                      
+                        
                           <li><strong>servoj_time_waiting</strong> <em>&#91;default: $(arg servoj_time_waiting)&#93; </em></li>
                         
                       
@@ -2282,7 +2570,15 @@ the end-effector as reported by the controller itself.</p>
                     <ul>
                       
                         
-                          <li><strong>robot_ip</strong>  </em></li>
+                          <li><strong>robot_ip</strong>   &#8212; IP of the controller</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_ip</strong> <em>&#91;default: &#93;  &#8212; IP of the computer running the driver</em></li>
+                        
+                      
+                        
+                          <li><strong>reverse_port</strong> <em>&#91;default: 50001&#93; </em></li>
                         
                       
                         
@@ -2620,7 +2916,7 @@ ur_modern_driver
     
     
     
-    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">13</span> Dependencies</a>
+    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">14</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -2699,7 +2995,7 @@ ur_modern_driver
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2017-10-10
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-01
         </span>
       </td>
     </tr>
@@ -2778,6 +3074,22 @@ ur_modern_driver
               <div class="panel-body">
                     <div class="rendered-markdown">
 <h1 id="ur_modern_driver">ur_modern_driver</h1>
+
+<h2 id="deprecation-notice">Deprecation notice</h2>
+
+<p><strong>note</strong>: the <code>master</code> branch contains a deprecated version of this driver, kept for archival purposes only.</p>
+
+<p>The <code>master</code> version of <code>ur_modern_driver</code> is <strong>not compatible</strong> with newer controller and Polyscope versions, and should not be used with those.</p>
+
+<p>We recommend anyone using Polyscope versions 3 and newer to use the <code>kinetic-devel</code> branch instead.</p>
+
+<p>If building this package from source, the following will checkout the <code>kinetic-devel</code> branch:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git clone <span class="nt">-b</span> kinetic-devel https://github.com/ros-industrial/ur_modern_driver.git
+
+</code></pre></div>
+<p><code>kinetic-devel</code> will be made the default branch in this repository in the near future.</p>
+
+<h2 id="overview">Overview</h2>
 
 <p>A new driver for the UR3/UR5/UR10 robot arms from Universal Robots. It is designed to replace the old driver transparently, while solving some issues, improving usability as well as enabling compatibility  of ros_control. </p>
 
@@ -3251,6 +3563,26 @@ the end-effector as reported by the controller itself.</p>
                           </a>
                         </td>
                         <td><a href="/p/realtime_tools#indigo">realtime_tools</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#indigo">catkin</a></td>
                       </tr>
                     
                   
@@ -4123,7 +4455,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

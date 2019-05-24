@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//r/jsk_apc/github-start-jsk-jsk_apc/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -371,7 +374,7 @@
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-12-16
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-15
         </span>
       </td>
     </tr>
@@ -414,37 +417,37 @@
                 
                   <tr>
                     <td><a href="/p/jsk_2015_05_baxter_apc/github-start-jsk-jsk_apc">jsk_2015_05_baxter_apc</a></td>
-                    <td>4.2.0</td>
+                    <td>4.2.1</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/jsk_2016_01_baxter_apc/github-start-jsk-jsk_apc">jsk_2016_01_baxter_apc</a></td>
-                    <td>4.2.0</td>
+                    <td>4.2.1</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/jsk_apc/github-start-jsk-jsk_apc">jsk_apc</a></td>
-                    <td>4.2.0</td>
+                    <td>4.2.1</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/jsk_apc2015_common/github-start-jsk-jsk_apc">jsk_apc2015_common</a></td>
-                    <td>4.2.0</td>
+                    <td>4.2.1</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/jsk_apc2016_common/github-start-jsk-jsk_apc">jsk_apc2016_common</a></td>
-                    <td>4.2.0</td>
+                    <td>4.2.1</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/jsk_arc2017_baxter/github-start-jsk-jsk_apc">jsk_arc2017_baxter</a></td>
-                    <td>4.2.0</td>
+                    <td>4.2.1</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/jsk_arc2017_common/github-start-jsk-jsk_apc">jsk_arc2017_common</a></td>
-                    <td>4.2.0</td>
+                    <td>4.2.1</td>
                   </tr>
                 
                 </tbody>
@@ -523,7 +526,7 @@ The documentation is available at <a href="http://jsk-apc.readthedocs.org">here<
 <li>Build catkin workspace for <a href="https://github.com/start-jsk/jsk_apc">jsk_apc</a>:</li>
 </ol>
 <div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ~/ros/ws_jsk_apc/src <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/ros/ws_jsk_apc/src
-<span class="nv">$ </span>wstool init <span class="nb">.</span> https://raw.githubusercontent.com/start-jsk/jsk_apc/master/fc.rosinstall
+<span class="nv">$ </span>wstool init <span class="nb">.</span> https://raw.githubusercontent.com/start-jsk/jsk_apc/master/fc.rosinstall.<span class="k">${</span><span class="nv">ROS_DISTRO</span><span class="k">}</span>
 <span class="nv">$ </span><span class="nb">cd</span> ..
 <span class="nv">$ </span>rosdep <span class="nb">install</span> <span class="nt">-y</span> <span class="nt">-r</span> <span class="nt">--from-paths</span> <span class="nb">.</span>
 <span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>python-catkin-tools ros-indigo-jsk-tools
@@ -580,6 +583,60 @@ $ rossetdefault baxter  # set ROS_MASTER_URI as http://baxter:11311
   User ruser  # password: rethink
 
 </code></pre></div>
+<p><strong>Setup UP Board</strong></p>
+
+<p>Inside UP Board...
+1. <a href="http://wiki.ros.org/kinetic/Installation/Ubuntu">Install ros-kinetic-ros-base and setup environment</a>.
+2. Build catkin workspace for jsk_apc:</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">$ </span><span class="nb">source</span> /opt/ros/kinetic/setup.bash
+<span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> ~/ros/kinetic/src <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/ros/kinetic/src
+<span class="nv">$ </span>wstool init <span class="nb">.</span> https://raw.githubusercontent.com/start-jsk/jsk_apc/master/upboard.rosinstall
+<span class="nv">$ </span>wstool merge <span class="nt">-t</span> <span class="nb">.</span> https://raw.githubusercontent.com/start-jsk/jsk_apc/master/upboard.rosinstall.kinetic
+<span class="nv">$ </span>wstool update
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>python-pip
+<span class="nv">$ </span>rosdep <span class="nb">install</span> <span class="nt">-y</span> <span class="nt">-r</span> <span class="nt">--from-paths</span> <span class="nb">.</span> <span class="nt">--ignore-src</span>
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>python-catkin-tools
+<span class="nv">$ </span><span class="nb">cd</span> .. <span class="o">&amp;&amp;</span> catkin build
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'source $HOME/ros/kinetic/devel/setup.bash'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"rossetip"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"rossetmaster baxter"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nv">$ </span><span class="nb">source</span> ~/.bashrc
+
+</code></pre></div>
+<ol>
+<li>Create udev rules:</li>
+</ol>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c"># baxter-c2</span>
+<span class="nv">$ </span>rosrun jsk_arc2017_baxter create_udev_rules
+<span class="c"># baxter-c3</span>
+<span class="nv">$ </span>rosrun jsk_arc2017_common create_udev_rules
+
+</code></pre></div>
+<ol>
+<li>Create <code>~/env-loader.sh</code>:</li>
+</ol>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c">#!/bin/bash</span>
+
+<span class="nb">.</span> <span class="nv">$HOME</span>/ros/kinetic/devel/setup.bash
+<span class="nb">export </span><span class="nv">ROSCONSOLE_FORMAT</span><span class="o">=</span><span class="s1">'[${severity}] [${time}]: [${node}] [${function}] ${message}'</span>
+rossetip
+rossetmaster baxter
+<span class="nb">exec</span> <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+
+</code></pre></div>
+<p>and <code>chmod +x ~/env-loader.sh</code></p>
+
+<ol>
+<li>Setup time synchronization</li>
+</ol>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">sudo </span>apt <span class="nb">install </span>ntp
+<span class="c"># Set the same configuration as other PCs</span>
+<span class="nb">sudo </span>vi /etc/ntp.conf
+
+</code></pre></div>
+<p>From main PC...
+1. <code>ssh -oHostKeyAlgorithms='ssh-rsa' baxter@&lt;UP Board Host Name&gt;.jsk.imi.i.u-tokyo.ac.jp</code>
+2. Add main PC's ssh public key to <code>~/.ssh/authorized_keys</code> on UP Board.</p>
 </div>
             
           </div>
@@ -641,7 +698,7 @@ $ rossetdefault baxter  # set ROS_MASTER_URI as http://baxter:11311
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/nav2_util/github-ros-planning-navigation2/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -294,6 +297,14 @@ nav2_bt_navigator
           
             
             
+              <a class="label label-primary pkg-label" href="/p/nav2_common/github-ros-planning-navigation2">
+
+nav2_common
+</a>
+            
+          
+            
+            
               <a class="label label-primary pkg-label" href="/p/nav2_costmap_2d/github-ros-planning-navigation2">
 
 nav2_costmap_2d
@@ -382,6 +393,14 @@ nav2_dynamic_params
           
             
             
+              <a class="label label-primary pkg-label" href="/p/nav2_turtlebot3_rl/github-ros-planning-navigation2">
+
+nav2_turtlebot3_rl
+</a>
+            
+          
+            
+            
               <a class="label label-primary pkg-label" href="/p/nav2_map_server/github-ros-planning-navigation2">
 
 nav2_map_server
@@ -425,14 +444,6 @@ nav2_navfn_planner
               <a class="label label-primary pkg-label" href="/p/nav2_robot/github-ros-planning-navigation2">
 
 nav2_robot
-</a>
-            
-          
-            
-            
-              <a class="label label-primary pkg-label" href="/p/nav2_simple_navigator/github-ros-planning-navigation2">
-
-nav2_simple_navigator
 </a>
             
           
@@ -564,7 +575,7 @@ navigation2
     
     
     
-    <a href="#crystal-deps" data-toggle="tab"><span class="label label-primary">8</span> Dependencies</a>
+    <a href="#crystal-deps" data-toggle="tab"><span class="label label-primary">19</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -643,7 +654,7 @@ navigation2
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-18
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-16
         </span>
       </td>
     </tr>
@@ -714,7 +725,15 @@ navigation2
             <div class="panel panel-default">
               <div class="panel-heading"><span class="glyphicon glyphicon-file"></span><a href="https://github.com/ros-planning/navigation2/tree/master/nav2_util/README.md" title="Open in git repository">nav2_util/README.md</a></div>
               <div class="panel-body">
-                    <div class="rendered-markdown"></div>
+                    <div class="rendered-markdown">
+<h1 id="nav2-util">Nav2 Util</h1>
+
+<p>The <code>nav2_util</code> package contains utilities abstracted from individual packages which may find use in other uses. Examples include the particle filter implementation from AMCL, motion models, ROS2 node utilities, and more. </p>
+
+<h2 id="ros1-comparison">ROS1 Comparison</h2>
+
+<p>This package does not have a direct counter-part in Navigation. This was created to abstract out sections of the code-base from their implementations should the base algorithms/utilities find use elsewhere.</p>
+</div>
               </div>
             </div>
           </div>
@@ -774,6 +793,26 @@ navigation2
                   <th style="width: 100%">Name</th>
                 </thead>
                 <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/nav2_common#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/nav2_common" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/nav2_common#crystal">nav2_common</a></td>
+                      </tr>
+                    
                   
                     
                     
@@ -895,6 +934,206 @@ navigation2
                       </tr>
                     
                   
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/lifecycle_msgs#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/lifecycle_msgs" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/lifecycle_msgs#crystal">lifecycle_msgs</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_cmake#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_cmake" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_cmake#crystal">ament_cmake</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_lint_common#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_lint_common" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_lint_common#crystal">ament_lint_common</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_lint_auto#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_lint_auto" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_lint_auto#crystal">ament_lint_auto</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_cmake_pytest#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_cmake_pytest" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_cmake_pytest#crystal">ament_cmake_pytest</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/ament_cmake_gtest#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/ament_cmake_gtest" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/ament_cmake_gtest#crystal">ament_cmake_gtest</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/launch#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/launch" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/launch#crystal">launch</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/launch_testing#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/launch_testing" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/launch_testing#crystal">launch_testing</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/std_srvs#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/std_srvs" class="label label-primary">
+                            3
+                          </a>
+                        </td>
+                        <td><a href="/p/std_srvs#crystal">std_srvs</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rclcpp_lifecycle#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rclcpp_lifecycle" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rclcpp_lifecycle#crystal">rclcpp_lifecycle</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -961,6 +1200,20 @@ navigation2
                     
                     
                     <tr>
+                      <td><a href="/p/nav2_bt_navigator/github-ros-planning-navigation2#crystal">nav2_bt_navigator</a></td>
+                      <td><a href="/r/navigation2/github-ros-planning-navigation2">github-ros-planning-navigation2</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/nav2_bt_navigator/github-ros-planning-navigation2#crystal-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
                       <td><a href="/p/nav2_costmap_2d/github-ros-planning-navigation2#crystal">nav2_costmap_2d</a></td>
                       <td><a href="/r/navigation2/github-ros-planning-navigation2">github-ros-planning-navigation2</a></td>
                       <td class="text-center">
@@ -1017,11 +1270,39 @@ navigation2
                     
                     
                     <tr>
+                      <td><a href="/p/nav2_dynamic_params/github-ros-planning-navigation2#crystal">nav2_dynamic_params</a></td>
+                      <td><a href="/r/navigation2/github-ros-planning-navigation2">github-ros-planning-navigation2</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/nav2_dynamic_params/github-ros-planning-navigation2#crystal-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/nav2_map_server/github-ros-planning-navigation2#crystal">nav2_map_server</a></td>
+                      <td><a href="/r/navigation2/github-ros-planning-navigation2">github-ros-planning-navigation2</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/nav2_map_server/github-ros-planning-navigation2#crystal-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
                       <td><a href="/p/nav2_motion_primitives/github-ros-planning-navigation2#crystal">nav2_motion_primitives</a></td>
                       <td><a href="/r/navigation2/github-ros-planning-navigation2">github-ros-planning-navigation2</a></td>
                       <td class="text-center">
                         
-                        <a href="/p/nav2_motion_primitives/github-ros-planning-navigation2#crystal-deps" class="inactive">
+                        <a href="/p/nav2_motion_primitives/github-ros-planning-navigation2#crystal-deps" >
                           <span class="glyphicon glyphicon-arrow-right"></span>
                         </a>
                       </td>
@@ -1035,7 +1316,7 @@ navigation2
                       <td><a href="/r/navigation2/github-ros-planning-navigation2">github-ros-planning-navigation2</a></td>
                       <td class="text-center">
                         
-                        <a href="/p/nav2_navfn_planner/github-ros-planning-navigation2#crystal-deps" class="inactive">
+                        <a href="/p/nav2_navfn_planner/github-ros-planning-navigation2#crystal-deps" >
                           <span class="glyphicon glyphicon-arrow-right"></span>
                         </a>
                       </td>
@@ -1059,11 +1340,39 @@ navigation2
                     
                     
                     <tr>
+                      <td><a href="/p/nav2_tasks/github-ros-planning-navigation2#crystal">nav2_tasks</a></td>
+                      <td><a href="/r/navigation2/github-ros-planning-navigation2">github-ros-planning-navigation2</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/nav2_tasks/github-ros-planning-navigation2#crystal-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
                       <td><a href="/p/nav2_world_model/github-ros-planning-navigation2#crystal">nav2_world_model</a></td>
                       <td><a href="/r/navigation2/github-ros-planning-navigation2">github-ros-planning-navigation2</a></td>
                       <td class="text-center">
                         
-                        <a href="/p/nav2_world_model/github-ros-planning-navigation2#crystal-deps" class="inactive">
+                        <a href="/p/nav2_world_model/github-ros-planning-navigation2#crystal-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/navigation2/github-ros-planning-navigation2#crystal">navigation2</a></td>
+                      <td><a href="/r/navigation2/github-ros-planning-navigation2">github-ros-planning-navigation2</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/navigation2/github-ros-planning-navigation2#crystal-deps" >
                           <span class="glyphicon glyphicon-arrow-right"></span>
                         </a>
                       </td>
@@ -1327,7 +1636,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/prbt_hardware_support/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -425,7 +428,7 @@ prbt_support
     
     
     
-    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">7</span> Dependencies</a>
+    <a href="#melodic-deps" data-toggle="tab"><span class="label label-primary">13</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -456,7 +459,7 @@ prbt_support
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.4.6</td>
+                <td>0.4.8</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -504,7 +507,7 @@ prbt_support
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-21
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-24
         </span>
       </td>
     </tr>
@@ -561,6 +564,8 @@ prbt_support
                 
                   <li>Alexander Gutenkunst</li>
                 
+                  <li>Christian Henkel</li>
+                
                   <li>Hagen Slusarek</li>
                 
                   <li>Immanuel Martini</li>
@@ -589,6 +594,8 @@ prbt_support
 <h1 id="overview">Overview</h1>
 
 <p>The prbt_hardware_support package contains files needed to control hardware functions of the PRBT manipulator like STO for Stop1 functionality. The Pilz hardware PNOZmulti is supported using a Modbus connection.</p>
+
+<p>There is no need to call these launch files directly; they are included from <code>prbt_support/robot.launch</code>.</p>
 
 <h1 id="safe-stop-1-ss1">Safe stop 1 (SS1)</h1>
 
@@ -842,6 +849,26 @@ hold controllers, disable drives</p>
                           
                           
                           
+                          <a href="/p/catkin#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#melodic">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
                           <a href="/p/message_runtime#melodic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
@@ -852,6 +879,106 @@ hold controllers, disable drives</p>
                           </a>
                         </td>
                         <td><a href="/p/message_runtime#melodic">message_runtime</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rostest#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rostest" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rostest#melodic">rostest</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rosunit#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rosunit" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rosunit#melodic">rosunit</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/cmake_modules#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/cmake_modules" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/cmake_modules#melodic">cmake_modules</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/code_coverage#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/code_coverage" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/code_coverage#melodic">code_coverage</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/pilz_testutils#melodic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/pilz_testutils" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/pilz_testutils#melodic">pilz_testutils</a></td>
                       </tr>
                     
                   
@@ -890,7 +1017,30 @@ hold controllers, disable drives</p>
           </div>
           <div class="panel-body">
             
-              <em>No known dependants.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                  <th>Repo</th>
+                  <th class="text-center">Deps</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/prbt_support/github-PilzDE-pilz_robots#melodic">prbt_support</a></td>
+                      <td><a href="/r/pilz_robots/github-PilzDE-pilz_robots">github-PilzDE-pilz_robots</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/prbt_support/github-PilzDE-pilz_robots#melodic-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -1313,7 +1463,7 @@ prbt_support
     
     
     
-    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">7</span> Dependencies</a>
+    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">13</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1344,7 +1494,7 @@ prbt_support
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.4.6</td>
+                <td>0.4.8</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -1392,7 +1542,7 @@ prbt_support
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-21
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-24
         </span>
       </td>
     </tr>
@@ -1449,6 +1599,8 @@ prbt_support
                 
                   <li>Alexander Gutenkunst</li>
                 
+                  <li>Christian Henkel</li>
+                
                   <li>Hagen Slusarek</li>
                 
                   <li>Immanuel Martini</li>
@@ -1477,6 +1629,8 @@ prbt_support
 <h1 id="overview">Overview</h1>
 
 <p>The prbt_hardware_support package contains files needed to control hardware functions of the PRBT manipulator like STO for Stop1 functionality. The Pilz hardware PNOZmulti is supported using a Modbus connection.</p>
+
+<p>There is no need to call these launch files directly; they are included from <code>prbt_support/robot.launch</code>.</p>
 
 <h1 id="safe-stop-1-ss1">Safe stop 1 (SS1)</h1>
 
@@ -1730,6 +1884,26 @@ hold controllers, disable drives</p>
                           
                           
                           
+                          <a href="/p/catkin#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#kinetic">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
                           <a href="/p/message_runtime#kinetic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
@@ -1740,6 +1914,106 @@ hold controllers, disable drives</p>
                           </a>
                         </td>
                         <td><a href="/p/message_runtime#kinetic">message_runtime</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rostest#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rostest" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rostest#kinetic">rostest</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rosunit#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rosunit" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rosunit#kinetic">rosunit</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/cmake_modules#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/cmake_modules" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/cmake_modules#kinetic">cmake_modules</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/code_coverage#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/code_coverage" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/code_coverage#kinetic">code_coverage</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/pilz_testutils#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/pilz_testutils" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/pilz_testutils#kinetic">pilz_testutils</a></td>
                       </tr>
                     
                   
@@ -1778,7 +2052,30 @@ hold controllers, disable drives</p>
           </div>
           <div class="panel-body">
             
-              <em>No known dependants.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                  <th>Repo</th>
+                  <th class="text-center">Deps</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/prbt_support/github-PilzDE-pilz_robots#kinetic">prbt_support</a></td>
+                      <td><a href="/r/pilz_robots/github-PilzDE-pilz_robots">github-PilzDE-pilz_robots</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/prbt_support/github-PilzDE-pilz_robots#kinetic-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -2084,7 +2381,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

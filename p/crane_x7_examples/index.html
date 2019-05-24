@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/crane_x7_examples/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -339,6 +342,14 @@ crane_x7_examples
           
             
             
+              <a class="label label-primary pkg-label" href="/p/crane_x7_gazebo/github-rt-net-crane_x7_ros">
+
+crane_x7_gazebo
+</a>
+            
+          
+            
+            
               <a class="label label-primary pkg-label" href="/p/crane_x7_moveit_config/github-rt-net-crane_x7_ros">
 
 crane_x7_moveit_config
@@ -426,14 +437,14 @@ crane_x7_msgs
     
     
     
-    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-default">0</span> Assets</a>
+    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">5</span> Assets</a>
   </li>
   <li class="better-tabs">
     
     
     
     
-    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">2</span> Dependencies</a>
+    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">8</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -512,7 +523,7 @@ crane_x7_msgs
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-11-29
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-09
         </span>
       </td>
     </tr>
@@ -592,21 +603,76 @@ crane_x7_msgs
 
 <p>CRANE-X7のためのパッケージ、 <code>crane_x7</code> で用いるサンプルをまとめたパッケージです。</p>
 
-<h2 id="part-3786c95a72c55e2">使い方</h2>
+<h2 id="part-3eb11110ef86637f">システムの起動方法</h2>
+
+<p>CRANE-X7の制御信号ケーブルを制御用パソコンへ接続します。
+Terminalを開き、<code>crane_x7_bringup</code>の<code>demo.launch</code>を起動します。
+このlaunchファイルには次のオプションが用意されています。</p>
+
+<ul>
+<li>fake_execution (default: true)</li>
+</ul>
+
+<p>実機を使用する/使用しない</p>
 
 <h3 id="part-7e17bd995377d3a0">シミュレータを使う場合</h3>
 
-<p>Terminalを開き、 <code>crane_x7_bringup</code> の <code>demo.launch</code> を起動します。</p>
-<div class="highlight"><pre><code class="language-" data-lang="">roslaunch crane_x7_bringup demo.launch fake_execution:=true
+<p>実機無しで動作を確認する場合、
+制御信号ケーブルを接続しない状態で次のコマンドを実行します。</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">roslaunch crane_x7_bringup demo.launch fake_execution:<span class="o">=</span><span class="nb">true</span>
 
 </code></pre></div>
-<p>次に、もう1つTerminalを開き、 <code>crane_x7_examples</code> の <code>crane_x7_pick_and_place_demo.py</code> を実行するとCRANE-X7にPick and Placeのデモを実行させることができます。</p>
-<div class="highlight"><pre><code class="language-" data-lang="">rosrun crane_x7_examples crane_x7_pick_and_place_demo.py
+<h3 id="part-d8574f9ae2b8f3bc">実機を使う場合</h3>
+
+<p>実機で動作を確認する場合、
+制御信号ケーブルを接続した状態で次のコマンドを実行します。</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">roslaunch crane_x7_bringup demo.launch fake_execution:<span class="o">=</span><span class="nb">false</span>
+
+</code></pre></div>
+<p>ケーブルの接続ポート名はデフォルトで<code>/dev/ttyUSB0</code>です。
+別のポート名(例: /dev/ttyUSB1)を使う場合は次のコマンドを実行します。</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">roslaunch crane_x7_bringup demo.launch fake_execution:<span class="o">=</span><span class="nb">false </span>port:<span class="o">=</span>/dev/ttyUSB1
+
+</code></pre></div>
+<h2 id="part-be0f3d93513bdb02">サンプルの実行方法</h2>
+
+<p><code>demo.launch</code>を実行している状態で各サンプルを実行することができます。</p>
+
+<h3 id="gripper_action_example-py">gripper_action_example.pyの実行</h3>
+
+<p>ハンドを開閉させるコード例です。
+このサンプルは実機動作のみに対応しています。</p>
+
+<p>次のコマンドで45度まで開いて閉じる動作を実行します。</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">rosrun crane_x7_examples gripper_action_example.py
+
+</code></pre></div>
+<hr>
+
+<h3 id="pose_groupstate_example-py">pose_groupstate_example.pyの実行</h3>
+
+<p>group_stateを使うコード例です。</p>
+
+<p>SRDFファイル<a href="https://github.com/rt-net/crane_x7_ros/tree/master/crane_x7_examples/../crane_x7_moveit_config/config/crane_x7.srdf">crane_x7_moveit_config/config/crane_x7.srdf</a>
+に記載されている<code>home</code>と<code>vertical</code>の姿勢に移行します。</p>
+
+<p>次のコマンドを実行します。</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">rosrun crane_x7_examples pose_groupstate_example.py
+
+</code></pre></div>
+<hr>
+
+<h3 id="crane_x7_pick_and_place_demo-py">crane_x7_pick_and_place_demo.pyの実行</h3>
+
+<p>モノを掴む・持ち上げる・運ぶ・置くコード例です。</p>
+
+<p>次のコマンドを実行します。</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">rosrun crane_x7_examples crane_x7_pick_and_place_demo.py
 
 </code></pre></div>
 <p><img src="https://github.com/rt-net/crane_x7_ros/blob/images/images/bringup_rviz.gif" alt="bringup_rviz" title="bringup_rviz"></p>
 
-<h3 id="part-d8574f9ae2b8f3bc">実機を使う場合</h3>
+<p><strong>実機を使う場合</strong></p>
 
 <p>CRANE-X7から20cm離れた位置にピッキング対象を設置します。</p>
 
@@ -614,15 +680,245 @@ crane_x7_msgs
 
 <p>サンプルで使用しているこのオレンジ色のソフトボールはRT ROBOT SHOPの<a href="https://www.rt-shop.jp/index.php?main_page=product_info&amp;cPath=1299_1307&amp;products_id=3701">こちらのページ</a>から入手することができます。</p>
 
-<p>Terminalを開き、 <code>crane_x7_bringup</code> の <code>demo.launch</code> を起動します。</p>
-<div class="highlight"><pre><code class="language-" data-lang="">roslaunch crane_x7_bringup demo.launch fake_execution:=false
+<p>動作させると<a href="https://youtu.be/_8xBgpgMhk8">こちら</a>のような動きになります。</p>
+
+<hr>
+
+<h3 id="preset_pid_gain_example-py">preset_pid_gain_example.pyの実行</h3>
+
+<p><code>crane_x7_control</code>の<code>preset_reconfigure</code>を使うコード例です。
+サーボモータのPIDゲインを一斉に変更できます。</p>
+
+<p>プリセットは<a href="https://github.com/rt-net/crane_x7_ros/tree/master/crane_x7_examples/../crane_x7_control/scripts/preset_reconfigure.py">crane_x7_control/scripts/preset_reconfigure.py</a>
+にて編集できます。</p>
+
+<p>次のコマンドを実行すると、<code>preset_reconfigure.py</code>と<code>preset_pid_gain_example.py</code>のノードを起動します。</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">roslaunch crane_x7_examples preset_pid_gain_example.launch
 
 </code></pre></div>
-<p>次に、もう1つTerminalを開き、 <code>crane_x7_examples</code> の <code>crane_x7_pick_and_place_demo.py</code> を実行するとCRANE-X7にPick and Placeのデモを実行させることができます。</p>
-<div class="highlight"><pre><code class="language-" data-lang="">rosrun crane_x7_examples crane_x7_pick_and_place_demo.py
+<p>動作させると<a href="https://youtu.be/0rBbgNDwm6Y">こちら</a>のような動きになります。</p>
+
+<hr>
+
+<h3 id="teaching_example-py">teaching_example.pyの実行</h3>
+
+<p>ティーチングのコード例です。X7のPIDゲインを小さくすることでダイレクトティーチングができます。</p>
+
+<p>次のコマンドでノードを起動します。</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">roslaunch crane_x7_examples teaching_example.launch
 
 </code></pre></div>
-<p>デモ動画は<a href="https://youtu.be/_8xBgpgMhk8">こちら</a>。</p>
+<p>以下のキー割当を参考に、キーボードから操作してください。</p>
+
+<p><strong>Teaching Mode</strong></p>
+
+<p>起動時のモードです。トルクOFF*状態です。</p>
+
+<table>
+<thead>
+<tr>
+<th>キー</th>
+<th>機能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s / S</td>
+<td>現在の姿勢を保存</td>
+</tr>
+<tr>
+<td>d / D</td>
+<td>これまでに保存した姿勢を削除</td>
+</tr>
+<tr>
+<td>m / M</td>
+<td>
+<strong>Action Mode</strong>へ遷移</td>
+</tr>
+<tr>
+<td>q / Q</td>
+<td>シャットダウン</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Action Mode</strong></p>
+
+<p>Teaching Modeから遷移します。トルクON*状態です。</p>
+
+<table>
+<thead>
+<tr>
+<th>キー</th>
+<th>機能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p / P</td>
+<td>保存した姿勢を１つずつ再生</td>
+</tr>
+<tr>
+<td>a / A</td>
+<td>保存した姿勢のすべてを連続再生</td>
+</tr>
+<tr>
+<td>l / L</td>
+<td>ループ再生 ON / OFF</td>
+</tr>
+<tr>
+<td>m / M</td>
+<td>
+<strong>Teaching Mode</strong>へ遷移</td>
+</tr>
+<tr>
+<td>q / Q</td>
+<td>シャットダウン</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>トルクのON / OFFはサーボモータのPIDゲインに小さい値をプリセットすることで実現しています。</li>
+</ul>
+
+<p>動作させると<a href="https://youtu.be/--5_l1DpQ-0">こちら</a>のような動きになります。</p>
+
+<hr>
+
+<h3 id="joystick_example-py">joystick_example.pyの実行</h3>
+
+<p>ジョイスティックでX7を動かすコード例です。
+手先の位置・姿勢の変更、グリッパーの開閉、PIDゲインのプリセット、ティーチングができます。</p>
+
+<p>ジョイスティックをPCに接続し、<code>/dev/input/js0</code>が存在することを確認してください。</p>
+
+<p>次のコマンドでノードを起動します。</p>
+
+<h4 id="part-d8574f9ae2b8f3bc">実機を使う場合</h4>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">roslaunch crane_x7_examples joystick_example.launch
+
+</code></pre></div>
+<h4 id="part-7e17bd995377d3a0">シミュレータを使う場合</h4>
+
+<p>シミュレータを使う場合は、エラーを防ぐため<code>sim</code>オプションを追加してください。</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">roslaunch crane_x7_examples joystick_example.launch sim:<span class="o">=</span><span class="nb">true</span>
+
+</code></pre></div>
+<h4 id="part-6d5f014c61b0c9e0">キー割り当ての変更</h4>
+
+<p>デフォルトのキー割り当てはこちらです。ジョイスティックは
+<a href="https://support.logicool.co.jp/ja_jp/product/wireless-gamepad-f710">Logicool Wireless Gamepad F710</a>
+を使っています。
+<img src="https://github.com/rt-net/crane_x7_ros/blob/images/images/joystick_example_key_config.png" alt="key_config" title="key_config"></p>
+
+<p><a href="https://github.com/rt-net/crane_x7_ros/tree/master/crane_x7_examples/./launch/joystick_example.launch">crane_x7_example/launch/joystick_example.launch</a>
+のキー番号を編集することで、キー割り当てを変更できます。</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;node</span> <span class="na">name=</span><span class="s">"joystick_example"</span> <span class="na">pkg=</span><span class="s">"crane_x7_examples"</span> <span class="na">type=</span><span class="s">"joystick_example.py"</span> <span class="na">required=</span><span class="s">"true"</span> <span class="na">output=</span><span class="s">"screen"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- 使用するジョイスティックコントローラに合わせてvalueを変更してください --&gt;</span>
+    <span class="c">&lt;!-- ひとつのボタンに複数の機能を割り当てています --&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"button_shutdown_1"</span> <span class="na">value=</span><span class="s">"8"</span> <span class="na">type=</span><span class="s">"int"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"button_shutdown_2"</span> <span class="na">value=</span><span class="s">"9"</span> <span class="na">type=</span><span class="s">"int"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"button_name_enable"</span> <span class="na">value=</span><span class="s">"7"</span> <span class="na">type=</span><span class="s">"int"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"button_name_home"</span>  <span class="na">value=</span><span class="s">"8"</span> <span class="na">type=</span><span class="s">"int"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"button_preset_enable"</span> <span class="na">value=</span><span class="s">"7"</span> <span class="na">type=</span><span class="s">"int"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"button_preset_no1"</span> <span class="na">value=</span><span class="s">"9"</span> <span class="na">type=</span><span class="s">"int"</span> <span class="nt">/&gt;</span>
+
+</code></pre></div>
+<p>デフォルトのキー番号はこちらです。
+<img src="https://github.com/rt-net/crane_x7_ros/blob/images/images/joystick_example_key_numbers.png" alt="key_numbers" title="key_numbers"></p>
+
+<p>ジョイスティックのキー番号はトピック<code>/joy</code>で確認できます。</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c"># ノードを起動する</span>
+roslaunch crane_x7_examples joystick_example.launch sim:<span class="o">=</span><span class="nb">true</span>
+
+<span class="c"># 別のターミナルでコマンドを入力</span>
+rostopic <span class="nb">echo</span> /joy
+
+<span class="c"># ジョイスティックのボタンを押す</span>
+header: 
+  <span class="nb">seq</span>: 1
+  stamp: 
+    secs: 1549359364
+    nsecs: 214800952
+  frame_id: <span class="s1">''</span>
+axes: <span class="o">[</span>0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+buttons: <span class="o">[</span>0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+<span class="nt">---</span>
+
+</code></pre></div>
+<p>動作させると<a href="https://youtu.be/IQci_vb3owM">こちら</a>のような動きになります。</p>
+
+<hr>
+
+<h3 id="obstacle_avoidance_example-py">obstacle_avoidance_example.pyの実行</h3>
+
+<p>ROSのServiceを使って、障害物の追加と障害物回避をするコード例です。</p>
+
+<p>次のコマンドでノードを起動します。</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">roslaunch crane_x7_examples obstacle_avoidance_example.launch
+
+</code></pre></div>
+<p>このサンプルでは目標姿勢と障害物の大きさ・姿勢を定義した<a href="https://github.com/rt-net/crane_x7_ros/tree/master/crane_x7_examples/./srv/ObstacleAvoidance.srv">サービスファイル</a>を使用します。</p>
+
+<p>目標姿勢と障害物の大きさ・姿勢は
+<a href="https://github.com/rt-net/crane_x7_ros/tree/master/crane_x7_examples/./scripts/obstacle_client.py"><code>crane_x7_examples/scripts/obstacle_client.py</code></a>を編集することで変更できます。
+デフォルトでは、直方体の箱を障害物として設定しています。</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python">    <span class="c1"># 障害物を設定
+</span>    <span class="n">obstacle_name</span> <span class="o">=</span> <span class="s">"box"</span>
+    <span class="n">obstacle_size</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">0.28</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.14</span><span class="p">)</span>
+    <span class="n">obstacle_pose_stamped</span> <span class="o">=</span> <span class="n">PoseStamped</span><span class="p">()</span>
+    <span class="n">obstacle_pose_stamped</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s">"/base_link"</span>
+    <span class="n">obstacle_pose_stamped</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.35</span>
+    <span class="n">obstacle_pose_stamped</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">obstacle_size</span><span class="o">.</span><span class="n">z</span><span class="o">/</span><span class="mf">2.0</span>
+
+</code></pre></div>
+<p>安全のため障害物として床を設置しています。
+不要であれば<a href="https://github.com/rt-net/crane_x7_ros/tree/master/crane_x7_examples/./scripts/obstacle_avoidance_example.py"><code>crane_x7_examples/scripts/obstacle_avoidance_example.py</code></a>
+を編集してください。</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python">    <span class="c1"># 安全のため床を障害物として生成する
+</span>    <span class="n">floor_name</span> <span class="o">=</span> <span class="s">"floor"</span>
+    <span class="n">floor_size</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">floor_pose</span> <span class="o">=</span> <span class="n">PoseStamped</span><span class="p">()</span>
+    <span class="n">floor_pose</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s">"/base_link"</span>
+    <span class="n">floor_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="n">floor_size</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mf">2.0</span>
+    <span class="n">scene</span><span class="o">.</span><span class="n">add_box</span><span class="p">(</span><span class="n">floor_name</span><span class="p">,</span> <span class="n">floor_pose</span><span class="p">,</span> <span class="n">floor_size</span><span class="p">)</span>
+    <span class="n">rospy</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">SLEEP_TIME</span><span class="p">)</span>
+
+</code></pre></div>
+<p>moveitが障害物回避のパスを生成できない場合、X7は動作せず、次の目標位置に対するパスを計算します。
+この場合、サーバからの返答は<code>result=False</code>となります。</p>
+
+<p><img src="https://github.com/rt-net/crane_x7_ros/blob/images/images/obstacle_avoidance_1.png" width="400"><img src="https://github.com/rt-net/crane_x7_ros/blob/images/images/obstacle_avoidance_2.png" width="400"></p>
+
+<hr>
+
+<h3 id="servo_info_example-py">servo_info_example.pyの実行</h3>
+
+<p>サーボモータ（joint）の情報を取得するコード例です。</p>
+
+<p>次のコマンドでノードを起動します。</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">rosrun crane_x7_examples servo_info_example.py
+
+</code></pre></div>
+<p>このサンプルではグリッパーのモータ<code>crane_x7_gripper_finger_a_joint</code>のトピックを取得しています。</p>
+
+<p>実行するとターミナル画面にモータの電流・位置・温度が表示されます。</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c"># 表示例</span>
+ current <span class="o">[</span>mA]: 0.0     dxl_position: 2634    temp <span class="o">[</span>deg C]: 42.0  
+ current <span class="o">[</span>mA]: 2.69    dxl_position: 2634    temp <span class="o">[</span>deg C]: 42.0  
+ current <span class="o">[</span>mA]: 0.0     dxl_position: 2634    temp <span class="o">[</span>deg C]: 42.0  
+ current <span class="o">[</span>mA]: 0.0     dxl_position: 2634    temp <span class="o">[</span>deg C]: 42.0  
+ current <span class="o">[</span>mA]: 2.69    dxl_position: 2634    temp <span class="o">[</span>deg C]: 42.0
+ ...
+
+</code></pre></div>
+<p>また、電流が一定値を超えるとグリッパーを開く（閉じる）処理を入れてます。
+これにより、手でグリッパーを開く（閉じる）ことができます。</p>
+
+<p>トピックの詳細については、<a href="https://github.com/rt-net/crane_x7_ros/tree/master/crane_x7_examples/../crane_x7_control/README.md#%E3%83%8D%E3%83%BC%E3%83%A0%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%A8%E3%83%88%E3%83%94%E3%83%83%E3%82%AF"><code>crane_x7_control/README.md</code></a>を確認してください。</p>
 </div>
               </div>
             </div>
@@ -709,6 +1005,86 @@ crane_x7_msgs
                           
                           
                           
+                          <a href="/p/std_msgs#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/std_msgs" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/std_msgs#kinetic">std_msgs</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/geometry_msgs#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/geometry_msgs" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/geometry_msgs#kinetic">geometry_msgs</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/message_generation#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/message_generation" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/message_generation#kinetic">message_generation</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#kinetic">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
                           <a href="/p/moveit_commander#kinetic-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
@@ -719,6 +1095,46 @@ crane_x7_msgs
                           </a>
                         </td>
                         <td><a href="/p/moveit_commander#kinetic">moveit_commander</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/message_runtime#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/message_runtime" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/message_runtime#kinetic">message_runtime</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/joy#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/joy" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/joy#kinetic">joy</a></td>
                       </tr>
                     
                   
@@ -782,7 +1198,69 @@ crane_x7_msgs
       </div>
       <div class="panel-body">
         
-          <em>No launch files found</em>
+          <ul>
+            
+              <li><a href="https://github.com/rt-net/crane_x7_ros/tree/master/crane_x7_examples/launch/obstacle_avoidance_example.launch" target="_blank">launch/obstacle_avoidance_example.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/rt-net/crane_x7_ros/tree/master/crane_x7_examples/launch/preset_pid_gain_example.launch" target="_blank">launch/preset_pid_gain_example.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/rt-net/crane_x7_ros/tree/master/crane_x7_examples/launch/joystick_example.launch" target="_blank">launch/joystick_example.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>joydev</strong> <em>&#91;default: /dev/input/js0&#93; </em></li>
+                        
+                      
+                        
+                          <li><strong>sim</strong> <em>&#91;default: false&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/rt-net/crane_x7_ros/tree/master/crane_x7_examples/launch/teaching_example.launch" target="_blank">launch/teaching_example.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em></em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+          </ul>
         
       </div>
     </div>
@@ -804,7 +1282,11 @@ crane_x7_msgs
       </div>
       <div class="panel-body">
         
-          <em>No service files found</em>
+          <ul>
+            
+              <li><a href="https://github.com/rt-net/crane_x7_ros/tree/master/crane_x7_examples/srv/ObstacleAvoidance.srv" target="_blank">srv/ObstacleAvoidance.srv</a></li>
+            
+          </ul>
         
       </div>
     </div>
@@ -991,7 +1473,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

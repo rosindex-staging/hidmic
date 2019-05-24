@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/image_recognition_keras/github-tue-robotics-image_recognition/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -476,7 +479,7 @@ image_recognition_util
     
     
     
-    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">1</span> Dependencies</a>
+    <a href="#kinetic-deps" data-toggle="tab"><span class="label label-primary">10</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -555,7 +558,7 @@ image_recognition_util
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-12
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-06
         </span>
       </td>
     </tr>
@@ -635,7 +638,7 @@ image_recognition_util
 
 <h2 id="ros-node-face_properties_node">ROS Node (face_properties_node)</h2>
 
-<p>Age and gender estimation with use of WideResNet from <a href="https://github.com/yu4u/age-gender-estimation">https://github.com/yu4u/age-gender-estimation</a>. You can download the pre-trained model here: <a href="https://github.com/yu4u/age-gender-estimation/releases/download/v0.5/weights.28-3.73.hdf5">https://github.com/yu4u/age-gender-estimation/releases/download/v0.5/weights.28-3.73.hdf5</a></p>
+<p>Age and gender estimation with use of WideResNet from <a href="https://github.com/yu4u/age-gender-estimation">https://github.com/yu4u/age-gender-estimation</a>. You can download the pre-trained model here: <a href="https://github.com/tue-robotics/image_recognition/releases/download/image_recognition_keras_face_properties_weights.28-3.73/image_recognition_keras_face_properties_weights.28-3.73.hdf5">https://github.com/tue-robotics/image_recognition/releases/download/image_recognition_keras_face_properties_weights.28-3.73/image_recognition_keras_face_properties_weights.28-3.73.hdf5</a></p>
 <div class="highlight"><pre><code class="language-" data-lang="">rosrun image_recognition_keras face_properties_node _weights_file_path:=[path_to_model]
 
 </code></pre></div>
@@ -648,10 +651,20 @@ image_recognition_util
 
 <h2 id="scripts">Scripts</h2>
 
+<h3 id="download-model">Download model</h3>
+
+<p>Download weights from github.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">usage: download_model [-h] [--model_path MODEL_PATH]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --model_path MODEL_PATH
+
+</code></pre></div>
 <h3 id="get-face-properties-get_face_properties">Get face properties (get_face_properties)</h3>
 
 <p>Get the classification result of an input image:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">rosrun image_recognition_keras get_face_properties --image doc/face.png --weights-path [path_to_model]
+<div class="highlight"><pre><code class="language-" data-lang="">rosrun image_recognition_keras get_face_properties `rospack find image_recognition_keras`/doc/face.png
 
 </code></pre></div>
 <p><img src="https://raw.githubusercontent.com/tue-robotics/image_recognition/master/image_recognition_keras/doc/face.png" alt="Example"></p>
@@ -715,7 +728,116 @@ image_recognition_util
           </div>
           <div class="panel-body">
             
-              <em>No dependencies on ROS packages.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th class="text-center">Deps</th>
+                  <th class="text-center"><span class="glyphicon glyphicon-th" title="Package instances"></span></th>
+                  <th style="width: 100%">Name</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#kinetic">catkin</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/diagnostic_updater#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/diagnostic_updater" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/diagnostic_updater#kinetic">diagnostic_updater</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/image_recognition_msgs#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/image_recognition_msgs" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/image_recognition_msgs#kinetic">image_recognition_msgs</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/image_recognition_util#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/image_recognition_util" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/image_recognition_util#kinetic">image_recognition_util</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rospy#kinetic-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rospy" class="label label-primary">
+                            2
+                          </a>
+                        </td>
+                        <td><a href="/p/rospy#kinetic">rospy</a></td>
+                      </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
           <div class="panel-heading">
@@ -735,6 +857,30 @@ image_recognition_util
                       </tr>
                     
                   
+                    
+                      <tr>
+                        <td><a href="/d/python-keras-pip">python-keras-pip</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/python-numpy">python-numpy</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/python-opencv">python-opencv</a></td>
+                      </tr>
+                    
+                  
+                    
+                      <tr>
+                        <td><a href="/d/python-tensorflow-pip">python-tensorflow-pip</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -749,7 +895,30 @@ image_recognition_util
           </div>
           <div class="panel-body">
             
-              <em>No known dependants.</em>
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <th>Name</th>
+                  <th>Repo</th>
+                  <th class="text-center">Deps</th>
+                </thead>
+                <tbody>
+                  
+                    
+                    
+                    <tr>
+                      <td><a href="/p/image_recognition/github-tue-robotics-image_recognition#kinetic">image_recognition</a></td>
+                      <td><a href="/r/image_recognition/github-tue-robotics-image_recognition">github-tue-robotics-image_recognition</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/image_recognition/github-tue-robotics-image_recognition#kinetic-deps" class="inactive">
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                </tbody>
+              </table>
             
           </div>
         </div>
@@ -973,7 +1142,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

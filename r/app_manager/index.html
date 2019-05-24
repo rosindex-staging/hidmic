@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//r/app_manager/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -347,7 +350,7 @@
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-08-29
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-01
         </span>
       </td>
     </tr>
@@ -402,7 +405,8 @@
           <div class="panel-body">
             
               <div class="rendered-markdown">
-<h1 id="app_manager">app_manager</h1>
+<h1 id="app_manager">app_manager <a href="https://travis-ci.org/PR2/app_manager"><img src="https://travis-ci.com/PR2/app_manager.svg?branch=kinetic-devel" alt="Build Status"></a>
+</h1>
 
 <p>A package for making launch file an application</p>
 
@@ -441,6 +445,8 @@
 <p>Another way to notify the location is to define them in <code>&lt;export&gt;</code> tag in <code>package.xml</code>.</p>
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- package_root/package.xml --&gt;</span>
 <span class="nt">&lt;package&gt;</span>
+  ...
+  <span class="nt">&lt;run_depend&gt;</span>app_manager<span class="nt">&lt;/run_depend&gt;</span>
   ...
   <span class="nt">&lt;export&gt;</span>
     <span class="nt">&lt;app_manager</span> <span class="na">app_dir=</span><span class="s">"${prefix}/apps"</span><span class="nt">/&gt;</span>
@@ -526,7 +532,7 @@ If you set the parameter <code>/robot/type</code> to <code>pr2</code>, then apps
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-08-29
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-01
         </span>
       </td>
     </tr>
@@ -581,7 +587,8 @@ If you set the parameter <code>/robot/type</code> to <code>pr2</code>, then apps
           <div class="panel-body">
             
               <div class="rendered-markdown">
-<h1 id="app_manager">app_manager</h1>
+<h1 id="app_manager">app_manager <a href="https://travis-ci.org/PR2/app_manager"><img src="https://travis-ci.com/PR2/app_manager.svg?branch=kinetic-devel" alt="Build Status"></a>
+</h1>
 
 <p>A package for making launch file an application</p>
 
@@ -620,6 +627,8 @@ If you set the parameter <code>/robot/type</code> to <code>pr2</code>, then apps
 <p>Another way to notify the location is to define them in <code>&lt;export&gt;</code> tag in <code>package.xml</code>.</p>
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- package_root/package.xml --&gt;</span>
 <span class="nt">&lt;package&gt;</span>
+  ...
+  <span class="nt">&lt;run_depend&gt;</span>app_manager<span class="nt">&lt;/run_depend&gt;</span>
   ...
   <span class="nt">&lt;export&gt;</span>
     <span class="nt">&lt;app_manager</span> <span class="na">app_dir=</span><span class="s">"${prefix}/apps"</span><span class="nt">/&gt;</span>
@@ -705,7 +714,7 @@ If you set the parameter <code>/robot/type</code> to <code>pr2</code>, then apps
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2018-08-29
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-01
         </span>
       </td>
     </tr>
@@ -760,7 +769,8 @@ If you set the parameter <code>/robot/type</code> to <code>pr2</code>, then apps
           <div class="panel-body">
             
               <div class="rendered-markdown">
-<h1 id="app_manager">app_manager</h1>
+<h1 id="app_manager">app_manager <a href="https://travis-ci.org/PR2/app_manager"><img src="https://travis-ci.com/PR2/app_manager.svg?branch=kinetic-devel" alt="Build Status"></a>
+</h1>
 
 <p>A package for making launch file an application</p>
 
@@ -799,6 +809,8 @@ If you set the parameter <code>/robot/type</code> to <code>pr2</code>, then apps
 <p>Another way to notify the location is to define them in <code>&lt;export&gt;</code> tag in <code>package.xml</code>.</p>
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- package_root/package.xml --&gt;</span>
 <span class="nt">&lt;package&gt;</span>
+  ...
+  <span class="nt">&lt;run_depend&gt;</span>app_manager<span class="nt">&lt;/run_depend&gt;</span>
   ...
   <span class="nt">&lt;export&gt;</span>
     <span class="nt">&lt;app_manager</span> <span class="na">app_dir=</span><span class="s">"${prefix}/apps"</span><span class="nt">/&gt;</span>
@@ -1083,7 +1095,7 @@ If you set the parameter <code>/robot/type</code> to <code>pr2</code>, then apps
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

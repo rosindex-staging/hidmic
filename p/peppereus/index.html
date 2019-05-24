@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/peppereus/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -577,7 +580,7 @@ roseus_remote
     
     
     
-    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">4</span> Dependencies</a>
+    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -656,7 +659,7 @@ roseus_remote
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-12
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-23
         </span>
       </td>
     </tr>
@@ -799,8 +802,9 @@ catkin build
 </code></pre></div>
 <h2 id="joints-of-pepper">Joints of Pepper</h2>
 
-<p>Here is a list of joints when accessing Pepper.
-ex:</p>
+<p>Here is a list of joints when accessing Pepper.</p>
+
+<p>ex:  </p>
 <div class="highlight"><pre><code class="language-" data-lang="">(send *pepper* :reset-pose)
 =&gt; #f(2.0 -2.0 -5.0 85.0 10.0 -70.0 -20.0 -40.0 85.0 -10.0 70.0 20.0 40.0 0.0 0.0)
        0    1    2   3    4     5     6     7    8     9    10   11   12   13  14
@@ -823,6 +827,105 @@ ex:</p>
 14: :head :neck-p
 
 </code></pre></div>
+<h3 id="how-to-send-angle-vector">How to send angle vector</h3>
+<div class="highlight"><pre><code class="language-" data-lang="">(send *pepper* :head :neck-y :joint-angle -10)
+(send *ri* :angle-vector (send *pepper* :angle-vector)
+
+</code></pre></div>
+<h3 id="how-to-send-sequences-of-angle-vector">How to send sequences of angle vector</h3>
+<div class="highlight"><pre><code class="language-" data-lang="">(setq *reset-pose* #f(2.0 -2.0 -5.0 85.0 10.0 -70.0 -20.0 -40.0 85.0 -10.0 70.0 20.0 40.0 0.0 0.0))
+(setq *hello-pose1* #f(2.0 -2.0 -5.0 85.0 10.0 30.0 -0.5 30.0 -20.0 -10.0 70.0 20.0 40.0 30.0 0.0))
+(setq *hello-pose2* #f(2.0 -2.0 -5.0 85.0 10.0 -70.0 -20.0 -40.0 0.0 -10.0 70.0 20.0 40.0 0.0 0.0))
+
+(setq *hello-pose-list* (list *reset-pose* *hello-pose1* *hello-pose2* *reset-pose*))
+(setq *hello-time-list* (list 2000 3000 4000 5000))
+
+(send *ri* :angle-vector-sequence *hello-pose-list* *hello-time-list*)
+
+</code></pre></div>
+<h2 id="default-poses">Default poses</h2>
+
+<p>They are defined in <code>pepper.yaml</code>.</p>
+
+<p><code>:bowing-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/bowing-pose.png" alt=""></p>
+
+<p><code>:greeting-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/greeting-pose.png" alt=""></p>
+
+<p><code>:look-foot</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/look-foot.png" alt=""></p>
+
+<p><code>:nodding-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/nodding-pose.png" alt=""></p>
+
+<p><code>:ok-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/ok-pose.png" alt=""></p>
+
+<p><code>:pointing-left-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/pointing-left-pose.png" alt=""></p>
+
+<p><code>:pointing-right-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/pointing-right-pose.png" alt=""></p>
+
+<p><code>:raise-left-hand-high</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/raise-left-hand-high.png" alt=""></p>
+
+<p><code>:raise-left-hand-low</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/raise-left-hand-low.png" alt=""></p>
+
+<p><code>:raise-right-hand-high</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/raise-right-hand-high.png" alt=""></p>
+
+<p><code>:raise-right-hand-low</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/raise-right-hand-low.png" alt=""></p>
+
+<p><code>:reset-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/reset-pose.png" alt=""></p>
+
+<p><code>:show-bottom-camera</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/show-bottom-camera.png" alt=""></p>
+
+<p><code>:show-head</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/show-head.png" alt=""></p>
+
+<p><code>:show-top-camera</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/show-top-camera.png" alt=""></p>
+
+<p><code>:spread-hands-smally</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/spread-hands-smally.png" alt=""></p>
+
+<p><code>:spread-hands-widely</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/spread-hands-widely.png" alt=""></p>
+
+<p><code>:touch-speakers</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/touch-speakers.png" alt=""></p>
+
+<p><code>:watching-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/watching-pose.png" alt=""></p>
+
+<p><code>:wondering-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/wondering-pose.png" alt=""></p>
 </div>
               </div>
             </div>
@@ -941,6 +1044,26 @@ ex:</p>
                           </a>
                         </td>
                         <td><a href="/p/rostest#indigo">rostest</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#indigo">catkin</a></td>
                       </tr>
                     
                   
@@ -1500,7 +1623,7 @@ roseus_remote
     
     
     
-    <a href="#hydro-deps" data-toggle="tab"><span class="label label-primary">4</span> Dependencies</a>
+    <a href="#hydro-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1579,7 +1702,7 @@ roseus_remote
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-12
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-23
         </span>
       </td>
     </tr>
@@ -1722,8 +1845,9 @@ catkin build
 </code></pre></div>
 <h2 id="joints-of-pepper">Joints of Pepper</h2>
 
-<p>Here is a list of joints when accessing Pepper.
-ex:</p>
+<p>Here is a list of joints when accessing Pepper.</p>
+
+<p>ex:  </p>
 <div class="highlight"><pre><code class="language-" data-lang="">(send *pepper* :reset-pose)
 =&gt; #f(2.0 -2.0 -5.0 85.0 10.0 -70.0 -20.0 -40.0 85.0 -10.0 70.0 20.0 40.0 0.0 0.0)
        0    1    2   3    4     5     6     7    8     9    10   11   12   13  14
@@ -1746,6 +1870,105 @@ ex:</p>
 14: :head :neck-p
 
 </code></pre></div>
+<h3 id="how-to-send-angle-vector">How to send angle vector</h3>
+<div class="highlight"><pre><code class="language-" data-lang="">(send *pepper* :head :neck-y :joint-angle -10)
+(send *ri* :angle-vector (send *pepper* :angle-vector)
+
+</code></pre></div>
+<h3 id="how-to-send-sequences-of-angle-vector">How to send sequences of angle vector</h3>
+<div class="highlight"><pre><code class="language-" data-lang="">(setq *reset-pose* #f(2.0 -2.0 -5.0 85.0 10.0 -70.0 -20.0 -40.0 85.0 -10.0 70.0 20.0 40.0 0.0 0.0))
+(setq *hello-pose1* #f(2.0 -2.0 -5.0 85.0 10.0 30.0 -0.5 30.0 -20.0 -10.0 70.0 20.0 40.0 30.0 0.0))
+(setq *hello-pose2* #f(2.0 -2.0 -5.0 85.0 10.0 -70.0 -20.0 -40.0 0.0 -10.0 70.0 20.0 40.0 0.0 0.0))
+
+(setq *hello-pose-list* (list *reset-pose* *hello-pose1* *hello-pose2* *reset-pose*))
+(setq *hello-time-list* (list 2000 3000 4000 5000))
+
+(send *ri* :angle-vector-sequence *hello-pose-list* *hello-time-list*)
+
+</code></pre></div>
+<h2 id="default-poses">Default poses</h2>
+
+<p>They are defined in <code>pepper.yaml</code>.</p>
+
+<p><code>:bowing-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/bowing-pose.png" alt=""></p>
+
+<p><code>:greeting-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/greeting-pose.png" alt=""></p>
+
+<p><code>:look-foot</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/look-foot.png" alt=""></p>
+
+<p><code>:nodding-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/nodding-pose.png" alt=""></p>
+
+<p><code>:ok-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/ok-pose.png" alt=""></p>
+
+<p><code>:pointing-left-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/pointing-left-pose.png" alt=""></p>
+
+<p><code>:pointing-right-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/pointing-right-pose.png" alt=""></p>
+
+<p><code>:raise-left-hand-high</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/raise-left-hand-high.png" alt=""></p>
+
+<p><code>:raise-left-hand-low</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/raise-left-hand-low.png" alt=""></p>
+
+<p><code>:raise-right-hand-high</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/raise-right-hand-high.png" alt=""></p>
+
+<p><code>:raise-right-hand-low</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/raise-right-hand-low.png" alt=""></p>
+
+<p><code>:reset-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/reset-pose.png" alt=""></p>
+
+<p><code>:show-bottom-camera</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/show-bottom-camera.png" alt=""></p>
+
+<p><code>:show-head</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/show-head.png" alt=""></p>
+
+<p><code>:show-top-camera</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/show-top-camera.png" alt=""></p>
+
+<p><code>:spread-hands-smally</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/spread-hands-smally.png" alt=""></p>
+
+<p><code>:spread-hands-widely</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/spread-hands-widely.png" alt=""></p>
+
+<p><code>:touch-speakers</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/touch-speakers.png" alt=""></p>
+
+<p><code>:watching-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/watching-pose.png" alt=""></p>
+
+<p><code>:wondering-pose</code></p>
+
+<p><img src="https://raw.githubusercontent.com/jsk-ros-pkg/jsk_robot/master/jsk_naoqi_robot/peppereus/doc/img/wondering-pose.png" alt=""></p>
 </div>
               </div>
             </div>
@@ -1864,6 +2087,26 @@ ex:</p>
                           </a>
                         </td>
                         <td><a href="/p/rostest#hydro">rostest</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#hydro-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#hydro">catkin</a></td>
                       </tr>
                     
                   
@@ -2138,7 +2381,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

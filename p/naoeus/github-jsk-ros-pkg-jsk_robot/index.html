@@ -10,9 +10,12 @@
     <meta name="description" content="a community-maintained index of robotics software
 ">
 
+    
     <link rel="canonical" href="https://ros-infrastructure.github.io/index.ros.org//p/naoeus/github-jsk-ros-pkg-jsk_robot/">
+    
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sphinx.css">
     
 
     <script type="text/javascript" src=/js/jquery.js></script>
@@ -580,7 +583,7 @@ roseus_remote
     
     
     
-    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">4</span> Dependencies</a>
+    <a href="#indigo-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -659,7 +662,7 @@ roseus_remote
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-12
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-23
         </span>
       </td>
     </tr>
@@ -740,6 +743,10 @@ roseus_remote
 catkin build
 
 </code></pre></div>
+<h2 id="how-to-start-jsk_nao_startup">How to start jsk_nao_startup</h2>
+<div class="highlight"><pre><code class="language-" data-lang="">roslaunch jsk_nao_startup jsk_nao_startup.launch network_interface:=enp0s25
+
+</code></pre></div>
 <h2 id="control-nao-via-roseus">Control NAO via roseus</h2>
 <div class="highlight"><pre><code class="language-" data-lang="">(load "package://naoeus/nao-interface.l") ;; load modules
 (setq *nao* (nao))          ;; creat a robot model
@@ -760,12 +767,14 @@ catkin build
 </li>
 <li>Please refer to <a href="https://github.com/jsk-ros-pkg/jsk_robot/blob/master/jsk_naoqi_robot/naoeus/README.md#control-nao-via-roseus">Control NAO via roseus</a>.<br>
 </li>
-<li>Please try methods, you can refer to the explanations below how to try them. If there is a sign of <code>kochigami-develop</code>, please follow (Interface when controlling NAO and Pepper via roseus)[../README.md#interface-when-controlling-nao-and-pepper-via-roseus]. </li>
+<li>Please try methods, you can refer to the explanations below how to try them. If there is a sign of <code>kochigami-develop</code>, please follow <a href="https://github.com/jsk-ros-pkg/jsk_robot/tree/master/jsk_naoqi_robot/naoeus/../README.md#interface-when-controlling-nao-and-pepper-via-roseus">Interface when controlling NAO and Pepper via roseus</a>. </li>
 </ol>
 
 <h2 id="joints-of-nao">Joints of NAO</h2>
 
-<p>Here is a list of joints when accessing NAO. ex:</p>
+<p>Here is a list of joints when accessing NAO.</p>
+
+<p>ex:</p>
 <div class="highlight"><pre><code class="language-" data-lang="">(send *nao* :reset-pose)
 =&gt; #f(110.0 10.0 -90.0 -40.0 0.0 110.0 -10.0 90.0 40.0 0.0 0.0 0.0 -30.0 60.0 -30.0 0.0 0.0 0.0 -30.0 60.0 -30.0 0.0 0.0 0.0)
        0     1     2     3    4   5      6    7    8    9  10   11   12   13     14  15  16  17   18   19    20   21  22  23
@@ -915,6 +924,26 @@ catkin build
                           </a>
                         </td>
                         <td><a href="/p/rostest#indigo">rostest</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#indigo-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#indigo">catkin</a></td>
                       </tr>
                     
                   
@@ -1580,7 +1609,7 @@ roseus_remote
     
     
     
-    <a href="#hydro-deps" data-toggle="tab"><span class="label label-primary">4</span> Dependencies</a>
+    <a href="#hydro-deps" data-toggle="tab"><span class="label label-primary">5</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -1659,7 +1688,7 @@ roseus_remote
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-12
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-23
         </span>
       </td>
     </tr>
@@ -1740,6 +1769,10 @@ roseus_remote
 catkin build
 
 </code></pre></div>
+<h2 id="how-to-start-jsk_nao_startup">How to start jsk_nao_startup</h2>
+<div class="highlight"><pre><code class="language-" data-lang="">roslaunch jsk_nao_startup jsk_nao_startup.launch network_interface:=enp0s25
+
+</code></pre></div>
 <h2 id="control-nao-via-roseus">Control NAO via roseus</h2>
 <div class="highlight"><pre><code class="language-" data-lang="">(load "package://naoeus/nao-interface.l") ;; load modules
 (setq *nao* (nao))          ;; creat a robot model
@@ -1760,12 +1793,14 @@ catkin build
 </li>
 <li>Please refer to <a href="https://github.com/jsk-ros-pkg/jsk_robot/blob/master/jsk_naoqi_robot/naoeus/README.md#control-nao-via-roseus">Control NAO via roseus</a>.<br>
 </li>
-<li>Please try methods, you can refer to the explanations below how to try them. If there is a sign of <code>kochigami-develop</code>, please follow (Interface when controlling NAO and Pepper via roseus)[../README.md#interface-when-controlling-nao-and-pepper-via-roseus]. </li>
+<li>Please try methods, you can refer to the explanations below how to try them. If there is a sign of <code>kochigami-develop</code>, please follow <a href="https://github.com/jsk-ros-pkg/jsk_robot/tree/master/jsk_naoqi_robot/naoeus/../README.md#interface-when-controlling-nao-and-pepper-via-roseus">Interface when controlling NAO and Pepper via roseus</a>. </li>
 </ol>
 
 <h2 id="joints-of-nao">Joints of NAO</h2>
 
-<p>Here is a list of joints when accessing NAO. ex:</p>
+<p>Here is a list of joints when accessing NAO.</p>
+
+<p>ex:</p>
 <div class="highlight"><pre><code class="language-" data-lang="">(send *nao* :reset-pose)
 =&gt; #f(110.0 10.0 -90.0 -40.0 0.0 110.0 -10.0 90.0 40.0 0.0 0.0 0.0 -30.0 60.0 -30.0 0.0 0.0 0.0 -30.0 60.0 -30.0 0.0 0.0 0.0)
        0     1     2     3    4   5      6    7    8    9  10   11   12   13     14  15  16  17   18   19    20   21  22  23
@@ -1915,6 +1950,26 @@ catkin build
                           </a>
                         </td>
                         <td><a href="/p/rostest#hydro">rostest</a></td>
+                      </tr>
+                    
+                  
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/catkin#hydro-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/catkin" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/catkin#hydro">catkin</a></td>
                       </tr>
                     
                   
@@ -2295,7 +2350,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-01-24</em>
+          <em>generated on 2019-05-23</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">
