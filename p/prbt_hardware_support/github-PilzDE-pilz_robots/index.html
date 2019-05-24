@@ -403,7 +403,7 @@ prbt_support
 
 <div class="list-group list-group-sm list-group-horizontal list-group-justified">
   <a class="list-group-item text-center" target="_blank" href="http://docs.ros.org/melodic/api/prbt_hardware_support/html/" ><span style="margin-right: 5px;" class="glyphicon glyphicon-file"></span><br> API Docs</a>
-  <a class="list-group-item text-center" target="_blank" href="https://github.com/PilzDE/pilz_robots/tree/kinetic-devel/prbt_hardware_support"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span><br> Browse Code</a>
+  <a class="list-group-item text-center" target="_blank" href="https://github.com/PilzDE/pilz_robots/tree/melodic-devel/prbt_hardware_support"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span><br> Browse Code</a>
   <a class="list-group-item text-center inactive" target="_blank" href="http://wiki.ros.org/prbt_hardware_support?distro=melodic"><span style="margin-right: 5px;" class="glyphicon glyphicon-info-sign"></span><br> Wiki</a>
   <a class="list-group-item text-center inactive" target="_blank" href="http://http404error.github.io/roseco/graph.html?id=ros.json&focus=prbt_hardware_support&height=1&depth=2&tred=standard&metagroup=false&colorby=Health&direction=LR" ><span style="margin-right: 5px;" class="glyphicon glyphicon-tree-deciduous"></span><br></a>
   
@@ -424,7 +424,7 @@ prbt_support
     
     
     
-    <a href="#melodic-assets" data-toggle="tab"><span class="label label-primary">3</span> Assets</a>
+    <a href="#melodic-assets" data-toggle="tab"><span class="label label-primary">8</span> Assets</a>
   </li>
   <li class="better-tabs">
     
@@ -462,7 +462,7 @@ prbt_support
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.4.8</td>
+                <td>0.5.3</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -504,13 +504,13 @@ prbt_support
     </tr>
     <tr>
       <td class="text-right"><b>VCS Version</b></td>
-      <td><span class="label label-default">kinetic-devel</span></td>
+      <td><span class="label label-default">melodic-devel</span></td>
     </tr>
     <tr>
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-24
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-24
         </span>
       </td>
     </tr>
@@ -591,12 +591,12 @@ prbt_support
         <div class="row">
           <div class="col-xs-12">
             <div class="panel panel-default">
-              <div class="panel-heading"><span class="glyphicon glyphicon-file"></span><a href="https://github.com/PilzDE/pilz_robots/tree/kinetic-devel/prbt_hardware_support/README.md" title="Open in git repository">prbt_hardware_support/README.md</a></div>
+              <div class="panel-heading"><span class="glyphicon glyphicon-file"></span><a href="https://github.com/PilzDE/pilz_robots/tree/melodic-devel/prbt_hardware_support/README.md" title="Open in git repository">prbt_hardware_support/README.md</a></div>
               <div class="panel-body">
                     <div class="rendered-markdown">
 <h1 id="overview">Overview</h1>
 
-<p>The prbt_hardware_support package contains files needed to control hardware functions of the PRBT manipulator like STO for Stop1 functionality. The Pilz hardware PNOZmulti is supported using a Modbus connection.</p>
+<p>The prbt_hardware_support package contains files needed to control hardware functions of the PRBT manipulator like STO for Stop1 functionality. The Pilz hardware PNOZmulti and PSS4000 is supported using a Modbus connection.</p>
 
 <p>There is no need to call these launch files directly; they are included from <code>prbt_support/robot.launch</code>.</p>
 
@@ -604,7 +604,7 @@ prbt_support
 
 <p>The STO function (“Safe torque off”) of the robot arm is a safety function to immediately turn off torque of the drives. To allow a
 controlled stop, the safety controller is allowed to delay the STO signal by several milliseconds. This package opens a
-modbus connection to the safety controller (currently PNOZmulti). The safety controller sends an emergency
+modbus connection to the safety controller (PNOZmulti or PSS4000). The safety controller sends an emergency
 stop signal via Modbus immediately so that ros_control has a short time interval to stop the drives via a brake ramp.
 The TCP could for example brake on the current trajectory. After execution of the brake ramp, the drivers are halted. Even if ROS would fail, the safety controller turns off the motors via STO (that would be a Stop 0 then).</p>
 
@@ -627,12 +627,12 @@ The TCP could for example brake on the current trajectory. After execution of th
 <td>ROS system is shutdown which leads to an abrupt stop of the robot.</td>
 </tr>
 <tr>
-<td>Connection loss between PNOZmulti &amp; Modbus client</td>
+<td>Connection loss between PNOZmulti/PSS4000 &amp; Modbus client</td>
 <td>Stop 1 is triggered</td>
 </tr>
 <tr>
 <td>System overload (messages don't arrive in time)</td>
-<td>In case a Stop 1 message does not arrive in time, PNOZmulti will automatically perform a hard stop. In case a Stop 1-release message does not get through, brakes will remain closed.</td>
+<td>In case a Stop 1 message does not arrive in time, the safety controller will automatically perform a hard stop. In case a Stop 1-release message does not get through, brakes will remain closed.</td>
 </tr>
 <tr>
 <td>STO Modbus adapter cannot connect to stop services</td>
@@ -645,15 +645,15 @@ The TCP could for example brake on the current trajectory. After execution of th
 </tbody>
 </table>
 
-<h1 id="communcation-structure">Communcation Structure</h1>
+<h1 id="architecture">Architecture</h1>
 
-<p><img src="https://raw.githubusercontent.com/PilzDE/pilz_robots/kinetic-devel/prbt_hardware_support/doc/diag_comp_stop1_architecture.png" alt="Component diagram"></p>
+<p><img src="https://raw.githubusercontent.com/PilzDE/pilz_robots/melodic-devel/prbt_hardware_support/doc/architecture_overview.png" alt="Component diagram"></p>
 
 <h1 id="ros-api">ROS API</h1>
 
 <h2 id="modbusclient">ModbusClient</h2>
 
-<p>A Modbus client (for usage with the PNOZmulti) can be started with <code>roslaunch prbt_hardware_support modbus_read_client.launch</code>.</p>
+<p>A Modbus client (for usage with the PNOZmulti or PSS4000) can be started with <code>roslaunch prbt_hardware_support modbus_read_client.launch</code>.</p>
 
 <h3 id="published-topics">Published Topics</h3>
 
@@ -662,6 +662,12 @@ The TCP could for example brake on the current trajectory. After execution of th
 
 <ul>
 <li>Holds information about the modbus holding register. Timestamp is only updated if the register content changed.</li>
+</ul>
+</li>
+<li>~/prbt/brake_test_required (std_msgs/Bool)
+
+<ul>
+<li>True, if a brake test is required, false otherwise.</li>
 </ul>
 </li>
 </ul>
@@ -675,15 +681,32 @@ The TCP could for example brake on the current trajectory. After execution of th
 <li>num_registers_to_read</li>
 <li>modbus_connection_retries (default: 10)</li>
 <li>modbus_connection_retry_timeout - timeout between retries (default: 1s)</li>
+<li>modbus_response_timeout (default: 20ms)</li>
+<li>modbus_topic_name (default: "/pilz_modbus_node/modbus_read")</li>
 </ul>
+
+<p><strong>Please note:</strong>
+- The parameters <code>modbus_response_timeout</code> and <code>modbus_topic_name</code> are
+important for the Safe stop 1 functionality and must NOT be given, if the
+<code>modbus_read_node</code> is used as part of the Safe stop 1 functionality.
+If the parameters are not given the default values for these parameters are used.</p>
 
 <h2 id="stomodbusadapternode">StoModbusAdapterNode</h2>
 
-<p>The <code>PilzStoModbusAdapterNode</code> is noticed via the topic <code>/modbus_read</code> if the STO is true or false and reacts as follows calling the corresponding services of the controllers and drivers:
+<p>The <code>PilzStoModbusAdapterNode</code> is noticed via the topic <code>/pilz_modbus_node/modbus_read</code> if the STO is true or false and reacts as follows calling the corresponding services of the controllers and drivers:
 - <strong>STO true:</strong>
 enable drives, unhold controllers
 - <strong>STO false:</strong>
 hold controllers, disable drives</p>
+
+<h2 id="modbusbraketestannouncernode">ModbusBrakeTestAnnouncerNode</h2>
+
+<p>The <code>ModbusBrakeTestAnnouncerNode</code> is noticed via the topic <code>/pilz_modbus_node/modbus_read</code> if the PSS4000 requests a brake test or if a brake test request is no longer prevailing. As a result, the requirement status is published on <code>/prbt/brake_test_required</code>.</p>
+
+<h2 id="braketestexecutornode">BraketestExecutorNode</h2>
+
+<p>The <code>BraketestExecutorNode</code> offers the <code>/execute_braketest</code> service which, in interaction with the <code>CanOpenBraketestAdapter</code>,
+executes a braketest on each drive of the manipulator.</p>
 </div>
               </div>
             </div>
@@ -1060,7 +1083,35 @@ hold controllers, disable drives</p>
         
           <ul>
             
-              <li><a href="https://github.com/PilzDE/pilz_robots/tree/kinetic-devel/prbt_hardware_support/launch/sto_modbus_adapter_node.launch" target="_blank">launch/sto_modbus_adapter_node.launch</a>
+              <li><a href="https://github.com/PilzDE/pilz_robots/tree/melodic-devel/prbt_hardware_support/launch/brake_test_executor_node.launch" target="_blank">launch/brake_test_executor_node.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+Copyright (c) 2019 Pilz GmbH & Co. KG
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/PilzDE/pilz_robots/tree/melodic-devel/prbt_hardware_support/launch/sto_modbus_adapter_node.launch" target="_blank">launch/sto_modbus_adapter_node.launch</a>
                 <ul class="list-unstyled">
                   
                     <li><em>
@@ -1092,7 +1143,67 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 </ul>
               </li>
             
-              <li><a href="https://github.com/PilzDE/pilz_robots/tree/kinetic-devel/prbt_hardware_support/launch/modbus_read_client.launch" target="_blank">launch/modbus_read_client.launch</a>
+              <li><a href="https://github.com/PilzDE/pilz_robots/tree/melodic-devel/prbt_hardware_support/launch/modbus_brake_test_announcer_node.launch" target="_blank">launch/modbus_brake_test_announcer_node.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+Copyright (c) 2018 Pilz GmbH & Co. KG
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>api_spec_file</strong> <em>&#91;default: $(find prbt_hardware_support)/config/modbus_api_spec_pss4000.yaml&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/PilzDE/pilz_robots/tree/melodic-devel/prbt_hardware_support/launch/canopen_braketest_adapter_node.launch" target="_blank">launch/canopen_braketest_adapter_node.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+Copyright (c) 2019 Pilz GmbH & Co. KG
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/PilzDE/pilz_robots/tree/melodic-devel/prbt_hardware_support/launch/modbus_read_client.launch" target="_blank">launch/modbus_read_client.launch</a>
                 <ul class="list-unstyled">
                   
                     <li><em>
@@ -1128,7 +1239,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                         
                       
                         
-                          <li><strong>num_registers_to_read</strong> <em>&#91;default: 2&#93; </em></li>
+                          <li><strong>num_registers_to_read</strong> <em>&#91;default: 3&#93; </em></li>
                         
                       
                     </ul>
@@ -1149,7 +1260,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         
           <ul>
             
-              <li><a href="https://github.com/PilzDE/pilz_robots/tree/kinetic-devel/prbt_hardware_support/msg/ModbusMsgInStamped.msg" target="_blank">msg/ModbusMsgInStamped.msg</a></li>
+              <li><a href="https://github.com/PilzDE/pilz_robots/tree/melodic-devel/prbt_hardware_support/msg/BrakeTestErrorCodes.msg" target="_blank">msg/BrakeTestErrorCodes.msg</a></li>
+            
+              <li><a href="https://github.com/PilzDE/pilz_robots/tree/melodic-devel/prbt_hardware_support/msg/ModbusMsgInStamped.msg" target="_blank">msg/ModbusMsgInStamped.msg</a></li>
             
           </ul>
         
@@ -1162,7 +1275,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
       </div>
       <div class="panel-body">
         
-          <em>No service files found</em>
+          <ul>
+            
+              <li><a href="https://github.com/PilzDE/pilz_robots/tree/melodic-devel/prbt_hardware_support/srv/BrakeTest.srv" target="_blank">srv/BrakeTest.srv</a></li>
+            
+          </ul>
         
       </div>
     </div>
@@ -1279,7 +1396,7 @@ jQuery(function() {
 
 <div class="list-group list-group-sm ">
   <a class="list-group-item" target="_blank" href="http://docs.ros.org/melodic/api/prbt_hardware_support/html/" ><span style="margin-right: 5px;" class="glyphicon glyphicon-file"></span> API Docs</a>
-  <a class="list-group-item" target="_blank" href="https://github.com/PilzDE/pilz_robots/tree/kinetic-devel/prbt_hardware_support"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span> Browse Code</a>
+  <a class="list-group-item" target="_blank" href="https://github.com/PilzDE/pilz_robots/tree/melodic-devel/prbt_hardware_support"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span> Browse Code</a>
   <a class="list-group-item inactive" target="_blank" href="http://wiki.ros.org/prbt_hardware_support?distro=melodic"><span style="margin-right: 5px;" class="glyphicon glyphicon-info-sign"></span> Wiki</a>
   <a class="list-group-item inactive" target="_blank" href="http://http404error.github.io/roseco/graph.html?id=ros.json&focus=prbt_hardware_support&height=1&depth=2&tred=standard&metagroup=false&colorby=Health&direction=LR" ><span style="margin-right: 5px;" class="glyphicon glyphicon-tree-deciduous"></span></a>
   
@@ -1459,7 +1576,7 @@ prbt_support
     
     
     
-    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">3</span> Assets</a>
+    <a href="#kinetic-assets" data-toggle="tab"><span class="label label-primary">8</span> Assets</a>
   </li>
   <li class="better-tabs">
     
@@ -1545,7 +1662,7 @@ prbt_support
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-24
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-24
         </span>
       </td>
     </tr>
@@ -1631,7 +1748,7 @@ prbt_support
                     <div class="rendered-markdown">
 <h1 id="overview">Overview</h1>
 
-<p>The prbt_hardware_support package contains files needed to control hardware functions of the PRBT manipulator like STO for Stop1 functionality. The Pilz hardware PNOZmulti is supported using a Modbus connection.</p>
+<p>The prbt_hardware_support package contains files needed to control hardware functions of the PRBT manipulator like STO for Stop1 functionality. The Pilz hardware PNOZmulti and PSS4000 is supported using a Modbus connection.</p>
 
 <p>There is no need to call these launch files directly; they are included from <code>prbt_support/robot.launch</code>.</p>
 
@@ -1639,7 +1756,7 @@ prbt_support
 
 <p>The STO function (“Safe torque off”) of the robot arm is a safety function to immediately turn off torque of the drives. To allow a
 controlled stop, the safety controller is allowed to delay the STO signal by several milliseconds. This package opens a
-modbus connection to the safety controller (currently PNOZmulti). The safety controller sends an emergency
+modbus connection to the safety controller (PNOZmulti or PSS4000). The safety controller sends an emergency
 stop signal via Modbus immediately so that ros_control has a short time interval to stop the drives via a brake ramp.
 The TCP could for example brake on the current trajectory. After execution of the brake ramp, the drivers are halted. Even if ROS would fail, the safety controller turns off the motors via STO (that would be a Stop 0 then).</p>
 
@@ -1662,12 +1779,12 @@ The TCP could for example brake on the current trajectory. After execution of th
 <td>ROS system is shutdown which leads to an abrupt stop of the robot.</td>
 </tr>
 <tr>
-<td>Connection loss between PNOZmulti &amp; Modbus client</td>
+<td>Connection loss between PNOZmulti/PSS4000 &amp; Modbus client</td>
 <td>Stop 1 is triggered</td>
 </tr>
 <tr>
 <td>System overload (messages don't arrive in time)</td>
-<td>In case a Stop 1 message does not arrive in time, PNOZmulti will automatically perform a hard stop. In case a Stop 1-release message does not get through, brakes will remain closed.</td>
+<td>In case a Stop 1 message does not arrive in time, the safety controller will automatically perform a hard stop. In case a Stop 1-release message does not get through, brakes will remain closed.</td>
 </tr>
 <tr>
 <td>STO Modbus adapter cannot connect to stop services</td>
@@ -1680,15 +1797,15 @@ The TCP could for example brake on the current trajectory. After execution of th
 </tbody>
 </table>
 
-<h1 id="communcation-structure">Communcation Structure</h1>
+<h1 id="architecture">Architecture</h1>
 
-<p><img src="https://raw.githubusercontent.com/PilzDE/pilz_robots/kinetic-devel/prbt_hardware_support/doc/diag_comp_stop1_architecture.png" alt="Component diagram"></p>
+<p><img src="https://raw.githubusercontent.com/PilzDE/pilz_robots/kinetic-devel/prbt_hardware_support/doc/architecture_overview.png" alt="Component diagram"></p>
 
 <h1 id="ros-api">ROS API</h1>
 
 <h2 id="modbusclient">ModbusClient</h2>
 
-<p>A Modbus client (for usage with the PNOZmulti) can be started with <code>roslaunch prbt_hardware_support modbus_read_client.launch</code>.</p>
+<p>A Modbus client (for usage with the PNOZmulti or PSS4000) can be started with <code>roslaunch prbt_hardware_support modbus_read_client.launch</code>.</p>
 
 <h3 id="published-topics">Published Topics</h3>
 
@@ -1697,6 +1814,12 @@ The TCP could for example brake on the current trajectory. After execution of th
 
 <ul>
 <li>Holds information about the modbus holding register. Timestamp is only updated if the register content changed.</li>
+</ul>
+</li>
+<li>~/prbt/brake_test_required (std_msgs/Bool)
+
+<ul>
+<li>True, if a brake test is required, false otherwise.</li>
 </ul>
 </li>
 </ul>
@@ -1710,15 +1833,32 @@ The TCP could for example brake on the current trajectory. After execution of th
 <li>num_registers_to_read</li>
 <li>modbus_connection_retries (default: 10)</li>
 <li>modbus_connection_retry_timeout - timeout between retries (default: 1s)</li>
+<li>modbus_response_timeout (default: 20ms)</li>
+<li>modbus_topic_name (default: "/pilz_modbus_node/modbus_read")</li>
 </ul>
+
+<p><strong>Please note:</strong>
+- The parameters <code>modbus_response_timeout</code> and <code>modbus_topic_name</code> are
+important for the Safe stop 1 functionality and must NOT be given, if the
+<code>modbus_read_node</code> is used as part of the Safe stop 1 functionality.
+If the parameters are not given the default values for these parameters are used.</p>
 
 <h2 id="stomodbusadapternode">StoModbusAdapterNode</h2>
 
-<p>The <code>PilzStoModbusAdapterNode</code> is noticed via the topic <code>/modbus_read</code> if the STO is true or false and reacts as follows calling the corresponding services of the controllers and drivers:
+<p>The <code>PilzStoModbusAdapterNode</code> is noticed via the topic <code>/pilz_modbus_node/modbus_read</code> if the STO is true or false and reacts as follows calling the corresponding services of the controllers and drivers:
 - <strong>STO true:</strong>
 enable drives, unhold controllers
 - <strong>STO false:</strong>
 hold controllers, disable drives</p>
+
+<h2 id="modbusbraketestannouncernode">ModbusBrakeTestAnnouncerNode</h2>
+
+<p>The <code>ModbusBrakeTestAnnouncerNode</code> is noticed via the topic <code>/pilz_modbus_node/modbus_read</code> if the PSS4000 requests a brake test or if a brake test request is no longer prevailing. As a result, the requirement status is published on <code>/prbt/brake_test_required</code>.</p>
+
+<h2 id="braketestexecutornode">BraketestExecutorNode</h2>
+
+<p>The <code>BraketestExecutorNode</code> offers the <code>/execute_braketest</code> service which, in interaction with the <code>CanOpenBraketestAdapter</code>,
+executes a braketest on each drive of the manipulator.</p>
 </div>
               </div>
             </div>
@@ -2095,6 +2235,34 @@ hold controllers, disable drives</p>
         
           <ul>
             
+              <li><a href="https://github.com/PilzDE/pilz_robots/tree/kinetic-devel/prbt_hardware_support/launch/brake_test_executor_node.launch" target="_blank">launch/brake_test_executor_node.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+Copyright (c) 2019 Pilz GmbH & Co. KG
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
               <li><a href="https://github.com/PilzDE/pilz_robots/tree/kinetic-devel/prbt_hardware_support/launch/sto_modbus_adapter_node.launch" target="_blank">launch/sto_modbus_adapter_node.launch</a>
                 <ul class="list-unstyled">
                   
@@ -2121,6 +2289,66 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                         
                           <li><strong>index_of_first_register_to_read</strong> <em>&#91;default: 512&#93; </em></li>
                         
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/PilzDE/pilz_robots/tree/kinetic-devel/prbt_hardware_support/launch/modbus_brake_test_announcer_node.launch" target="_blank">launch/modbus_brake_test_announcer_node.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+Copyright (c) 2018 Pilz GmbH & Co. KG
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+</em></li>
+                  
+                  <li>
+                    <ul>
+                      
+                        
+                          <li><strong>api_spec_file</strong> <em>&#91;default: $(find prbt_hardware_support)/config/modbus_api_spec_pss4000.yaml&#93; </em></li>
+                        
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <li><a href="https://github.com/PilzDE/pilz_robots/tree/kinetic-devel/prbt_hardware_support/launch/canopen_braketest_adapter_node.launch" target="_blank">launch/canopen_braketest_adapter_node.launch</a>
+                <ul class="list-unstyled">
+                  
+                    <li><em>
+Copyright (c) 2019 Pilz GmbH & Co. KG
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+</em></li>
+                  
+                  <li>
+                    <ul>
                       
                     </ul>
                   </li>
@@ -2163,7 +2391,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                         
                       
                         
-                          <li><strong>num_registers_to_read</strong> <em>&#91;default: 2&#93; </em></li>
+                          <li><strong>num_registers_to_read</strong> <em>&#91;default: 3&#93; </em></li>
                         
                       
                     </ul>
@@ -2184,6 +2412,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         
           <ul>
             
+              <li><a href="https://github.com/PilzDE/pilz_robots/tree/kinetic-devel/prbt_hardware_support/msg/BrakeTestErrorCodes.msg" target="_blank">msg/BrakeTestErrorCodes.msg</a></li>
+            
               <li><a href="https://github.com/PilzDE/pilz_robots/tree/kinetic-devel/prbt_hardware_support/msg/ModbusMsgInStamped.msg" target="_blank">msg/ModbusMsgInStamped.msg</a></li>
             
           </ul>
@@ -2197,7 +2427,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
       </div>
       <div class="panel-body">
         
-          <em>No service files found</em>
+          <ul>
+            
+              <li><a href="https://github.com/PilzDE/pilz_robots/tree/kinetic-devel/prbt_hardware_support/srv/BrakeTest.srv" target="_blank">srv/BrakeTest.srv</a></li>
+            
+          </ul>
         
       </div>
     </div>
@@ -2384,7 +2618,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-05-23</em>
+          <em>generated on 2019-05-24</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

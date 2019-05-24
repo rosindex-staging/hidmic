@@ -833,7 +833,9 @@
                     
                     
                     
-                      <em>Not available</em>
+                      
+                        <code>python%{python3_pkgversion}-numpy</code>
+                      
                     
                   </div>
                 
@@ -1213,7 +1215,7 @@
     <div class="panel-heading"><h3 class="panel-title">Raw Rosdep Data</h3></div>
     <div class="panel-body">
       <pre>
-  {"debian"=>["python3-numpy"], "fedora"=>["python3-numpy"], "gentoo"=>["dev-python/numpy"], "ubuntu"=>["python3-numpy"]}
+  {"debian"=>["python3-numpy"], "fedora"=>["python3-numpy"], "gentoo"=>["dev-python/numpy"], "openembedded"=>["python3-numpy@openembedded-core"], "rhel"=>["python%{python3_pkgversion}-numpy"], "ubuntu"=>["python3-numpy"]}
       </pre>
     </div>
   </div>
@@ -1236,18 +1238,6 @@
               
               <a href="/p/rqt_plot#crystal" class="label label-primary pkg-label">
                 rqt_plot
-              </a>
-              
-              <a href="/p/ros2topic#crystal" class="label label-primary pkg-label">
-                ros2topic
-              </a>
-              
-              <a href="/p/rosidl_generator_py#crystal" class="label label-primary pkg-label">
-                rosidl_generator_py
-              </a>
-              
-              <a href="/p/rosidl_runtime_py#crystal" class="label label-primary pkg-label">
-                rosidl_runtime_py
               </a>
               
             </td>
@@ -1292,7 +1282,7 @@
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-05-23</em>
+          <em>generated on 2019-05-24</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

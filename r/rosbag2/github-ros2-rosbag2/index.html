@@ -328,13 +328,13 @@
     </tr>
     <tr>
       <td class="text-right"><b>VCS Version</b></td>
-      <td><span class="label label-default">master</span></td>
+      <td><span class="label label-default">crystal</span></td>
     </tr>
     <tr>
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-20
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-04-08
         </span>
       </td>
     </tr>
@@ -376,53 +376,63 @@
                 <tbody>
                 
                   <tr>
+                    <td><a href="/p/ros1_rosbag_storage_vendor/github-ros2-rosbag2">ros1_rosbag_storage_vendor</a></td>
+                    <td>0.0.7</td>
+                  </tr>
+                
+                  <tr>
                     <td><a href="/p/ros2bag/github-ros2-rosbag2">ros2bag</a></td>
-                    <td>0.1.2</td>
+                    <td>0.0.7</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/rosbag2/github-ros2-rosbag2">rosbag2</a></td>
-                    <td>0.1.2</td>
+                    <td>0.0.7</td>
+                  </tr>
+                
+                  <tr>
+                    <td><a href="/p/rosbag2_bag_v2_plugins/github-ros2-rosbag2">rosbag2_bag_v2_plugins</a></td>
+                    <td>0.0.7</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/rosbag2_converter_default_plugins/github-ros2-rosbag2">rosbag2_converter_default_plugins</a></td>
-                    <td>0.1.2</td>
+                    <td>0.0.7</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/rosbag2_storage/github-ros2-rosbag2">rosbag2_storage</a></td>
-                    <td>0.1.2</td>
+                    <td>0.0.7</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/rosbag2_storage_default_plugins/github-ros2-rosbag2">rosbag2_storage_default_plugins</a></td>
-                    <td>0.1.2</td>
+                    <td>0.0.7</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/rosbag2_test_common/github-ros2-rosbag2">rosbag2_test_common</a></td>
-                    <td>0.1.2</td>
+                    <td>0.0.7</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/rosbag2_tests/github-ros2-rosbag2">rosbag2_tests</a></td>
-                    <td>0.1.2</td>
+                    <td>0.0.7</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/rosbag2_transport/github-ros2-rosbag2">rosbag2_transport</a></td>
-                    <td>0.1.2</td>
+                    <td>0.0.7</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/shared_queues_vendor/github-ros2-rosbag2">shared_queues_vendor</a></td>
-                    <td>0.1.2</td>
+                    <td>0.0.7</td>
                   </tr>
                 
                   <tr>
                     <td><a href="/p/sqlite3_vendor/github-ros2-rosbag2">sqlite3_vendor</a></td>
-                    <td>0.1.2</td>
+                    <td>0.0.7</td>
                   </tr>
                 
                 </tbody>
@@ -437,6 +447,8 @@
             
               <div class="rendered-markdown">
 <h1 id="rosbag2">rosbag2</h1>
+
+<p>THIS IS WORK IN PROGRESS AND SHOULD BE USED WITH CARE</p>
 
 <p>Repository for implementing rosbag2 as described in its corresponding <a href="https://github.com/ros2/design/blob/f69fbbd11848e3dd6866b71a158a1902e31e92f1/articles/rosbags.md">design article</a></p>
 
@@ -542,7 +554,8 @@ rosbag2 specifically was designed to support multiple storage formats.
 This allows a flexible adaptation of various storage formats depending on individual use cases.
 As of now, this repository comes with two storage plugins.
 The first plugin, sqlite3 is chosen by default.
-If not specified otherwise, rosbag2 will store and replay all recorded data in an SQLite3 database.</p>
+If not specified otherwise, rosbag2 will store and replay all recorded data in an SQLite3 database.
+Secondly, rosbag2 provides support for legacy ROS 1 bag data. <strong>TODO(karsten1987) Add link when rosindex ran</strong>.</p>
 
 <p>In order to use a specified (non-default) storage format plugin, rosbag2 has a command line argument for it:</p>
 <div class="highlight"><pre><code class="language-" data-lang="">$ ros2 bag &lt;record&gt; | &lt;play&gt; | &lt;info&gt; -s &lt;sqlite3&gt; | &lt;rosbag2_v2&gt; | &lt;custom_plugin&gt;
@@ -665,7 +678,7 @@ This also allows to record data in a native format to optimize for speed, but to
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-05-23</em>
+          <em>generated on 2019-05-24</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

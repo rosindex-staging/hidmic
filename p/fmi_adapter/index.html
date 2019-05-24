@@ -343,7 +343,7 @@ fmi_adapter_examples
 
 <div class="list-group list-group-sm list-group-horizontal list-group-justified">
   <a class="list-group-item text-center" target="_blank" href="http://docs.ros2.org/crystal/api/fmi_adapter/" ><span style="margin-right: 5px;" class="glyphicon glyphicon-file"></span><br> API Docs</a>
-  <a class="list-group-item text-center" target="_blank" href="https://github.com/boschresearch/fmi_adapter_ros2/tree/master/fmi_adapter"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span><br> Browse Code</a>
+  <a class="list-group-item text-center" target="_blank" href="https://github.com/boschresearch/fmi_adapter_ros2/tree/crystal/fmi_adapter"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span><br> Browse Code</a>
   <a class="list-group-item text-center inactive" target="_blank" href="http://wiki.ros.org/fmi_adapter?distro=crystal"><span style="margin-right: 5px;" class="glyphicon glyphicon-info-sign"></span><br> Wiki</a>
   <a class="list-group-item text-center inactive" target="_blank" href="http://http404error.github.io/roseco/graph.html?id=ros.json&focus=fmi_adapter&height=1&depth=2&tred=standard&metagroup=false&colorby=Health&direction=LR" ><span style="margin-right: 5px;" class="glyphicon glyphicon-tree-deciduous"></span><br></a>
   
@@ -371,7 +371,7 @@ fmi_adapter_examples
     
     
     
-    <a href="#crystal-deps" data-toggle="tab"><span class="label label-primary">15</span> Dependencies</a>
+    <a href="#crystal-deps" data-toggle="tab"><span class="label label-primary">13</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -402,7 +402,7 @@ fmi_adapter_examples
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.1.1</td>
+                <td>0.1.4</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -444,13 +444,13 @@ fmi_adapter_examples
     </tr>
     <tr>
       <td class="text-right"><b>VCS Version</b></td>
-      <td><span class="label label-default">master</span></td>
+      <td><span class="label label-default">crystal</span></td>
     </tr>
     <tr>
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-01-23
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-23
         </span>
       </td>
     </tr>
@@ -523,10 +523,10 @@ fmi_adapter_examples
         <div class="row">
           <div class="col-xs-12">
             <div class="panel panel-default">
-              <div class="panel-heading"><span class="glyphicon glyphicon-file"></span><a href="https://github.com/boschresearch/fmi_adapter_ros2/tree/master/fmi_adapter/README.md" title="Open in git repository">fmi_adapter/README.md</a></div>
+              <div class="panel-heading"><span class="glyphicon glyphicon-file"></span><a href="https://github.com/boschresearch/fmi_adapter_ros2/tree/crystal/fmi_adapter/README.md" title="Open in git repository">fmi_adapter/README.md</a></div>
               <div class="panel-body">
                     <div class="rendered-markdown">
-<p>General information about this repository, including legal information, build instructions and known issues/limitations, are given in <a href="https://github.com/boschresearch/fmi_adapter_ros2/tree/master/fmi_adapter/../README.md">README.md</a> in the repository root.</p>
+<p>General information about this repository, including legal information, build instructions and known issues/limitations, are given in <a href="https://github.com/boschresearch/fmi_adapter_ros2/tree/crystal/fmi_adapter/../README.md">README.md</a> in the repository root.</p>
 
 <h1 id="the-fmi_adapter-package">The fmi_adapter package</h1>
 
@@ -538,9 +538,9 @@ fmi_adapter_examples
 
 <h2 id="fmi_adapter_node">fmi_adapter_node</h2>
 
-<p>fmi_adapter provides a ROS node <em>fmi_adapter_node</em> (class <a href="https://github.com/boschresearch/fmi_adapter_ros2/tree/master/fmi_adapter/include/fmi_adapter/FMIAdapterNode.hpp">FMIAdapterNode</a> derived from <a href="https://github.com/ros2/rclcpp/blob/master/rclcpp_lifecycle/include/rclcpp_lifecycle/lifecycle_node.hpp">LifecycleNode</a>), which takes an FMU and creates subscribers and publishers for the input and output variables of the FMU, respectively. Then, it runs the FMU's solver with a user-definable update period. This approach is illustrated in the following diagram.</p>
+<p>fmi_adapter provides a ROS node <em>fmi_adapter_node</em> (class <a href="https://github.com/boschresearch/fmi_adapter_ros2/tree/crystal/fmi_adapter/include/fmi_adapter/FMIAdapterNode.hpp">FMIAdapterNode</a> derived from <a href="https://github.com/ros2/rclcpp/blob/master/rclcpp_lifecycle/include/rclcpp_lifecycle/lifecycle_node.hpp">LifecycleNode</a>), which takes an FMU and creates subscribers and publishers for the input and output variables of the FMU, respectively. Then, it runs the FMU's solver with a user-definable update period. This approach is illustrated in the following diagram.</p>
 
-<p><img src="https://raw.githubusercontent.com/boschresearch/fmi_adapter_ros2/master/fmi_adapter/doc/high-level_architecture_with_fmi_adapter_node.png" alt="fmi_adapter in application node"></p>
+<p><img src="https://raw.githubusercontent.com/boschresearch/fmi_adapter_ros2/crystal/fmi_adapter/doc/high-level_architecture_with_fmi_adapter_node.png" alt="fmi_adapter in application node"></p>
 
 <p>The fmi_adapter_node also searches for counterparts for each FMU parameter and variable in the ROS node parameters and initializes the FMU correspondingly.</p>
 
@@ -548,13 +548,13 @@ fmi_adapter_examples
 <div class="highlight"><pre><code class="language-Bash" data-lang="Bash">ros2 launch fmi_adapter fmi_adapter_node.launch.py fmu_path:=[PathToTheFMUFile]
 
 </code></pre></div>
-<p>Please see the <a href="https://github.com/boschresearch/fmi_adapter_ros2/tree/master/fmi_adapter/../fmi_adapter_examples/README.md">README.md</a> of the <a href="https://github.com/boschresearch/fmi_adapter_ros2/tree/master/fmi_adapter/../fmi_adapter_examples/">fmi_adapter_examples package</a> for a step-by-step description how to use the fmi_adapter_node with a damped pendulum model and FMU.</p>
+<p>Please see the <a href="https://github.com/boschresearch/fmi_adapter_ros2/tree/crystal/fmi_adapter/../fmi_adapter_examples/README.md">README.md</a> of the <a href="https://github.com/boschresearch/fmi_adapter_ros2/tree/crystal/fmi_adapter/../fmi_adapter_examples/">fmi_adapter_examples package</a> for a step-by-step description how to use the fmi_adapter_node with a damped pendulum model and FMU.</p>
 
 <h2 id="fmi_adapter-library">fmi_adapter library</h2>
 
-<p>fmi_adapter provides a library with convenience functions based on common ROS types to load an FMU during runtime, to retrieve the input, output, and parameter names, to set timestamped input values, to run the FMU's numeric solver, and to query the resulting output. These functions are provided by the class <a href="https://github.com/boschresearch/fmi_adapter_ros2/tree/master/fmi_adapter/include/fmi_adapter/FMIAdapter.hpp">FMIAdapter</a>. Instances of this class may be integrated in application-specific ROS nodes or libraries as illustrated in the following architecture diagram.</p>
+<p>fmi_adapter provides a library with convenience functions based on common ROS types to load an FMU during runtime, to retrieve the input, output, and parameter names, to set timestamped input values, to run the FMU's numeric solver, and to query the resulting output. These functions are provided by the class <a href="https://github.com/boschresearch/fmi_adapter_ros2/tree/crystal/fmi_adapter/include/fmi_adapter/FMIAdapter.hpp">FMIAdapter</a>. Instances of this class may be integrated in application-specific ROS nodes or libraries as illustrated in the following architecture diagram.</p>
 
-<p><img src="https://raw.githubusercontent.com/boschresearch/fmi_adapter_ros2/master/fmi_adapter/doc/high-level_architecture_with_application_node.png" alt="fmi_adapter in application node"></p>
+<p><img src="https://raw.githubusercontent.com/boschresearch/fmi_adapter_ros2/crystal/fmi_adapter/doc/high-level_architecture_with_application_node.png" alt="fmi_adapter in application node"></p>
 
 <p>For parsing the XML description of an FMU and for running the FMU's solver, fmi_adapter uses the C library <a href="http://www.jmodelica.org/FMILibrary">FMI Library</a>. This library is downloaded, compiled and linked in the CMakeLists.txt of this package using cmake's <em>externalproject_add</em> command.</p>
 
@@ -598,7 +598,7 @@ auto adapter = std::make_shared&lt;fmi_adapter::FMIAdapter&gt;(get_logger(), fmu
 adapter-&gt;setInitialValue("angleX", 1.3);
 
 </code></pre></div>
-<p>The function <code>adapter-&gt;initializeFromROSParameters(nodeHandle)</code> may be used to initialize all parameters from the corresponding ROS parameters. Please note that all characters in the FMU parameter names that are not supported by ROS are replaced by an '_', cf. <code>FMIAdapter::rosifyName(name)</code>.</p>
+<p>The function <code>adapter-&gt;initializeFromROSParameters(get_node_parameters_interface())</code> may be used to initialize all parameters from the corresponding ROS parameters. Please note that all characters in the FMU parameter names that are not supported by ROS are replaced by an '_', cf. <code>FMIAdapter::rosifyName(name)</code>.</p>
 
 <p><strong>Step 6:</strong> As last setup step, exit the FMU's initialization mode and set the ROS time that refers to the FMU's internal timepoint 0.0.</p>
 <div class="highlight"><pre><code class="language-C++" data-lang="C++">adapter-&gt;exitInitializationMode(now());
@@ -702,66 +702,6 @@ adapter-&gt;setInitialValue("angleX", 1.3);
                           </a>
                         </td>
                         <td><a href="/p/rclcpp_lifecycle#crystal">rclcpp_lifecycle</a></td>
-                      </tr>
-                    
-                  
-                    
-                    
-                      <tr>
-                        <td class="text-center">
-                          
-                          
-                          
-                          <a href="/p/rcutils#crystal-deps" >
-                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
-                          </a>
-                        </td>
-                        <td class="text-center">
-                          <a href="/packages/rcutils" class="label label-default">
-                            1
-                          </a>
-                        </td>
-                        <td><a href="/p/rcutils#crystal">rcutils</a></td>
-                      </tr>
-                    
-                  
-                    
-                    
-                      <tr>
-                        <td class="text-center">
-                          
-                          
-                          
-                          <a href="/p/rmw#crystal-deps" >
-                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
-                          </a>
-                        </td>
-                        <td class="text-center">
-                          <a href="/packages/rmw" class="label label-default">
-                            1
-                          </a>
-                        </td>
-                        <td><a href="/p/rmw#crystal">rmw</a></td>
-                      </tr>
-                    
-                  
-                    
-                    
-                      <tr>
-                        <td class="text-center">
-                          
-                          
-                          
-                          <a href="/p/rmw_implementation_cmake#crystal-deps" >
-                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
-                          </a>
-                        </td>
-                        <td class="text-center">
-                          <a href="/packages/rmw_implementation_cmake" class="label label-default">
-                            1
-                          </a>
-                        </td>
-                        <td><a href="/p/rmw_implementation_cmake#crystal">rmw_implementation_cmake</a></td>
                       </tr>
                     
                   
@@ -965,6 +905,26 @@ adapter-&gt;setInitialValue("angleX", 1.3);
                       </tr>
                     
                   
+                    
+                    
+                      <tr>
+                        <td class="text-center">
+                          
+                          
+                          
+                          <a href="/p/rcutils#crystal-deps" >
+                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
+                          </a>
+                        </td>
+                        <td class="text-center">
+                          <a href="/packages/rcutils" class="label label-default">
+                            1
+                          </a>
+                        </td>
+                        <td><a href="/p/rcutils#crystal">rcutils</a></td>
+                      </tr>
+                    
+                  
                 </tbody>
               </table>
             
@@ -1164,7 +1124,7 @@ jQuery(function() {
 
 <div class="list-group list-group-sm ">
   <a class="list-group-item" target="_blank" href="http://docs.ros2.org/crystal/api/fmi_adapter/" ><span style="margin-right: 5px;" class="glyphicon glyphicon-file"></span> API Docs</a>
-  <a class="list-group-item" target="_blank" href="https://github.com/boschresearch/fmi_adapter_ros2/tree/master/fmi_adapter"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span> Browse Code</a>
+  <a class="list-group-item" target="_blank" href="https://github.com/boschresearch/fmi_adapter_ros2/tree/crystal/fmi_adapter"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span> Browse Code</a>
   <a class="list-group-item inactive" target="_blank" href="http://wiki.ros.org/fmi_adapter?distro=crystal"><span style="margin-right: 5px;" class="glyphicon glyphicon-info-sign"></span> Wiki</a>
   <a class="list-group-item inactive" target="_blank" href="http://http404error.github.io/roseco/graph.html?id=ros.json&focus=fmi_adapter&height=1&depth=2&tred=standard&metagroup=false&colorby=Health&direction=LR" ><span style="margin-right: 5px;" class="glyphicon glyphicon-tree-deciduous"></span></a>
   
@@ -1992,7 +1952,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-05-23</em>
+          <em>generated on 2019-05-24</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

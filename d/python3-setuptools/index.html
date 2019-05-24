@@ -833,7 +833,9 @@
                     
                     
                     
-                      <em>Not available</em>
+                      
+                        <code>python%{python3_pkgversion}-setuptools</code>
+                      
                     
                   </div>
                 
@@ -1213,7 +1215,7 @@
     <div class="panel-heading"><h3 class="panel-title">Raw Rosdep Data</h3></div>
     <div class="panel-body">
       <pre>
-  {"debian"=>["python3-setuptools"], "fedora"=>["python3-setuptools"], "gentoo"=>["dev-python/setuptools"], "ubuntu"=>["python3-setuptools"]}
+  {"debian"=>["python3-setuptools"], "fedora"=>["python3-setuptools"], "gentoo"=>["dev-python/setuptools"], "openembedded"=>["python3-setuptools@openembedded-core"], "rhel"=>["python%{python3_pkgversion}-setuptools"], "ubuntu"=>["python3-setuptools"]}
       </pre>
     </div>
   </div>
@@ -1232,6 +1234,10 @@
               
               <a href="/p/ament_package#crystal" class="label label-primary pkg-label">
                 ament_package
+              </a>
+              
+              <a href="/p/py_trees#crystal" class="label label-primary pkg-label">
+                py_trees
               </a>
               
             </td>
@@ -1306,7 +1312,7 @@
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-05-23</em>
+          <em>generated on 2019-05-24</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

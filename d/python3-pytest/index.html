@@ -835,7 +835,9 @@
                     
                     
                     
-                      <em>Not available</em>
+                      
+                        <code>python%{python3_pkgversion}-pytest</code>
+                      
                     
                   </div>
                 
@@ -1215,7 +1217,7 @@
     <div class="panel-heading"><h3 class="panel-title">Raw Rosdep Data</h3></div>
     <div class="panel-body">
       <pre>
-  {"arch"=>["python-pytest"], "debian"=>["python3-pytest"], "fedora"=>["python3-pytest"], "gentoo"=>["dev-python/pytest"], "ubuntu"=>["python3-pytest"]}
+  {"alpine"=>["py3-pytest"], "arch"=>["python-pytest"], "debian"=>["python3-pytest"], "fedora"=>["python3-pytest"], "gentoo"=>["dev-python/pytest"], "rhel"=>["python%{python3_pkgversion}-pytest"], "ubuntu"=>["python3-pytest"]}
       </pre>
     </div>
   </div>
@@ -1280,10 +1282,6 @@
                 demo_nodes_py
               </a>
               
-              <a href="/p/quality_of_service_demo_py#crystal" class="label label-primary pkg-label">
-                quality_of_service_demo_py
-              </a>
-              
               <a href="/p/topic_monitor#crystal" class="label label-primary pkg-label">
                 topic_monitor
               </a>
@@ -1320,28 +1318,28 @@
                 launch
               </a>
               
+              <a href="/p/launch_ros#crystal" class="label label-primary pkg-label">
+                launch_ros
+              </a>
+              
               <a href="/p/launch_testing#crystal" class="label label-primary pkg-label">
                 launch_testing
               </a>
               
-              <a href="/p/test_launch_testing#crystal" class="label label-primary pkg-label">
-                test_launch_testing
+              <a href="/p/ros2launch#crystal" class="label label-primary pkg-label">
+                ros2launch
+              </a>
+              
+              <a href="/p/test_launch_ros#crystal" class="label label-primary pkg-label">
+                test_launch_ros
               </a>
               
               <a href="/p/rclpy#crystal" class="label label-primary pkg-label">
                 rclpy
               </a>
               
-              <a href="/p/ros2action#crystal" class="label label-primary pkg-label">
-                ros2action
-              </a>
-              
               <a href="/p/ros2cli#crystal" class="label label-primary pkg-label">
                 ros2cli
-              </a>
-              
-              <a href="/p/ros2component#crystal" class="label label-primary pkg-label">
-                ros2component
               </a>
               
               <a href="/p/ros2lifecycle#crystal" class="label label-primary pkg-label">
@@ -1384,6 +1382,10 @@
                 ros2topic
               </a>
               
+              <a href="/p/rosidl_actions#crystal" class="label label-primary pkg-label">
+                rosidl_actions
+              </a>
+              
               <a href="/p/rosidl_parser#crystal" class="label label-primary pkg-label">
                 rosidl_parser
               </a>
@@ -1394,14 +1396,6 @@
               
               <a href="/p/rosidl_generator_py#crystal" class="label label-primary pkg-label">
                 rosidl_generator_py
-              </a>
-              
-              <a href="/p/rosidl_runtime_py#crystal" class="label label-primary pkg-label">
-                rosidl_runtime_py
-              </a>
-              
-              <a href="/p/nav2_turtlebot3_rl#crystal" class="label label-primary pkg-label">
-                nav2_turtlebot3_rl
               </a>
               
               <a href="/p/ros2bag#crystal" class="label label-primary pkg-label">
@@ -1599,7 +1593,7 @@
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-05-23</em>
+          <em>generated on 2019-05-24</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

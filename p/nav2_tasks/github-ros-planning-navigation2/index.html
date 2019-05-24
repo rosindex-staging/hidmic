@@ -393,14 +393,6 @@ nav2_dynamic_params
           
             
             
-              <a class="label label-primary pkg-label" href="/p/nav2_turtlebot3_rl/github-ros-planning-navigation2">
-
-nav2_turtlebot3_rl
-</a>
-            
-          
-            
-            
               <a class="label label-primary pkg-label" href="/p/nav2_map_server/github-ros-planning-navigation2">
 
 nav2_map_server
@@ -444,6 +436,14 @@ nav2_navfn_planner
               <a class="label label-primary pkg-label" href="/p/nav2_robot/github-ros-planning-navigation2">
 
 nav2_robot
+</a>
+            
+          
+            
+            
+              <a class="label label-primary pkg-label" href="/p/nav2_simple_navigator/github-ros-planning-navigation2">
+
+nav2_simple_navigator
 </a>
             
           
@@ -547,7 +547,7 @@ navigation2
 
 <div class="list-group list-group-sm list-group-horizontal list-group-justified">
   <a class="list-group-item text-center" target="_blank" href="http://docs.ros2.org/crystal/api/nav2_tasks/" ><span style="margin-right: 5px;" class="glyphicon glyphicon-file"></span><br> API Docs</a>
-  <a class="list-group-item text-center" target="_blank" href="https://github.com/ros-planning/navigation2/tree/master/nav2_tasks"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span><br> Browse Code</a>
+  <a class="list-group-item text-center" target="_blank" href="https://github.com/ros-planning/navigation2/tree/crystal-devel/nav2_tasks"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span><br> Browse Code</a>
   <a class="list-group-item text-center inactive" target="_blank" href="http://wiki.ros.org/nav2_tasks?distro=crystal"><span style="margin-right: 5px;" class="glyphicon glyphicon-info-sign"></span><br> Wiki</a>
   <a class="list-group-item text-center inactive" target="_blank" href="http://http404error.github.io/roseco/graph.html?id=ros.json&focus=nav2_tasks&height=1&depth=2&tred=standard&metagroup=false&colorby=Health&direction=LR" ><span style="margin-right: 5px;" class="glyphicon glyphicon-tree-deciduous"></span><br></a>
   
@@ -575,7 +575,7 @@ navigation2
     
     
     
-    <a href="#crystal-deps" data-toggle="tab"><span class="label label-primary">21</span> Dependencies</a>
+    <a href="#crystal-deps" data-toggle="tab"><span class="label label-primary">20</span> Dependencies</a>
   </li>
   <li class="better-tabs">
     
@@ -606,7 +606,7 @@ navigation2
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.1.5</td>
+                <td>0.1.7</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -648,13 +648,13 @@ navigation2
     </tr>
     <tr>
       <td class="text-right"><b>VCS Version</b></td>
-      <td><span class="label label-default">master</span></td>
+      <td><span class="label label-default">crystal-devel</span></td>
     </tr>
     <tr>
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-16
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-03-13
         </span>
       </td>
     </tr>
@@ -725,7 +725,7 @@ navigation2
         <div class="row">
           <div class="col-xs-12">
             <div class="panel panel-default">
-              <div class="panel-heading"><span class="glyphicon glyphicon-file"></span><a href="https://github.com/ros-planning/navigation2/tree/master/nav2_tasks/README.md" title="Open in git repository">nav2_tasks/README.md</a></div>
+              <div class="panel-heading"><span class="glyphicon glyphicon-file"></span><a href="https://github.com/ros-planning/navigation2/tree/crystal-devel/nav2_tasks/README.md" title="Open in git repository">nav2_tasks/README.md</a></div>
               <div class="panel-body">
                     <div class="rendered-markdown">
 <h1 id="nav2-tasks">Nav2 Tasks</h1>
@@ -736,13 +736,13 @@ navigation2
 
 <ul>
 <li>
-<a href="https://github.com/ros-planning/navigation2/tree/master/nav2_tasks/include/nav2_tasks/task_server.hpp">TaskServer</a> and <a href="https://github.com/ros-planning/navigation2/tree/master/nav2_tasks/include/nav2_tasks/task_client.hpp">TaskClient</a> templates which are used as base classes to implement task servers and their associated task clients</li>
-<li>A few derived classes, such as <a href="https://github.com/ros-planning/navigation2/tree/master/nav2_tasks/include/nav2_tasks/compute_path_to_pose_task.hpp">ComputePathToPoseTask</a>, that define specific task clients and servers</li>
+<a href="https://github.com/ros-planning/navigation2/tree/crystal-devel/nav2_tasks/include/nav2_tasks/task_server.hpp">TaskServer</a> and <a href="https://github.com/ros-planning/navigation2/tree/crystal-devel/nav2_tasks/include/nav2_tasks/task_client.hpp">TaskClient</a> templates which are used as base classes to implement task servers and their associated task clients</li>
+<li>A few derived classes, such as <a href="https://github.com/ros-planning/navigation2/tree/crystal-devel/nav2_tasks/include/nav2_tasks/compute_path_to_pose_task.hpp">ComputePathToPoseTask</a>, that define specific task clients and servers</li>
 </ul>
 
 <p>For convenience the nav_tasks library also provides:
-* A <a href="https://github.com/ros-planning/navigation2/tree/master/nav2_tasks/include/nav2_tasks/service_client.hpp">ServiceClient</a> template used to define clients for ROS2 services
-* A couple specific service client classes, such as <a href="https://github.com/ros-planning/navigation2/tree/master/nav2_tasks/include/nav2_tasks/map_service_client.hpp">MapServiceClient</a> that use the ServiceClient template</p>
+* A <a href="https://github.com/ros-planning/navigation2/tree/crystal-devel/nav2_tasks/include/nav2_tasks/service_client.hpp">ServiceClient</a> template used to define clients for ROS2 services
+* A couple specific service client classes, such as <a href="https://github.com/ros-planning/navigation2/tree/crystal-devel/nav2_tasks/include/nav2_tasks/map_service_client.hpp">MapServiceClient</a> that use the ServiceClient template</p>
 
 <h2 id="overview">Overview</h2>
 
@@ -750,7 +750,7 @@ navigation2
 
 <p>For example, the Navigation2 software currently implements four tasks: <strong>ExecuteMission</strong>, <strong>NavigateToPose</strong>, <strong>ComputePathToPose</strong>, and <strong>FollowPath</strong>, which are organized as follows:</p>
 
-<p><img src="https://raw.githubusercontent.com/ros-planning/navigation2/master/nav2_tasks/./doc/hierarchy.svg" width="400" title="Navigation Task Hiearchy"></p>
+<p><img src="https://raw.githubusercontent.com/ros-planning/navigation2/crystal-devel/nav2_tasks/./doc/hierarchy.svg" width="400" title="Navigation Task Hiearchy"></p>
 
 <p>This approach allows for easily replacing any task with an alternative implementation. The replacement module must simply implement the correct task interface. </p>
 
@@ -1155,26 +1155,6 @@ DoSomethingImplementation::execute(const nav2_tasks::DoSomethingCommand::SharedP
                           
                           
                           
-                          <a href="/p/nav2_util#crystal-deps" >
-                            <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
-                          </a>
-                        </td>
-                        <td class="text-center">
-                          <a href="/packages/nav2_util" class="label label-default">
-                            1
-                          </a>
-                        </td>
-                        <td><a href="/p/nav2_util#crystal">nav2_util</a></td>
-                      </tr>
-                    
-                  
-                    
-                    
-                      <tr>
-                        <td class="text-center">
-                          
-                          
-                          
                           <a href="/p/ament_cmake#crystal-deps" >
                             <span class="glyphicon glyphicon-arrow-left" title="Package dependencies"></span>
                           </a>
@@ -1445,6 +1425,20 @@ DoSomethingImplementation::execute(const nav2_tasks::DoSomethingCommand::SharedP
                     
                     
                     <tr>
+                      <td><a href="/p/nav2_simple_navigator/github-ros-planning-navigation2#crystal">nav2_simple_navigator</a></td>
+                      <td><a href="/r/navigation2/github-ros-planning-navigation2">github-ros-planning-navigation2</a></td>
+                      <td class="text-center">
+                        
+                        <a href="/p/nav2_simple_navigator/github-ros-planning-navigation2#crystal-deps" >
+                          <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  
+                    
+                    
+                    <tr>
                       <td><a href="/p/nav2_system_tests/github-ros-planning-navigation2#crystal">nav2_system_tests</a></td>
                       <td><a href="/r/navigation2/github-ros-planning-navigation2">github-ros-planning-navigation2</a></td>
                       <td class="text-center">
@@ -1625,7 +1619,7 @@ jQuery(function() {
 
 <div class="list-group list-group-sm ">
   <a class="list-group-item" target="_blank" href="http://docs.ros2.org/crystal/api/nav2_tasks/" ><span style="margin-right: 5px;" class="glyphicon glyphicon-file"></span> API Docs</a>
-  <a class="list-group-item" target="_blank" href="https://github.com/ros-planning/navigation2/tree/master/nav2_tasks"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span> Browse Code</a>
+  <a class="list-group-item" target="_blank" href="https://github.com/ros-planning/navigation2/tree/crystal-devel/nav2_tasks"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span> Browse Code</a>
   <a class="list-group-item inactive" target="_blank" href="http://wiki.ros.org/nav2_tasks?distro=crystal"><span style="margin-right: 5px;" class="glyphicon glyphicon-info-sign"></span> Wiki</a>
   <a class="list-group-item inactive" target="_blank" href="http://http404error.github.io/roseco/graph.html?id=ros.json&focus=nav2_tasks&height=1&depth=2&tred=standard&metagroup=false&colorby=Health&direction=LR" ><span style="margin-right: 5px;" class="glyphicon glyphicon-tree-deciduous"></span></a>
   
@@ -1727,7 +1721,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-05-23</em>
+          <em>generated on 2019-05-24</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">

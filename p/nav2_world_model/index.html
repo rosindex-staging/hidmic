@@ -390,14 +390,6 @@ nav2_dynamic_params
           
             
             
-              <a class="label label-primary pkg-label" href="/p/nav2_turtlebot3_rl/github-ros-planning-navigation2">
-
-nav2_turtlebot3_rl
-</a>
-            
-          
-            
-            
               <a class="label label-primary pkg-label" href="/p/nav2_map_server/github-ros-planning-navigation2">
 
 nav2_map_server
@@ -441,6 +433,14 @@ nav2_navfn_planner
               <a class="label label-primary pkg-label" href="/p/nav2_robot/github-ros-planning-navigation2">
 
 nav2_robot
+</a>
+            
+          
+            
+            
+              <a class="label label-primary pkg-label" href="/p/nav2_simple_navigator/github-ros-planning-navigation2">
+
+nav2_simple_navigator
 </a>
             
           
@@ -544,7 +544,7 @@ navigation2
 
 <div class="list-group list-group-sm list-group-horizontal list-group-justified">
   <a class="list-group-item text-center" target="_blank" href="http://docs.ros2.org/crystal/api/nav2_world_model/" ><span style="margin-right: 5px;" class="glyphicon glyphicon-file"></span><br> API Docs</a>
-  <a class="list-group-item text-center" target="_blank" href="https://github.com/ros-planning/navigation2/tree/master/nav2_world_model"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span><br> Browse Code</a>
+  <a class="list-group-item text-center" target="_blank" href="https://github.com/ros-planning/navigation2/tree/crystal-devel/nav2_world_model"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span><br> Browse Code</a>
   <a class="list-group-item text-center inactive" target="_blank" href="http://wiki.ros.org/nav2_world_model?distro=crystal"><span style="margin-right: 5px;" class="glyphicon glyphicon-info-sign"></span><br> Wiki</a>
   <a class="list-group-item text-center inactive" target="_blank" href="http://http404error.github.io/roseco/graph.html?id=ros.json&focus=nav2_world_model&height=1&depth=2&tred=standard&metagroup=false&colorby=Health&direction=LR" ><span style="margin-right: 5px;" class="glyphicon glyphicon-tree-deciduous"></span><br></a>
   
@@ -603,7 +603,7 @@ navigation2
               </tr>
               <tr>
                 <td class="text-right"><strong>Version</strong></td>
-                <td>0.1.5</td>
+                <td>0.1.7</td>
               </tr>
               <tr>
                 <td class="text-right"><strong>License</strong></td>
@@ -645,13 +645,13 @@ navigation2
     </tr>
     <tr>
       <td class="text-right"><b>VCS Version</b></td>
-      <td><span class="label label-default">master</span></td>
+      <td><span class="label label-default">crystal-devel</span></td>
     </tr>
     <tr>
       <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
       <td>
         
-          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-05-16
+          <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2019-03-13
         </span>
       </td>
     </tr>
@@ -718,24 +718,9 @@ navigation2
         <div class="row">
           <div class="col-xs-12">
             <div class="panel panel-default">
-              <div class="panel-heading"><span class="glyphicon glyphicon-file"></span><a href="https://github.com/ros-planning/navigation2/tree/master/nav2_world_model/README.md" title="Open in git repository">nav2_world_model/README.md</a></div>
+              <div class="panel-heading"><span class="glyphicon glyphicon-file"></span><a href="https://github.com/ros-planning/navigation2/tree/crystal-devel/nav2_world_model/README.md" title="Open in git repository">nav2_world_model/README.md</a></div>
               <div class="panel-body">
-                    <div class="rendered-markdown">
-<h1 id="nav2-world-model">Nav2 World Model</h1>
-
-<p><code>nav2_world_model</code> is a package containing an exposed environmental representation. Today, it uses the <code>nav2_costmap_2d</code> layered costmap as the world model. In the future, this is the entry point for applications to request or view information about the environment around it. The implementations such as costmaps or height maps will provide the buffering of data and representations as they require. They are then wrapped for generalized use for path planning and control.</p>
-
-<h2 id="ros1-comparison">ROS1 Comparison</h2>
-
-<p>ROS1 Navigation contains <code>costmap_2d</code> which is directly used as the evironmental model. This package is able to consume <code>nav2_costmap_2d</code> as an implementation of a world model, but can also utilize other world models to suit the needs of a specific application. Rather than querying <code>costmap_2d</code> for information, applications will query <code>nav2_world_model</code> which will in turn use the current world model and retrieve the information requested.</p>
-
-<h2 id="future">Future</h2>
-
-<ul>
-<li>Additional implementations/support for different environmental representations like <code>grid_maps</code>, height maps, traversibility maps, etc. </li>
-<li>Utilities for converting types for use in other applications like control and planning. </li>
-</ul>
-</div>
+                    <div class="rendered-markdown"></div>
               </div>
             </div>
           </div>
@@ -1255,7 +1240,7 @@ jQuery(function() {
 
 <div class="list-group list-group-sm ">
   <a class="list-group-item" target="_blank" href="http://docs.ros2.org/crystal/api/nav2_world_model/" ><span style="margin-right: 5px;" class="glyphicon glyphicon-file"></span> API Docs</a>
-  <a class="list-group-item" target="_blank" href="https://github.com/ros-planning/navigation2/tree/master/nav2_world_model"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span> Browse Code</a>
+  <a class="list-group-item" target="_blank" href="https://github.com/ros-planning/navigation2/tree/crystal-devel/nav2_world_model"><span class="glyphicon glyphicon-folder-open" style="margin-right:5px;"></span> Browse Code</a>
   <a class="list-group-item inactive" target="_blank" href="http://wiki.ros.org/nav2_world_model?distro=crystal"><span style="margin-right: 5px;" class="glyphicon glyphicon-info-sign"></span> Wiki</a>
   <a class="list-group-item inactive" target="_blank" href="http://http404error.github.io/roseco/graph.html?id=ros.json&focus=nav2_world_model&height=1&depth=2&tred=standard&metagroup=false&colorby=Health&direction=LR" ><span style="margin-right: 5px;" class="glyphicon glyphicon-tree-deciduous"></span></a>
   
@@ -1357,7 +1342,7 @@ jQuery(function() {
             <span class="username">ros-infrastructure</span>
           </a>
           |
-          <em>generated on 2019-05-23</em>
+          <em>generated on 2019-05-24</em>
         
         </div>
         <div class="col-sm-8 col-md-8 text-right">
